@@ -18,7 +18,7 @@ public class UseController extends BaseController{
     @FXML private TableColumn<Use, Number>colID;
     @FXML private TableColumn<Use, String>colName;
 
-    @FXML private TextField nameField;
+    @FXML private Label nameLabel;
 
     @FXML
     public void initialize(){
@@ -31,7 +31,7 @@ public class UseController extends BaseController{
                 .addListener((obs,old,val)->{
                     if(val!=null){
                         selectedUse=val;
-                        nameField.setText(val.getName());
+                        nameLabel.setText(val.getName());
                     }
                 });
 
@@ -43,31 +43,15 @@ public class UseController extends BaseController{
 
     @FXML
     public void onClear(){
-        nameField.clear();
+        nameLabel.setText("Name*");
         useTable.getSelectionModel().clearSelection();
     }
 
     @FXML
-    public void onSave(){
-        if(currentUser==null){
-            showAlert(Alert.AlertType.ERROR, "Invalid operation", "One must be logged in to edit");
-            return;
-        }
-        if(nameField.getText().isEmpty()){
-            showAlert(Alert.AlertType.WARNING, "Validation", "Name cannot be empty");
-            return;
-        }
-        if (selectedUse == null) {
-            useService.save(new Use(nameField.getText()));
-            log("INSERT", "Use", nameField.getText());
-        }
-        else{
-            selectedUse.setName(nameField.getText());
-            useService.save(selectedUse);
-            log("UPDATE", "Use", nameField.getText());
-        }
-        refresh();
+    public void onEdit(){
+        openPopupWindow("/hr/algebra/views/insert-update-use-view.fxml", "Insert or update use", currentUser);
     }
+
 
     @FXML
     public void onDelete(){
@@ -75,15 +59,15 @@ public class UseController extends BaseController{
             showAlert(Alert.AlertType.ERROR, "Invalid operation", "One must be logged in to edit");
             return;
         }
-        if(nameField.getText().isEmpty()){
+        if(selectedUse==null ||  selectedUse.getName().isEmpty()){
             showAlert(Alert.AlertType.ERROR, "Error", "Name cannot be empty");
             return;
         }
 
-        showConfirm("Confirmation", "Do you want to delete: "+ nameField.getText());
+        showConfirm("Confirmation", "Do you want to delete: "+ selectedUse.getName());
 
         useService.delete(selectedUse.getId());
-        log( "DELETE", "Use", nameField.getText());
+        log( "DELETE", "Use", selectedUse.getName());
         refresh();
     }
 

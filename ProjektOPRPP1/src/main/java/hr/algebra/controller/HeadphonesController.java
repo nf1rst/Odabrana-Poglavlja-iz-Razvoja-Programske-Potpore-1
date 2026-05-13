@@ -13,15 +13,16 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
+
 import java.io.File;
 import java.io.StringWriter;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class HeadphonesController extends BaseController {
@@ -34,19 +35,19 @@ public class HeadphonesController extends BaseController {
     @FXML private TableColumn<Headphones, Number> colBattery;
     @FXML private TableColumn<Headphones,  Number> colImpedance;
 
-    @FXML private TextField nameField;
-    @FXML private TextField yearField;
-    @FXML private TextField priceField;
-    @FXML private TextField impedanceField;
-    @FXML private TextField minFreqField;
-    @FXML private TextField maxFreqField;
-    @FXML private TextField batteryField;
-    @FXML private TextArea descriptionArea;
-    @FXML private ComboBox<Brand>brandCombo;
-    @FXML private ComboBox<Type>typeCombo;
-    @FXML private ListView<Technology> technologiesListView;
-    @FXML private ListView<Use>usesListView;
-    @FXML private Label imageLabel;
+    @FXML private ImageView headphoneImageView;
+    @FXML private Label nameLabel;
+    @FXML private Label yearLabel;
+    @FXML private Label priceLabel;
+    @FXML private Label impedanceLabel;
+    @FXML private Label minFreqLabel;
+    @FXML private Label maxFreqLabel;
+    @FXML private Label batteryLabel;
+    @FXML private Label brandLabel;
+    @FXML private Label typeLabel;
+    @FXML private Label descLabel;
+    @FXML private Label techLabel;
+    @FXML private Label useLabel;
 
     @FXML private TextField searchField;
     @FXML private ComboBox<Brand> filterBrandCombo;
@@ -63,13 +64,62 @@ public class HeadphonesController extends BaseController {
 
     @FXML
     public void initialize(){
-        // je ltu treba bit metoda da poveca nesto iz vanjskog
         setupColums();
-        setupCombos();
-        setupListViews();
         setupTableSelection();
+        setUpComboBoxes();
         setupSearch();
         refresh();
+    }
+
+    private void setUpComboBoxes() {
+        List<Type>allTypes=typeService.getAllTypes();
+        List<Brand>allBrands = brandService.getAllBrands();
+
+        filterTypeCombo.setItems(FXCollections.observableArrayList(allTypes));
+        filterBrandCombo.setItems(FXCollections.observableArrayList(allBrands));
+
+        filterBrandCombo.setConverter(new StringConverter<Brand>() {
+            @Override
+            public String toString(Brand brand) {
+                return brand.getName()!=null?brand.getName():null;
+            }
+
+            @Override
+            public Brand fromString(String s) {
+                return null;
+            }
+        });
+
+        filterTypeCombo.setConverter(new StringConverter<Type>() {
+            @Override
+            public String toString(Type type) {
+                return type.getName()!=null?type.getName():null;
+            }
+
+            @Override
+            public Type fromString(String s) {
+                return null;
+            }
+        });
+
+        filterBrandCombo
+                .getSelectionModel()
+                .selectedItemProperty()
+                .addListener((obs, old, val)->{
+                    if(val!=null){
+                        headphonesTable.setItems(FXCollections.observableArrayList(headphonesService.getByBrand(val.getId())));
+                    }
+                });
+
+        filterTypeCombo
+                .getSelectionModel()
+                .selectedItemProperty()
+                .addListener((obs, old, val)->{
+                    if(val!=null){
+                        headphonesTable.setItems(FXCollections.observableArrayList(headphonesService.getByType(val.getId())));
+                    }
+                });
+
     }
 
     private void refresh() {
@@ -94,67 +144,47 @@ public class HeadphonesController extends BaseController {
                 .addListener((obs,old, val)->{
                     if(val!=null){
                         selectedHeadphnes=val;
-                        populateForm(val);
+                        populateDetailsForm(val);
                     }
                 });
     }
 
-    private void populateForm(Headphones h) {
-        nameField.setText(h.getName());
-        yearField.setText(String.valueOf(h.getYearEdition()));
-        priceField.setText(String.valueOf(h.getPrice()));
-        impedanceField.setText(String.valueOf(h.getImpedance()));
-        minFreqField.setText(String.valueOf(h.getMinFrequency()));
-        maxFreqField.setText(String.valueOf(h.getMaxFrequency()));
-        batteryField.setText(String.valueOf(h.getBatteryLife()));
-        brandCombo.setValue(h.getBrand());
-        typeCombo.setValue(h.getType());
-        selectedImagePath=h.getImagePath();
-        imageLabel.setText(h.getImagePath()!=null?h.getImagePath():"No picture to display");
+    private void populateDetailsForm(Headphones h) {
+        nameLabel.setText(h.getName());
+        yearLabel.setText(Integer.toString(h.getYearEdition()));
+        priceLabel.setText((h.getPrice()) + "€");
+        impedanceLabel.setText((h.getImpedance())+" Ω");
+        minFreqLabel.setText((h.getMinFrequency())+" Hz");
+        maxFreqLabel.setText((h.getMaxFrequency())+" Hz");
+        batteryLabel.setText((h.getBatteryLife()==0?"Wired":h.getBatteryLife() + " h")); //bez ovog "h" bi on to shvatio kao int
+        brandLabel.setText(h.getBrand().getName());
+        typeLabel.setText(h.getType().getName());
+        descLabel.setText(h.getDescription());
 
-        technologiesListView.getSelectionModel().clearSelection();
-        if(h.getTechnologies()!=null){
-            h.getTechnologies().forEach(t->technologiesListView.getSelectionModel().select(t));
-        }
+        techLabel.setText( // jer nema pametnijeg nacina za iscupat samo name iz techonologies
+                h.getTechnologies()
+                        .stream()
+                        .map(t->t.getName())
+                        .collect(Collectors.joining(", "))
+        );
 
-        usesListView.getSelectionModel().clearSelection();
-        if(h.getPossibleUsages()!=null){
-            h.getPossibleUsages().forEach(u->usesListView.getSelectionModel().select(u));
-        }
+        useLabel.setText(
+                h.getPossibleUsages()
+                        .stream()
+                        .map(u->u.getName())
+                        .collect(Collectors.joining(","))
+        );
     }
 
-    private void setupListViews() {
-        technologiesListView.setItems(
-                FXCollections.observableArrayList(technologyService.getAllTechnologies()));
-        technologiesListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-
-        //da se vide samo nazivi u listView
-        technologiesListView.setCellFactory(lv->new ListCell<Technology>(){
-            protected void updateItem(Technology t, boolean empty) {
-                super.updateItem(t,empty);
-                setText(empty || t==null?null:t.getName());
-            }
-        });
-
-        usesListView.setItems(FXCollections.observableArrayList(useService.getAllUses()));
-        usesListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-
-        usesListView.setCellFactory(lv->new ListCell<Use>(){
-            protected void updateItem(Use u, boolean empty){
-                super.updateItem(u,empty);
-                setText(empty || u==null?null:u.getName());
-            }
-        });
-    }
 
     private void setupColums(){
         colName.setCellValueFactory(
                 d->new SimpleStringProperty(d.getValue().getName()));
         colBrand.setCellValueFactory(
-                d->new SimpleStringProperty(d.getValue().getName()));
+                d->new SimpleStringProperty(d.getValue().getBrand().getName()));
         colType.setCellValueFactory(
                 d->new SimpleStringProperty(d.getValue().getType()!=null?
-                        d.getValue().getName()
+                        d.getValue().getType().getName()
                         : ""));
         colYear.setCellValueFactory(
                 d-> new SimpleIntegerProperty(d.getValue().getYearEdition()));
@@ -167,103 +197,9 @@ public class HeadphonesController extends BaseController {
                 d->new SimpleIntegerProperty(d.getValue().getImpedance()));
     }
 
-    public void setupCombos(){
-        List<Brand> brands = brandService.getAllBrands();
-        List<Type> types= typeService.getAllTypes();
-
-        brandCombo.setItems(FXCollections.observableList(brands));
-        typeCombo.setItems(FXCollections.observableList(types));
-
-        brandCombo.setConverter(new StringConverter<Brand>() {
-            @Override
-            public String toString(Brand brand) {return brand!=null? brand.getName():"";}
-            @Override
-            public Brand fromString(String s) {return null;}
-        });
-        typeCombo.setConverter(new StringConverter<Type>() {
-            @Override
-            public String toString(Type type) {return type!=null?type.getName():"";}
-            @Override
-            public Type fromString(String s) {return null;}
-        });
-
-        filterBrandCombo.getItems().add(null);
-        filterBrandCombo.getItems().addAll(brands);
-        filterBrandCombo.setConverter(new StringConverter<Brand>() {
-            @Override
-            public String toString(Brand brand) {
-                return brand!=null? brand.getName():"All brands";
-            }
-            @Override
-            public Brand fromString(String s) {
-                return null;
-            }
-        });
-        filterBrandCombo.setOnAction(e->OnFilterBrand());
-
-        filterTypeCombo.getItems().add(null);
-        filterTypeCombo.getItems().addAll(types);
-        filterTypeCombo.setConverter(new StringConverter<Type>() {
-            @Override
-            public String toString(Type type) {
-                return type!=null?type.getName():"All types";
-            }
-            @Override
-            public Type fromString(String s) {
-                return null;
-            }
-        });
-        filterTypeCombo.setOnAction(e->onFilterType());
-    }
-
-
     @FXML
-    public void onSave(){
-        if(!validateForm())return;
-
-        try{
-            boolean isNew=(selectedHeadphnes==null);
-            if(isNew){ // ako ne posoji napravi novi
-                selectedHeadphnes= new Headphones(
-                        nameField.getText(),
-                        Integer.parseInt(yearField.getText()),
-                        Integer.parseInt(impedanceField.getText()),
-                        Integer.parseInt(minFreqField.getText()),
-                        Integer.parseInt(maxFreqField.getText()),
-                        Integer.parseInt(batteryField.getText()),
-                        Double.parseDouble(priceField.getText()),
-                        descriptionArea.getText(),
-                        selectedImagePath,
-                        brandCombo.getValue(),
-                        typeCombo.getValue(),
-                        technologiesListView.getSelectionModel().getSelectedItems(),
-                        usesListView.getSelectionModel().getSelectedItems()
-                );
-            }
-            else{//ako postoje napravi update
-                selectedHeadphnes.setName(nameField.getText());
-                selectedHeadphnes.setYearEdition(Integer.parseInt(yearField.getText()));
-                selectedHeadphnes.setImpedance(Integer.parseInt(yearField.getText()));
-                selectedHeadphnes.setMinFrequency(Integer.parseInt(minFreqField.getText()));
-                selectedHeadphnes.setMaxFrequency(Integer.parseInt(maxFreqField.getText()));
-                selectedHeadphnes.setPrice(Double.parseDouble(priceField.getText()));
-                selectedHeadphnes.setDescription(descriptionArea.getText());
-                selectedHeadphnes.setImagePath(selectedImagePath);
-                selectedHeadphnes.setBrand(brandCombo.getValue());
-                selectedHeadphnes.setType(typeCombo.getValue());
-            }
-
-            headphonesService.save(selectedHeadphnes);
-            if (!isNew) {
-                updateManyToMany(selectedHeadphnes);
-            }
-            ActionLogger.log(checkUsernameForLogging(), isNew?"INSERT":"UPDATE", "Headphones", selectedHeadphnes.getName());
-            showAlert(Alert.AlertType.INFORMATION, "Success", "Headphones successfully saved");
-            refresh();
-        }
-        catch (NumberFormatException e){
-            showAlert(Alert.AlertType.ERROR, "Error", "Check your numeric values");
-        }
+    public void onEdit(){
+        openPopupWindow("/hr/algebra/views/insert-update-headphones-view.fxml", "Insert and Update Headphone", currentUser);
     }
 
     @FXML
@@ -288,27 +224,6 @@ public class HeadphonesController extends BaseController {
         refresh();
     }
 
-    @FXML
-    public void onChooseImage(){
-        FileChooser fc = new FileChooser();
-        fc.setTitle("Choose image for headphones: ");
-        fc.getExtensionFilters().add(
-                new FileChooser.ExtensionFilter("Pictures", "*.png", "*.jpg", "*.jpeg"));
-
-        File file = fc.showOpenDialog(nameField.getScene().getWindow());
-        if(file ==null) return;
-        try{
-            Path assetsDir = Paths.get("src/main/resources/hr/algebra/assets/");
-            Files.createDirectories(assetsDir);
-            Path dest = assetsDir.resolve(file.getName());
-            Files.copy(file.toPath(), dest, StandardCopyOption.REPLACE_EXISTING);
-            selectedImagePath=dest.toString();
-            imageLabel.setText(file.getName());
-        }
-        catch(Exception e){
-            showAlert(Alert.AlertType.ERROR, "Error", "Cannot copy picture");
-        }
-    }
 
     @FXML
     public void onShowAll() {
@@ -326,25 +241,6 @@ public class HeadphonesController extends BaseController {
         catch(Exception ignored){}
     }
 
-
-    private void onFilterType() {
-        Type t = filterTypeCombo.getValue();
-        if(t==null){
-            refresh();
-            return;
-        }
-        headphonesTable.setItems(FXCollections.observableArrayList(headphonesService.getByType(t.getId())));
-    }
-
-    private void OnFilterBrand() {
-        Brand b = filterBrandCombo.getValue();
-        if(b==null){
-            refresh();
-            return;
-        }
-        headphonesTable.setItems(FXCollections.observableArrayList(headphonesService.getByBrand(b.getId())));
-    }
-
      @FXML
      public void onExportXml(){
          FileChooser fc = new FileChooser();
@@ -353,7 +249,7 @@ public class HeadphonesController extends BaseController {
                  new FileChooser.ExtensionFilter("XML files", "*.xml"));
          fc.setInitialFileName("headphones_catalogue.xml");
 
-         File file = fc.showSaveDialog(nameField.getScene().getWindow());
+         File file = fc.showSaveDialog(nameLabel.getScene().getWindow());
          if(file==null)return;
         try{
             List<Headphones> list= headphonesService.getAllHeadphones();
@@ -373,54 +269,11 @@ public class HeadphonesController extends BaseController {
         }
      }
 
-    private void convertToXML(Headphones selectedHeadphnes) throws JAXBException {
-        JAXBContext jaxbContext =JAXBContext.newInstance(Headphones.class);
-        Marshaller marshaller = jaxbContext.createMarshaller();
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        StringWriter stringWriter = new StringWriter();
-        marshaller.marshal(selectedHeadphnes, stringWriter);
-        String xmlContent = stringWriter.toString();
-        System.out.println(xmlContent);
-    }
-
-    private void updateManyToMany(Headphones h) {
-        if(h.getTechnologies()!=null){
-            h.getTechnologies().forEach(t->headphonesService.removeTechnology(h.getId(), h.getId()));
-        }
-        if(h.getPossibleUsages()!=null){
-            h.getPossibleUsages().forEach(u->headphonesService.removeUse(h.getId(), u.getId()));
-        }
-    }
-
     @Override
     protected Node getMainNode() {
         return searchField;
     }
 
-
-    private boolean validateForm() {
-        if (nameField.getText().isEmpty()) {
-            showAlert(Alert.AlertType.WARNING, "Validation", "Name cannot be empty");
-            return false;
-        }
-        if (brandCombo.getValue() == null) {
-            showAlert(Alert.AlertType.WARNING, "Validation", "Brand cannot be empty");
-            return false;
-        }
-        if (typeCombo.getValue() == null) {
-            showAlert(Alert.AlertType.WARNING, "Validation", "Type cannot be empty");
-            return false;
-        }
-        try {
-            Integer.parseInt(yearField.getText());
-            Double.parseDouble(priceField.getText());
-
-        } catch (NumberFormatException e) {
-            showAlert(Alert.AlertType.WARNING, "Validation", "Year and price must be numbers");
-            return false;
-        }
-        return true;
-    }
 
         @FXML
     public void onClear(){
@@ -429,14 +282,20 @@ public class HeadphonesController extends BaseController {
     }
 
     private void clearForm() {
-        nameField.clear(); yearField.clear(); priceField.clear();
-        impedanceField.clear(); minFreqField.clear();
-        maxFreqField.clear(); batteryField.clear();
-        descriptionArea.clear();
-        brandCombo.setValue(null); typeCombo.setValue(null);
-        technologiesListView.getSelectionModel().clearSelection();
-        usesListView.getSelectionModel().clearSelection();
-        imageLabel.setText("No picture");
+        headphoneImageView=null;
+        nameLabel.setText("Name*");
+        yearLabel.setText("Year*");
+        priceLabel.setText("Price*");
+        impedanceLabel.setText("Impedance*");
+        minFreqLabel.setText("Min. frequency*");
+        maxFreqLabel.setText("Max. frequency*");
+        batteryLabel.setText("Battery Life(h, 0=wired)*");
+        typeLabel.setText("Type*");
+        brandLabel.setText("Brand*");
+        techLabel.setText("Technologies*");
+        useLabel.setText("Uses*");
+        descLabel.setText("Description*");
+
         selectedImagePath = null;
         selectedHeadphnes = null;
         headphonesTable.getSelectionModel().clearSelection();

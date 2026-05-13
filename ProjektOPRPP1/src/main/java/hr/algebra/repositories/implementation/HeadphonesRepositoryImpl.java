@@ -4,6 +4,7 @@ import hr.algebra.models.*;
 import hr.algebra.repositories.BrandRepository;
 import hr.algebra.repositories.HeadphonesRepository;
 
+import java.io.IOException;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -112,6 +113,20 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
             throw new RuntimeException("Cannot get headphones by use", e);
         }
         return headphones;
+    }
+
+    @Override
+    public Optional<Headphones> getByName(String name) {
+        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetHeadphonesByName(?)}")){
+            statement.setString(1, name);
+            try(ResultSet rs = statement.executeQuery()){
+                if(rs.next())return Optional.of(mapRow(rs));
+            }
+        }
+        catch (SQLException e){
+            throw new RuntimeException("Cannot get headphone");
+        }
+        return Optional.empty();
     }
 
     @Override
@@ -244,7 +259,13 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
             statement.setString(9,h.getImagePath());
             statement.setInt(10,h.getBrand().getId());
             statement.setInt(11,h.getType().getId());
-            statement.execute();
+
+            try(ResultSet rs = statement.executeQuery()){
+                if(rs.next()){
+                    int generatedID = rs.getInt("generatedID");
+                    h.setId(generatedID);
+                }
+            }
         }
         catch (SQLException e)  {
             throw new RuntimeException("Cannot insert headphones",e);

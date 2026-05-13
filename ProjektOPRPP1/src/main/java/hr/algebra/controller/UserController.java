@@ -1,13 +1,14 @@
 package hr.algebra.controller;
-
+import hr.algebra.services.UserService;
+import hr.algebra.xml.ActionLogger;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.nio.file.Files;
@@ -24,6 +25,10 @@ public class UserController extends BaseController {
     @FXML Label imageStatusLabel;
     @FXML TextField newPasswordField;
     @FXML TextField confirmPasswordField;
+
+    private String selectedImagePath;
+
+    private UserService userService=UserService.getInstance();
 
     @FXML
     public void initialize(){
@@ -96,7 +101,85 @@ public class UserController extends BaseController {
 
             Path dest = assetsDir.resolve(newFileName);
             Files.copy(file.toPath(), dest, StandardCopyOption.REPLACE_EXISTING);
-            selectedImagePath=
+            selectedImagePath=dest.toString();
+
+            Image image = new Image(new FileInputStream(dest.toFile()));
+            profileImageView.setImage(image);
+            imageStatusLabel.setText(newFileName);
+            setStatus("Picture selected. Click 'Save changes' to save");
+        }
+        catch(Exception e){
+            showAlert(Alert.AlertType.ERROR, "Error", "Cannot fetch the image");
         }
     }
+
+    @FXML
+    public void onSaveChanges(){
+        boolean changed=false;
+
+        String newPasword = newPasswordField.getText();
+        String conirmPassword=confirmPasswordField.getText();
+
+        if(!newPasword.isEmpty()){
+            if(newPasword.length()<7){
+                setStatus("Password must have at least 7 characters");
+                return;
+            }
+            if(!newPasword.equals(conirmPassword)){
+                setStatus("Password do not match");
+                return;
+            }
+            if(newPasword.contains("/")){
+                setStatus("Cannot use character '/'");
+                return;
+            }
+            currentUser.setPassword(newPasword);
+            changed = true;
+        }
+
+        //slika
+        if(selectedImagePath!=null){
+            currentUser.setImagePath(selectedImagePath);
+            changed=true;
+        }
+
+        if(!changed){
+            setStatus("You've made no changes");
+            return;
+        }
+
+        userService.updateUser(currentUser);
+
+        ActionLogger.log(currentUser.getUsername(), "UPDATE", "User", "Account updated");
+
+        setStatus("Changes saved successfully");
+
+        newPasswordField.clear();
+        confirmPasswordField.clear();
+    }
+
+    @FXML
+    public void onCancel(){
+        Image oldProfilePicture=null;
+        try{
+            oldProfilePicture = new Image(new FileInputStream(new File(currentUser.getImagePath())));
+        }
+        catch (Exception e){
+            // samo neka ostavi na null da prikaze staru sliku
+        }
+        profileImageView.setImage(oldProfilePicture); // da makne sliku ako klikne cancel
+        newPasswordField.clear();
+        confirmPasswordField.clear();
+        imageStatusLabel.setText("");
+    }
+
+    private void setStatus(String s) {
+        statusLabel.setText(s);
+    }
+
+    private String getExtension(String fileName) {
+        int dot = fileName.lastIndexOf('.');
+        return dot>=0?fileName.substring(dot):".png";
+    }
+
 }

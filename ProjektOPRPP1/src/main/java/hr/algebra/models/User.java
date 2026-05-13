@@ -20,7 +20,7 @@ public class User implements Comparable<User>{
         this.username = username;
         this.password = password;
         this.role = role;
-        imagePath=null; // po defaultu korisnik nema profilnu sliku
+        this.imagePath="/hr/algebra/assets/noProfPic.jpg"; // po defaultu korisnik nema profilnu sliku
     }
 
     public int getId() {return id;}

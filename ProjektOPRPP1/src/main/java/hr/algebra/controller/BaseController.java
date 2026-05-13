@@ -50,6 +50,30 @@ public abstract class BaseController {
         }
     }
 
+    protected void openPopupWindow(String fxmlPath, String title, User user){//zasto je ovdje object, jel zato da bi se moglo zavorit ili nesto drugo
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Scene scene = new Scene(loader.load());
+
+            Object controller = loader.getController();
+
+            if(controller instanceof BaseController bc)bc.setUser(user);
+            if(controller instanceof MainController mc)mc.setUser(user);
+            if(controller instanceof AdminController ac)ac.setUser(user);
+
+            Stage stage = new Stage();
+            stage.setTitle(title);
+            stage.setScene(scene);
+            stage.setMinHeight(400);
+            stage.setMinWidth(500);
+            stage.show();
+        }
+        catch (IOException e){
+            showAlert(Alert.AlertType.ERROR, "Error", "Something went wrong");
+        }
+    }
+
+
     private void closeThisWindow() {
         Node node = getMainNode();
         if(node!=null && node.getScene()!=null){

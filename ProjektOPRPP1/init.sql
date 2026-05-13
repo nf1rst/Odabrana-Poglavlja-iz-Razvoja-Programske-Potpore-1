@@ -37,7 +37,6 @@ Name nvarchar(100) not null
 );
 
 
-
 create table Headphones(
 ID integer primary key identity(1,1),
 Name nvarchar(300) not null,
@@ -54,7 +53,7 @@ TypeID int references Type(ID)
 );
 
 
-create table headphonesTechnology(
+create table HeadphonesTechnology(
 primary key(HeadphonesID,TechnologyID),
 HeadphonesID int references Headphones(ID) on delete cascade,
 TechnologyID int references Technology(ID)
@@ -66,7 +65,7 @@ HeadphonesID int references Headphones(ID) on delete cascade,
 UseID int references UsePurpose(ID)
 );
 
-
+go
 create table Users(
 ID int primary key identity(1,1),
 Username nvarchar(150) unique not null,
@@ -301,6 +300,14 @@ begin
 end	
 
 go
+create or alter proc GetHeadphonesByName
+@name nvarchar(50)
+as
+	select f.ID,f.Name,f.YearEdition,f.Impedance,f.MinFrequency,f.MaxFrequency,f.BatteryLife,f.Price,f.Description,f.ImagePath,f.BrandID,f.TypeID
+	from Headphones as f
+	where f.Name=@name
+
+go
 create proc GetHeadphonesByUse
 @useID int
 as
@@ -322,12 +329,14 @@ begin
 end	
 
 go
-create proc InsertHeadphones
+create or alter proc InsertHeadphones
 @name nvarchar(200), @yearEdition int, @impedance int, @minFreq int, @maxFreq int, @batteryLife int,@price money, @description nvarchar(1000), @imagePath nvarchar(500), @brandId int, @typeID int
 as
 begin
 	insert into Headphones(Name, YearEdition,Impedance,MinFrequency,MaxFrequency,BatteryLife,Price,Description,ImagePath,BrandID,TypeID)
 		values(@name,@yearEdition,@impedance,@minFreq,@maxFreq,@batteryLife, @price,@description,@imagePath, @brandId, @typeID)
+
+		select SCOPE_IDENTITY() as generatedID
 end
 
 go
@@ -402,7 +411,7 @@ begin
 end	
 
 go
-create proc AddHeadphonesUse
+create or alter proc AddHeadphonesUse
 @useId int,
 @headphonesID int
 as
@@ -422,7 +431,7 @@ begin
 end	
 
 go
-create proc GetAllUsers
+create or alter proc GetAllUsers
 as
 begin
 	select u.id, u.Username, u.Password, u.Role, u.ImagePath
@@ -430,7 +439,7 @@ begin
 end
 
 go
-create proc GetUserById
+create or alter proc GetUserById
 @id int 
 as
 begin
@@ -440,7 +449,7 @@ begin
 end
 
 go
-create proc GetUserByUsername
+create or alter proc GetUserByUsername
 @username nvarchar(100)
 as
 begin
@@ -450,16 +459,16 @@ begin
 end
 
 go
-create proc InsertUser
+create or alter proc InsertUser
 @name nvarchar(100), @password nvarchar(50), @role nvarchar(20), @imagePath nvarchar(150)
 as
 begin
-	insert into Users(Username,Password,Role)
+	insert into Users(Username,Password,Role, ImagePath)
 		values(@name, @password, @role, @imagePath)
 end
 
 go
-create proc UpdateUser
+create or alter proc UpdateUser
 @id int,@name nvarchar(100), @password nvarchar(50), @role nvarchar(20), @imagePath nvarchar(150)
 as
 begin
@@ -473,7 +482,7 @@ begin
 end
 
 go
-create proc DeleteUser
+create or alter proc DeleteUser
 @id int
 as
 begin

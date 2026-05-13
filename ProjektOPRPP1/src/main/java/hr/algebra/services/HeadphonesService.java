@@ -38,6 +38,10 @@ public class HeadphonesService {
         repo.removeUse(headphonesId, useId);
     }
 
+    public boolean exists(String name){
+        Optional<Headphones> found = repo.getByName(name);
+        return found.isPresent();
+    }
 
     public void forEach(Consumer<Headphones>action){
         repo.getAll().forEach(action);

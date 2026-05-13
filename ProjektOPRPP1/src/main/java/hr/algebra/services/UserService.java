@@ -17,7 +17,6 @@ public class UserService {
     private final UserRepository repo;
     private User loggedUser;
 
-
     private UserService() {
         this.repo= UserRepositoryImpl.getInstance();
     }
@@ -68,6 +67,10 @@ public class UserService {
 
     public void updateImagePath(User user, String imagePath){
         user.setImagePath(imagePath);
+        repo.save(user);
+    }
+
+    public void updateUser(User user){
         repo.save(user);
     }
 

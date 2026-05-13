@@ -4,7 +4,8 @@ import java.util.Objects;
 
 
 public class Headphones implements Comparable<Headphones> {
-    private final int id;
+    private int id; // ovdje id nije final da ga se moze u repo sloju postavit na inserted objekt tako da ga u controlleru mogu poslat u metodu koja ce preko vracenog
+    //ID-a novostvorenog objekta moc insertirat u M:N medutablice
 
     //polja trebaju bit private radi enkapsulacije - PROMIJENIT
     private int yearEdition;
@@ -84,6 +85,8 @@ public class Headphones implements Comparable<Headphones> {
     public void setImagePath(String imagePath) { this.imagePath = imagePath; }
     public void setBrand(Brand brand) { this.brand = brand; }
     public void setType(Type type) { this.type = type; }
+    public void setId(int id) {this.id = id;}
+
     public void setTechnologies(List<Technology> technologies) { this.technologies = technologies; }
     public void setPossibleUsages(List<Use> possibleUsages) { this.uses = possibleUsages; }
 

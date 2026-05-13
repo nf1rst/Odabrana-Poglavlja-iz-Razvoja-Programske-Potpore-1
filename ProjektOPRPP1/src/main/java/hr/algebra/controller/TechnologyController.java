@@ -21,10 +21,9 @@ public class TechnologyController extends BaseController{
     @FXML private TableColumn<Technology, String> colName;
     @FXML private TableColumn<Technology, String> colDesc;
 
-    @FXML private TextField nameField;
-    @FXML private TextField descField;
+    @FXML private Label nameLabel;
+    @FXML private Label descLabel;
 
-    @FXML private Label currentUserLabel;
 
     @FXML
     public void initialize(){
@@ -40,8 +39,8 @@ public class TechnologyController extends BaseController{
                 .addListener((obs,old,val)->{
                     if(val!=null){
                         selectedTechnology=val;
-                        nameField.setText(val.getName());
-                        descField.setText(val.getDescription()!=null?val.getDescription():"...");
+                        nameLabel.setText(val.getName());
+                        descLabel.setText(val.getDescription());
                     }
                 });
 
@@ -55,34 +54,14 @@ public class TechnologyController extends BaseController{
 
     @FXML
     public void onClear(){
-        nameField.clear();
-        descField.clear();
+        nameLabel.setText("Name*");
+        descLabel.setText("Description*");
         technologiesTable.getSelectionModel().clearSelection();
     }
 
     @FXML
-    public void onSave(){
-        if(currentUser==null){
-            showAlert(Alert.AlertType.ERROR, "Error", "One must be logged in to edit");
-            return;
-        }
-        if(nameField.getText().isEmpty()){
-            showAlert(Alert.AlertType.WARNING, "Warning", "Name must not be empty");
-            return;
-        }
-        if(selectedTechnology==null){ //tehnologija ne postoji onda je mora ubacit
-            technologyService.save(new Technology(nameField.getText(), descField.getText()));
-            log("INSERT", "Technology", nameField.getText());
-        }
-        else{// ako vec postoji onda se treba napravit update te tehnologije s istim IDjem
-            selectedTechnology.setName(nameField.getText());
-            selectedTechnology.setDescription(descField.getText());
-            technologyService.save(selectedTechnology);
-            log("UPDATE", "Technology", nameField.getText());
-        }
-
-        showAlert(Alert.AlertType.INFORMATION, "Success", "Technology has been successfully saved");
-        refresh();
+    public void onEdit(){
+        openPopupWindow("/hr/algebra/views/insert-update-technology-view.fxml", "Insert and update technology", currentUser);
     }
 
     @FXML
@@ -91,12 +70,13 @@ public class TechnologyController extends BaseController{
             showAlert(Alert.AlertType.ERROR, "Error" , "One must be logged in to edit");
             return;
         }
-        if(nameField.getText().isEmpty()){
+        if(selectedTechnology==null || selectedTechnology.getName().isEmpty()){
+
             showAlert(Alert.AlertType.WARNING, "Warning", "One must choose a technology to delete");
             return;
         }
 
-        showConfirm("Confirmation", "Do you want to delete: "+ nameField.getText());
+        showConfirm("Confirmation", "Do you want to delete: "+ selectedTechnology.getName());
 
         technologyService.delete(selectedTechnology.getId());
         log( "DELETE", "Technology", selectedTechnology.getName());
@@ -112,7 +92,6 @@ public class TechnologyController extends BaseController{
 
     private void refresh() {
         technologiesTable.setItems(FXCollections.observableArrayList(technologyService.getAllTechnologies()));
-        currentUserLabel.setText("User: " + (currentUser!=null?currentUser.getUsername():"Not loggen in"));
     }
 
 }

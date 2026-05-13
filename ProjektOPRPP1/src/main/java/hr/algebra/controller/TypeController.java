@@ -18,7 +18,7 @@ public class TypeController extends BaseController{
 
     @FXML TextField searchField;
 
-    @FXML TextField nameField;
+    @FXML Label nameLabel;
 
     @FXML Label currentUserLabel;
     @FXML
@@ -33,7 +33,7 @@ public class TypeController extends BaseController{
                 .addListener((obs,old,val)->{
                     if(val!=null){
                         selectedType=val;
-                        nameField.setText(val.getName());
+                        nameLabel.setText(val.getName());
                     }
                 });
         searchField.textProperty().addListener((obs,old,q)->{
@@ -44,34 +44,14 @@ public class TypeController extends BaseController{
 
     @FXML
     public void onClear(){
-        nameField.clear();
+        nameLabel.setText("Name*");
         typeTable.getSelectionModel().clearSelection();
     }
 
+
     @FXML
-    public void onSave(){
-        if(currentUser==null){
-            showAlert(Alert.AlertType.ERROR, "Stop there", "One must be logged in to edit");
-            return;
-        }
-
-        if(nameField.getText().isEmpty()){
-            showAlert(Alert.AlertType.ERROR, "Error", "Name cannot be empty");
-            return;
-        }
-        if(selectedType==null){ // trenutno ne postoji type s tim imenom pa ga dodaj
-            typeService.save(new Type(nameField.getText()));
-            log("INSERT", "Type", nameField.getText());
-        }
-        else{ //postoji type s tim imenom pa ga updateaj
-            selectedType.setName(nameField.getText());
-            typeService.save(selectedType);
-            log("UPDATE", "Type", selectedType.getName());
-        }
-
-        showAlert(Alert.AlertType.INFORMATION, "Success", "Type has been successfully saved");
-        onClear();
-        refresh();
+    public void onEdit(){
+        openPopupWindow("/hr/algebra/views/insert-update-type-view.fxml", "Insert and Update Type", currentUser);
     }
 
     @FXML
@@ -80,12 +60,12 @@ public class TypeController extends BaseController{
             showAlert(Alert.AlertType.ERROR, "Error", "One must be logged in to edit");
             return;
         }
-        if(nameField.getText().isEmpty()){
+        if(selectedType.getName().isEmpty()){
             showAlert(Alert.AlertType.WARNING, "Validation", "Name cannot be empty");
             return;
         }
 
-        showConfirm("Confirm", "Do you want to delete: "+ nameField.getText());
+        showConfirm("Confirm", "Do you want to delete: "+ selectedType.getName());
 
         typeService.delete(selectedType.getId());
         log( "DELETE", "Type", selectedType.getName());
