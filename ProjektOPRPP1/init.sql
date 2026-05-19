@@ -69,7 +69,7 @@ go
 create table Users(
 ID int primary key identity(1,1),
 Username nvarchar(150) unique not null,
-Password nvarchar(100) not null,
+Password nvarchar(60) not null,
 Role nvarchar(50) not null,
 ImagePath nvarchar(150) null
 )
@@ -458,9 +458,10 @@ begin
 	where u.Username=@username
 end
 
+
 go
 create or alter proc InsertUser
-@name nvarchar(100), @password nvarchar(50), @role nvarchar(20), @imagePath nvarchar(150)
+@name nvarchar(100), @password nvarchar(60), @role nvarchar(20), @imagePath nvarchar(150)
 as
 begin
 	insert into Users(Username,Password,Role, ImagePath)

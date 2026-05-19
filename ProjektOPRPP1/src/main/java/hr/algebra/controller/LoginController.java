@@ -1,5 +1,5 @@
 package hr.algebra.controller;
-
+import hr.algebra.exceptions.EntityExistantException;
 import hr.algebra.models.Role;
 import hr.algebra.models.User;
 import hr.algebra.services.UserService;
@@ -24,10 +24,8 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
     @FXML private PasswordField registerConfirmField;
     @FXML private Label registerErrorLabel;
 
-
     private final UserService userService = UserService.getInstance();
 
-    private final Predicate<String> notEmpty = s-> s!=null && !s.trim().isEmpty();
     private final Predicate<String> minLength5 = s->s!=null && s.length()>=5;
     private final Predicate<String> minLength7 = s->s!=null && s.length()>=7;
     private final Predicate<String> hasSuspiciusCharacters= s->s.contains("/");
@@ -51,21 +49,40 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
         String username = loginUsernameField.getText();
         String password = loginPasswordField.getText();
 
-        if(!notEmpty.test(username) ||!notEmpty.test(password)){
-            showError(loginErrorLabel, "Fill out all information please");
-            loginPasswordField.clear();
+        if(!validateLoginUserInput(username, password)){
             return;
         }
 
-        Optional<User> result = userService.login(username,password);
+        Optional<User> result=Optional.empty(); // da ga dole mogu provjerit jel spremio ista u varijablu
+
+        try{
+            result = userService.login(username,password);
+        }
+        catch (EntityExistantException e){
+            showError(loginErrorLabel, e.getMessage()); // ako ga tu uhvati znaci da ne postoji
+            return;
+        }
 
         if(result.isEmpty()){
-            showError(loginErrorLabel, "Incorrect username or password");
+            showError(loginErrorLabel, "Incorrect password"); // ako prode do tu znaci da username postoji al password nije dobar
             loginPasswordField.clear();
             return;
         }
 
-        User user = result.get();
+        User currentUser = result.get();
+        handleUserRedirection(currentUser);
+        closeThisWindow();
+    }
+
+    private boolean validateLoginUserInput(String username, String password) {
+        if(username.isEmpty() || password.isEmpty()){
+            showError(registerErrorLabel, "Username and password cannot be empty");
+            return false;
+        }
+        return true;
+    }
+
+    private void handleUserRedirection(User user) {
         if(user.getRole()== Role.ADMIN){
             openWindow("/hr/algebra/views/admin-view.fxml", "Admin Panel", user);
             closeThisWindow();
@@ -75,7 +92,6 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
             openWindow("/hr/algebra/views/main-view-loggedIn.fxml", "Main Panel", user);
             closeThisWindow();
         }
-        closeThisWindow();
     }
 
     @FXML
@@ -86,31 +102,46 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
         String password = registerPasswordField.getText();
         String confirm = registerConfirmField.getText();
 
-        if(!minLength5.test(username)){
-            showError(registerErrorLabel, "Username must be at least 5 characters long");
+        if(!validateRegisterUserInput(username, password, confirm)){
             return;
         }
-        if(!minLength7.test(password)){
-            showError(registerErrorLabel, "Password must have at least 7 characters");
-            return;
-        }
-        if(!password.equals(confirm)){
-            showError(registerErrorLabel, "Password do not match, please try again");
-            return;
-        }
-        if(hasSuspiciusCharacters.test(username)){
-            showError(registerErrorLabel, "Username cannot contain characters '/'"); // jer se za logiranje koristi N/A ako nije ulogiran
-        }
-        boolean success = userService.register(username,password);
-        if(!success) {
-            showError(registerErrorLabel, "Username already exists");
-            return;
-        }
-        showSuccess(registerErrorLabel, "Registration successful, you can now login");
 
+        try{
+            userService.register(username,(password));
+            showSuccess(registerErrorLabel, "Registration successful. You can now log in");
+        }
+        catch (EntityExistantException e){
+            showError(registerErrorLabel, e.getMessage() + "!");
+            return;
+        }
+        
+        clearUserInput();
+    }
+
+    private void clearUserInput() {
         registerUsernameField.clear();
         registerConfirmField.clear();
         registerPasswordField.clear();
+    }
+
+    private boolean validateRegisterUserInput(String username, String password, String confirm) {
+        if(!minLength5.test(username)){
+            showError(registerErrorLabel, "Username must be at least 5 characters long");
+            return false;
+        }
+        if(!minLength7.test(password)){
+            showError(registerErrorLabel, "Password must have at least 7 characters");
+            return false;
+        }
+        if(!password.equals(confirm)){
+            showError(registerErrorLabel, "Password do not match, please try again");
+            return false;
+        }
+        if(hasSuspiciusCharacters.test(username)){
+            showError(registerErrorLabel, "Username cannot contain characters '/'"); // jer se za logiranje koristi N/A ako nije ulogiran
+            return false;
+        }
+        return true;
     }
 
     @FXML
@@ -140,7 +171,6 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
         }
         catch (IOException e){
             showError(loginErrorLabel, "Cannot open the window: " + e.getMessage());
-            //System.out.println(e.getMessage() + "!!!!!!!!!!!!!!!!!!!!!!!!!! " +e.getCause());
         }
     }
 

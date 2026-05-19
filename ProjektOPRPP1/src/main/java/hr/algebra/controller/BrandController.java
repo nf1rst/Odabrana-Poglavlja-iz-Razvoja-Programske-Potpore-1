@@ -70,7 +70,7 @@ public class BrandController extends BaseController {
 
     @FXML
     public void onDelete(){
-        if(currentUser==null){
+        if(!userIsLoggedIn(currentUser)){
             showAlert(Alert.AlertType.ERROR, "Error", "To edit brands you must be logged in");
             return;
         }

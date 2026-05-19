@@ -1,10 +1,9 @@
 package hr.algebra.repositories.implementation;
-import com.microsoft.sqlserver.jdbc.SQLServerStatementColumnEncryptionSetting;
 import hr.algebra.database.DBConnector;
+import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Role;
 import hr.algebra.models.User;
 import hr.algebra.repositories.UserRepository;
-
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,8 +25,8 @@ public class UserRepositoryImpl implements UserRepository {
                 if(rs.next())return Optional.of(mapRow(rs));
             }
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot get user", e);
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot get user");
         }
         return Optional.empty();
     }
@@ -45,8 +44,8 @@ public class UserRepositoryImpl implements UserRepository {
         {
             while(rs.next())users.add(mapRow(rs));
         }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot get users", e);
+        catch(SQLException _){
+            throw new CannotPerformActionException("Cannot get users");
         }
         return users;
     }
@@ -65,11 +64,11 @@ public class UserRepositoryImpl implements UserRepository {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetUserById(?)}")){
             statement.setInt(1, id);
             try(ResultSet rs = statement.executeQuery()){
-                while(rs.next())return Optional.of(mapRow(rs));
+                if(rs.next())return Optional.of(mapRow(rs));
             }
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot get user by id", e);
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot get user by id");
         }
         return Optional.empty();
     }
@@ -83,8 +82,8 @@ public class UserRepositoryImpl implements UserRepository {
             statement.setString(5,user.getImagePath());
             statement.execute();
         }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot update user", e);
+        catch(SQLException _){
+            throw new CannotPerformActionException("Cannot update user");
         }
     }
 
@@ -96,8 +95,8 @@ public class UserRepositoryImpl implements UserRepository {
             statement.setString(4, user.getImagePath());
             statement.execute();
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot insert user",e );
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot insert user");
         }
     }
 
@@ -107,8 +106,8 @@ public class UserRepositoryImpl implements UserRepository {
             statement.setInt(1,id);
             statement.execute();
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot delete user", e);
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot delete user");
         }
     }
 

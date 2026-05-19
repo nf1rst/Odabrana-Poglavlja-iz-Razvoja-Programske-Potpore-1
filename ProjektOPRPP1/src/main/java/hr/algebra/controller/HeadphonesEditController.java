@@ -6,8 +6,18 @@ import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 public class HeadphonesEditController extends BaseController{
@@ -25,15 +35,18 @@ public class HeadphonesEditController extends BaseController{
     @FXML private ListView<Use>usesListView;
     @FXML private Label imageLabel;
 
-    private HeadphonesService headphonesService=HeadphonesService.getInstance();
-    private BrandService brandService=BrandService.getInstance();
-    private TypeService typeService=TypeService.getInstance();
-    private TechnologyService technologyService=TechnologyService.getInstance();
-    private UseService userService = UseService.getInstance();
+    @FXML private Label statusLabel;
 
-    private ContextMenu suggestions= new ContextMenu();
-    private List<Headphones>allHeadphones;
+
+    private final HeadphonesService headphonesService=HeadphonesService.getInstance();
+    private final BrandService brandService=BrandService.getInstance();
+    private final TypeService typeService=TypeService.getInstance();
+    private final TechnologyService technologyService=TechnologyService.getInstance();
+    private final UseService userService = UseService.getInstance();
+
+    private final ContextMenu suggestions= new ContextMenu();
     private Headphones selectedHeadphones;
+    private String selectedImagePath=null;
 
     @FXML
     public void initialize(){
@@ -60,8 +73,8 @@ public class HeadphonesEditController extends BaseController{
         usesListView.setItems(FXCollections.observableArrayList(allUses));
         usesListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-
         technologiesListView.setCellFactory(lv->new ListCell<Technology>(){
+            @Override
             protected void updateItem(Technology t, boolean empty){
                 super.updateItem(t,empty);
                 setText(empty || t==null?null:t.getName());
@@ -69,6 +82,7 @@ public class HeadphonesEditController extends BaseController{
         });
 
         usesListView.setCellFactory(lv->new ListCell<Use>(){
+            @Override
             protected void updateItem(Use u, boolean emtpy){
                 super.updateItem(u,emtpy);
                 setText(emtpy|| u==null?null:u.getName());
@@ -114,7 +128,7 @@ public class HeadphonesEditController extends BaseController{
 
     private void showSuggestions(String val) {
         suggestions.getItems().clear();
-
+        List<Headphones>allHeadphones;
         allHeadphones=headphonesService.getAllHeadphones();
 
         allHeadphones
@@ -145,7 +159,6 @@ public class HeadphonesEditController extends BaseController{
                             h.getPossibleUsages().forEach(u->usesListView.getSelectionModel().select(u));
                         }
 
-
                         selectedHeadphones=h;
                     });
                     suggestions.getItems().add(item);
@@ -160,65 +173,75 @@ public class HeadphonesEditController extends BaseController{
 
     @FXML
     public void onSave(){
-        if(currentUser==null){
+        if(!userIsLoggedIn(currentUser)){
             showAlert(Alert.AlertType.ERROR, "ERROR", "One must be logged in to edit");
             return;
         }
-
 
         if(!validateUserInput()){
             showAlert(Alert.AlertType.WARNING, "Input warning", "Values you've entered are not valid, please retry");
             return;
         }
-
             try{
                 List<Use>userSelectedUses=usesListView.getSelectionModel().getSelectedItems();
                 List<Technology>userselectedTech=technologiesListView.getSelectionModel().getSelectedItems();
 
                 if(!headphonesService.exists(nameField.getText())){ //
-                    Headphones headphonesForInsert = new Headphones(
-                            nameField.getText(),
-                            Integer.parseInt(yearField.getText()),
-                            Integer.parseInt(impedanceField.getText()),
-                            Integer.parseInt(minFreqField.getText()),
-                            Integer.parseInt(maxFreqField.getText()),
-                            Integer.parseInt(batteryField.getText()),
-                            Double.parseDouble(priceField.getText()),
-                            descField.getText(),
-                            null, //image path,
-                            brandComboBox.getValue(),
-                            typeComboBox.getValue(),
-                            userselectedTech,
-                            userSelectedUses
-                    );
-                    headphonesService.save(headphonesForInsert);
-                    log("INSERT", "Headphones", headphonesForInsert.getName());
-                    showAlert(Alert.AlertType.INFORMATION, "SUCCESS", "You've successfully inserted new headphones");
+                    insertNewHeadphones(userselectedTech, userSelectedUses);
+
                 }
                 else{
-                    selectedHeadphones.setName(nameField.getText());
-                    selectedHeadphones.setYearEdition(Integer.parseInt(yearField.getText()));
-                    selectedHeadphones.setImpedance(Integer.parseInt(impedanceField.getText()));
-                    selectedHeadphones.setMinFrequency(Integer.parseInt(minFreqField.getText()));
-                    selectedHeadphones.setMaxFrequency(Integer.parseInt(maxFreqField.getText()));
-                    selectedHeadphones.setBatteryLife(Integer.parseInt(batteryField.getText()));
-                    selectedHeadphones.setPrice(Double.parseDouble(priceField.getText()));
-                    selectedHeadphones.setDescription(descField.getText());
-                    selectedHeadphones.setBrand(brandComboBox.getValue());
-                    selectedHeadphones.setType(typeComboBox.getValue());
-
-                    headphonesService.save(selectedHeadphones);
-                    // sad zbog onog scope identity ovdje se moze napravit getID da vrati pravi ID koji mu je baza generirala
-
-                    updateManyToMany(selectedHeadphones, userselectedTech, userSelectedUses); // posebne tablice u bazi pa se mora rucno
-                    showAlert(Alert.AlertType.INFORMATION, "SUCCESS", "You've successfully updated existing headphones");
+                    updateExistingHeadphones(userselectedTech, userSelectedUses);
                 }
 
             }
-            catch(NumberFormatException e){
+            catch(NumberFormatException _){
                 showAlert(Alert.AlertType.ERROR, "Error", "Year, price, impedance and frequency fields must be numbers");
             }
 
+    }
+
+    private void updateExistingHeadphones(List<Technology> userselectedTech, List<Use> userSelectedUses) {
+        selectedHeadphones.setName(nameField.getText());
+        selectedHeadphones.setYearEdition(Integer.parseInt(yearField.getText()));
+        selectedHeadphones.setImpedance(Integer.parseInt(impedanceField.getText()));
+        selectedHeadphones.setMinFrequency(Integer.parseInt(minFreqField.getText()));
+        selectedHeadphones.setMaxFrequency(Integer.parseInt(maxFreqField.getText()));
+        selectedHeadphones.setBatteryLife(Integer.parseInt(batteryField.getText()));
+        selectedHeadphones.setPrice(Double.parseDouble(priceField.getText()));
+        selectedHeadphones.setDescription(descField.getText());
+        selectedHeadphones.setBrand(brandComboBox.getValue());
+        selectedHeadphones.setType(typeComboBox.getValue());
+        selectedHeadphones.setImagePath(selectedImagePath);
+
+        headphonesService.save(selectedHeadphones);
+        // sad zbog onog scope identity ovdje se moze napravit getID da vrati pravi ID koji mu je baza generirala
+
+        updateManyToMany(selectedHeadphones, userselectedTech, userSelectedUses); // posebne tablice u bazi pa se mora rucno
+        statusLabel.setText("Headphones successfully updated");
+        statusLabel.setTextFill(Color.GREEN);
+    }
+
+    private void insertNewHeadphones(List<Technology> userselectedTech, List<Use> userSelectedUses) {
+        Headphones headphonesForInsert = new Headphones(
+                nameField.getText(),
+                Integer.parseInt(yearField.getText()),
+                Integer.parseInt(impedanceField.getText()),
+                Integer.parseInt(minFreqField.getText()),
+                Integer.parseInt(maxFreqField.getText()),
+                Integer.parseInt(batteryField.getText()),
+                Double.parseDouble(priceField.getText()),
+                descField.getText(),
+                selectedImagePath,
+                brandComboBox.getValue(),
+                typeComboBox.getValue(),
+                userselectedTech,
+                userSelectedUses
+        );
+        headphonesService.save(headphonesForInsert);
+        log("INSERT", "Headphones", headphonesForInsert.getName());
+        statusLabel.setText("Headphones successfully inserted");
+        statusLabel.setTextFill(Color.GREEN);
     }
 
     private void updateManyToMany(Headphones selectedHeadphones, List<Technology> userselectedTech, List<Use> userSelectedUses) {
@@ -266,7 +289,7 @@ public class HeadphonesEditController extends BaseController{
             Integer.parseInt(batteryField.getText());
             Double.parseDouble(priceField.getText());
         }
-        catch (NumberFormatException e){
+        catch (NumberFormatException _){
             return false;
         }
         return true;
@@ -274,6 +297,25 @@ public class HeadphonesEditController extends BaseController{
 
     @FXML
     public void onChooseImage(){
+        FileChooser fc = new FileChooser();
+        fc.setTitle("Choose image for headphones: ");
+        fc.getExtensionFilters().add(
+                new FileChooser.ExtensionFilter("Pictures", "*.png", "*.jpeg", "*.jpg"));
+
+        File file = fc.showOpenDialog(nameField.getScene().getWindow());
+        if(file ==null)return;
+
+        try{
+            Path assestsDir = Paths.get("src/main/resources/algebra/assets");
+            Files.createDirectories(assestsDir);
+            Path dest = assestsDir.resolve(file.getName());
+            Files.copy(file.toPath(), dest, StandardCopyOption.REPLACE_EXISTING);
+            selectedImagePath = dest.toString();
+            imageLabel.setText(file.getName());
+        }
+        catch (Exception _){
+            showAlert(Alert.AlertType.ERROR, "Error", "Cannot copy image you've selected");
+        }
 
     }
 

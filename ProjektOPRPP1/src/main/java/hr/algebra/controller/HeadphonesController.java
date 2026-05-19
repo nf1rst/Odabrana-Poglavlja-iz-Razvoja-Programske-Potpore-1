@@ -13,12 +13,12 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
-
 import java.io.File;
-import java.io.StringWriter;
+import java.io.FileInputStream;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
@@ -56,8 +56,6 @@ public class HeadphonesController extends BaseController {
     private final HeadphonesService headphonesService = HeadphonesService.getInstance();
     private final BrandService brandService = BrandService.getInstance();
     private final TypeService typeService = TypeService.getInstance();
-    private final TechnologyService technologyService = TechnologyService.getInstance();
-    private final UseService useService = UseService.getInstance();
 
     private Headphones selectedHeadphnes = null;
     private String selectedImagePath=null;
@@ -68,6 +66,7 @@ public class HeadphonesController extends BaseController {
         setupTableSelection();
         setUpComboBoxes();
         setupSearch();
+        showPlaceholderImage();
         refresh();
     }
 
@@ -119,7 +118,6 @@ public class HeadphonesController extends BaseController {
                         headphonesTable.setItems(FXCollections.observableArrayList(headphonesService.getByType(val.getId())));
                     }
                 });
-
     }
 
     private void refresh() {
@@ -161,17 +159,19 @@ public class HeadphonesController extends BaseController {
         typeLabel.setText(h.getType().getName());
         descLabel.setText(h.getDescription());
 
+        setImage(h.getImagePath());
+
         techLabel.setText( // jer nema pametnijeg nacina za iscupat samo name iz techonologies
                 h.getTechnologies()
                         .stream()
-                        .map(t->t.getName())
+                        .map(Technology::getName)
                         .collect(Collectors.joining(", "))
         );
 
         useLabel.setText(
                 h.getPossibleUsages()
                         .stream()
-                        .map(u->u.getName())
+                        .map(Use::getName)
                         .collect(Collectors.joining(","))
         );
     }
@@ -204,7 +204,7 @@ public class HeadphonesController extends BaseController {
 
     @FXML
     public void onDelete(){
-        if(currentUser==null){
+        if(!userIsLoggedIn(currentUser)){
             showAlert(Alert.AlertType.ERROR, "Error", "One must be logged in to edit");
             return;
         }
@@ -213,15 +213,19 @@ public class HeadphonesController extends BaseController {
             return;
         }
 
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setContentText("Do you want to delete headphones: " + selectedHeadphnes.getName());
-        if(alert.showAndWait().filter(b->b==ButtonType.OK).isEmpty())return;
+        askConfirmation("Do you want to delete headphones: " + selectedHeadphnes.getName());
 
         deleteImageFile(selectedImagePath);
         headphonesService.delete(selectedHeadphnes.getId());
         ActionLogger.log(checkUsernameForLogging(), "DELETE", "Headphones", selectedHeadphnes.getName());
 
         refresh();
+    }
+
+    private void askConfirmation(String text) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setContentText(text);
+        if(alert.showAndWait().filter(b->b==ButtonType.OK).isEmpty())return;
     }
 
 
@@ -238,7 +242,9 @@ public class HeadphonesController extends BaseController {
         try{
             Files.deleteIfExists(Paths.get(path));
         }
-        catch(Exception ignored){}
+        catch(Exception _){
+            //
+        }
     }
 
      @FXML
@@ -264,7 +270,7 @@ public class HeadphonesController extends BaseController {
 
             showAlert(Alert.AlertType.INFORMATION, "Success", "Catalogue has been successfully exported to "+ file.getName());
         }
-        catch (JAXBException e) {
+        catch (JAXBException _) {
             showAlert(Alert.AlertType.ERROR, "ERROR", "Cannot export to xml");
         }
      }
@@ -282,7 +288,6 @@ public class HeadphonesController extends BaseController {
     }
 
     private void clearForm() {
-        headphoneImageView=null;
         nameLabel.setText("Name*");
         yearLabel.setText("Year*");
         priceLabel.setText("Price*");
@@ -296,11 +301,39 @@ public class HeadphonesController extends BaseController {
         useLabel.setText("Uses*");
         descLabel.setText("Description*");
 
-        selectedImagePath = null;
-        selectedHeadphnes = null;
+        showPlaceholderImage();
         headphonesTable.getSelectionModel().clearSelection();
     }
+    private void setImage(String path) {
+        if(path==null || path.isEmpty()){
+            showPlaceholderImage();
+            return;
+        }
+        try{
+            File imageFIle = new File(path);
+            if(!imageFIle.exists()){
+                showPlaceholderImage();
+                return;
+            }
+            Image image = new Image(new FileInputStream(imageFIle));
+            headphoneImageView.setImage(image);
+        }
+        catch (Exception _){
+            showPlaceholderImage();
+        }
+    }
 
+    private void showPlaceholderImage() {
+        try{
+            var placeholder = getClass().getResourceAsStream("/hr/algebra/assets/No_Image_Available.jpg");
+            if(placeholder!=null){
+                headphoneImageView.setImage(new Image(placeholder));
+            }
+        }
+        catch (Exception _){
+            showAlert(Alert.AlertType.WARNING, "Image fail", "No image could be loaded");
+        }
+    }
 
 
 }

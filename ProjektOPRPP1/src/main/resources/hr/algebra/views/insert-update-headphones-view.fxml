@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="724.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.HeadphonesEditController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="991.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.HeadphonesEditController">
    <top>
       <Label text="Insert or Update Headphones" BorderPane.alignment="CENTER">
          <font>
@@ -48,7 +48,7 @@
                   <Label text="Type" />
                   <ComboBox fx:id="typeComboBox" prefHeight="25.0" prefWidth="237.0" />
                   <Label text="Use" />
-                  <ListView fx:id="usesListView" minHeight="80.0" prefHeight="200" prefWidth="403.0" VBox.vgrow="ALWAYS">
+                  <ListView fx:id="usesListView" minHeight="80.0" prefHeight="200.0" prefWidth="403.0" VBox.vgrow="ALWAYS">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin></ListView>
@@ -62,6 +62,7 @@
                      <VBox.margin>
                         <Insets bottom="10.0" top="5.0" />
                      </VBox.margin></Button>
+                  <Label fx:id="statusLabel" />
                   <Button mnemonicParsing="false" onAction="#onSave" prefHeight="25.0" prefWidth="329.0" text="Save">
                      <VBox.margin>
                         <Insets bottom="20.0" />

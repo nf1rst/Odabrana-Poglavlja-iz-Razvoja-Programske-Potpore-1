@@ -21,7 +21,6 @@ public class UseEditController extends BaseController{
     private final ContextMenu suggestions= new ContextMenu();
     private List<Use>allUses;
 
-
     @FXML
     public void initialize(){
         allUses=useService.getAllUses();
@@ -65,22 +64,36 @@ public class UseEditController extends BaseController{
             showAlert(Alert.AlertType.ERROR, "Invalid operation", "One must be logged in to edit");
             return;
         }
+        
+        validateUserInput();
+
+        if (selectedUse == null) {
+            insertNewUse();
+        }
+        else{
+            updateExistingUse();
+        }
+    }
+
+    private void updateExistingUse() {
+        selectedUse.setName(nameField.getText());
+        useService.save(selectedUse);
+        log("UPDATE", "Use", nameField.getText());
+        statusLabel.setText("Use successfully updated");
+        statusLabel.setTextFill(Color.GREEN);
+    }
+
+    private void insertNewUse() {
+        useService.save(new Use(nameField.getText()));
+        log("INSERT", "Use", nameField.getText());
+        statusLabel.setText("Use successfully inserted");
+        statusLabel.setTextFill(Color.GREEN);
+    }
+
+    private void validateUserInput() {
         if(nameField.getText().isEmpty()){
             showAlert(Alert.AlertType.WARNING, "Validation", "Name cannot be empty");
             return;
-        }
-        if (selectedUse == null) {
-            useService.save(new Use(nameField.getText()));
-            log("INSERT", "Use", nameField.getText());
-            statusLabel.setText("Use successfully inserted");
-            statusLabel.setTextFill(Color.GREEN);
-        }
-        else{
-            selectedUse.setName(nameField.getText());
-            useService.save(selectedUse);
-            log("UPDATE", "Use", nameField.getText());
-            statusLabel.setText("Use successfully updated");
-            statusLabel.setTextFill(Color.GREEN);
         }
     }
 

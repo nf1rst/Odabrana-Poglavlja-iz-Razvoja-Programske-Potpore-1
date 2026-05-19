@@ -4,10 +4,8 @@ import hr.algebra.services.BrandService;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ContextMenu;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.paint.Color;
 import java.util.List;
 
 public class BrandEditController extends BaseController
@@ -15,8 +13,10 @@ public class BrandEditController extends BaseController
     @FXML private TextField nameField; // ovo tu ce trebat kad ce doc popup
     @FXML private TextField descField;
 
+    @FXML private Label statusLabel;
+
     private Brand selectedBrand;
-    private BrandService brandService=BrandService.getInstance();
+    private final BrandService brandService=BrandService.getInstance();
     private final ContextMenu suggestions = new ContextMenu();
     private List<Brand> allBrands;
 
@@ -66,32 +66,43 @@ public class BrandEditController extends BaseController
         }
     }
 
-
     @FXML
     public void onSave(){
-        if(currentUser==null){
+        if(!userIsLoggedIn(currentUser)){
             showAlert(Alert.AlertType.ERROR, "Error", "To edit brands you must be logged in");
             return;
         }
 
-        String name = nameField.getText();
-        if(name.isEmpty()){
-            showAlert(Alert.AlertType.WARNING, "Validation", "Name cannot be empty");
-            return;
-        }
-        if(selectedBrand==null){
-            brandService.save(new Brand(name, descField.getText()));
-            log("INSERT", "Brand", name);
+        validateUserInput();
+
+        if(!brandService.nameExists(nameField.getText())){
+            insertNewBrand();
         }
         else{
-            selectedBrand.setName(name);
-            selectedBrand.setDescription(descField.getText());
-            brandService.save(selectedBrand);
-            log( "UPDATE", "Brand", name);
+            updateExistingBrand();
         }
-        showAlert(Alert.AlertType.INFORMATION, "Success", "Brand has been successfully saved");
-        //onNew();//da makne sve selektirano
-        //refresh(); // da prikazu dobro ono sto se primjernilo
+    }
+
+    private void updateExistingBrand() {
+        selectedBrand.setName(nameField.getText());
+        selectedBrand.setDescription(descField.getText());
+        brandService.save(selectedBrand);
+        log( "UPDATE", "Brand", nameField.getText());
+        statusLabel.setText("Brand successfully updated");
+        statusLabel.setTextFill(Color.GREEN);
+    }
+
+    private void insertNewBrand() {
+        brandService.save(new Brand(nameField.getText(), descField.getText()));
+        log("INSERT", "Brand", nameField.getText());
+        statusLabel.setText("Brand successfully inserted");
+        statusLabel.setTextFill(Color.GREEN);
+    }
+
+    private void validateUserInput() {
+        if(nameField.getText().isEmpty()){
+            showAlert(Alert.AlertType.WARNING, "Validation", "Name cannot be empty");
+        }
     }
 
 }

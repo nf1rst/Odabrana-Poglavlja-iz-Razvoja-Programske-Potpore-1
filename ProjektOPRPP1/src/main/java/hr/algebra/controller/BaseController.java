@@ -1,4 +1,5 @@
 package hr.algebra.controller;
+import hr.algebra.models.Role;
 import hr.algebra.models.User;
 import hr.algebra.xml.ActionLogger;
 import javafx.fxml.FXML;
@@ -45,8 +46,8 @@ public abstract class BaseController {
 
             closeThisWindow();
         }
-        catch (IOException e){
-            showAlert(Alert.AlertType.ERROR, "Error", "Something went wrong");
+        catch (IOException _){
+            showAlert(Alert.AlertType.ERROR, "Window error", "Cannot open new windiow");
         }
     }
 
@@ -68,8 +69,8 @@ public abstract class BaseController {
             stage.setMinWidth(500);
             stage.show();
         }
-        catch (IOException e){
-            showAlert(Alert.AlertType.ERROR, "Error", "Something went wrong");
+        catch (IOException _){
+            showAlert(Alert.AlertType.ERROR, "Popup window error", "Cannot open popup window");
         }
     }
 
@@ -163,5 +164,13 @@ public abstract class BaseController {
         alert.setTitle(title);
         alert.setContentText(message);
         return alert.showAndWait().filter(b->b== ButtonType.OK).isPresent(); // kako ovaj linija radi
+    }
+
+    protected boolean userIsAdmin(User user){
+        return user.getRole().equals(Role.ADMIN);
+    }
+
+    protected boolean userIsLoggedIn(User user){
+        return user!=null;
     }
 }

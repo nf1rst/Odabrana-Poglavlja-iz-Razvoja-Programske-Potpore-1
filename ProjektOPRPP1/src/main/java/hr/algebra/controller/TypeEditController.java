@@ -63,25 +63,38 @@ public class TypeEditController extends BaseController{
             return;
         }
 
+        validateUserInput();
+
+        if(!typeService.nameExists(nameField.getText())){ // trenutno ne postoji type s tim imenom pa ga dodaj
+            insertNewType();
+        }
+        else{ //postoji type s tim imenom pa ga updateaj
+            updateExistingType();
+        }
+
+        showAlert(Alert.AlertType.INFORMATION, "Success", "Type has been successfully saved");
+    }
+
+    private void updateExistingType() {
+        selectedType.setName(nameField.getText());
+        typeService.save(selectedType);
+        log("UPDATE", "Type", selectedType.getName());
+        statusLabel.setText("Type succesfully updated");
+        statusLabel.setTextFill(Color.GREEN);
+    }
+
+    private void insertNewType() {
+        typeService.save(new Type(nameField.getText()));
+        log("INSERT", "Type", nameField.getText());
+        statusLabel.setText("Type succesfully inserted");
+        statusLabel.setTextFill(Color.GREEN);
+    }
+
+    private void validateUserInput() {
         if(nameField.getText().isEmpty()){
             showAlert(Alert.AlertType.ERROR, "Error", "Name cannot be empty");
             return;
         }
-        if(selectedType==null){ // trenutno ne postoji type s tim imenom pa ga dodaj
-            typeService.save(new Type(nameField.getText()));
-            log("INSERT", "Type", nameField.getText());
-            statusLabel.setText("Type succesfully inserted");
-            statusLabel.setTextFill(Color.GREEN);
-        }
-        else{ //postoji type s tim imenom pa ga updateaj
-            selectedType.setName(nameField.getText());
-            typeService.save(selectedType);
-            log("UPDATE", "Type", selectedType.getName());
-            statusLabel.setText("Type succesfully updated");
-            statusLabel.setTextFill(Color.GREEN);
-        }
-
-        showAlert(Alert.AlertType.INFORMATION, "Success", "Type has been successfully saved");
     }
 
     @Override

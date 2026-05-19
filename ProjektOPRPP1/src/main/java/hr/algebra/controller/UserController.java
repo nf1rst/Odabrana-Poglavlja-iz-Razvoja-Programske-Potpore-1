@@ -28,7 +28,7 @@ public class UserController extends BaseController {
 
     private String selectedImagePath;
 
-    private UserService userService=UserService.getInstance();
+    private final UserService userService=UserService.getInstance();
 
     @FXML
     public void initialize(){
@@ -61,7 +61,7 @@ public class UserController extends BaseController {
             profileImageView.setImage(image);
             imageStatusLabel.setText(imageFile.getName());
         }
-        catch (Exception e){
+        catch (Exception _){
             showPlaceHolderImage();
         }
     }
@@ -73,7 +73,7 @@ public class UserController extends BaseController {
                 profileImageView.setImage(new Image(placeholder));
             }
         }
-        catch(Exception e){
+        catch(Exception _){
             imageStatusLabel.setText("No profile picture");
         }
     }
@@ -108,7 +108,7 @@ public class UserController extends BaseController {
             imageStatusLabel.setText(newFileName);
             setStatus("Picture selected. Click 'Save changes' to save");
         }
-        catch(Exception e){
+        catch(Exception _){
             showAlert(Alert.AlertType.ERROR, "Error", "Cannot fetch the image");
         }
     }
@@ -164,13 +164,12 @@ public class UserController extends BaseController {
         try{
             oldProfilePicture = new Image(new FileInputStream(new File(currentUser.getImagePath())));
         }
-        catch (Exception e){
+        catch (Exception _){
             // samo neka ostavi na null da prikaze staru sliku
         }
         profileImageView.setImage(oldProfilePicture); // da makne sliku ako klikne cancel
         newPasswordField.clear();
         confirmPasswordField.clear();
-        imageStatusLabel.setText("");
     }
 
     private void setStatus(String s) {

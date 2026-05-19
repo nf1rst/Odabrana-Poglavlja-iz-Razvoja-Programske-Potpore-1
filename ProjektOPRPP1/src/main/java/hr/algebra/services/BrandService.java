@@ -39,28 +39,9 @@ public class BrandService {
                 .stream()
                 .filter(containsQuery)
                 .sorted()
-                .collect(Collectors.toList());
+                .toList();
     }
 
-    public List<String>getBrandNames(){
-        Function<Brand,String>nameToString=Brand::getName;
-        return repo.getAll()
-                .stream()
-                .map(nameToString)
-                .sorted()
-                .collect(Collectors.toList());
-    }
-
-    public void forEachBrand(Consumer<Brand> action){
-        repo.getAll().forEach(action);
-    }
-
-    public Set<String> getUniqueNames(){
-        return repo.getAll()
-                .stream()
-                .map(Brand::getName)
-                .collect(Collectors.toSet());
-    }
 
     public boolean nameExists(String name){
         return repo.getAll()

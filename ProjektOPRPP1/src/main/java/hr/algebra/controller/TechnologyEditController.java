@@ -66,26 +66,40 @@ public class TechnologyEditController extends BaseController{
             showAlert(Alert.AlertType.ERROR, "Error", "One must be logged in to edit");
             return;
         }
+        
+        validateUserInput();
+
+        if(technologyService.nameExists(nameField.getText())){ //tehnologija ne postoji onda je mora ubacit
+            insertTechnology();
+        }
+        else{// ako vec postoji onda se treba napravit update te tehnologije s istim IDjem
+            updateExistingTechnology();
+        }
+
+        showAlert(Alert.AlertType.INFORMATION, "Success", "Technology has been successfully saved");
+    }
+
+    private void updateExistingTechnology() {
+        selectedTechnology.setName(nameField.getText());
+        selectedTechnology.setDescription(descField.getText());
+        technologyService.save(selectedTechnology);
+        log("UPDATE", "Technology", nameField.getText());
+        statusLabel.setText("Technology succesfully updated");
+        statusLabel.setTextFill(Color.GREEN);
+    }
+
+    private void insertTechnology() {
+        technologyService.save(new Technology(nameField.getText(), descField.getText()));
+        log("INSERT", "Technology", nameField.getText());
+        statusLabel.setText("Technology succesfully inserted");
+        statusLabel.setTextFill(Color.GREEN);
+    }
+
+    private void validateUserInput() {
         if(nameField.getText().isEmpty()){
             showAlert(Alert.AlertType.WARNING, "Warning", "Name must not be empty");
             return;
         }
-        if(technologyService.nameExists(nameField.getText())){ //tehnologija ne postoji onda je mora ubacit
-            technologyService.save(new Technology(nameField.getText(), descField.getText()));
-            log("INSERT", "Technology", nameField.getText());
-            statusLabel.setText("Technology succesfully inserted");
-            statusLabel.setTextFill(Color.GREEN);
-        }
-        else{// ako vec postoji onda se treba napravit update te tehnologije s istim IDjem
-            selectedTechnology.setName(nameField.getText());
-            selectedTechnology.setDescription(descField.getText());
-            technologyService.save(selectedTechnology);
-            log("UPDATE", "Technology", nameField.getText());
-            statusLabel.setText("Technology succesfully updated");
-            statusLabel.setTextFill(Color.GREEN);
-        }
-
-        showAlert(Alert.AlertType.INFORMATION, "Success", "Technology has been successfully saved");
     }
 
     @Override

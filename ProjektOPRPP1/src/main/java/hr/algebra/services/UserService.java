@@ -1,13 +1,12 @@
 package hr.algebra.services;
+import hr.algebra.exceptions.EntityExistantException;
 import hr.algebra.models.Role;
 import hr.algebra.models.User;
 import hr.algebra.repositories.UserRepository;
 import hr.algebra.repositories.implementation.UserRepositoryImpl;
-
+import org.mindrot.jbcrypt.BCrypt;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
-import java.util.function.Predicate;
 
 public class UserService {
     //singleton
@@ -22,10 +21,26 @@ public class UserService {
     }
 
     public Optional<User> login(String username, String password){
-        Optional<User>user = repo.getByUsername(username)
-                .filter(u->u.getPassword().equals(password)); //predikat
-        user.ifPresent(u->loggedUser=u); //ako je tocno onda ga spremi kao da se ulogirao
-        return user;
+        //https://davidbertoldi.medium.com/hashing-passwords-in-java-757e787ce71c
+        //https://medium.com/@singhalabhay19/understanding-bcrypt-in-java-a-deep-dive-into-password-hashing-1b4362ccae94
+
+        Optional<User> user = repo.getByUsername(username);
+
+        if(user.isEmpty()){
+            throw new EntityExistantException("User does not exist");
+        }
+
+        boolean passwordsMatch = checkPasswordMatch(password, user.get().getPassword());
+
+        if(passwordsMatch){
+            loggedUser=user.get();
+            return user;
+        }
+        return Optional.empty();
+    }
+
+    private boolean checkPasswordMatch(String password, String hashedPassword) {
+        return BCrypt.checkpw(password, hashedPassword);
     }
 
     public void logOut(){
@@ -36,27 +51,21 @@ public class UserService {
         return Optional.ofNullable(loggedUser);
     }
 
-    public boolean isLoggedUserAdmin(){
-        return getLoggedUser().map(u->u.getRole()== Role.ADMIN)
-                .orElse(false);
-        //zasto ne samo loggedUser.GetRole()==ROLE.ADMIN
+
+
+    public void register(String username,String password){
+        if(repo.usernameExists(username))throw new EntityExistantException("Username already in use");
+        //ovdje ne treba provjera inputa jer je to napravljeno u kontrolleru
+
+        String hashedPassword = hashPassword(password);
+        User newUser = new User(username,hashedPassword,Role.USER);
+        repo.save(newUser);
     }
 
-
-    //registracija kompletno novog korisnika - ako korisnik postoji false, ako ne postoji kreiraj ga i vrati true
-
-    public boolean register(String username,String password){
-        if(repo.usernameExists(username))return false; //korisnik vec postoji
-
-      Predicate<String> validUsername = s->s!=null && s.trim().length()>=5;
-      Predicate<String> valudPassword = s->s!=null && s.trim().length()>=7;
-
-        if(!validUsername.test(username) || !valudPassword.test(password))return false;
-
-        User newUser = new User(username,password,Role.USER);
-        repo.save(newUser);
-
-        return true;
+    private String hashPassword(String password) {
+        int logRounds=12;
+        String salt = BCrypt.gensalt(logRounds);
+        return BCrypt.hashpw(password, salt);
     }
 
     public List<User> getAllUsers(){

@@ -59,15 +59,6 @@ public class MainController {
         //proslijedi korisnika svakom kontrolleru koji ga treba
         Object controller = loader.getController();
 
-        /* jel bolje imat 100 kontrolera provjere ili samo 1 base controller
-        if(controller instanceof HeadphonesController c) c.setUser(currentUser);
-        else if(controller instanceof TechnologyController c) c.setUser(currentUser);
-        else if(controller instanceof BrandController c) c.setUser(currentUser);
-        else if(controller instanceof TypeController c) c.setUser(currentUser);
-        else if(controller instanceof UseController c) c.setUser(currentUser);
-        else if(controller instanceof CompareController c) c.setUser(currentUser);
-        */
-        //else if(controller instanceof LoginController c) c.setUser(null);
 
             if(controller instanceof BaseController bc)bc.setUser(user);
 
@@ -79,12 +70,9 @@ public class MainController {
             stage.show();
             closeThisWindow();
         }
-        catch(IOException e){
+        catch(IOException _){
             showAlert(Alert.AlertType.ERROR, "Error", "Something went wrong");
             //System.out.println(e.getMessage()); //OVO TREBA IZBRISAT
-            System.out.println(e.fillInStackTrace());
-            System.out.println(e.getMessage());
-            System.out.println(e.getCause());
         }
     }
 

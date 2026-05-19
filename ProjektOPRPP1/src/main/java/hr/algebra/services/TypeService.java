@@ -1,16 +1,13 @@
 package hr.algebra.services;
-
 import hr.algebra.models.Type;
 import hr.algebra.repositories.TypeRepository;
 import hr.algebra.repositories.implementation.TypeRepositoryImpl;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class TypeService {
-    private final static TypeService INSTANCE = new TypeService();
+    private static final TypeService INSTANCE = new TypeService();
     public static TypeService getInstance(){return INSTANCE;}
     private final TypeRepository repo;
 
@@ -32,7 +29,7 @@ public class TypeService {
                 .stream()
                 .filter(containsQuery)
                 .sorted()
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public boolean nameExists(String name){
