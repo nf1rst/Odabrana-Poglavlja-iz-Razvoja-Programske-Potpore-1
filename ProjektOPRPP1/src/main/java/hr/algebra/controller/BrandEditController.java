@@ -1,6 +1,9 @@
 package hr.algebra.controller;
+import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Brand;
+import hr.algebra.models.Session;
 import hr.algebra.services.BrandService;
+import hr.algebra.util.AlertUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
@@ -28,7 +31,7 @@ public class BrandEditController extends BaseController
     @FXML
     public void initialize() {
 
-        allBrands = brandService.getAllBrands();
+        allBrands = fillList();
 
         nameField.textProperty().addListener((obs, old, val) -> {
 
@@ -39,6 +42,16 @@ public class BrandEditController extends BaseController
 
             showSuggestions(val);
         });
+    }
+
+    private List<Brand> fillList() {
+        try{
+            allBrands=brandService.getAllBrands();
+        }
+        catch (CannotPerformActionException e){
+            AlertUtil.showErrorAlert(e.getMessage());
+        }
+        return allBrands;
     }
 
     private void showSuggestions(String val) {
@@ -68,8 +81,8 @@ public class BrandEditController extends BaseController
 
     @FXML
     public void onSave(){
-        if(!userIsLoggedIn(currentUser)){
-            showAlert(Alert.AlertType.ERROR, "Error", "To edit brands you must be logged in");
+        if(!Session.userCanEdit()){
+            AlertUtil.showErrorAlert("To edit brands you must be logged in");
             return;
         }
 
@@ -86,22 +99,34 @@ public class BrandEditController extends BaseController
     private void updateExistingBrand() {
         selectedBrand.setName(nameField.getText());
         selectedBrand.setDescription(descField.getText());
-        brandService.save(selectedBrand);
-        log( "UPDATE", "Brand", nameField.getText());
-        statusLabel.setText("Brand successfully updated");
-        statusLabel.setTextFill(Color.GREEN);
+
+        try{
+            brandService.save(selectedBrand);
+            logger.info( "UPDATE", "Brand", nameField.getText());
+            statusLabel.setText("Brand successfully updated");
+            statusLabel.setTextFill(Color.GREEN);
+        }
+        catch (CannotPerformActionException e){
+            AlertUtil.showErrorAlert(e.getMessage());
+        }
+
     }
 
     private void insertNewBrand() {
-        brandService.save(new Brand(nameField.getText(), descField.getText()));
-        log("INSERT", "Brand", nameField.getText());
-        statusLabel.setText("Brand successfully inserted");
-        statusLabel.setTextFill(Color.GREEN);
+        try{
+            brandService.save(new Brand(nameField.getText(), descField.getText()));
+            logger.info("INSERT", "Brand", nameField.getText());
+            statusLabel.setText("Brand successfully inserted");
+            statusLabel.setTextFill(Color.GREEN);
+        }
+        catch (CannotPerformActionException e){
+            AlertUtil.showErrorAlert(e.getMessage());
+        }
     }
 
     private void validateUserInput() {
         if(nameField.getText().isEmpty()){
-            showAlert(Alert.AlertType.WARNING, "Validation", "Name cannot be empty");
+            AlertUtil.showErrorAlert("Name cannot be empty");
         }
     }
 

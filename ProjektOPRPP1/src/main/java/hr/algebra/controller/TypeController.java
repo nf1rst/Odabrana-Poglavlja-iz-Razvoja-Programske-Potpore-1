@@ -1,6 +1,9 @@
 package hr.algebra.controller;
+import hr.algebra.models.Session;
 import hr.algebra.models.Type;
 import hr.algebra.services.TypeService;
+import hr.algebra.util.AlertUtil;
+import hr.algebra.util.SceneLoadingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -9,6 +12,9 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 
 public class TypeController extends BaseController{
+
+    @FXML private NavigationController  navigationController;
+
     private final TypeService typeService=TypeService.getInstance();
     private Type selectedType;
 
@@ -19,8 +25,10 @@ public class TypeController extends BaseController{
     @FXML TextField searchField;
 
     @FXML Label nameLabel;
+    @FXML Label descLabel;
 
     @FXML Label currentUserLabel;
+
     @FXML
     public void initialize(){
         colID.setCellValueFactory(
@@ -39,6 +47,8 @@ public class TypeController extends BaseController{
         searchField.textProperty().addListener((obs,old,q)->{
             typeTable.setItems(FXCollections.observableArrayList(typeService.search(q)));
         });
+
+        fillUserLabel(currentUserLabel);
         refresh();
     }
 
@@ -51,25 +61,31 @@ public class TypeController extends BaseController{
 
     @FXML
     public void onEdit(){
-        openPopupWindow("/hr/algebra/views/insert-update-type-view.fxml", "Insert and Update Type", currentUser);
+        if(!Session.userCanEdit()){
+            AlertUtil.showErrorAlert("One must be loggedin to edit");
+            return;
+        }
+        SceneLoadingUtil.loadPopUpWindow("/hr/algebra/views/insert-update-type-view.fxml", "Insert and Update Type");
     }
 
     @FXML
     public void onDelete(){
         if(currentUser==null){
-            showAlert(Alert.AlertType.ERROR, "Error", "One must be logged in to edit");
+            AlertUtil.showErrorAlert("One must be logged in to edit");
             return;
         }
         if(selectedType.getName().isEmpty()){
-            showAlert(Alert.AlertType.WARNING, "Validation", "Name cannot be empty");
+            AlertUtil.showErrorAlert( "Name cannot be empty");
             return;
         }
 
-        showConfirm("Confirm", "Do you want to delete: "+ selectedType.getName());
+        if(!AlertUtil.showConfirmationAlert( "Do you want to delete: "+ selectedType.getName())){
+            return;
+        }
 
         typeService.delete(selectedType.getId());
-        log( "DELETE", "Type", selectedType.getName());
-        showAlert(Alert.AlertType.INFORMATION, "Success", "Type successfully deleted");
+        logger.info( "DELETE", "Type", selectedType.getName());
+        AlertUtil.showErrorAlert("Type successfully deleted");
         onClear();
         refresh();
     }

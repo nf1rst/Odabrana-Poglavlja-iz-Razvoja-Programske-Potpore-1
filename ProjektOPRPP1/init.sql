@@ -1,3 +1,5 @@
+create database HeadphonesDB
+use HeadphonesDB
 DROP TABLE IF EXISTS headphonesTechnology
 DROP TABLE IF EXISTS HeadphonesUse
 DROP TABLE IF EXISTS Headphones
@@ -461,7 +463,7 @@ end
 
 go
 create or alter proc InsertUser
-@name nvarchar(100), @password nvarchar(60), @role nvarchar(20), @imagePath nvarchar(150)
+@name nvarchar(100), @password nvarchar(60), @role nvarchar(20), @imagePath nvarchar(400)
 as
 begin
 	insert into Users(Username,Password,Role, ImagePath)
@@ -470,7 +472,7 @@ end
 
 go
 create or alter proc UpdateUser
-@id int,@name nvarchar(100), @password nvarchar(50), @role nvarchar(20), @imagePath nvarchar(150)
+@id int,@name nvarchar(100), @password nvarchar(60), @role nvarchar(20), @imagePath nvarchar(150)
 as
 begin
 	update Users
@@ -491,6 +493,54 @@ begin
 	where Users.ID=@id
 end
 
+--procedure za admina 
+go
+create or alter proc DeleteAllUsers
+as
+begin 
+	delete
+	from Users
+	where Role='User'
+end 
 
-insert into Users(Username,Password,Role)
-	values('admin', 'nimda','ADMIN')
+go
+create or alter proc DeleteUserByUsername
+@username int
+as
+begin
+	delete
+	from Users
+	where Username=@username
+end
+
+go
+create or alter proc GetNumberOfEntries
+as
+begin
+	select COUNT(*) from Headphones
+	select COUNT(*) from Brand
+	select COUNT(*) from Technology
+	select COUNT(*) from UsePurpose
+	select COUNT(*) from Type
+	select COUNT(*) from Users
+end
+
+go
+create or alter proc DeleteAllEntities
+as
+begin 
+	delete from Headphones
+	delete from Brand
+	delete from HeadphonesTechnology
+	delete from HeadphonesUse
+	delete from Technology
+	delete from Type
+	delete from UsePurpose
+end 
+
+go
+create or alter proc DropDatabase
+as
+begin
+	drop database HeadphonesDB
+end

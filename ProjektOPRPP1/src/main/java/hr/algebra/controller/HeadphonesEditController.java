@@ -1,6 +1,7 @@
 package hr.algebra.controller;
 import hr.algebra.models.*;
 import hr.algebra.services.*;
+import hr.algebra.util.AlertUtil;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
@@ -173,13 +174,13 @@ public class HeadphonesEditController extends BaseController{
 
     @FXML
     public void onSave(){
-        if(!userIsLoggedIn(currentUser)){
-            showAlert(Alert.AlertType.ERROR, "ERROR", "One must be logged in to edit");
+        if(!Session.userCanEdit()){
+            AlertUtil.showErrorAlert( "One must be logged in to edit");
             return;
         }
 
         if(!validateUserInput()){
-            showAlert(Alert.AlertType.WARNING, "Input warning", "Values you've entered are not valid, please retry");
+            AlertUtil.showErrorAlert("Values you've entered are not valid, please retry");
             return;
         }
             try{
@@ -196,7 +197,7 @@ public class HeadphonesEditController extends BaseController{
 
             }
             catch(NumberFormatException _){
-                showAlert(Alert.AlertType.ERROR, "Error", "Year, price, impedance and frequency fields must be numbers");
+                AlertUtil.showErrorAlert( "Year, price, impedance and frequency fields must be numbers");
             }
 
     }
@@ -239,7 +240,7 @@ public class HeadphonesEditController extends BaseController{
                 userSelectedUses
         );
         headphonesService.save(headphonesForInsert);
-        log("INSERT", "Headphones", headphonesForInsert.getName());
+        logger.info("INSERT", "Headphones", headphonesForInsert.getName());
         statusLabel.setText("Headphones successfully inserted");
         statusLabel.setTextFill(Color.GREEN);
     }
@@ -265,19 +266,19 @@ public class HeadphonesEditController extends BaseController{
 
     private boolean validateUserInput() {
         if(nameField.getText().isEmpty()){
-            showAlert(Alert.AlertType.WARNING, "Name warning", "Name cannot be empty");
+            AlertUtil.showErrorAlert( "Name cannot be empty");
             return false;
         }
         if(priceField.getText().isEmpty()){
-            showAlert(Alert.AlertType.WARNING, "Price warning", "Price cannot be empty");
+            AlertUtil.showErrorAlert( "Price cannot be empty");
             return false;
         }
         if(brandComboBox.getValue()==null){
-            showAlert(Alert.AlertType.WARNING, "Brand warning", "Brand cannot be empty");
+            AlertUtil.showErrorAlert( "Brand cannot be empty");
             return false;
         }
         if(typeComboBox.getValue()==null){
-            showAlert(Alert.AlertType.WARNING, "Type warning", "Type cannot be empty");
+            AlertUtil.showErrorAlert( "Type cannot be empty");
             return false;
         }
 
@@ -314,7 +315,7 @@ public class HeadphonesEditController extends BaseController{
             imageLabel.setText(file.getName());
         }
         catch (Exception _){
-            showAlert(Alert.AlertType.ERROR, "Error", "Cannot copy image you've selected");
+            AlertUtil.showErrorAlert( "Cannot copy image you've selected");
         }
 
     }

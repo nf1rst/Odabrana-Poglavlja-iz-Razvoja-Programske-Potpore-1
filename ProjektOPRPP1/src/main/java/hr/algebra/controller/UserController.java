@@ -1,9 +1,9 @@
 package hr.algebra.controller;
+import hr.algebra.models.Session;
 import hr.algebra.services.UserService;
-import hr.algebra.xml.ActionLogger;
+import hr.algebra.util.AlertUtil;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -17,6 +17,8 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 public class UserController extends BaseController {
+
+    @FXML private NavigationController  navigationController;
 
     @FXML ImageView profileImageView;
     @FXML Label usernameLabel;
@@ -38,7 +40,7 @@ public class UserController extends BaseController {
 
     @Override
     protected void onUserSet() {
-        if(currentUser==null)return; // je li ovo nepotrebno s obizorm da ne ulogirani korisnici ne mogu gledat ovaj view
+        if(!Session.userLoggedIn())return; // je li ovo nepotrebno s obizorm da ne ulogirani korisnici ne mogu gledat ovaj view
 
         usernameLabel.setText(currentUser.getUsername());
         roleLabel.setText(currentUser.getRole().toString());
@@ -46,13 +48,15 @@ public class UserController extends BaseController {
         loadProfileImage(currentUser.getImagePath());
     }
 
-    private void loadProfileImage(String imagePath) {
-        if(imagePath==null ||imagePath.isEmpty()){
+    private void loadProfileImage(String imageName) {
+        if(imageName==null ||imageName.isEmpty()){
             showPlaceHolderImage();
             return;
         }
         try{
-            File imageFile = new File(imagePath);
+            Path imagePath = Paths.get("src/main/resources/hr/algebra/assets/images/"+imageName);
+            File imageFile = imagePath.toFile();
+
             if(!imageFile.exists()){
                 showPlaceHolderImage();
                 return;
@@ -68,7 +72,7 @@ public class UserController extends BaseController {
 
     private void showPlaceHolderImage() {
         try{
-            var placeholder = getClass().getResourceAsStream("/hr/algebra/assets/placeholder.png");
+            var placeholder = getClass().getResourceAsStream("/hr/algebra/assets/images/placeholder.png");
             if(placeholder!=null){
                 profileImageView.setImage(new Image(placeholder));
             }
@@ -93,7 +97,7 @@ public class UserController extends BaseController {
                 usernameLabel.getScene().getWindow());
         if(file==null)return;
         try{
-            Path assetsDir=Paths.get("src/main/resources/algebra/assets/");
+            Path assetsDir=Paths.get("src/main/resources/hr/algebra/assets/images/");
             Files.createDirectories(assetsDir);
 
             String extension = getExtension(file.getName());
@@ -101,7 +105,7 @@ public class UserController extends BaseController {
 
             Path dest = assetsDir.resolve(newFileName);
             Files.copy(file.toPath(), dest, StandardCopyOption.REPLACE_EXISTING);
-            selectedImagePath=dest.toString();
+            selectedImagePath=newFileName; // da se u bazu spremi samo ime ne cijela putanja
 
             Image image = new Image(new FileInputStream(dest.toFile()));
             profileImageView.setImage(image);
@@ -109,7 +113,7 @@ public class UserController extends BaseController {
             setStatus("Picture selected. Click 'Save changes' to save");
         }
         catch(Exception _){
-            showAlert(Alert.AlertType.ERROR, "Error", "Cannot fetch the image");
+            AlertUtil.showErrorAlert( "Cannot fetch the image");
         }
     }
 
@@ -150,7 +154,7 @@ public class UserController extends BaseController {
 
         userService.updateUser(currentUser);
 
-        ActionLogger.log(currentUser.getUsername(), "UPDATE", "User", "Account updated");
+        logger.info(currentUser.getUsername(), "UPDATE", "User", "Account updated");
 
         setStatus("Changes saved successfully");
 

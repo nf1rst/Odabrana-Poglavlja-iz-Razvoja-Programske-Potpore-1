@@ -1,6 +1,8 @@
 package hr.algebra.controller;
+import hr.algebra.models.Session;
 import hr.algebra.models.Use;
 import hr.algebra.services.UseService;
+import hr.algebra.util.AlertUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
@@ -60,8 +62,8 @@ public class UseEditController extends BaseController{
 
     @FXML
     public void onSave(){
-        if(currentUser==null){
-            showAlert(Alert.AlertType.ERROR, "Invalid operation", "One must be logged in to edit");
+        if(!Session.userCanEdit()){
+            AlertUtil.showErrorAlert( "One must be logged in to edit");
             return;
         }
         
@@ -78,22 +80,21 @@ public class UseEditController extends BaseController{
     private void updateExistingUse() {
         selectedUse.setName(nameField.getText());
         useService.save(selectedUse);
-        log("UPDATE", "Use", nameField.getText());
+        logger.info("UPDATE", "Use", nameField.getText());
         statusLabel.setText("Use successfully updated");
         statusLabel.setTextFill(Color.GREEN);
     }
 
     private void insertNewUse() {
         useService.save(new Use(nameField.getText()));
-        log("INSERT", "Use", nameField.getText());
+        logger.info("INSERT", "Use", nameField.getText());
         statusLabel.setText("Use successfully inserted");
         statusLabel.setTextFill(Color.GREEN);
     }
 
     private void validateUserInput() {
         if(nameField.getText().isEmpty()){
-            showAlert(Alert.AlertType.WARNING, "Validation", "Name cannot be empty");
-            return;
+            AlertUtil.showErrorAlert( "Name cannot be empty");
         }
     }
 

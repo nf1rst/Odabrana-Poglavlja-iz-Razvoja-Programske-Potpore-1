@@ -1,7 +1,10 @@
 package hr.algebra.controller;
 
+import hr.algebra.models.Session;
 import hr.algebra.models.Technology;
 import hr.algebra.services.TechnologyService;
+import hr.algebra.util.AlertUtil;
+import hr.algebra.util.SceneLoadingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -11,6 +14,9 @@ import javafx.scene.control.*;
 
 
 public class TechnologyController extends BaseController{
+
+    @FXML private NavigationController  navigationController;
+
     private final TechnologyService technologyService= TechnologyService.getInstance();
     private Technology selectedTechnology;
 
@@ -24,6 +30,7 @@ public class TechnologyController extends BaseController{
     @FXML private Label nameLabel;
     @FXML private Label descLabel;
 
+    @FXML private Label currentUserLabel;
 
     @FXML
     public void initialize(){
@@ -49,6 +56,8 @@ public class TechnologyController extends BaseController{
             technologiesTable.setItems(FXCollections.observableArrayList(technologyService.search(q)));
         });
 
+        fillUserLabel(currentUserLabel);
+
         refresh();
     }
 
@@ -61,25 +70,31 @@ public class TechnologyController extends BaseController{
 
     @FXML
     public void onEdit(){
-        openPopupWindow("/hr/algebra/views/insert-update-technology-view.fxml", "Insert and update technology", currentUser);
+        if(!Session.userCanEdit()){
+            AlertUtil.showErrorAlert("One must be loggedin to edit");
+            return;
+        }
+        SceneLoadingUtil.loadPopUpWindow("/hr/algebra/views/insert-update-technology-view.fxml", "Insert and update technology");
     }
 
     @FXML
     public void onDelete(){
-        if(currentUser==null){
-            showAlert(Alert.AlertType.ERROR, "Error" , "One must be logged in to edit");
+        if(!Session.userLoggedIn()){
+            AlertUtil.showErrorAlert( "One must be logged in to edit");
             return;
         }
         if(selectedTechnology==null || selectedTechnology.getName().isEmpty()){
 
-            showAlert(Alert.AlertType.WARNING, "Warning", "One must choose a technology to delete");
+            AlertUtil.showErrorAlert("One must choose a technology to delete");
             return;
         }
 
-        showConfirm("Confirmation", "Do you want to delete: "+ selectedTechnology.getName());
+        if(!AlertUtil.showConfirmationAlert("Do you want to delete: "+ selectedTechnology.getName())){
+            return ;
+        }
 
         technologyService.delete(selectedTechnology.getId());
-        log( "DELETE", "Technology", selectedTechnology.getName());
+        logger.info( "DELETE", "Technology", selectedTechnology.getName());
 
         onClear();
         refresh();

@@ -15,7 +15,7 @@ public class BrandRepositoryImpl implements BrandRepository {
     private BrandRepositoryImpl() {}
 
     @Override
-    public List<Brand> getAll() {
+    public List<Brand> getAll() throws SQLException {
         List<Brand>brands = new ArrayList<>();
         try (
                 CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetAllBrands()}");
@@ -23,63 +23,48 @@ public class BrandRepositoryImpl implements BrandRepository {
         {
             while (rs.next())brands.add(mapRow(rs));
         }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot fetch the brands", e); // jel ovo potrebno bacat ponovno ili sto se treba, tko ce ovo hvatat
-        }
         return brands;
     }
 
     @Override
-    public Optional<Brand> getById(int id) {
+    public Optional<Brand> getById(int id) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetBrandById(?)}")){
             statement.setInt(1,id);
             try(ResultSet rs = statement.executeQuery()){
                 if(rs.next())return Optional.of(mapRow(rs));
             }
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot fetch the brand",e);
-        }
         return Optional.empty();
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(int id) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL DeleteBrand(?)}")){
             statement.setInt(1,id);
             statement.execute();
         }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot delete the brand",e);
-        }
     }
 
     @Override
-    public void save(Brand brand) {
+    public void save(Brand brand) throws SQLException {
         if(brand.getId()==0) insert(brand);
         else update(brand);
     }
 
-    private void update(Brand brand) {
+    private void update(Brand brand) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL UpdateBrand(?,?,?)}")){
             statement.setInt(1,brand.getId());
             statement.setString(2,brand.getName());
             statement.setString(3,brand.getDescription());
             statement.execute();
         }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot update brand", e);
-        }
     }
 
-    private void insert (Brand brand){
+    private void insert (Brand brand) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL InsertBrand(?,?)}")){
             statement.setString(1,brand.getName());
             statement.setString(2,brand.getDescription());
             statement.execute();
-        }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot insert brand", e);
         }
     }
 

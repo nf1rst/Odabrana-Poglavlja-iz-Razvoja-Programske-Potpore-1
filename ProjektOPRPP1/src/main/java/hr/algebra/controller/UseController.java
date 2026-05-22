@@ -1,6 +1,9 @@
 package hr.algebra.controller;
+import hr.algebra.models.Session;
 import hr.algebra.models.Use;
 import hr.algebra.services.UseService;
+import hr.algebra.util.AlertUtil;
+import hr.algebra.util.SceneLoadingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -9,6 +12,9 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 
 public class UseController extends BaseController{
+
+    @FXML private NavigationController  navigationController;
+
     private final UseService useService = UseService.getInstance();
     private Use selectedUse;
 
@@ -19,6 +25,8 @@ public class UseController extends BaseController{
     @FXML private TableColumn<Use, String>colName;
 
     @FXML private Label nameLabel;
+
+    @FXML private Label currentUserLabel;
 
     @FXML
     public void initialize(){
@@ -35,7 +43,9 @@ public class UseController extends BaseController{
                     }
                 });
 
- refresh();
+        //refresh();
+
+        fillUserLabel(currentUserLabel);
 
         searchField.textProperty().addListener((obs,old,q)->useTable.setItems(FXCollections.observableArrayList(useService.search(q))));
     
@@ -49,25 +59,32 @@ public class UseController extends BaseController{
 
     @FXML
     public void onEdit(){
-        openPopupWindow("/hr/algebra/views/insert-update-use-view.fxml", "Insert or update use", currentUser);
+        if(!Session.userCanEdit()){
+            AlertUtil.showErrorAlert("One must be loggedin to edit");
+            return;
+        }
+        SceneLoadingUtil.loadPopUpWindow("/hr/algebra/views/insert-update-use-view.fxml", "Insert or update use");
     }
 
 
     @FXML
     public void onDelete(){
         if(currentUser ==null){
-            showAlert(Alert.AlertType.ERROR, "Invalid operation", "One must be logged in to edit");
+            AlertUtil.showErrorAlert( "One must be logged in to edit");
             return;
         }
         if(selectedUse==null ||  selectedUse.getName().isEmpty()){
-            showAlert(Alert.AlertType.ERROR, "Error", "Name cannot be empty");
+            AlertUtil.showErrorAlert( "Name cannot be empty");
             return;
         }
 
-        showConfirm("Confirmation", "Do you want to delete: "+ selectedUse.getName());
+        if(!AlertUtil.showConfirmationAlert( "Do you want to delete: "+ selectedUse.getName()))
+        {
+            return;
+        }
 
         useService.delete(selectedUse.getId());
-        log( "DELETE", "Use", selectedUse.getName());
+        logger.info( "DELETE", "Use", selectedUse.getName());
         refresh();
     }
 

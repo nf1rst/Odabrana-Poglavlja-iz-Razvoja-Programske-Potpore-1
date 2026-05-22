@@ -1,7 +1,8 @@
 package hr.algebra.controller;
 import hr.algebra.models.*;
 import hr.algebra.services.*;
-import hr.algebra.xml.ActionLogger;
+import hr.algebra.util.AlertUtil;
+import hr.algebra.util.SceneLoadingUtil;
 import hr.algebra.xml.export.HeadphonesCatalog;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
@@ -26,6 +27,9 @@ import java.util.stream.Collectors;
 
 
 public class HeadphonesController extends BaseController {
+
+    @FXML private NavigationController  navigationController;
+
     @FXML private TableView<Headphones> headphonesTable;
     @FXML private TableColumn<Headphones, String> colName;
     @FXML private TableColumn<Headphones, String> colBrand;
@@ -60,6 +64,8 @@ public class HeadphonesController extends BaseController {
     private Headphones selectedHeadphnes = null;
     private String selectedImagePath=null;
 
+    @FXML private Label currentUserLabel;
+
     @FXML
     public void initialize(){
         setupColums();
@@ -67,6 +73,7 @@ public class HeadphonesController extends BaseController {
         setUpComboBoxes();
         setupSearch();
         showPlaceholderImage();
+        fillUserLabel(currentUserLabel);
         refresh();
     }
 
@@ -199,34 +206,33 @@ public class HeadphonesController extends BaseController {
 
     @FXML
     public void onEdit(){
-        openPopupWindow("/hr/algebra/views/insert-update-headphones-view.fxml", "Insert and Update Headphone", currentUser);
+        if(!Session.userCanEdit()){
+            AlertUtil.showErrorAlert("One must be logged in to edit");
+            return;
+        }
+        SceneLoadingUtil.loadPopUpWindow("/hr/algebra/views/insert-update-headphones-view.fxml", "Insert and Update Headphone");
     }
 
     @FXML
     public void onDelete(){
-        if(!userIsLoggedIn(currentUser)){
-            showAlert(Alert.AlertType.ERROR, "Error", "One must be logged in to edit");
+        if(!Session.userCanEdit()){
+            AlertUtil.showErrorAlert("One must be logged in to edit");
             return;
         }
         if(selectedHeadphnes.getName().isEmpty()){
-            showAlert(Alert.AlertType.WARNING, "Validation", "Name field cannot be emtpy");
+            AlertUtil.showErrorAlert("Name field cannot be emtpy");
             return;
         }
 
-        askConfirmation("Do you want to delete headphones: " + selectedHeadphnes.getName());
+        if(!AlertUtil.showConfirmationAlert("Do you want to delete headphones: " + selectedHeadphnes.getName())) return;
 
         deleteImageFile(selectedImagePath);
         headphonesService.delete(selectedHeadphnes.getId());
-        ActionLogger.log(checkUsernameForLogging(), "DELETE", "Headphones", selectedHeadphnes.getName());
+        logger.info(checkUsernameForLogging(), "DELETE", "Headphones", selectedHeadphnes.getName());
 
         refresh();
     }
 
-    private void askConfirmation(String text) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setContentText(text);
-        if(alert.showAndWait().filter(b->b==ButtonType.OK).isEmpty())return;
-    }
 
 
     @FXML
@@ -266,12 +272,13 @@ public class HeadphonesController extends BaseController {
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
             marshaller.marshal(catalog, file);
 
-            ActionLogger.log(checkUsernameForLogging(), "EXPORT", "Headphones", file.getName());
+            logger.info(checkUsernameForLogging(), "EXPORT", "Headphones", file.getName());
 
-            showAlert(Alert.AlertType.INFORMATION, "Success", "Catalogue has been successfully exported to "+ file.getName());
+            AlertUtil.showInformationAlert("Catalogue has been successfully exported to "+ file.getName());
         }
         catch (JAXBException _) {
-            showAlert(Alert.AlertType.ERROR, "ERROR", "Cannot export to xml");
+            AlertUtil.showErrorAlert("Cannot export to xml");
+            logger.error("Cannot export to xml");
         }
      }
 
@@ -331,7 +338,7 @@ public class HeadphonesController extends BaseController {
             }
         }
         catch (Exception _){
-            showAlert(Alert.AlertType.WARNING, "Image fail", "No image could be loaded");
+            AlertUtil.showWarningAlert("No image could be loaded");
         }
     }
 

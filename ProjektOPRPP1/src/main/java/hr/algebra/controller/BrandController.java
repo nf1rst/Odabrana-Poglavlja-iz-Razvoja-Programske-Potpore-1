@@ -1,7 +1,12 @@
 package hr.algebra.controller;
 
+import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Brand;
+import hr.algebra.models.Session;
+import hr.algebra.models.User;
 import hr.algebra.services.BrandService;
+import hr.algebra.util.AlertUtil;
+import hr.algebra.util.SceneLoadingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -12,7 +17,10 @@ import javafx.scene.image.ImageView;
 
 
 public class BrandController extends BaseController {
+
     @FXML private TextField searchField;
+
+    @FXML private NavigationController  navigationController;
 
     @FXML private TableView<Brand> brandTable;
     @FXML private TableColumn<Brand,Number>colId;
@@ -23,6 +31,7 @@ public class BrandController extends BaseController {
     @FXML private ImageView brandImageView;
     @FXML private Label descLabel;
 
+    @FXML private Label currentUserLabel;
 
     private final BrandService brandService = BrandService.getInstance();
     private Brand selectedBrand=null;
@@ -36,9 +45,8 @@ public class BrandController extends BaseController {
         colDesc.setCellValueFactory(
                 d->new SimpleStringProperty(d.getValue().getDescription()));
 
-        refresh();
+        //refresh();
 
-        //kako ovo tocno radi
         brandTable.getSelectionModel().selectedItemProperty()
                 .addListener((obs,old,val)->{
             if(val!=null){
@@ -48,13 +56,14 @@ public class BrandController extends BaseController {
             }
         });
 
-        //kako ovo tocno radi
         searchField.textProperty().addListener((obs,old,q)->{
             brandTable.setItems(FXCollections.observableArrayList(brandService.search(q)));
         });
 
-        //refresh(); //da se odmah ucitaju svi brendovi, ne da stoji prazno
+        fillUserLabel(currentUserLabel);
     }
+
+
 
     @FXML
     public void onNew(){
@@ -65,26 +74,36 @@ public class BrandController extends BaseController {
 
     @FXML
     public void onOpenSave(){
-        openPopupWindow("/hr/algebra/views/insert-update-brand-view.fxml", "Insert or Update Brand", currentUser);
+        if(!Session.userCanEdit()){
+            AlertUtil.showErrorAlert("One must be loggedd in to edit");
+            return;
+        }
+        SceneLoadingUtil.loadPopUpWindow("/hr/algebra/views/insert-update-brand-view.fxml", "Insert or Update Brand");
     }
 
     @FXML
     public void onDelete(){
-        if(!userIsLoggedIn(currentUser)){
-            showAlert(Alert.AlertType.ERROR, "Error", "To edit brands you must be logged in");
+        if(!Session.userLoggedIn()){
+            AlertUtil.showErrorAlert("To edit brands you must be logged in");
             return;
         }
 
         if(selectedBrand==null ||selectedBrand.getName().isEmpty()){ // prvo provjeri jel null jer uopce ne moze do get name ako je
-            showAlert(Alert.AlertType.WARNING, "Warning", "One must choose a brand to delete");
+            AlertUtil.showErrorAlert( "One must choose a brand to delete");
             return;
         }
 
-        if(!showConfirm("Confirmation", "Do you want to delete: " + selectedBrand.getName()))return;
+        if(!AlertUtil.showConfirmationAlert("Do you want to delete: " + selectedBrand.getName())){
+            return;
+        }
 
-        brandService.delete(selectedBrand.getId());
-        log("DELETE", "Brand", selectedBrand.getName());
-        showAlert(Alert.AlertType.INFORMATION, "Success", "Brand successfully deleted");
+        try{
+            brandService.delete(selectedBrand.getId());
+            logger.error("DELETE", "Brand", selectedBrand.getName());
+        }
+        catch (CannotPerformActionException e){
+            AlertUtil.showErrorAlert(e.getMessage());
+        }
         onNew();
         refresh();
     }
@@ -97,6 +116,6 @@ public class BrandController extends BaseController {
 
     @Override
     protected Node getMainNode() {
-        return searchField;
+        return brandTable;
     }
 }

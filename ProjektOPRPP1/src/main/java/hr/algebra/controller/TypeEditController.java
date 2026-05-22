@@ -1,6 +1,8 @@
 package hr.algebra.controller;
+import hr.algebra.models.Session;
 import hr.algebra.models.Type;
 import hr.algebra.services.TypeService;
+import hr.algebra.util.AlertUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
@@ -58,8 +60,8 @@ public class TypeEditController extends BaseController{
 
     @FXML
     public void onSave(){
-        if(currentUser==null){
-            showAlert(Alert.AlertType.ERROR, "Stop there", "One must be logged in to edit");
+        if(!Session.userCanEdit()){
+            AlertUtil.showErrorAlert("One must be logged in to edit");
             return;
         }
 
@@ -72,28 +74,27 @@ public class TypeEditController extends BaseController{
             updateExistingType();
         }
 
-        showAlert(Alert.AlertType.INFORMATION, "Success", "Type has been successfully saved");
+        AlertUtil.showInformationAlert( "Type has been successfully saved");
     }
 
     private void updateExistingType() {
         selectedType.setName(nameField.getText());
         typeService.save(selectedType);
-        log("UPDATE", "Type", selectedType.getName());
+        logger.info("UPDATE", "Type", selectedType.getName());
         statusLabel.setText("Type succesfully updated");
         statusLabel.setTextFill(Color.GREEN);
     }
 
     private void insertNewType() {
         typeService.save(new Type(nameField.getText()));
-        log("INSERT", "Type", nameField.getText());
+        logger.info("INSERT", "Type", nameField.getText());
         statusLabel.setText("Type succesfully inserted");
         statusLabel.setTextFill(Color.GREEN);
     }
 
     private void validateUserInput() {
         if(nameField.getText().isEmpty()){
-            showAlert(Alert.AlertType.ERROR, "Error", "Name cannot be empty");
-            return;
+            AlertUtil.showErrorAlert( "Name cannot be empty");
         }
     }
 

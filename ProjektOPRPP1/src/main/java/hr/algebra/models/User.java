@@ -4,7 +4,7 @@ public class User implements Comparable<User>{
     private final int id;
     private String username;
     private String password;
-    private Role role;
+    private final Role role;
     private String imagePath;
 
     public User(int id, String username, String password, Role role, String imagePath) {
@@ -20,7 +20,7 @@ public class User implements Comparable<User>{
         this.username = username;
         this.password = password;
         this.role = role;
-        this.imagePath="/hr/algebra/assets/noProfPic.jpg"; // po defaultu korisnik nema profilnu sliku
+        this.imagePath=null; // po defaultu korisnik nema profilnu sliku
     }
 
     public int getId() {return id;}
@@ -31,7 +31,6 @@ public class User implements Comparable<User>{
 
     public void setUsername(String username) {this.username = username;}
     public void setPassword(String password) {this.password = password;}
-    public void setRole(Role role) {this.role = role;}
     public void setImagePath(String imagePath) {this.imagePath = imagePath;}
 
 

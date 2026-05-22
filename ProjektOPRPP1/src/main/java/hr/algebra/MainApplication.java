@@ -1,9 +1,21 @@
 package hr.algebra;
+import hr.algebra.database.DBConnector;
 import hr.algebra.database.DBSingleton;
+import hr.algebra.exceptions.CannotPerformActionException;
+import hr.algebra.exceptions.EntityExistantException;
+import hr.algebra.models.Role;
+import hr.algebra.models.User;
+import hr.algebra.services.UserService;
+import hr.algebra.util.SceneLoadingUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class MainApplication extends Application {
@@ -17,27 +29,27 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/hr/algebra/views/login-view.fxml"));
-        //ovo zasad ne treba bit prvo da mogu provjeravat jel ostale stvari rade
 
-        //FXMLLoader loader =new  FXMLLoader(getClass().getResource("/hr/algebra/views/brand-view.fxml"));
-        //Scene scene = new Scene(loader.load());
+        SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/login-view.fxml","Headphones - login",null, 400,500);
+        insertAdmin();
+    }
+
+    private void insertAdmin() {
+        final UserService userService = UserService.getInstance();
+
+        userService.registerAdmin("admin", "asdfasdf");
+        //ovaj ne treba u try catch jer se greska hvata u userService
 
 
-        //moze i Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-
-        Scene scene = new Scene(loader.load(),420,520); //ove dimenzije su za login screen
-        primaryStage.setTitle("Headphones - Login");
-        primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
-        primaryStage.show();
     }
 
     @Override
     public void stop() throws Exception {
         try {
-            DBSingleton.getInstance().closeConnection();
-        } catch (Exception ignored) {}
+            DBSingleton.INSTANCE.closeConnection();
+        } catch (Exception _) {
+            //
+        }
         super.stop();
     }
 }

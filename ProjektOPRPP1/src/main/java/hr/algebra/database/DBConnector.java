@@ -1,4 +1,6 @@
 package hr.algebra.database;
+import hr.algebra.exceptions.DBConnectionException;
+
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -9,10 +11,10 @@ public class DBConnector {
 
     public static Connection getConnection(){
         try{
-            return DBSingleton.getInstance().getConnection();
+            return DBSingleton.INSTANCE.getConnection();
         }
-        catch(SQLException e) {
-            throw new RuntimeException("Cannot connect to database, try again later", e); // je li ovdje potrebno bacati novu gresku i jel se treba zapisat u logove
+        catch(SQLException _) {
+            throw new DBConnectionException("DBConnector failed");// je li ovdje potrebno bacati novu gresku i jel se treba zapisat u logove
         }
     }
 }

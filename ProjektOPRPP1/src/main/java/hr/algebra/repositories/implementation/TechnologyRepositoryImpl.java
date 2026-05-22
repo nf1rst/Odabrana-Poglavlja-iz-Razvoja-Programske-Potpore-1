@@ -15,69 +15,54 @@ public class TechnologyRepositoryImpl implements TechnologyRepository {
     public static TechnologyRepositoryImpl getInstance(){return INSTANCE;}
 
     @Override
-    public List<Technology> getAll() {
+    public List<Technology> getAll() throws SQLException {
         List<Technology>technology=new ArrayList<>();
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetAllTechnologies()}");
             ResultSet rs = statement.executeQuery();)
         {
             while(rs.next())technology.add(mapRow(rs));
         }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot get technologies", e);
-        }
         return technology;
     }
 
     @Override
-    public Optional<Technology> getById(int id) {
+    public Optional<Technology> getById(int id) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetTechnologyById(?)}")){
             statement.setInt(1,id);
             try(ResultSet rs=statement.executeQuery()){
                 while(rs.next())Optional.of(mapRow(rs));
             }
         }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot get technology", e);
-        }
         return Optional.empty();
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(int id) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL RemoveTechnology(?)}")){
             statement.setInt(1,id);
             statement.execute();
         }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot delete technology", e);
-        }
     }
 
     @Override
-    public void save(Technology technology) {
+    public void save(Technology technology) throws SQLException {
         if(technology.getId()==0)insert(technology);
         else update(technology);
     }
 
-    private void update(Technology technology) {
+    private void update(Technology technology) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL UpdateTechnology(?,?,?)}")){
             statement.setInt(1,technology.getId());
             statement.setString(2,technology.getName());
             statement.setString(3,technology.getDescription());
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot update technology", e);
-        }
     }
 
-    private void insert(Technology technology) {
+    private void insert(Technology technology) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL InsertTechnology(?,?)}")){
             statement.setString(1,technology.getName());
             statement.setString(2,technology.getDescription());
             statement.execute();
-        }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot insert technology", e);
         }
     }
 

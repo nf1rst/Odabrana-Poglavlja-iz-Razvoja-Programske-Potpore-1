@@ -18,7 +18,7 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
     HeadphonesRepositoryImpl() {}
 
     @Override
-    public List<Headphones> getByBrandID(int brandID) {
+    public List<Headphones> getByBrandID(int brandID) throws SQLException {
         List<Headphones>headphones=new ArrayList<>();
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetHeadphonesByBrand(?)}");){
         statement.setInt(1,brandID);
@@ -26,13 +26,10 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
             while(rs.next())headphones.add(mapRow(rs));
         }
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot get headphones by brand", e);
-        }
         return headphones;
     }
 
-    private List<Technology> getTechnologiesForHeadphones(int id) {
+    private List<Technology> getTechnologiesForHeadphones(int id) throws SQLException {
         List<Technology>technologies=new ArrayList<>();
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetTechnologiesForHeadphones(?)}")){
         statement.setInt(1,id);
@@ -44,13 +41,10 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
             ));
         }
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot get technologies for headphones", e);
-        }
         return technologies;
     }
 
-    private List<Use> getPossibleUsagesForHeadphones(int id) {
+    private List<Use> getPossibleUsagesForHeadphones(int id) throws SQLException {
         List<Use> possibleUsages=new ArrayList<>();
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetUsagesForHeadphones(?)}")){
             statement.setInt(1,id);
@@ -63,14 +57,11 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
                 );
             }
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot het usages for headphones", e);
-        }
         return possibleUsages;
     }
 
     @Override
-    public List<Headphones> getByTypeID(int typeID) {
+    public List<Headphones> getByTypeID(int typeID) throws SQLException {
         List<Headphones>headphones=new ArrayList<>();
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetHeadphonesByType(?)}"))
         {
@@ -79,14 +70,11 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
                 while(rs.next())headphones.add(mapRow(rs));
             }
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot get headphones", e);
-        }
         return headphones;
     }
 
     @Override
-    public List<Headphones> getByUseID(int useID) {
+    public List<Headphones> getByUseID(int useID) throws SQLException {
         List<Headphones>headphones = new ArrayList<>();
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetHeadphonesByUse(?)}")){
             statement.setInt(1,useID);
@@ -94,14 +82,11 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
                 while(rs.next())headphones.add(mapRow(rs));
             }
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot get headphones by use", e);
-        }
         return headphones;
     }
 
     @Override
-    public List<Headphones> getByMaxPrice(double maxPrice) {
+    public List<Headphones> getByMaxPrice(double maxPrice) throws SQLException {
         List<Headphones>headphones = new ArrayList<>();
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetHeadphonesByMaxPrice(?)}")){
             statement.setDouble(1,maxPrice);
@@ -109,121 +94,95 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
                 while(rs.next())headphones.add(mapRow(rs));
             }
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot get headphones by use", e);
-        }
         return headphones;
     }
 
     @Override
-    public Optional<Headphones> getByName(String name) {
+    public Optional<Headphones> getByName(String name) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetHeadphonesByName(?)}")){
             statement.setString(1, name);
             try(ResultSet rs = statement.executeQuery()){
                 if(rs.next())return Optional.of(mapRow(rs));
             }
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot get headphone");
-        }
         return Optional.empty();
     }
 
     @Override
-    public void addTechnology(int headphonesID, int technologyID) {
+    public void addTechnology(int headphonesID, int technologyID) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL AddHeadphonesTechnology(?,?)}")){
             statement.setInt(1,technologyID);
             statement.setInt(2, headphonesID);
             statement.execute();
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot add technology to headphones", e);
-        }
     }
 
     @Override
-    public void removeTechnology(int headphonesID, int technologyID) {
+    public void removeTechnology(int headphonesID, int technologyID) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL RemoveHeadphonesTechnology(?,?)}")){
             statement.setInt(1,technologyID);
             statement.setInt(2, headphonesID);
             statement.execute();
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot remove technology from headphones", e);
-        }
     }
 
     @Override
-    public void addUse(int headphonesID, int useID) {
+    public void addUse(int headphonesID, int useID) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL AddHeadphonesUse(?,?)}")){
             statement.setInt(1,useID);
             statement.setInt(2, headphonesID);
             statement.execute();
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot add use to headphones", e);
-        }
     }
 
 
     @Override
-    public void removeUse(int headphonesID, int useID) {
+    public void removeUse(int headphonesID, int useID) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL RemoveHeadphonesUse(?,?)}")){
             statement.setInt(1,useID);
             statement.setInt(2, headphonesID);
             statement.execute();
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot remove use from headphones", e);
-        }
     }
 
     @Override
-    public List<Headphones> getAll() {
+    public List<Headphones> getAll() throws SQLException {
         List<Headphones>headphones = new ArrayList<>();
 
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetAllHeadphones()}");
             ResultSet rs = statement.executeQuery();)
         {
             while(rs.next())headphones.add(mapRow(rs));
-        } catch (SQLException e) {
-            throw new RuntimeException("Cannot get headphones", e);
         }
         return headphones;
     }
 
     @Override
-    public Optional<Headphones> getById(int id) {
+    public Optional<Headphones> getById(int id) throws SQLException {
         try(CallableStatement statement= DBConnector.getConnection().prepareCall("{CALL GetHeadphonesById(?)}")){
             statement.setInt(1,id);
             try(ResultSet rs = statement.executeQuery()){
-                while(rs.next())return Optional.of(mapRow(rs));
+                if(rs.next())return Optional.of(mapRow(rs));
             }
-        }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot get headphones by id", e);
         }
         return Optional.empty();
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(int id) throws SQLException {
         try(CallableStatement statement=DBConnector.getConnection().prepareCall("{CALL DeleteHeadphones(?)}")){
             statement.setInt(1,id);
             statement.execute();
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot delete headphones", e);
-        }
     }
 
     @Override
-    public void save(Headphones h) {
+    public void save(Headphones h) throws SQLException {
         if(h.getId()==0)insert(h);
         else update(h);
     }
 
-    private void update(Headphones h) {
+    private void update(Headphones h) throws SQLException {
         try(CallableStatement statement=DBConnector.getConnection().prepareCall("{CALL UpdateHeadphones(?,?,?,?,?,?,?,?,?,?,?,?)}")){
 
             statement.setInt(1,h.getId());
@@ -240,12 +199,9 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
             statement.setInt(12,h.getType().getId());
             statement.execute();
         }
-        catch (SQLException e){
-            throw new RuntimeException("Cannot update headphones",e );
-        }
     }
 
-    private void insert(Headphones h) {
+    private void insert(Headphones h) throws SQLException {
         try(CallableStatement statement=DBConnector.getConnection().prepareCall("{CALL InsertHeadphones(?,?,?,?,?,?,?,?,?,?,?)}")){
             //ovo se moze izdvojit u funkciju da ne moras kopirat dijelove koda
             statement.setString(1,h.getName());
@@ -266,9 +222,6 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
                     h.setId(generatedID);
                 }
             }
-        }
-        catch (SQLException e)  {
-            throw new RuntimeException("Cannot insert headphones",e);
         }
     }
 
@@ -301,5 +254,5 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
     headphones.setPossibleUsages(getPossibleUsagesForHeadphones(rs.getInt("Id")));
     headphones.setTechnologies(getTechnologiesForHeadphones(rs.getInt("Id")));
     return headphones;
-}
+    }
 }

@@ -16,69 +16,54 @@ public class TypeRepositoryImpl implements TypeRepository {
     TypeRepositoryImpl(){}
 
     @Override
-    public List<Type> getAll() {
+    public List<Type> getAll() throws SQLException {
         List<Type>types = new ArrayList<>();
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetAllTypes()}");
             ResultSet rs = statement.executeQuery())
         {
             while(rs.next())types.add(mapRow(rs));
         }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot get types", e);
-        }
         return types;
     }
 
 
     @Override
-    public Optional<Type> getById(int id) {
+    public Optional<Type> getById(int id) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetTypeById(?)}")){
             statement.setInt(1,id);
             try(ResultSet rs = statement.executeQuery()){
                 while(rs.next()) return Optional.of(mapRow(rs));
             }
         }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot get type", e);
-        }
         return Optional.empty();
     }
 
     @Override
-    public void delete(int id) {
+    public void delete(int id) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL DeleteType(?)}")){
             statement.setInt(1,id);
             statement.execute();
         }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot delete type", e);
-        }
     }
 
     @Override
-    public void save(Type type) {
+    public void save(Type type) throws SQLException {
         if(type.getId()==0)insert(type); // 0 jer sam ja tako stavila u kontruktoru pa ga moze prepoznat
         else update(type);
     }
 
-    private void update(Type type) {
+    private void update(Type type) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL UpdateType(?,?)}")){
             statement.setInt(1,type.getId());
             statement.setString(2,type.getName());
             statement.execute();
         }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot update type", e);
-        }
     }
 
-    private void insert(Type type) {
+    private void insert(Type type) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL InsertType(?)}")){
             statement.setString(1,type.getName());
             statement.execute();
-        }
-        catch(SQLException e){
-            throw new RuntimeException("Cannot insert type", e);
         }
     }
 

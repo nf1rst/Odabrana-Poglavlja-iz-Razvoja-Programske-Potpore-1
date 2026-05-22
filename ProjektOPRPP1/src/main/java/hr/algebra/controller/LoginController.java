@@ -1,16 +1,17 @@
 package hr.algebra.controller;
+import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.exceptions.EntityExistantException;
 import hr.algebra.models.Role;
+import hr.algebra.models.Session;
 import hr.algebra.models.User;
 import hr.algebra.services.UserService;
+import hr.algebra.util.SceneLoadingUtil;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+import javafx.scene.Node;
 import javafx.scene.control.PasswordField;
-import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import java.io.IOException;
+
 import java.util.Optional;
 import java.util.function.Predicate;
 
@@ -30,6 +31,9 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
     private final Predicate<String> minLength7 = s->s!=null && s.length()>=7;
     private final Predicate<String> hasSuspiciusCharacters= s->s.contains("/");
 
+    private Node getMainNode(){
+        return registerConfirmField; //da se moze vracat za zatvaranje prozoera
+    }
 
 
     @FXML //javaFX poziva automatski nakon ucitavanja FXML
@@ -58,9 +62,12 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
         try{
             result = userService.login(username,password);
         }
-        catch (EntityExistantException e){
-            showError(loginErrorLabel, e.getMessage()); // ako ga tu uhvati znaci da ne postoji
+        catch (EntityExistantException _){
+            showError(loginErrorLabel, "Username not found. Try to register new account with it"); // ako ga tu uhvati znaci da ne postoji
             return;
+        }
+        catch (CannotPerformActionException e){
+            showError(loginErrorLabel, e.getMessage());
         }
 
         if(result.isEmpty()){
@@ -70,8 +77,8 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
         }
 
         User currentUser = result.get();
+        Session.setCurrentUser(currentUser);
         handleUserRedirection(currentUser);
-        closeThisWindow();
     }
 
     private boolean validateLoginUserInput(String username, String password) {
@@ -84,13 +91,12 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
 
     private void handleUserRedirection(User user) {
         if(user.getRole()== Role.ADMIN){
-            openWindow("/hr/algebra/views/admin-view.fxml", "Admin Panel", user);
-            closeThisWindow();
+            SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/admin-view.fxml", "Admin Panel", getMainNode(),600,500);
+
         }
         else if(user.getRole()==Role.USER){
             //ovo tu ce trebat bit neki main il nesto, za sad je samo eksperimentiranje
-            openWindow("/hr/algebra/views/main-view-loggedIn.fxml", "Main Panel", user);
-            closeThisWindow();
+            SceneLoadingUtil.loadNewWindow("/hr/algebra/views/main-view-loggedIn.fxml", "Main Panel", getMainNode());
         }
     }
 
@@ -114,7 +120,10 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
             showError(registerErrorLabel, e.getMessage() + "!");
             return;
         }
-        
+        catch (CannotPerformActionException e){
+            showSuccess(registerErrorLabel, e.getMessage());
+        }
+
         clearUserInput();
     }
 
@@ -146,37 +155,9 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
 
     @FXML
     public void onWithoutAccount(){
-        openWindow("/hr/algebra/views/main-view-anonymus.fxml", "Main screen", null); //null jer znaci da korisnik klinuo da zeli razgledavat pa se nije ni mono ulogirat tad
+        SceneLoadingUtil.loadNewWindow("/hr/algebra/views/main-view-anonymus.fxml", "Main screen", getMainNode()); //null jer znaci da korisnik klinuo da zeli razgledavat pa se nije ni mono ulogirat tad
     }
 
-    private void openWindow(String fxmlPath, String title, User user){
-        try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-            Scene scene = new Scene(loader.load());
-
-            Object controller = loader.getController();
-
-            //!!!!!!!!!!!!!!!!!!!!! ovo je dobra putanja ako ces na kraju imat neki main meni za sve i kad ces dodavat admina
-
-
-            if(controller instanceof MainController mc) mc.setUser(user);
-
-            Stage stage = new Stage();
-            stage.setTitle(title);
-            stage.setScene(scene);
-            stage.setMinHeight(700);
-            stage.setMinWidth(1000);
-            stage.show();
-            closeThisWindow();
-        }
-        catch (IOException e){
-            showError(loginErrorLabel, "Cannot open the window: " + e.getMessage());
-        }
-    }
-
-    private void closeThisWindow() {
-        ((Stage) loginUsernameField.getScene().getWindow()).close();
-    }
 
     private void showError(Label label, String message){
         label.setText(message);
@@ -190,7 +171,6 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
     }
 
     private void showSuccess(Label label, String message){
-
         label.setText(message);
         label.setStyle("-fx-test-fill: green;");
         label.setVisible(true);

@@ -1,9 +1,11 @@
 package hr.algebra.services;
 
+import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Use;
 import hr.algebra.repositories.UseRepository;
 import hr.algebra.repositories.implementation.UseRepositoryImpl;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
@@ -19,26 +21,67 @@ public class UseService {
         this.repo= UseRepositoryImpl.getInstance();
     }
 
-    public List<Use> getAllUses(){return repo.getAll();}
-    public Optional<Use> getUseById(int id){return repo.getById(id);}
-    public void save(Use use){repo.save(use);}
-    public void delete(int id){repo.delete(id);}
+    public List<Use> getAllUses(){
+        try{
+            return repo.getAll();
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot execute to get uses");
+        }
+    }
+    public Optional<Use> getUseById(int id){
+        try{
+            return repo.getById(id);
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot execute to get use");
+        }
+    }
+    public void save(Use use){
+        try{
+            repo.save(use);
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot execute to save use");
+        }
+    }
+    public void delete(int id){
+        try{
+            repo.delete(id);
+
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot execute to delete use");
+        }
+    }
 
     public List<Use>search(String query){
         if(query==null ||query.trim().isEmpty())return getAllUses();
 
         Predicate<Use> nameMatches=u->u.getName().contains(query.toLowerCase());
 
-        return repo.getAll()
-                .stream()
-                .filter(nameMatches)
-                .sorted()
-                .collect(Collectors.toList());
+        try{
+            return repo.getAll()
+                    .stream()
+                    .filter(nameMatches)
+                    .sorted()
+                    .toList();
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot get uses");
+        }
+
     }
 
     public boolean nameExists(String name){
-        return repo.getAll()
-                .stream()
-                .anyMatch(u->u.getName().equals(name));
+        try{
+            return repo.getAll()
+                    .stream()
+                    .anyMatch(u->u.getName().equals(name));
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot get uses");
+        }
+
     }
 }

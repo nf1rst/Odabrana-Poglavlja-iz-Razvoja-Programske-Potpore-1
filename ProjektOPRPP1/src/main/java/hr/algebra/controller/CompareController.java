@@ -3,6 +3,7 @@ import hr.algebra.models.Headphones;
 import hr.algebra.models.Technology;
 import hr.algebra.models.Use;
 import hr.algebra.services.HeadphonesService;
+import hr.algebra.util.AlertUtil;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -22,11 +23,15 @@ public class CompareController extends BaseController {
 
     @FXML private ListView<Headphones>headphonesListView;
 
+    @FXML private NavigationController  navigationController;
+
     @FXML private Label viewHeadphoneName1;
     @FXML private Label viewHeadphoneName2;
 
     @FXML private ImageView headphones1ImageView;
     @FXML private ImageView headphones2ImageView;
+
+    @FXML private Label currentUserLabel;
 
     @FXML private Label nameLabel1;
     @FXML private Label nameLabel2;
@@ -66,6 +71,8 @@ public class CompareController extends BaseController {
         initListView();
         setUpDragSource();
         setupDropZones(); //kad dode dovoljno blizu da krene zeleno
+
+        fillUserLabel(currentUserLabel);
     }
 
     @FXML
@@ -98,7 +105,7 @@ public class CompareController extends BaseController {
     @FXML
     public void onCompare(){
         if(headphonesForComparing1==null || headphonesForComparing2==null){
-            showAlert(Alert.AlertType.ERROR, "Cannot compare","Both headphones must be chosen to start comparison");
+            AlertUtil.showErrorAlert("Both headphones must be chosen to start comparison");
             return;
         }
 
@@ -213,7 +220,7 @@ public class CompareController extends BaseController {
             }
         }
         catch (Exception _){
-            showAlert(Alert.AlertType.ERROR, "Picture error", "Cannot load any images");
+            AlertUtil.showErrorAlert("Cannot load any images");
         }
     }
 

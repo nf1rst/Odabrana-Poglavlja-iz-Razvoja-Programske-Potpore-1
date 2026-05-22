@@ -1,10 +1,14 @@
 package hr.algebra.services;
+import ch.qos.logback.core.pattern.color.BoldCyanCompositeConverter;
+import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.exceptions.EntityExistantException;
 import hr.algebra.models.Role;
 import hr.algebra.models.User;
 import hr.algebra.repositories.UserRepository;
 import hr.algebra.repositories.implementation.UserRepositoryImpl;
 import org.mindrot.jbcrypt.BCrypt;
+
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,7 +28,13 @@ public class UserService {
         //https://davidbertoldi.medium.com/hashing-passwords-in-java-757e787ce71c
         //https://medium.com/@singhalabhay19/understanding-bcrypt-in-java-a-deep-dive-into-password-hashing-1b4362ccae94
 
-        Optional<User> user = repo.getByUsername(username);
+        Optional<User> user=Optional.empty();
+        try{
+            user = repo.getByUsername(username);
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot execute to find user by username");
+        }
 
         if(user.isEmpty()){
             throw new EntityExistantException("User does not exist");
@@ -52,14 +62,36 @@ public class UserService {
     }
 
 
+    public void registerAdmin(String username, String password){
+        try{
+            String passwordHash = hashPassword(password);
+            User admin = new User(username,passwordHash, Role.ADMIN);
+            repo.save(admin);
+        }
+        catch (SQLException e){
+            // ne treba se bacat korisniku dalje da vidi nego samo logirat da se nije ubacio
+            //TODO: log
+        }
+    }
 
     public void register(String username,String password){
-        if(repo.usernameExists(username))throw new EntityExistantException("Username already in use");
+        try{
+            if(repo.usernameExists(username))throw new EntityExistantException("Username already in use");
+        }
+        catch (SQLException _){ // provjera jel se procedura opce moze izvrsit
+            throw new  CannotPerformActionException("Cannot execute to register user");
+        }
         //ovdje ne treba provjera inputa jer je to napravljeno u kontrolleru
 
         String hashedPassword = hashPassword(password);
         User newUser = new User(username,hashedPassword,Role.USER);
-        repo.save(newUser);
+
+        try{
+            repo.save(newUser);
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot execute to save user");
+        }
     }
 
     private String hashPassword(String password) {
@@ -69,18 +101,54 @@ public class UserService {
     }
 
     public List<User> getAllUsers(){
-        return repo.getAll();
+        try{
+            return repo.getAll();
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot execute to get users");
+        }
     }
 
-    public void deleteUser(int id){repo.delete(id);}
+    public List<User> search(String query){
+        try{
+            if(query==null || query.isEmpty()){return repo.getAll();}
+            return repo.getAll()
+                    .stream()
+                    .filter(s->s.getUsername().contains(query))
+                    .toList();
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot execute to get users");
+        }
+
+    }
+
+    public void deleteUser(int id){
+        try{
+            repo.delete(id);
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot execute to delete user");
+        }
+    }
 
     public void updateImagePath(User user, String imagePath){
-        user.setImagePath(imagePath);
-        repo.save(user);
+        try{
+            user.setImagePath(imagePath);
+            repo.save(user);
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot execute to update image for user");
+        }
     }
 
     public void updateUser(User user){
-        repo.save(user);
+        try{
+            repo.save(user);
+        }
+        catch (SQLException _){
+            throw new CannotPerformActionException("Cannot execute to update user");
+        }
     }
 
 }

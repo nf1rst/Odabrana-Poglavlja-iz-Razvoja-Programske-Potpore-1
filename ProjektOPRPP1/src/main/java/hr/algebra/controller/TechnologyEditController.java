@@ -1,7 +1,9 @@
 package hr.algebra.controller;
 
+import hr.algebra.models.Session;
 import hr.algebra.models.Technology;
 import hr.algebra.services.TechnologyService;
+import hr.algebra.util.AlertUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
@@ -62,8 +64,8 @@ public class TechnologyEditController extends BaseController{
 
     @FXML
     public void onSave(){
-        if(currentUser==null){
-            showAlert(Alert.AlertType.ERROR, "Error", "One must be logged in to edit");
+        if(!Session.userCanEdit()){
+            AlertUtil.showErrorAlert("One must be logged in to edit");
             return;
         }
         
@@ -76,29 +78,28 @@ public class TechnologyEditController extends BaseController{
             updateExistingTechnology();
         }
 
-        showAlert(Alert.AlertType.INFORMATION, "Success", "Technology has been successfully saved");
+        AlertUtil.showInformationAlert( "Technology has been successfully saved");
     }
 
     private void updateExistingTechnology() {
         selectedTechnology.setName(nameField.getText());
         selectedTechnology.setDescription(descField.getText());
         technologyService.save(selectedTechnology);
-        log("UPDATE", "Technology", nameField.getText());
+        logger.info("UPDATE", "Technology", nameField.getText());
         statusLabel.setText("Technology succesfully updated");
         statusLabel.setTextFill(Color.GREEN);
     }
 
     private void insertTechnology() {
         technologyService.save(new Technology(nameField.getText(), descField.getText()));
-        log("INSERT", "Technology", nameField.getText());
-        statusLabel.setText("Technology succesfully inserted");
+        logger.info("INSERT", "Technology", nameField.getText());
+        statusLabel.setText("Technology successfully inserted");
         statusLabel.setTextFill(Color.GREEN);
     }
 
     private void validateUserInput() {
         if(nameField.getText().isEmpty()){
-            showAlert(Alert.AlertType.WARNING, "Warning", "Name must not be empty");
-            return;
+            AlertUtil.showErrorAlert( "Name must not be empty");
         }
     }
 
