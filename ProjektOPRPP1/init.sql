@@ -517,12 +517,14 @@ go
 create or alter proc GetNumberOfEntries
 as
 begin
-	select COUNT(*) from Headphones
-	select COUNT(*) from Brand
-	select COUNT(*) from Technology
-	select COUNT(*) from UsePurpose
-	select COUNT(*) from Type
-	select COUNT(*) from Users
+-- da ih sve vrati kao 1 select za map metodu u repo 
+select
+	(select COUNT(*) from Headphones) as headphonesNum,
+	(select COUNT(*) from Brand) as brandNum,
+	(select COUNT(*) from Technology) as techNum,
+	(select COUNT(*) from UsePurpose) useNum,
+	(select COUNT(*) from Type) as typeNum,
+	(select COUNT(*) from Users) as usersNum
 end
 
 go
@@ -543,4 +545,28 @@ create or alter proc DropDatabase
 as
 begin
 	drop database HeadphonesDB
+end
+
+go
+create table AdminActivities(
+allowUsersToEdit bit not null
+)
+insert into AdminActivities([allowUsersToEdit])values(0)
+
+go
+create or alter proc SetUserEditRights
+@value bit
+as
+begin
+	update AdminActivities
+		set 
+		allowUsersToEdit=@value
+end
+
+go
+create or alter proc GetUserEditRights
+as
+begin
+	select allowUsersToEdit
+	from AdminActivities
 end

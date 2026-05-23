@@ -35,7 +35,6 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
         return registerConfirmField; //da se moze vracat za zatvaranje prozoera
     }
 
-
     @FXML //javaFX poziva automatski nakon ucitavanja FXML
     public void initialize(){
         loginErrorLabel.setVisible(false);
@@ -91,7 +90,7 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
 
     private void handleUserRedirection(User user) {
         if(user.getRole()== Role.ADMIN){
-            SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/admin-view.fxml", "Admin Panel", getMainNode(),600,500);
+            SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/admin-view.fxml", "Admin Panel", getMainNode(),700,500);
 
         }
         else if(user.getRole()==Role.USER){

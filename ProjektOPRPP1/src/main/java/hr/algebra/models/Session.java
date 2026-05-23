@@ -6,7 +6,15 @@ public class Session {
 
     private static User currentUser;
 
-    private static boolean adminAllowedEdit=true;
+    private static boolean adminAllowedEdit;
+
+    public static void setAdminAllowedEdit(boolean adminAllowedEdit) {
+        Session.adminAllowedEdit = adminAllowedEdit;
+    }
+
+    public static boolean getUserRights() {
+        return adminAllowedEdit;
+    }
 
     public  static User getCurrentUser() {
         return currentUser;
@@ -18,13 +26,11 @@ public class Session {
 
     public static boolean userCanEdit(){
         //admin uvijek moze
-        if(!userLoggedIn() || adminAllowedEdit==false)return false; // i ako admin kaze da moze
-        return true;
+        return userLoggedIn() && adminAllowedEdit;
     }
 
     public static boolean userLoggedIn(){
-        if(currentUser==null)return false;
-        return true;
+        return currentUser != null;
     }
 
 

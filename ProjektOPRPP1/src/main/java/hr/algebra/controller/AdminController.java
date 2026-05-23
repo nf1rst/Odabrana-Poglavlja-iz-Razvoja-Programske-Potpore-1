@@ -1,5 +1,7 @@
 package hr.algebra.controller;
 import hr.algebra.exceptions.CannotPerformActionException;
+import hr.algebra.models.DBStatistics;
+import hr.algebra.models.Session;
 import hr.algebra.models.User;
 import hr.algebra.services.AdminService;
 import hr.algebra.services.UserService;
@@ -11,11 +13,13 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 
+import java.util.Optional;
+
 public class AdminController extends BaseController{
 
     @FXML private Label adminLabel;
     @FXML private TextField searchField;
-    @FXML private ChoiceBox<String>editRightsChoiceBox;
+    @FXML private CheckBox editRightsCheckBox;
 
     @FXML private TableView<User> userTableView;
     @FXML private TableColumn<User, Number>colID;
@@ -37,6 +41,7 @@ public class AdminController extends BaseController{
     @FXML
     public void initialize(){
         setUpColumns();
+        setUpChoiceBox();
 
         searchField.textProperty().addListener((obs, old, val)->{
             if(!val.isBlank()){
@@ -63,19 +68,27 @@ public class AdminController extends BaseController{
                 .addListener((obs, old, val)->{
                     if(val!=null){
                         selectedUser=val;
-                        System.out.println(selectedUser.getUsername());
                     }
                 });
         fillUserTable();
     }
 
-    private void refresh() {
+    private void setUpChoiceBox() {
+        boolean currentUserRights = adminService.getUserEditRights();
+        Session.setAdminAllowedEdit(currentUserRights);
+        editRightsCheckBox.setSelected(currentUserRights);
+        editRightsCheckBox.selectedProperty().addListener((obs, old, newValue)->{ // ne na text property jer se onda ne prati sto admin tipka po checkboxu
+            Session.setAdminAllowedEdit(newValue);
+            handleUserRights(newValue);
+        });
+    }
+
+    private void handleUserRights(Boolean newValue) {
         try{
-            userTableView.setItems(FXCollections.observableArrayList(userService.getAllUsers()));
+            adminService.saveUserEditRights(newValue);
         }
-        catch (CannotPerformActionException e){
-            logger.error("CannotPerformActionException", e);
-            AlertUtil.showErrorAlert("Cannot perform this action at the moment");
+        catch (CannotPerformActionException _){
+            //ignore - interna evidancija je napravljena u servis sloju
         }
     }
 
@@ -113,10 +126,25 @@ public class AdminController extends BaseController{
     @FXML
     public void onSeeDBStats(){
         try{
-            System.out.println("under construction");
+            Optional<DBStatistics>stats= adminService.getDBStats();
+
+            if(stats.isPresent()){
+                showStats(stats);
+            }
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot execute see database stats");
+        }
+    }
+
+    private void showStats(Optional<DBStatistics> stats) {
+        if(stats.isPresent()){
+            headphonesCount.setText(stats.get().getHeadphonesEntriesNum() + "");
+            brandsCount.setText(stats.get().getBrandEntriesNum() + "");
+            techCount.setText(stats.get().getTechEntriesNum() + "");
+            typesCount.setText(stats.get().getTypeEntriesNum() + "");
+            usersCount.setText(stats.get().getUsersEntriesNum() + "");
+            usesCount.setText(stats.get().getUseEntriesNum() + "");
         }
     }
 
@@ -134,9 +162,12 @@ public class AdminController extends BaseController{
     @FXML
     public void onRestartDB(){
         try{
-            adminService.deleteDatabase();
+            if(!AlertUtil.showConfirmationAlert("Are you sure you want to restart the database?")){
+                return;
+            }
+
         }
-        catch (CannotPerformActionException _s){
+        catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot drop database");
         }
     }
@@ -148,6 +179,10 @@ public class AdminController extends BaseController{
                 AlertUtil.showErrorAlert("No user was selected for deletion");
                 return;
             }
+            if(!AlertUtil.showConfirmationAlert("Aou you sure you want to delete user?")){
+                return;
+            }
+
             adminService.deleteUser(currentUser.getUsername());
         }
         catch (CannotPerformActionException _){
@@ -158,13 +193,13 @@ public class AdminController extends BaseController{
     @FXML
     public void onDeleteAllUsers(){
         try{
+            AlertUtil.showConfirmationAlert("Are you sure you want to delete all users");
             adminService.deleteAllUsers();
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete all users");
         }
     }
-
 
     @Override
     protected Node getMainNode() {

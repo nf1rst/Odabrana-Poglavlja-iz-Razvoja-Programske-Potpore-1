@@ -23,8 +23,16 @@ public abstract class BaseController {
         return currentUser.getUsername()!=null? currentUser.getUsername():"N/A";
     }
 
-    //https://stackoverflow.com/questions/41233886/display-a-confirmation-dialogue-when-the-user-try-to-exit-the-application-press
+    protected boolean userChangedData(){
+        boolean changed = false; // da se uvijek resetira
+        overrideChange();
+        return changed;
+    }
 
+    protected void overrideChange() {
+        //ova se metoda overridea u edit controllerima tako da se moze prenijet informacije o tome jel korisnik kliknuo save da se u obicnom kontroleru moze refrashat tablica
+        //i odmah prikazat rezultat
+    }
 
     protected void fillUserLabel(Label label) {
         if(!Session.userLoggedIn()) label.setText("Anonymous");

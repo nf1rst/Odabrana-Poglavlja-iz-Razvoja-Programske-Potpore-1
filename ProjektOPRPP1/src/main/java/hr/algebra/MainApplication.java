@@ -1,21 +1,9 @@
 package hr.algebra;
-import hr.algebra.database.DBConnector;
 import hr.algebra.database.DBSingleton;
-import hr.algebra.exceptions.CannotPerformActionException;
-import hr.algebra.exceptions.EntityExistantException;
-import hr.algebra.models.Role;
-import hr.algebra.models.User;
 import hr.algebra.services.UserService;
 import hr.algebra.util.SceneLoadingUtil;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 
 public class MainApplication extends Application {
@@ -29,7 +17,6 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-
         SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/login-view.fxml","Headphones - login",null, 400,500);
         insertAdmin();
     }
@@ -39,8 +26,6 @@ public class MainApplication extends Application {
 
         userService.registerAdmin("admin", "asdfasdf");
         //ovaj ne treba u try catch jer se greska hvata u userService
-
-
     }
 
     @Override

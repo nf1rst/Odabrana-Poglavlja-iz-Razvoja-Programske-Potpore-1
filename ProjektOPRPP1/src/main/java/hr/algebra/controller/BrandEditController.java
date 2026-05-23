@@ -4,6 +4,7 @@ import hr.algebra.models.Brand;
 import hr.algebra.models.Session;
 import hr.algebra.services.BrandService;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.LoggingUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
@@ -39,7 +40,6 @@ public class BrandEditController extends BaseController
                 suggestions.hide();
                 return;
             }
-
             showSuggestions(val);
         });
     }
@@ -81,12 +81,17 @@ public class BrandEditController extends BaseController
 
     @FXML
     public void onSave(){
+        System.out.println(Session.userCanEdit());
         if(!Session.userCanEdit()){
-            AlertUtil.showErrorAlert("To edit brands you must be logged in");
+            AlertUtil.showErrorAlert("Admin does not allow editing at the moment ");
             return;
         }
 
-        validateUserInput();
+
+        if(!validateUserInput()){
+            AlertUtil.showErrorAlert("Name must not be left blank");
+            return;
+        }
 
         if(!brandService.nameExists(nameField.getText())){
             insertNewBrand();
@@ -102,7 +107,7 @@ public class BrandEditController extends BaseController
 
         try{
             brandService.save(selectedBrand);
-            logger.info( "UPDATE", "Brand", nameField.getText());
+            LoggingUtil.logInfo("DELETE", "Brand", selectedBrand.getName(), Session.getCurrentUser().getUsername());
             statusLabel.setText("Brand successfully updated");
             statusLabel.setTextFill(Color.GREEN);
         }
@@ -115,7 +120,7 @@ public class BrandEditController extends BaseController
     private void insertNewBrand() {
         try{
             brandService.save(new Brand(nameField.getText(), descField.getText()));
-            logger.info("INSERT", "Brand", nameField.getText());
+            LoggingUtil.logInfo("INSERT", "Brand", nameField.getText(), Session.getCurrentUser().getUsername());
             statusLabel.setText("Brand successfully inserted");
             statusLabel.setTextFill(Color.GREEN);
         }
@@ -124,10 +129,8 @@ public class BrandEditController extends BaseController
         }
     }
 
-    private void validateUserInput() {
-        if(nameField.getText().isEmpty()){
-            AlertUtil.showErrorAlert("Name cannot be empty");
-        }
+    private boolean validateUserInput() {
+        return !nameField.getText().isEmpty();
     }
 
 }

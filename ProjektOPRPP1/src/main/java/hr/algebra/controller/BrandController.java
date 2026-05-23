@@ -6,6 +6,7 @@ import hr.algebra.models.Session;
 import hr.algebra.models.User;
 import hr.algebra.services.BrandService;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.LoggingUtil;
 import hr.algebra.util.SceneLoadingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -14,6 +15,8 @@ import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+
+import java.sql.SQLException;
 
 
 public class BrandController extends BaseController {
@@ -45,8 +48,6 @@ public class BrandController extends BaseController {
         colDesc.setCellValueFactory(
                 d->new SimpleStringProperty(d.getValue().getDescription()));
 
-        //refresh();
-
         brandTable.getSelectionModel().selectedItemProperty()
                 .addListener((obs,old,val)->{
             if(val!=null){
@@ -57,12 +58,26 @@ public class BrandController extends BaseController {
         });
 
         searchField.textProperty().addListener((obs,old,q)->{
-            brandTable.setItems(FXCollections.observableArrayList(brandService.search(q)));
+            try{
+                brandTable.setItems(FXCollections.observableArrayList(brandService.search(q)));
+            }
+            catch (CannotPerformActionException e){
+                AlertUtil.showErrorAlert(e.getMessage());
+            }
         });
 
         fillUserLabel(currentUserLabel);
+        fillBrandTable();
     }
 
+    private void fillBrandTable() {
+        try{
+            brandTable.setItems(FXCollections.observableArrayList(brandService.getAllBrands()));
+        }
+        catch (CannotPerformActionException e){
+            AlertUtil.showErrorAlert(e.getMessage());
+        }
+    }
 
 
     @FXML
@@ -74,7 +89,7 @@ public class BrandController extends BaseController {
 
     @FXML
     public void onOpenSave(){
-        if(!Session.userCanEdit()){
+        if(!Session.userLoggedIn()){
             AlertUtil.showErrorAlert("One must be loggedd in to edit");
             return;
         }
@@ -83,8 +98,8 @@ public class BrandController extends BaseController {
 
     @FXML
     public void onDelete(){
-        if(!Session.userLoggedIn()){
-            AlertUtil.showErrorAlert("To edit brands you must be logged in");
+        if(!Session.userCanEdit()){
+            AlertUtil.showErrorAlert("To delete brands you must be logged in and admin must allow edits");
             return;
         }
 
@@ -99,18 +114,12 @@ public class BrandController extends BaseController {
 
         try{
             brandService.delete(selectedBrand.getId());
-            logger.error("DELETE", "Brand", selectedBrand.getName());
+            LoggingUtil.logInfo("DELETE", "Brand", selectedBrand.getName(), Session.getCurrentUser().getUsername());
         }
         catch (CannotPerformActionException e){
             AlertUtil.showErrorAlert(e.getMessage());
         }
         onNew();
-        refresh();
-    }
-
-
-    private void refresh() {
-        brandTable.setItems(FXCollections.observableArrayList(brandService.getAllBrands()));
     }
 
 

@@ -1,18 +1,12 @@
 package hr.algebra.services;
-
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Brand;
 import hr.algebra.repositories.BrandRepository;
 import hr.algebra.repositories.implementation.BrandRepositoryImpl;
-
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
-import java.util.function.Consumer;
-import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class BrandService {
     private static final BrandService INSTANCE=new BrandService();
@@ -72,7 +66,7 @@ public class BrandService {
                     .toList();
         }
         catch (SQLException _){
-            throw new CannotPerformActionException("Cannot execute to get brands");
+            throw new CannotPerformActionException("Cannot filter brands at the moment");
         }
 
     }
