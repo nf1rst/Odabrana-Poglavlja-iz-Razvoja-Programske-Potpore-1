@@ -6,7 +6,7 @@ public class Session {
 
     private static User currentUser;
 
-    private static boolean adminAllowedEdit;
+    private static boolean adminAllowedEdit=true;
 
     public static void setAdminAllowedEdit(boolean adminAllowedEdit) {
         Session.adminAllowedEdit = adminAllowedEdit;

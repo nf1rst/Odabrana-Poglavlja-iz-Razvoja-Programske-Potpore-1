@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="800.0" prefWidth="800.0" style="-fx-padding: 10;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.HeadphonesController">
+<BorderPane prefHeight="700.0" prefWidth="1000.0" style="-fx-padding: 10;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.HeadphonesController">
     <right>
         <ScrollPane fitToWidth="true" prefHeight="745.0" prefWidth="243.0" style="-fx-padding: 0 0 0 10;">
             <VBox alignment="CENTER" prefHeight="705.0" prefWidth="270.0" spacing="8" style="-fx-padding: 5;">
@@ -60,13 +60,13 @@
    <center>
       <VBox prefHeight="730.0" prefWidth="524.0" BorderPane.alignment="CENTER">
          <children>
-             <HBox alignment="CENTER" spacing="10">
+             <HBox spacing="10">
                  <TextField fx:id="searchField" prefHeight="25.0" prefWidth="175.0" promptText="search by name" />
                  <ComboBox fx:id="filterBrandCombo" prefHeight="25.0" prefWidth="117.0" promptText="Filter by brand" />
                  <ComboBox fx:id="filterTypeCombo" prefHeight="25.0" prefWidth="109.0" promptText="Filter by type" />
                  <Button onAction="#onShowAll" text="Show all" />
              </HBox>
-            <TableView fx:id="headphonesTable" prefHeight="742.0" prefWidth="537.0">
+            <TableView fx:id="headphonesTable" prefHeight="652.0" prefWidth="737.0">
               <columns>
                 <TableColumn fx:id="colName" prefWidth="75.0" text="Name" />
                 <TableColumn fx:id="colBrand" prefWidth="75.0" text="Brand" />

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.TypeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.TypeController">
    <right>
       <VBox alignment="CENTER" prefHeight="379.0" prefWidth="193.0" spacing="8.0" BorderPane.alignment="CENTER">
          <children>
@@ -36,7 +36,7 @@
    <center>
        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
            <TextField fx:id="searchField" promptText="search..." />
-           <TableView fx:id="typeTable" prefHeight="393.0" prefWidth="407.0">
+           <TableView fx:id="typeTable" prefHeight="655.0" prefWidth="807.0">
                <columns>
                    <TableColumn fx:id="colID" prefWidth="75.0" text="ID" />
                    <TableColumn fx:id="colName" prefWidth="75.0" text="Name" />

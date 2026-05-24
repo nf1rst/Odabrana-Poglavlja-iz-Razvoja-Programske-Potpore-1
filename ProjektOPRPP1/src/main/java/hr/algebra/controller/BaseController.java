@@ -3,12 +3,11 @@ import hr.algebra.models.Session;
 import hr.algebra.models.User;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public abstract class BaseController {
-
-    protected static final Logger logger = LoggerFactory.getLogger(BaseController.class);
 
     protected User currentUser = Session.getCurrentUser();
 
@@ -19,20 +18,12 @@ public abstract class BaseController {
 
     protected abstract Node getMainNode(); // svaka podklasa mora dat bilo koji node iz forme da se moze dohvatit window i zatvorit prozor
 
-    protected String checkUsernameForLogging() {// ako korisnik nije ulogiran da ne pukne
-        return currentUser.getUsername()!=null? currentUser.getUsername():"N/A";
+
+    protected void fillStatusLabel(Label label, String message, Color color) {
+        label.setText(message);
+        label.setTextFill(color);
     }
 
-    protected boolean userChangedData(){
-        boolean changed = false; // da se uvijek resetira
-        overrideChange();
-        return changed;
-    }
-
-    protected void overrideChange() {
-        //ova se metoda overridea u edit controllerima tako da se moze prenijet informacije o tome jel korisnik kliknuo save da se u obicnom kontroleru moze refrashat tablica
-        //i odmah prikazat rezultat
-    }
 
     protected void fillUserLabel(Label label) {
         if(!Session.userLoggedIn()) label.setText("Anonymous");

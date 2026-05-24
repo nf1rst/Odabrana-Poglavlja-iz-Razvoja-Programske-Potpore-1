@@ -13,10 +13,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.CompareController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.CompareController">
 
    <top>
-      <fx:include source="top-navigation-view.fxml" fx:id="navigation"/>
+      <fx:include fx:id="navigation" source="top-navigation-view.fxml" />
    </top>
 
    <left>
@@ -263,7 +263,10 @@
                   <Label fx:id="currentUserLabel" />
                </children>
             </HBox>
-            <Button fx:id="onClear" mnemonicParsing="false" prefHeight="45.0" prefWidth="640.0" text="Clear" />
+            <Button fx:id="onClear" mnemonicParsing="false" prefHeight="45.0" prefWidth="640.0" text="Clear">
+               <HBox.margin>
+                  <Insets bottom="15.0" />
+               </HBox.margin></Button>
          </children>
       </HBox>
    </bottom>

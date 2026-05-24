@@ -25,9 +25,9 @@ public enum AdminService {
         }
     }
 
-    public void deleteDatabase() {
+    public void dropAllTables() {
         try {
-            repo.deleteDatababase();
+            repo.dropAllTables();
         } catch (SQLException e) {
             logger.error("ERROR", e);
             throw new CannotPerformActionException("Cannot execute to delete database");

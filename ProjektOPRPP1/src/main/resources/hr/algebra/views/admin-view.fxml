@@ -68,7 +68,7 @@
                                  <children>
                                     <Button mnemonicParsing="false" onAction="#onSeeDBStats" text="See Database Stats" />
                                     <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onDeleteAllEntities" text="DELETE ALL ENTITIES" />
-                                    <Button layoutX="127.0" layoutY="10.0" mnemonicParsing="false" onAction="#onRestartDB" text="Drop Database" />
+                                    <Button layoutX="127.0" layoutY="10.0" mnemonicParsing="false" onAction="#onDropTables" text="Drop Tables" />
                                  </children>
                                  <BorderPane.margin>
                                     <Insets top="15.0" />

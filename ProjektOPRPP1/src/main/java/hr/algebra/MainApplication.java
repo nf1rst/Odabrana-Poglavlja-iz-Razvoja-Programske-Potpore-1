@@ -9,8 +9,6 @@ import javafx.stage.Stage;
 public class MainApplication extends Application {
     public static void main(String[] args)  {
 
-        //ISPRAVI SVE THROW NEW RUNTIMEEXCEPTIONS U NESTO KORISNO!!
-
         launch(args);
 
     }

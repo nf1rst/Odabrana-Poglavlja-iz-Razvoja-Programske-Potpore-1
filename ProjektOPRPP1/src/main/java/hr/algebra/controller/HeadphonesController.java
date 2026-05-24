@@ -2,6 +2,7 @@ package hr.algebra.controller;
 import hr.algebra.models.*;
 import hr.algebra.services.*;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.LoggingUtil;
 import hr.algebra.util.SceneLoadingUtil;
 import hr.algebra.xml.export.HeadphonesCatalog;
 import jakarta.xml.bind.JAXBContext;
@@ -206,11 +207,11 @@ public class HeadphonesController extends BaseController {
 
     @FXML
     public void onEdit(){
-        if(!Session.userCanEdit()){
+        if(!Session.userLoggedIn()){
             AlertUtil.showErrorAlert("One must be logged in to edit");
             return;
         }
-        SceneLoadingUtil.loadPopUpWindow("/hr/algebra/views/insert-update-headphones-view.fxml", "Insert and Update Headphone");
+        SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/insert-update-headphones-view.fxml", "Insert and Update Headphone", null, 600,600);
     }
 
     @FXML
@@ -228,12 +229,12 @@ public class HeadphonesController extends BaseController {
 
         deleteImageFile(selectedImagePath);
         headphonesService.delete(selectedHeadphnes.getId());
-        logger.info(checkUsernameForLogging(), "DELETE", "Headphones", selectedHeadphnes.getName());
+        LoggingUtil.logInfo( "DELETE", "Headphones", selectedHeadphnes.getName(),Session.getCurrentUser().getUsername());
+
+        selectedHeadphnes=null;
 
         refresh();
     }
-
-
 
     @FXML
     public void onShowAll() {
@@ -272,13 +273,13 @@ public class HeadphonesController extends BaseController {
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
             marshaller.marshal(catalog, file);
 
-            logger.info(checkUsernameForLogging(), "EXPORT", "Headphones", file.getName());
+            LoggingUtil.logInfo( "EXPORT", "Headphones", file.getName(),Session.getCurrentUser().getUsername());
 
             AlertUtil.showInformationAlert("Catalogue has been successfully exported to "+ file.getName());
         }
-        catch (JAXBException _) {
+        catch (JAXBException e) {
             AlertUtil.showErrorAlert("Cannot export to xml");
-            logger.error("Cannot export to xml");
+            LoggingUtil.logError("XML export error", e);
         }
      }
 

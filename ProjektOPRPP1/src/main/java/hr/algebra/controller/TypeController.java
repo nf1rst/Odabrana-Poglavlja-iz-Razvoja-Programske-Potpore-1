@@ -3,6 +3,7 @@ import hr.algebra.models.Session;
 import hr.algebra.models.Type;
 import hr.algebra.services.TypeService;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.LoggingUtil;
 import hr.algebra.util.SceneLoadingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -12,8 +13,6 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 
 public class TypeController extends BaseController{
-
-    @FXML private NavigationController  navigationController;
 
     private final TypeService typeService=TypeService.getInstance();
     private Type selectedType;
@@ -56,12 +55,13 @@ public class TypeController extends BaseController{
     public void onClear(){
         nameLabel.setText("Name*");
         typeTable.getSelectionModel().clearSelection();
+        selectedType=null;
     }
 
 
     @FXML
     public void onEdit(){
-        if(!Session.userCanEdit()){
+        if(!Session.userLoggedIn()){
             AlertUtil.showErrorAlert("One must be loggedin to edit");
             return;
         }
@@ -84,8 +84,9 @@ public class TypeController extends BaseController{
         }
 
         typeService.delete(selectedType.getId());
-        logger.info( "DELETE", "Type", selectedType.getName());
+        LoggingUtil.logInfo( "DELETE", "Type", selectedType.getName(), Session.getCurrentUser().getUsername());
         AlertUtil.showErrorAlert("Type successfully deleted");
+        selectedType=null;
         onClear();
         refresh();
     }

@@ -5,6 +5,7 @@ import hr.algebra.models.Role;
 import hr.algebra.models.Session;
 import hr.algebra.models.User;
 import hr.algebra.services.UserService;
+import hr.algebra.util.LoggingUtil;
 import hr.algebra.util.SceneLoadingUtil;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -78,6 +79,8 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
         User currentUser = result.get();
         Session.setCurrentUser(currentUser);
         handleUserRedirection(currentUser);
+
+        LoggingUtil.logInfo("LOGIN", "User", Session.getCurrentUser().getUsername());
     }
 
     private boolean validateLoginUserInput(String username, String password) {
@@ -94,7 +97,6 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
 
         }
         else if(user.getRole()==Role.USER){
-            //ovo tu ce trebat bit neki main il nesto, za sad je samo eksperimentiranje
             SceneLoadingUtil.loadNewWindow("/hr/algebra/views/main-view-loggedIn.fxml", "Main Panel", getMainNode());
         }
     }
@@ -123,6 +125,7 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
             showSuccess(registerErrorLabel, e.getMessage());
         }
 
+        LoggingUtil.logInfo("LOGIN", "User", Session.getCurrentUser().getUsername());
         clearUserInput();
     }
 

@@ -1,15 +1,14 @@
 package hr.algebra.controller;
+
 import hr.algebra.models.*;
 import hr.algebra.services.*;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.LoggingUtil;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
@@ -38,7 +37,6 @@ public class HeadphonesEditController extends BaseController{
 
     @FXML private Label statusLabel;
 
-
     private final HeadphonesService headphonesService=HeadphonesService.getInstance();
     private final BrandService brandService=BrandService.getInstance();
     private final TypeService typeService=TypeService.getInstance();
@@ -61,7 +59,7 @@ public class HeadphonesEditController extends BaseController{
 
         initComboBoxes();
 
-        initListViews(); //ovo ne inicijalizira nista iz nepoznatih razlogas
+        initListViews();
     }
 
     private void initListViews() {
@@ -139,28 +137,8 @@ public class HeadphonesEditController extends BaseController{
                 .forEach(h->{
                     MenuItem item = new MenuItem(h.getName());
                     item.setOnAction(e->{
-                        nameField.setText(h.getName());
-                        yearField.setText(Integer.toString(h.getYearEdition()));
-                        priceField.setText(Double.toString(h.getPrice()));
-                        impedanceField.setText(Integer.toString(h.getImpedance()));
-                        minFreqField.setText(Integer.toString(h.getMinFrequency()));
-                        maxFreqField.setText(Integer.toString(h.getMaxFrequency()));
-                        batteryField.setText(Integer.toString(h.getBatteryLife()));
-                        brandComboBox.setValue(h.getBrand());
-                        typeComboBox.setValue(h.getType());
-                        descField.setText(h.getDescription());
-
-                        technologiesListView.getSelectionModel().clearSelection();
-                        if(h.getTechnologies()!=null){
-                            h.getTechnologies().forEach(t->technologiesListView.getSelectionModel().select(t));
-                        }
-
-                        usesListView.getSelectionModel().clearSelection();
-                        if(h.getPossibleUsages()!=null){
-                            h.getPossibleUsages().forEach(u->usesListView.getSelectionModel().select(u));
-                        }
-
                         selectedHeadphones=h;
+                        fillHeadphonesDetails(h);
                     });
                     suggestions.getItems().add(item);
                 });
@@ -172,10 +150,33 @@ public class HeadphonesEditController extends BaseController{
         }
     }
 
+    private void fillHeadphonesDetails(Headphones h) {
+        nameField.setText(h.getName());
+        yearField.setText(Integer.toString(h.getYearEdition()));
+        priceField.setText(Double.toString(h.getPrice()));
+        impedanceField.setText(Integer.toString(h.getImpedance()));
+        minFreqField.setText(Integer.toString(h.getMinFrequency()));
+        maxFreqField.setText(Integer.toString(h.getMaxFrequency()));
+        batteryField.setText(Integer.toString(h.getBatteryLife()));
+        brandComboBox.setValue(h.getBrand());
+        typeComboBox.setValue(h.getType());
+        descField.setText(h.getDescription());
+
+        technologiesListView.getSelectionModel().clearSelection();
+        if(h.getTechnologies()!=null){
+            h.getTechnologies().forEach(t->technologiesListView.getSelectionModel().select(t));
+        }
+
+        usesListView.getSelectionModel().clearSelection();
+        if(h.getPossibleUsages()!=null){
+            h.getPossibleUsages().forEach(u->usesListView.getSelectionModel().select(u));
+        }
+    }
+
     @FXML
     public void onSave(){
         if(!Session.userCanEdit()){
-            AlertUtil.showErrorAlert( "One must be logged in to edit");
+            AlertUtil.showErrorAlert( "Admin does not allow editing at the moment");
             return;
         }
 
@@ -183,23 +184,30 @@ public class HeadphonesEditController extends BaseController{
             AlertUtil.showErrorAlert("Values you've entered are not valid, please retry");
             return;
         }
-            try{
-                List<Use>userSelectedUses=usesListView.getSelectionModel().getSelectedItems();
-                List<Technology>userselectedTech=technologiesListView.getSelectionModel().getSelectedItems();
+        
+        trySaveHeadphones();
 
-                if(!headphonesService.exists(nameField.getText())){ //
-                    insertNewHeadphones(userselectedTech, userSelectedUses);
+        selectedHeadphones=null;
+    }
 
-                }
-                else{
-                    updateExistingHeadphones(userselectedTech, userSelectedUses);
-                }
+    private void trySaveHeadphones() {
+        try{
+            List<Use>userSelectedUses=usesListView.getSelectionModel().getSelectedItems();
+            List<Technology>userselectedTech=technologiesListView.getSelectionModel().getSelectedItems();
 
+            if(!headphonesService.exists(nameField.getText())){ //
+                insertNewHeadphones(userselectedTech, userSelectedUses);
+                fillStatusLabel(statusLabel,"Headphones successfully inserted", Color.GREEN);
             }
-            catch(NumberFormatException _){
-                AlertUtil.showErrorAlert( "Year, price, impedance and frequency fields must be numbers");
+            else{
+                updateExistingHeadphones(userselectedTech, userSelectedUses);
+                fillStatusLabel(statusLabel,"Headphones successfully updated", Color.BLUE);
             }
 
+        }
+        catch(NumberFormatException _){
+            AlertUtil.showErrorAlert( "Year, price, impedance and frequency fields must be numbers");
+        }
     }
 
     private void updateExistingHeadphones(List<Technology> userselectedTech, List<Use> userSelectedUses) {
@@ -219,8 +227,6 @@ public class HeadphonesEditController extends BaseController{
         // sad zbog onog scope identity ovdje se moze napravit getID da vrati pravi ID koji mu je baza generirala
 
         updateManyToMany(selectedHeadphones, userselectedTech, userSelectedUses); // posebne tablice u bazi pa se mora rucno
-        statusLabel.setText("Headphones successfully updated");
-        statusLabel.setTextFill(Color.GREEN);
     }
 
     private void insertNewHeadphones(List<Technology> userselectedTech, List<Use> userSelectedUses) {
@@ -240,10 +246,9 @@ public class HeadphonesEditController extends BaseController{
                 userSelectedUses
         );
         headphonesService.save(headphonesForInsert);
-        logger.info("INSERT", "Headphones", headphonesForInsert.getName());
-        statusLabel.setText("Headphones successfully inserted");
-        statusLabel.setTextFill(Color.GREEN);
+        LoggingUtil.logInfo("INSERT", "Headphones", headphonesForInsert.getName(), Session.getCurrentUser().getUsername());
     }
+
 
     private void updateManyToMany(Headphones selectedHeadphones, List<Technology> userselectedTech, List<Use> userSelectedUses) {
         //ako postoje vec neke veze u bazi, trebaju se zbrisat prije nego se krene ubacivat

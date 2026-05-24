@@ -8,8 +8,9 @@ import org.slf4j.LoggerFactory;
 public class LoggingUtil {
     private static Logger logger = LoggerFactory.getLogger(LoggingUtil.class);
 
+    private LoggingUtil(){}
 
-    public static void test(String message){
+    public static void logInfo(String message){
         logger.info(message);
     }
 
@@ -21,6 +22,8 @@ public class LoggingUtil {
         logger.info(action, entity, identificator, username);
     }
 
-
+    public static void logInfo(String action, String entity, String username){
+        logger.info(action, entity, username);
+    }
 
 }

@@ -6,6 +6,7 @@ import hr.algebra.models.User;
 import hr.algebra.services.AdminService;
 import hr.algebra.services.UserService;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.LoggingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -36,7 +37,7 @@ public class AdminController extends BaseController{
     private User selectedUser;
 
     private final UserService userService = UserService.getInstance();
-    private AdminService adminService = AdminService.INSTANCE;
+    private static final AdminService adminService = AdminService.INSTANCE;
 
     @FXML
     public void initialize(){
@@ -49,7 +50,7 @@ public class AdminController extends BaseController{
                     userTableView.setItems(FXCollections.observableArrayList(userService.search(val)));
                 }
                 catch (CannotPerformActionException e){
-                    logger.error("CannotPerformActionException", e);
+                    LoggingUtil.logError("search error", e);
                     AlertUtil.showErrorAlert("Cannot perform action at this time");
                 }
             }
@@ -57,7 +58,7 @@ public class AdminController extends BaseController{
                 try{
                     userTableView.setItems(FXCollections.observableArrayList(userService.getAllUsers()));
                 }catch (CannotPerformActionException e){
-                    logger.error("CannotPerformActionException", e);
+                    LoggingUtil.logError("get all users error", e);
                     AlertUtil.showErrorAlert("Cannot perform action at this time");
                 }
             }
@@ -76,16 +77,19 @@ public class AdminController extends BaseController{
     private void setUpChoiceBox() {
         boolean currentUserRights = adminService.getUserEditRights();
         Session.setAdminAllowedEdit(currentUserRights);
-        editRightsCheckBox.setSelected(currentUserRights);
+
+        editRightsCheckBox.setSelected(currentUserRights); //UI
+
         editRightsCheckBox.selectedProperty().addListener((obs, old, newValue)->{ // ne na text property jer se onda ne prati sto admin tipka po checkboxu
-            Session.setAdminAllowedEdit(newValue);
-            handleUserRights(newValue);
+            Session.setAdminAllowedEdit(newValue); // za session provjere
+            handleUserRights(newValue); // za update baze podataka
         });
     }
 
     private void handleUserRights(Boolean newValue) {
         try{
             adminService.saveUserEditRights(newValue);
+            LoggingUtil.logInfo("UPDATE", "User rights", Session.getCurrentUser().getUsername());
         }
         catch (CannotPerformActionException _){
             //ignore - interna evidancija je napravljena u servis sloju
@@ -112,9 +116,8 @@ public class AdminController extends BaseController{
         try{
             userTableView.setItems(FXCollections.observableArrayList(userService.getAllUsers()));
         }
-        catch (CannotPerformActionException e){
+        catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot perform this action at the moment");
-            logger.error("CannotPerformActionException", e);
         }
         clear();
     }
@@ -152,20 +155,21 @@ public class AdminController extends BaseController{
     public void onDeleteAllEntities(){
         try{
             adminService.deleteAllEntities();
+            LoggingUtil.logInfo("DELETE", "Entities",  Session.getCurrentUser().getUsername());
         }
-        catch (CannotPerformActionException e){
+        catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete all database content");
             //ovdje ne treba logger jer je taj exception vec zapisan u service sloju u logove, ovo je samo da user zna sto se dogodilo
         }
     }
 
     @FXML
-    public void onRestartDB(){
+    public void onDropTables(){
         try{
-            if(!AlertUtil.showConfirmationAlert("Are you sure you want to restart the database?")){
+            if(!AlertUtil.showConfirmationAlert("Are you sure you want to delete all tables in database?")){
                 return;
             }
-
+            adminService.dropAllTables();
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot drop database");

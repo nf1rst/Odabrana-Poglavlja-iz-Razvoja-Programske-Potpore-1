@@ -2,6 +2,7 @@ package hr.algebra.controller;
 import hr.algebra.models.Session;
 import hr.algebra.services.UserService;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.LoggingUtil;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -154,7 +155,7 @@ public class UserController extends BaseController {
 
         userService.updateUser(currentUser);
 
-        logger.info(currentUser.getUsername(), "UPDATE", "User", "Account updated");
+        LoggingUtil.logInfo( "UPDATE", "User", "Account updated",currentUser.getUsername());
 
         setStatus("Changes saved successfully");
 

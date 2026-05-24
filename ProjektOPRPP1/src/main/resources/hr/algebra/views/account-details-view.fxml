@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" prefHeight="622.0" prefWidth="510.0" spacing="20" style="-fx-padding: 30; -fx-background-color: #f9f9f9;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.UserController">
+<VBox alignment="TOP_CENTER" prefHeight="700.0" prefWidth="1000.0" spacing="20" style="-fx-padding: 30; -fx-background-color: #f9f9f9;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.UserController">
 
     <fx:include source="top-navigation-view.fxml" />
 

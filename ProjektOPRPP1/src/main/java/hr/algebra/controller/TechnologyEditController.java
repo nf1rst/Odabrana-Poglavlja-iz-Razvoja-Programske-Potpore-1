@@ -4,6 +4,7 @@ import hr.algebra.models.Session;
 import hr.algebra.models.Technology;
 import hr.algebra.services.TechnologyService;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.LoggingUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
@@ -47,9 +48,8 @@ public class TechnologyEditController extends BaseController{
                 .forEach(t->{
                     MenuItem item = new MenuItem(t.getName());
                     item.setOnAction(e->{
-                        nameField.setText(t.getName());
-                        descField.setText(t.getDescription());
                         selectedTechnology=t;
+                        fillTechnologyDetails(t);
                         suggestions.hide();
                     });
                     suggestions.getItems().add(item);
@@ -62,45 +62,56 @@ public class TechnologyEditController extends BaseController{
         }
     }
 
+    private void fillTechnologyDetails(Technology t) {
+        nameField.setText(t.getName());
+        descField.setText(t.getDescription());
+    }
+
     @FXML
     public void onSave(){
         if(!Session.userCanEdit()){
-            AlertUtil.showErrorAlert("One must be logged in to edit");
+            AlertUtil.showErrorAlert("Admin does not allow editing at the moment ");
             return;
         }
         
-        validateUserInput();
-
-        if(technologyService.nameExists(nameField.getText())){ //tehnologija ne postoji onda je mora ubacit
-            insertTechnology();
+        if(!validateUserInput()){
+            return;
         }
-        else{// ako vec postoji onda se treba napravit update te tehnologije s istim IDjem
-            updateExistingTechnology();
-        }
+        
+        trySaveTechnology();
+        selectedTechnology=null;
 
-        AlertUtil.showInformationAlert( "Technology has been successfully saved");
+    }
+
+    private void trySaveTechnology() {
+            if(technologyService.nameExists(nameField.getText())){ //tehnologija ne postoji onda je mora ubacit
+                insertTechnology();
+                fillStatusLabel(statusLabel, "Technology successfully inserted", Color.GREEN);
+            }
+            else{// ako vec postoji onda se treba napravit update te tehnologije s istim IDjem
+                updateExistingTechnology();
+                fillStatusLabel(statusLabel, "Technology successfully updated", Color.BLUE);
+            }
     }
 
     private void updateExistingTechnology() {
         selectedTechnology.setName(nameField.getText());
         selectedTechnology.setDescription(descField.getText());
         technologyService.save(selectedTechnology);
-        logger.info("UPDATE", "Technology", nameField.getText());
-        statusLabel.setText("Technology succesfully updated");
-        statusLabel.setTextFill(Color.GREEN);
+        LoggingUtil.logInfo("UPDATE", "Technology", nameField.getText(), Session.getCurrentUser().getUsername());
     }
 
     private void insertTechnology() {
         technologyService.save(new Technology(nameField.getText(), descField.getText()));
-        logger.info("INSERT", "Technology", nameField.getText());
-        statusLabel.setText("Technology successfully inserted");
-        statusLabel.setTextFill(Color.GREEN);
+        LoggingUtil.logInfo("INSERT", "Technology", nameField.getText(), Session.getCurrentUser().getUsername());
     }
 
-    private void validateUserInput() {
+    private boolean validateUserInput() {
         if(nameField.getText().isEmpty()){
             AlertUtil.showErrorAlert( "Name must not be empty");
+            return false;
         }
+        return true;
     }
 
     @Override

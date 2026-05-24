@@ -3,6 +3,7 @@ import hr.algebra.models.Session;
 import hr.algebra.models.Use;
 import hr.algebra.services.UseService;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.LoggingUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
@@ -46,8 +47,8 @@ public class UseEditController extends BaseController{
                 .forEach(u->{
                     MenuItem item = new MenuItem(u.getName());
                     item.setOnAction(e->{
-                        nameField.setText(u.getName());
                         selectedUse=u;
+                        nameField.setText(u.getName());
                         suggestions.hide();
                     });
                     suggestions.getItems().add(item);
@@ -63,13 +64,20 @@ public class UseEditController extends BaseController{
     @FXML
     public void onSave(){
         if(!Session.userCanEdit()){
-            AlertUtil.showErrorAlert( "One must be logged in to edit");
+            AlertUtil.showErrorAlert( "Admin does not allow editing at the moment ");
             return;
         }
         
-        validateUserInput();
+       if(!validateUserInput()){
+           return;
+       }
 
-        if (selectedUse == null) {
+        trySaveUse();
+        selectedUse=null;
+    }
+
+    private void trySaveUse() {
+        if (!useService.nameExists(nameField.getText())) {
             insertNewUse();
         }
         else{
@@ -80,22 +88,24 @@ public class UseEditController extends BaseController{
     private void updateExistingUse() {
         selectedUse.setName(nameField.getText());
         useService.save(selectedUse);
-        logger.info("UPDATE", "Use", nameField.getText());
-        statusLabel.setText("Use successfully updated");
-        statusLabel.setTextFill(Color.GREEN);
+        LoggingUtil.logInfo("UPDATE", "Use", nameField.getText(), Session.getCurrentUser().getUsername());
+        fillStatusLabel(statusLabel,"Use successfully updated", Color.BLUE);
+
     }
+
 
     private void insertNewUse() {
         useService.save(new Use(nameField.getText()));
-        logger.info("INSERT", "Use", nameField.getText());
-        statusLabel.setText("Use successfully inserted");
-        statusLabel.setTextFill(Color.GREEN);
+        LoggingUtil.logInfo("INSERT", "Use", nameField.getText(), Session.getCurrentUser().getUsername());
+        fillStatusLabel(statusLabel,"Use successfully inserted", Color.GREEN);
     }
 
-    private void validateUserInput() {
+    private boolean validateUserInput() {
         if(nameField.getText().isEmpty()){
             AlertUtil.showErrorAlert( "Name cannot be empty");
+            return false;
         }
+        return true;
     }
 
     @Override

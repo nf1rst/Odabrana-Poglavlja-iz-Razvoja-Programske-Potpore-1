@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="991.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.HeadphonesEditController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.HeadphonesEditController">
    <top>
       <Label text="Insert or Update Headphones" BorderPane.alignment="CENTER">
          <font>
@@ -25,7 +25,7 @@
    <center>
       <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="TOP_CENTER">
          <content>
-            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="503.0" spacing="8.0">
+            <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="600.0" spacing="8.0">
                <children>
                   <Label text="Name" />
                   <TextField fx:id="nameField" />
@@ -65,8 +65,9 @@
                   <Label fx:id="statusLabel" />
                   <Button mnemonicParsing="false" onAction="#onSave" prefHeight="25.0" prefWidth="329.0" text="Save">
                      <VBox.margin>
-                        <Insets bottom="20.0" />
-                     </VBox.margin></Button>
+                        <Insets bottom="50.0" />
+                     </VBox.margin>
+                  </Button>
                </children>
                <padding>
                   <Insets left="50.0" right="50.0" />

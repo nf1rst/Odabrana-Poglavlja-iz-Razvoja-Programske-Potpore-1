@@ -3,6 +3,7 @@ import hr.algebra.models.Session;
 import hr.algebra.models.Type;
 import hr.algebra.services.TypeService;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.LoggingUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
@@ -44,8 +45,8 @@ public class TypeEditController extends BaseController{
                 .forEach(t->{
                     MenuItem item = new MenuItem(t.getName());
                     item.setOnAction(e->{
-                        nameField.setText(t.getName());
                         selectedType=t;
+                        nameField.setText(t.getName());
                         suggestions.hide();
                     });
                     suggestions.getItems().add(item);
@@ -61,41 +62,46 @@ public class TypeEditController extends BaseController{
     @FXML
     public void onSave(){
         if(!Session.userCanEdit()){
-            AlertUtil.showErrorAlert("One must be logged in to edit");
+            AlertUtil.showErrorAlert("Admin does not allow editing at the moment ");
             return;
         }
 
-        validateUserInput();
+        if(!validateUserInput()){
+         return;
+        }
 
+        trySaveType();
+    }
+
+    private void trySaveType() {
         if(!typeService.nameExists(nameField.getText())){ // trenutno ne postoji type s tim imenom pa ga dodaj
             insertNewType();
+            fillStatusLabel(statusLabel,"Type inserted successfully", Color.GREEN);
         }
         else{ //postoji type s tim imenom pa ga updateaj
             updateExistingType();
+            fillStatusLabel(statusLabel,"Type updated successfully", Color.BLUE);
         }
-
-        AlertUtil.showInformationAlert( "Type has been successfully saved");
     }
 
     private void updateExistingType() {
         selectedType.setName(nameField.getText());
         typeService.save(selectedType);
-        logger.info("UPDATE", "Type", selectedType.getName());
-        statusLabel.setText("Type succesfully updated");
-        statusLabel.setTextFill(Color.GREEN);
+        LoggingUtil.logInfo("UPDATE", "Type", selectedType.getName(), Session.getCurrentUser().getUsername());
+
     }
 
     private void insertNewType() {
         typeService.save(new Type(nameField.getText()));
-        logger.info("INSERT", "Type", nameField.getText());
-        statusLabel.setText("Type succesfully inserted");
-        statusLabel.setTextFill(Color.GREEN);
+        LoggingUtil.logInfo("INSERT", "Type", nameField.getText(), Session.getCurrentUser().getUsername());
     }
 
-    private void validateUserInput() {
+    private boolean validateUserInput() {
         if(nameField.getText().isEmpty()){
             AlertUtil.showErrorAlert( "Name cannot be empty");
+            return false;
         }
+        return true;
     }
 
     @Override

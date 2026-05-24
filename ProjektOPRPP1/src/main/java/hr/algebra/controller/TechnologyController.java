@@ -4,6 +4,7 @@ import hr.algebra.models.Session;
 import hr.algebra.models.Technology;
 import hr.algebra.services.TechnologyService;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.LoggingUtil;
 import hr.algebra.util.SceneLoadingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -66,11 +67,12 @@ public class TechnologyController extends BaseController{
         nameLabel.setText("Name*");
         descLabel.setText("Description*");
         technologiesTable.getSelectionModel().clearSelection();
+        selectedTechnology=null;
     }
 
     @FXML
     public void onEdit(){
-        if(!Session.userCanEdit()){
+        if(!Session.userLoggedIn()){
             AlertUtil.showErrorAlert("One must be loggedin to edit");
             return;
         }
@@ -83,8 +85,7 @@ public class TechnologyController extends BaseController{
             AlertUtil.showErrorAlert( "One must be logged in to edit");
             return;
         }
-        if(selectedTechnology==null || selectedTechnology.getName().isEmpty()){
-
+        if(selectedTechnology==null){
             AlertUtil.showErrorAlert("One must choose a technology to delete");
             return;
         }
@@ -94,8 +95,10 @@ public class TechnologyController extends BaseController{
         }
 
         technologyService.delete(selectedTechnology.getId());
-        logger.info( "DELETE", "Technology", selectedTechnology.getName());
 
+        LoggingUtil.logInfo( "DELETE", "Technology", selectedTechnology.getName(), Session.getCurrentUser().getUsername());
+
+        selectedTechnology=null;
         onClear();
         refresh();
     }

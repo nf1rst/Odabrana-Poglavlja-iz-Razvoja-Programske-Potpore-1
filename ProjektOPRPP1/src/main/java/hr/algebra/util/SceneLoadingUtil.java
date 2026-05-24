@@ -21,15 +21,15 @@ public class SceneLoadingUtil {
             Stage stage = new Stage();
             stage.setScene(scene);
             stage.setTitle(title);
-            stage.setWidth(1000);
-            stage.setHeight(700);
+            stage.setWidth(1020);
+            stage.setHeight(800);
             stage.show();
 
             closeThisWindow(node);
         }
         catch (IOException e){
             AlertUtil.showErrorAlert("Cannot open new window");
-            logger.error("Cannot load FXML: ", fxmlPath, e);
+            LoggingUtil.logError("FXML error ", fxmlPath, e);
         }
     }
 
@@ -42,16 +42,14 @@ public class SceneLoadingUtil {
             Stage stage = new  Stage();
             stage.setScene(scene);
             stage.setTitle(title);
-            stage.setWidth(600);
-            stage.setHeight(600);
+            stage.setWidth(400);
+            stage.setHeight(320);
             stage.show();
         }
         catch (IOException e){
             AlertUtil.showErrorAlert("Cannot load new window");
-            logger.error("Cannot load FXML: ", fxmlPath, e);
+            LoggingUtil.logError("FXML load error ", fxmlPath, e);
         }
-
-
     }
 
     public static void loadNewCustomWindow(String fmxlPath, String title, Node node, int width, int height){
@@ -70,7 +68,7 @@ public class SceneLoadingUtil {
         }
         catch (IOException e){
             AlertUtil.showErrorAlert("Cannot load new window");
-            logger.error("Cannot load FXML: ", fmxlPath, e);
+            LoggingUtil.logError("FXML load error ", fmxlPath, e);
         }
     }
 

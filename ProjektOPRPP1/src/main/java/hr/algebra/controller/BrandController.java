@@ -1,9 +1,7 @@
 package hr.algebra.controller;
-
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Brand;
 import hr.algebra.models.Session;
-import hr.algebra.models.User;
 import hr.algebra.services.BrandService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
@@ -16,14 +14,10 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
-import java.sql.SQLException;
-
 
 public class BrandController extends BaseController {
 
     @FXML private TextField searchField;
-
-    @FXML private NavigationController  navigationController;
 
     @FXML private TableView<Brand> brandTable;
     @FXML private TableColumn<Brand,Number>colId;
@@ -52,8 +46,7 @@ public class BrandController extends BaseController {
                 .addListener((obs,old,val)->{
             if(val!=null){
                 selectedBrand=val;
-                nameLabel.setText(val.getName()!=null?val.getName():"N/A");
-                descLabel.setText(val.getDescription()!=null?val.getDescription():"N/A");
+                showDetailsSelectedBrand(val);
             }
         });
 
@@ -70,6 +63,11 @@ public class BrandController extends BaseController {
         fillBrandTable();
     }
 
+    private void showDetailsSelectedBrand(Brand val) {
+        nameLabel.setText(val.getName()!=null?val.getName():"N/A");
+        descLabel.setText(val.getDescription()!=null?val.getDescription():"N/A");
+    }
+
     private void fillBrandTable() {
         try{
             brandTable.setItems(FXCollections.observableArrayList(brandService.getAllBrands()));
@@ -84,6 +82,7 @@ public class BrandController extends BaseController {
     public void onNew(){
         nameLabel.setText("Name*");
         descLabel.setText("Description*");
+        selectedBrand=null;
         brandTable.getSelectionModel().clearSelection();
     }
 
@@ -103,7 +102,7 @@ public class BrandController extends BaseController {
             return;
         }
 
-        if(selectedBrand==null ||selectedBrand.getName().isEmpty()){ // prvo provjeri jel null jer uopce ne moze do get name ako je
+        if(selectedBrand==null ){ // prvo provjeri jel null jer uopce ne moze do get name ako je
             AlertUtil.showErrorAlert( "One must choose a brand to delete");
             return;
         }
@@ -112,6 +111,12 @@ public class BrandController extends BaseController {
             return;
         }
 
+        tryDeleteBrand();
+
+        onNew();//tu se poziva restart selektiranogBrenda
+    }
+
+    private void tryDeleteBrand() {
         try{
             brandService.delete(selectedBrand.getId());
             LoggingUtil.logInfo("DELETE", "Brand", selectedBrand.getName(), Session.getCurrentUser().getUsername());
@@ -119,7 +124,6 @@ public class BrandController extends BaseController {
         catch (CannotPerformActionException e){
             AlertUtil.showErrorAlert(e.getMessage());
         }
-        onNew();
     }
 
 

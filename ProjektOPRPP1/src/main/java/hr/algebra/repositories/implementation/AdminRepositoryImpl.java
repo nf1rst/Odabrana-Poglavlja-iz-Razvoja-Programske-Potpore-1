@@ -37,8 +37,8 @@ public class AdminRepositoryImpl implements AdminRepository {
     }
 
     @Override
-    public void deleteDatababase() throws SQLException {
-        try (CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL DropDatabase()}")) {
+    public void dropAllTables() throws SQLException {
+        try (CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL DeleteAllTables()}")) {
             statement.execute();
         }
     }

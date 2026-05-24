@@ -14,12 +14,12 @@ import java.util.List;
 
 public class BrandEditController extends BaseController
 {
-    @FXML private TextField nameField; // ovo tu ce trebat kad ce doc popup
+    @FXML private TextField nameField;
     @FXML private TextField descField;
 
     @FXML private Label statusLabel;
 
-    private Brand selectedBrand;
+    private Brand selectedBrand; // za update
     private final BrandService brandService=BrandService.getInstance();
     private final ContextMenu suggestions = new ContextMenu();
     private List<Brand> allBrands;
@@ -64,9 +64,8 @@ public class BrandEditController extends BaseController
                 .forEach(b ->{
                     MenuItem item = new MenuItem(b.getName());
                     item.setOnAction(e->{
-                        nameField.setText(b.getName());
                         selectedBrand=b;
-                        descField.setText(b.getDescription());
+                        fillBrandDetails(b);
                         suggestions.hide();
                     });
                     suggestions.getItems().add(item);
@@ -79,14 +78,17 @@ public class BrandEditController extends BaseController
         }
     }
 
+    private void fillBrandDetails(Brand b) {
+        nameField.setText(b.getName());
+        descField.setText(b.getDescription());
+    }
+
     @FXML
     public void onSave(){
-        System.out.println(Session.userCanEdit());
         if(!Session.userCanEdit()){
             AlertUtil.showErrorAlert("Admin does not allow editing at the moment ");
             return;
         }
-
 
         if(!validateUserInput()){
             AlertUtil.showErrorAlert("Name must not be left blank");
@@ -99,6 +101,7 @@ public class BrandEditController extends BaseController
         else{
             updateExistingBrand();
         }
+        selectedBrand=null;
     }
 
     private void updateExistingBrand() {
@@ -107,9 +110,8 @@ public class BrandEditController extends BaseController
 
         try{
             brandService.save(selectedBrand);
-            LoggingUtil.logInfo("DELETE", "Brand", selectedBrand.getName(), Session.getCurrentUser().getUsername());
-            statusLabel.setText("Brand successfully updated");
-            statusLabel.setTextFill(Color.GREEN);
+            LoggingUtil.logInfo("UPDATE", "Brand", selectedBrand.getName(), Session.getCurrentUser().getUsername());
+            fillStatusLabel(statusLabel, "Brand successfully updated", Color.BLUE);
         }
         catch (CannotPerformActionException e){
             AlertUtil.showErrorAlert(e.getMessage());
@@ -121,8 +123,7 @@ public class BrandEditController extends BaseController
         try{
             brandService.save(new Brand(nameField.getText(), descField.getText()));
             LoggingUtil.logInfo("INSERT", "Brand", nameField.getText(), Session.getCurrentUser().getUsername());
-            statusLabel.setText("Brand successfully inserted");
-            statusLabel.setTextFill(Color.GREEN);
+            fillStatusLabel(statusLabel, "Brand successfully inserted", Color.GREEN);
         }
         catch (CannotPerformActionException e){
             AlertUtil.showErrorAlert(e.getMessage());

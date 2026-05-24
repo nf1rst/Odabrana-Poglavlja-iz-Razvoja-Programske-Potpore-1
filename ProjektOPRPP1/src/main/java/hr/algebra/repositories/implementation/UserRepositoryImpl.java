@@ -1,13 +1,11 @@
 package hr.algebra.repositories.implementation;
 import hr.algebra.database.DBConnector;
-import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Role;
 import hr.algebra.models.User;
 import hr.algebra.repositories.UserRepository;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.SQLWarning;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

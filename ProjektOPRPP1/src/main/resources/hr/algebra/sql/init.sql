@@ -1,43 +1,52 @@
-create database HeadphonesDB
-use HeadphonesDB
-DROP TABLE IF EXISTS headphonesTechnology
-DROP TABLE IF EXISTS HeadphonesUse
-DROP TABLE IF EXISTS Headphones
-DROP TABLE IF EXISTS Technology
-DROP TABLE IF EXISTS UsePurpose
-DROP TABLE IF EXISTS Brand
-DROP TABLE IF EXISTS Type
-DROP TABLE IF EXISTS Users
-GO
--- ako nisu ovim redoslijedom obrisane, nece radit zog foreign keyjeva
+﻿--https://stackoverflow.com/questions/59641684/create-database-if-db-does-not-exist
+use HeadphonesDB;
+go
 
---jel treba rucno postojat komanda za stvorit bazu
+-- redoslijed je bitan
+--DROP TABLE IF EXISTS HeadphonesTechnology;
+--DROP TABLE IF EXISTS HeadphonesUse;
+--DROP TABLE IF EXISTS Headphones;
+--DROP TABLE IF EXISTS Technology;
+--DROP TABLE IF EXISTS UsePurpose;
+--DROP TABLE IF EXISTS Brand;
+--DROP TABLE IF EXISTS Type;
+--DROP TABLE IF EXISTS Users;
+--DROP TABLE IF EXISTS AdminActivities;
+go
+
+create table AdminActivities(
+allowUsersToEdit bit not null
+);
+go
+
+insert into AdminActivities([allowUsersToEdit]) values(0);
+go
 
 create table Brand(
 ID integer primary key identity(1,1),
 Name nvarchar(300) not null,
 Description nvarchar(1000) null
 );
-
+go
 
 create table Type(
 ID integer primary key identity(1,1),
 Name nvarchar(100) not null
 );
-
+go
 
 create table Technology(
 ID integer primary key identity(1,1),
 Name nvarchar(300) not null,
 Description nvarchar(1000) null
 );
-
+go
 
 create table UsePurpose(
 ID integer primary key identity(1,1),
 Name nvarchar(100) not null
 );
-
+go
 
 create table Headphones(
 ID integer primary key identity(1,1),
@@ -53,58 +62,59 @@ ImagePath nvarchar(500),
 BrandID int references Brand(ID),
 TypeID int references Type(ID)
 );
-
+go
 
 create table HeadphonesTechnology(
 primary key(HeadphonesID,TechnologyID),
 HeadphonesID int references Headphones(ID) on delete cascade,
 TechnologyID int references Technology(ID)
 );
+go
 
 create table HeadphonesUse(
 primary key(HeadphonesID,UseID),
 HeadphonesID int references Headphones(ID) on delete cascade,
 UseID int references UsePurpose(ID)
 );
-
 go
+
 create table Users(
 ID int primary key identity(1,1),
 Username nvarchar(150) unique not null,
 Password nvarchar(60) not null,
 Role nvarchar(50) not null,
 ImagePath nvarchar(150) null
-)
-
+);
 go
-create proc GetAllBrands
+
+create or alter proc GetAllBrands
 as
 begin
-	select  b.ID,b.Name,b.Description
+	select b.ID, b.Name, b.Description
 	from Brand as b
-end
-
+end;
 go
-create proc GetBrandById 
+
+create or alter proc GetBrandById 
 @id int 
 as
 begin
-	select b.ID,b.Name,b.Description
+	select b.ID, b.Name, b.Description
 	from Brand as b
 	where b.ID=@id
-end
-
+end;
 go
-create proc InsertBrand
+
+create or alter proc InsertBrand
 @Name nvarchar(100), @Description nvarchar(500)
 as
 begin
 	insert into Brand(Name,Description)
 		values(@Name,@Description)
-end	
-
+end;
 go
-create proc UpdateBrand
+
+create or alter proc UpdateBrand
 @id int, @name nvarchar(100), @description nvarchar(500)
 as
 begin
@@ -113,37 +123,38 @@ begin
 		Name=@name,
 		Description=@description
 	where Brand.ID=@id
-end
-
+end;
 go
-create proc DeleteBrand
+
+create or alter proc DeleteBrand
 @id int 
 as
 begin
 	delete from Brand
 	where Brand.ID = @id
-end	
-
+end;
 go
-create proc GetAllTypes
+
+create or alter proc GetAllTypes
 as
 begin
 	select t.id, t.Name
 	from Type as t
-end
-
+end;
 go
-create proc GetTypeById
+
+create or alter proc GetTypeById
 @id int
 as
 begin
 	select t.id, t.Name
 	from Type as t
 	where t.ID=@id
-end
-
+end;
 go
-create proc UpdateType
+
+-- ISPRAVLJENO: Pisalo je "createor alter" spojeno
+create or alter proc UpdateType
 @id int , @name nvarchar(50)
 as
 begin
@@ -151,55 +162,55 @@ begin
 	set 
 		Name=@name
 	where Type.ID=@id
-end
-
+end;
 go
-create proc InsertType
+
+create or alter proc InsertType
 @name nvarchar(50)
 as
 begin 
 	insert into Type(Name)
 		values(@name)
-end
-
+end;
 go
-create proc DeleteType
+
+create or alter proc DeleteType
 @id int 
 as
 begin
 	delete from Type
 	where Type.ID=@id
-end
-
+end;
 go
-create proc GetAllTechnologies
+
+create or alter proc GetAllTechnologies
 as
 begin
 	select t.ID,t.Name,t.Description
 	from Technology as t
-end	
-
+end;
 go
-create proc GetTechnologyById
+
+create or alter proc GetTechnologyById
 @id int
 as
 begin
 	select t.ID,t.Name,t.Description
 	from Technology as t
 	where t.ID=@id
-end	
-
+end;
 go
-create proc InsertTechnology
+
+create or alter proc InsertTechnology
 @name nvarchar(100), @description nvarchar(500)
 as
 begin
 	insert into Technology(Name,Description)
 		values(@name,@description)
-end	
-
+end;
 go
-create proc UpdateTechnology
+
+create or alter proc UpdateTechnology
 @id int, @name nvarchar(100), @description nvarchar(500)
 as
 begin
@@ -208,43 +219,43 @@ begin
 		Name=@name,
 		Description=@description
 	where Technology.ID=@id
-end	
-
+end;
 go
-create proc RemoveTechnology
+
+create or alter proc RemoveTechnology
 @id int
 as
 begin
 	delete from Technology
 	where Technology.ID=@id
-end	
-
+end;
 go
-create proc GetAllUses
+
+create or alter proc GetAllUses
 as
 begin
 	select f.ID,f.Name from UsePurpose as f
-end
-
+end;
 go
-create proc GetUseByID
+
+create or alter proc GetUseByID
 @id int
 as
 begin
 	select f.ID,f.Name from UsePurpose as f
 	where f.ID=@id
-end
-
+end;
 go
-create proc InsertUse
+
+create or alter proc InsertUse
 @name nvarchar(100)
 as
 begin
-	insert into UsePurpose(Name)values(@name)
-end
-
+	insert into UsePurpose(Name) values(@name)
+end;
 go
-create proc UpdateUse
+
+create or alter proc UpdateUse
 @id int,
 @name nvarchar(100)
 as
@@ -252,65 +263,67 @@ begin
 	update UsePurpose 
 	set Name=@name
 	where UsePurpose.ID=@id
-end
-
+end;
 go
-create proc DeleteUse
+
+create or alter proc DeleteUse
 @id int 
 as
 begin
 	delete from UsePurpose
 	where UsePurpose.ID=@id
-end
-
+end;
 go
-create proc GetAllHeadphones
+
+create or alter proc GetAllHeadphones
 as
 begin
  select f.ID,f.Name,f.YearEdition,f.Impedance,f.MinFrequency,f.MaxFrequency,f.BatteryLife,f.Price,f.Description,f.ImagePath,f.BrandID,f.TypeID
  from Headphones as f
-end
-
+end;
 go
-create proc GetHeadphonesByID
+
+create or alter proc GetHeadphonesByID
 @id int 
 as
 begin
 	select f.ID,f.Name,f.YearEdition,f.Impedance,f.MinFrequency,f.MaxFrequency,f.BatteryLife,f.Price,f.Description,f.ImagePath,f.BrandID,f.TypeID
 	from Headphones as f
 	where f.ID=@id
-end
-
+end;
 go
-create proc GetHeadphonesByType
+
+create or alter proc GetHeadphonesByType
 @typeID int
 as
 begin
 	select f.ID,f.Name,f.YearEdition,f.Impedance,f.MinFrequency,f.MaxFrequency,f.BatteryLife,f.Price,f.Description,f.ImagePath,f.BrandID,f.TypeID
 	from Headphones as f
 	where f.TypeID=@typeID
-end	
-
+end;	
 go
-create proc GetHeadphonesByBrand
+
+create or alter proc GetHeadphonesByBrand
 @brandID int
 as
 begin
 	select f.ID,f.Name,f.YearEdition,f.Impedance,f.MinFrequency,f.MaxFrequency,f.BatteryLife,f.Price,f.Description,f.ImagePath,f.BrandID,f.TypeID
 	from Headphones as f
 	where f.BrandID=@brandID
-end	
-
+end;	
 go
+
 create or alter proc GetHeadphonesByName
 @name nvarchar(50)
 as
+begin
 	select f.ID,f.Name,f.YearEdition,f.Impedance,f.MinFrequency,f.MaxFrequency,f.BatteryLife,f.Price,f.Description,f.ImagePath,f.BrandID,f.TypeID
 	from Headphones as f
 	where f.Name=@name
-
+end;
 go
-create proc GetHeadphonesByUse
+
+create or alter proc GetHeadphonesByUse
 @useID int
 as
 begin
@@ -318,19 +331,9 @@ begin
 	from Headphones as f
 	inner join HeadphonesUse as hu on hu.HeadphonesID=f.ID
 	where hu.UseID=@useID
-end	
-
+end;	
 go
-create proc GetHeadphonesByMaxPrice
-@maxPrice money
-as
-begin
-	select f.ID,f.Name,f.YearEdition,f.Impedance,f.MinFrequency,f.MaxFrequency,f.BatteryLife,f.Price,f.Description,f.ImagePath,f.BrandID,f.TypeID
-	from Headphones as f
-	where f.BrandID<=@maxPrice
-end	
 
-go
 create or alter proc InsertHeadphones
 @name nvarchar(200), @yearEdition int, @impedance int, @minFreq int, @maxFreq int, @batteryLife int,@price money, @description nvarchar(1000), @imagePath nvarchar(500), @brandId int, @typeID int
 as
@@ -339,10 +342,10 @@ begin
 		values(@name,@yearEdition,@impedance,@minFreq,@maxFreq,@batteryLife, @price,@description,@imagePath, @brandId, @typeID)
 
 		select SCOPE_IDENTITY() as generatedID
-end
-
+end;
 go
-create proc UpdateHeadphones
+
+create or alter proc UpdateHeadphones
 @id int,@name nvarchar(200), @yearEdition int, @impedance int, @minFreq int, @maxFreq int, @batteryLife int,@price money, @description nvarchar(1000), @imagePath nvarchar(500), @brandId int, @typeID int
 as
 begin
@@ -360,19 +363,19 @@ begin
 		BrandID=@brandId,
 		TypeID=@typeID
 	where Headphones.ID=@id
-end
-
+end;
 go
-create proc DeleteHeadphones 
+
+create or alter proc DeleteHeadphones 
 @id int 
 as
 begin
 	delete from Headphones
 	where Headphones.ID=@id
-end
-
+end;
 go
-create proc GetTechnologiesForHeadphones
+
+create or alter proc GetTechnologiesForHeadphones
 @headphonesId int
 as
 begin
@@ -380,39 +383,41 @@ begin
 	from Technology as t
 	inner join headphonesTechnology as ht on ht.TechnologyID=t.ID
 	where ht.HeadphonesID=@headphonesId
-end
-
+end;
 go
-create proc GetUsagesForHeadphones
+
+create or alter proc GetUsagesForHeadphones
 @headphonesID int
 as
 begin
 	select up.ID, up.Name
 	from UsePurpose as up
 	inner join HeadphonesUse as hu on hu.UseID=up.ID
-end	
-
+    where hu.HeadphonesID=@headphonesID -- ISPRAVAK: dodana zaboravljena filtracija po ID-u slušalica
+end;	
 go
-create proc AddHeadphonesTechnology
+
+create or alter proc AddHeadphonesTechnology
 @technologyID int,
 @headphonesID int
 as
 begin
 	insert into headphonesTechnology(TechnologyID,HeadphonesID)
 		values(@technologyID,@headphonesID)
-end	
-
+end;
 go
-create proc RemoveHeadphonesTechnology
+
+-- ISPRAVAK: Pisalo je "create proc or alter" pogrešnim redoslijedom
+create or alter proc RemoveHeadphonesTechnology
 @technologyID int,
 @headphonesID int
 as
 begin
 	delete from headphonesTechnology 
 	where TechnologyID=@technologyID and HeadphonesID=@headphonesID
-end	
-
+end;	
 go
+
 create or alter proc AddHeadphonesUse
 @useId int,
 @headphonesID int
@@ -420,27 +425,27 @@ as
 begin
 	insert into HeadphonesUse (UseID,HeadphonesID)
 		values(@useId, @headphonesID)
-end	
-
+end;	
 go
-create proc RemoveHeadphonesUse
+
+create or alter proc RemoveHeadphonesUse
 @useId int,
 @headphonesID int 
 as
 begin
 	delete from HeadphonesUse 
 	where UseID=@useId and HeadphonesID=@headphonesID
-end	
-
+end;	
 go
+
 create or alter proc GetAllUsers
 as
 begin
 	select u.id, u.Username, u.Password, u.Role, u.ImagePath
 	from Users as u
-end
-
+end;
 go
+
 create or alter proc GetUserById
 @id int 
 as
@@ -448,9 +453,9 @@ begin
 	select u.id, u.Username, u.Password, u.Role, u.ImagePath
 	from Users as u
 	where u.ID=@id
-end
-
+end;
 go
+
 create or alter proc GetUserByUsername
 @username nvarchar(100)
 as
@@ -458,19 +463,18 @@ begin
 	select u.ID,u.Username,u.Password,u.Role, u.ImagePath
 	from Users as u 
 	where u.Username=@username
-end
-
-
+end;
 go
+
 create or alter proc InsertUser
 @name nvarchar(100), @password nvarchar(60), @role nvarchar(20), @imagePath nvarchar(400)
 as
 begin
 	insert into Users(Username,Password,Role, ImagePath)
 		values(@name, @password, @role, @imagePath)
-end
-
+end;
 go
+
 create or alter proc UpdateUser
 @id int,@name nvarchar(100), @password nvarchar(60), @role nvarchar(20), @imagePath nvarchar(150)
 as
@@ -482,42 +486,41 @@ begin
 		Role=@role,
 		ImagePath=@imagePath
 	where Users.ID=@id
-end
-
+end;
 go
+
 create or alter proc DeleteUser
 @id int
 as
 begin
 	delete from Users
 	where Users.ID=@id
-end
-
---procedure za admina 
+end;
 go
+
 create or alter proc DeleteAllUsers
 as
 begin 
 	delete
 	from Users
 	where Role='User'
-end 
-
+end;
 go
+
+-- ISPRAVAK: @username parametar mora biti nvarchar(150), a ne int budući da je u tablici tekst!
 create or alter proc DeleteUserByUsername
-@username int
+@username nvarchar(150)
 as
 begin
 	delete
 	from Users
 	where Username=@username
-end
-
+end;
 go
+
 create or alter proc GetNumberOfEntries
 as
 begin
--- da ih sve vrati kao 1 select za map metodu u repo 
 select
 	(select COUNT(*) from Headphones) as headphonesNum,
 	(select COUNT(*) from Brand) as brandNum,
@@ -525,35 +528,38 @@ select
 	(select COUNT(*) from UsePurpose) useNum,
 	(select COUNT(*) from Type) as typeNum,
 	(select COUNT(*) from Users) as usersNum
-end
-
+end;
 go
+
 create or alter proc DeleteAllEntities
 as
 begin 
-	delete from Headphones
-	delete from Brand
 	delete from HeadphonesTechnology
 	delete from HeadphonesUse
+	delete from Headphones
+	delete from Brand
 	delete from Technology
 	delete from Type
 	delete from UsePurpose
-end 
-
+end; 
 go
-create or alter proc DropDatabase
+
+create or alter proc DeleteAllTables
 as
-begin
-	drop database HeadphonesDB
-end
-
+begin 
+	DROP TABLE IF EXISTS HeadphonesTechnology;
+	DROP TABLE IF EXISTS HeadphonesUse;
+	DROP TABLE IF EXISTS Headphones;
+	DROP TABLE IF EXISTS Technology;
+	DROP TABLE IF EXISTS UsePurpose;
+	DROP TABLE IF EXISTS Brand;
+	DROP TABLE IF EXISTS Type;
+	DROP TABLE IF EXISTS Users;
+	DROP TABLE IF EXISTS AdminActivities;
+end; 
 go
-create table AdminActivities(
-allowUsersToEdit bit not null
-)
-insert into AdminActivities([allowUsersToEdit])values(0)
 
-go
+
 create or alter proc SetUserEditRights
 @value bit
 as
@@ -561,12 +567,13 @@ begin
 	update AdminActivities
 		set 
 		allowUsersToEdit=@value
-end
-
+end;
 go
+
 create or alter proc GetUserEditRights
 as
 begin
 	select allowUsersToEdit
 	from AdminActivities
-end
+end;
+go

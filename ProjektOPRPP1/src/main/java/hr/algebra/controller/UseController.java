@@ -3,6 +3,7 @@ import hr.algebra.models.Session;
 import hr.algebra.models.Use;
 import hr.algebra.services.UseService;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.LoggingUtil;
 import hr.algebra.util.SceneLoadingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -12,8 +13,6 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 
 public class UseController extends BaseController{
-
-    @FXML private NavigationController  navigationController;
 
     private final UseService useService = UseService.getInstance();
     private Use selectedUse;
@@ -43,8 +42,6 @@ public class UseController extends BaseController{
                     }
                 });
 
-        //refresh();
-
         fillUserLabel(currentUserLabel);
 
         searchField.textProperty().addListener((obs,old,q)->useTable.setItems(FXCollections.observableArrayList(useService.search(q))));
@@ -55,11 +52,12 @@ public class UseController extends BaseController{
     public void onClear(){
         nameLabel.setText("Name*");
         useTable.getSelectionModel().clearSelection();
+        selectedUse=null;
     }
 
     @FXML
     public void onEdit(){
-        if(!Session.userCanEdit()){
+        if(!Session.userLoggedIn()){
             AlertUtil.showErrorAlert("One must be loggedin to edit");
             return;
         }
@@ -84,7 +82,8 @@ public class UseController extends BaseController{
         }
 
         useService.delete(selectedUse.getId());
-        logger.info( "DELETE", "Use", selectedUse.getName());
+        LoggingUtil.logInfo( "DELETE", "Use", selectedUse.getName(), Session.getCurrentUser().getUsername());
+        selectedUse=null;
         refresh();
     }
 
