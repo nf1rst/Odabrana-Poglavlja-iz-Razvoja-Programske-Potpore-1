@@ -31,8 +31,8 @@ public class AlertUtil {
         Alert alert =  new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmation");
         alert.setContentText(text);
-        if(alert.showAndWait().filter(b->b==ButtonType.OK).isEmpty()){return true;}
-        return  false;
+        alert.showAndWait();
+        return alert.getResult()==ButtonType.OK;
     }
 
 }

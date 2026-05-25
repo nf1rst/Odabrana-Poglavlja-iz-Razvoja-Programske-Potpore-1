@@ -7,7 +7,6 @@ public class Headphones implements Comparable<Headphones> {
     private int id; // ovdje id nije final da ga se moze u repo sloju postavit na inserted objekt tako da ga u controlleru mogu poslat u metodu koja ce preko vracenog
     //ID-a novostvorenog objekta moc insertirat u M:N medutablice
 
-    //polja trebaju bit private radi enkapsulacije - PROMIJENIT
     private int yearEdition;
     private int impedance; // impedance = el. otpor audio signalima (Ohm)
     private int minFrequency;
@@ -17,11 +16,12 @@ public class Headphones implements Comparable<Headphones> {
     private String description;
     private String imagePath;
     private String name;
-
     private Brand brand;
     private List<Technology>technologies;
     private List<Use>uses;
     private Type type;
+
+    public Headphones() {}
 
     public Headphones(int id, String name,int yearEdition, int impedance, int minFrequency, int maxFrequency, int batteryLife, double price, String description, String imagePath, Brand brand,Type type, List<Technology> technologies, List<Use> uses) {
         this.id = id;

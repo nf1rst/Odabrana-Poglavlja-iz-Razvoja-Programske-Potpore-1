@@ -1,17 +1,6 @@
-﻿--https://stackoverflow.com/questions/59641684/create-database-if-db-does-not-exist
-use HeadphonesDB;
+﻿use HeadphonesDB;
 go
 
--- redoslijed je bitan
---DROP TABLE IF EXISTS HeadphonesTechnology;
---DROP TABLE IF EXISTS HeadphonesUse;
---DROP TABLE IF EXISTS Headphones;
---DROP TABLE IF EXISTS Technology;
---DROP TABLE IF EXISTS UsePurpose;
---DROP TABLE IF EXISTS Brand;
---DROP TABLE IF EXISTS Type;
---DROP TABLE IF EXISTS Users;
---DROP TABLE IF EXISTS AdminActivities;
 go
 
 create table AdminActivities(

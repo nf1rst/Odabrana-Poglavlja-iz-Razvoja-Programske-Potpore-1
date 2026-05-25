@@ -21,10 +21,11 @@ public class AdminRepositoryImpl implements AdminRepository {
     }
 
     @Override
-    public void deleteUser(String username) throws SQLException {
+    public void deleteUserByUsername(String username) throws SQLException {
         try (CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL DeleteUserByUsername(?)}");) {
             statement.setString(1, username);
             statement.execute();
+            System.out.println("repo");
         }
     }
 

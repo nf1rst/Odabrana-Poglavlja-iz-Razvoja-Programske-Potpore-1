@@ -66,9 +66,10 @@
                            <top>
                               <HBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="600.0" spacing="15.0" BorderPane.alignment="CENTER">
                                  <children>
+                                    <Button mnemonicParsing="false" onAction="#onClearStats" text="Clear" />
                                     <Button mnemonicParsing="false" onAction="#onSeeDBStats" text="See Database Stats" />
                                     <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onDeleteAllEntities" text="DELETE ALL ENTITIES" />
-                                    <Button layoutX="127.0" layoutY="10.0" mnemonicParsing="false" onAction="#onDropTables" text="Drop Tables" />
+                                    <Button mnemonicParsing="false" onAction="#onXMLBackup" text="XML backup" />
                                  </children>
                                  <BorderPane.margin>
                                     <Insets top="15.0" />
@@ -76,46 +77,44 @@
                               </HBox>
                            </top>
                            <center>
-                              <GridPane gridLinesVisible="true" BorderPane.alignment="CENTER">
-                                <columnConstraints>
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                </columnConstraints>
-                                <rowConstraints>
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                  <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
-                                    <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                </rowConstraints>
-                                 <children>
-                                    <Label text="Number of Rows" GridPane.columnIndex="1">
-                                       <font>
+                               <GridPane gridLinesVisible="true" BorderPane.alignment="CENTER">
+                                   <columnConstraints>
+                                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                   </columnConstraints>
+                                   <rowConstraints>
+                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                                       <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                   </rowConstraints>
+                                   <BorderPane.margin>
+                                       <Insets top="15.0" />
+                                   </BorderPane.margin>
+                                   <Label text="Number of Rows" GridPane.columnIndex="1">
+                                      <font>
                                           <Font name="System Bold" size="12.0" />
-                                       </font>
-                                       <GridPane.margin>
+                                      </font>
+                                      <GridPane.margin>
                                           <Insets left="15.0" />
-                                       </GridPane.margin>
-                                    </Label>
-                                    <Label text="Headphones" GridPane.rowIndex="1" />
-                                    <Label text="Brands" GridPane.rowIndex="2" />
-                                    <Label prefHeight="0.0" prefWidth="68.0" text="Types" GridPane.rowIndex="3" />
-                                    <Label text="Uses" GridPane.rowIndex="4" />
-                                    <Label text="Technologies" GridPane.rowIndex="5" />
-                                    <Label text="Users" GridPane.rowIndex="6" />
-                                    <Label fx:id="headphonesCount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                    <Label fx:id="brandsCount" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                    <Label fx:id="typesCount" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                    <Label fx:id="usesCount" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                    <Label fx:id="techCount" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                    <Label fx:id="usersCount" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                 </children>
-                                 <BorderPane.margin>
-                                    <Insets top="15.0" />
-                                 </BorderPane.margin>
-                              </GridPane>
+                                      </GridPane.margin>
+                                   </Label>
+                                   <Label text="Headphones" GridPane.rowIndex="1" />
+                                   <Label text="Brands" GridPane.rowIndex="2" />
+                                   <Label prefHeight="0.0" prefWidth="68.0" text="Types" GridPane.rowIndex="3" />
+                                   <Label text="Uses" GridPane.rowIndex="4" />
+                                   <Label text="Technologies" GridPane.rowIndex="5" />
+                                   <Label text="Users" GridPane.rowIndex="6" />
+                                   <Label fx:id="headphonesCount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                   <Label fx:id="brandsCount" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                   <Label fx:id="typesCount" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                   <Label fx:id="usesCount" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                   <Label fx:id="techCount" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                   <Label fx:id="usersCount" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                               </GridPane>
                            </center></BorderPane>
                          </content>
                      </Tab>

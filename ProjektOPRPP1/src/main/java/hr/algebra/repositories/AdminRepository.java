@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.Optional;
 
 public interface AdminRepository {
-    void deleteUser(String username) throws SQLException;
+    void deleteUserByUsername(String username) throws SQLException;
     void deleteAllEntities() throws SQLException;
     void dropAllTables() throws SQLException;
     void deleteAllUsers() throws SQLException;

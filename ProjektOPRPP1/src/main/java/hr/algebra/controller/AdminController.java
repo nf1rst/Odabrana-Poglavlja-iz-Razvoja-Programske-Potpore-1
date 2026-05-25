@@ -4,9 +4,12 @@ import hr.algebra.models.DBStatistics;
 import hr.algebra.models.Session;
 import hr.algebra.models.User;
 import hr.algebra.services.AdminService;
+import hr.algebra.services.HeadphonesService;
 import hr.algebra.services.UserService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
+import hr.algebra.xml.export.XMLExporter;
+import jakarta.xml.bind.JAXBException;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -37,6 +40,7 @@ public class AdminController extends BaseController{
     private User selectedUser;
 
     private final UserService userService = UserService.getInstance();
+    private final HeadphonesService headphonesService = HeadphonesService.getInstance();
     private static final AdminService adminService = AdminService.INSTANCE;
 
     @FXML
@@ -163,17 +167,15 @@ public class AdminController extends BaseController{
         }
     }
 
+
     @FXML
-    public void onDropTables(){
-        try{
-            if(!AlertUtil.showConfirmationAlert("Are you sure you want to delete all tables in database?")){
-                return;
-            }
-            adminService.dropAllTables();
-        }
-        catch (CannotPerformActionException _){
-            AlertUtil.showErrorAlert("Cannot drop database");
-        }
+    public void onClearStats(){
+        headphonesCount.setText("");
+        brandsCount.setText( "");
+        techCount.setText("");
+        typesCount.setText( "");
+        usersCount.setText( "");
+        usesCount.setText( "");
     }
 
     @FXML
@@ -187,7 +189,7 @@ public class AdminController extends BaseController{
                 return;
             }
 
-            adminService.deleteUser(currentUser.getUsername());
+            adminService.deleteUserByUsername(selectedUser.getUsername());
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete user");
@@ -197,11 +199,24 @@ public class AdminController extends BaseController{
     @FXML
     public void onDeleteAllUsers(){
         try{
-            AlertUtil.showConfirmationAlert("Are you sure you want to delete all users");
+            if(!AlertUtil.showConfirmationAlert("Are you sure you want to delete all users")){
+                return;
+            };
             adminService.deleteAllUsers();
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete all users");
+        }
+    }
+
+    @FXML
+    public void onXMLBackup(){
+        try{
+            XMLExporter.marshall(headphonesService.getAllHeadphones());
+            AlertUtil.showInformationAlert("Database to XML export successful");
+        }
+        catch (JAXBException e){
+            LoggingUtil.logError("JAXB backup export error", e);
         }
     }
 

@@ -34,9 +34,10 @@ public enum AdminService {
         }
     }
 
-    public void deleteUser(String username) {
+    public void deleteUserByUsername(String username) {
         try {
-            repo.deleteUser(username);
+            repo.deleteUserByUsername(username);
+            System.out.println("servis");
         } catch (SQLException e) {
             logger.error("ERROR", e);
             throw new CannotPerformActionException("Cannot execute to delete user");

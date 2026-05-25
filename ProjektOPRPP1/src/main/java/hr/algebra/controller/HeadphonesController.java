@@ -4,10 +4,8 @@ import hr.algebra.services.*;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
 import hr.algebra.util.SceneLoadingUtil;
-import hr.algebra.xml.export.HeadphonesCatalog;
-import jakarta.xml.bind.JAXBContext;
+import hr.algebra.xml.export.XMLExporter;
 import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -17,7 +15,6 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
 import java.io.File;
 import java.io.FileInputStream;
@@ -256,26 +253,13 @@ public class HeadphonesController extends BaseController {
 
      @FXML
      public void onExportXml(){
-         FileChooser fc = new FileChooser();
-         fc.setTitle("Save FXML Catalogue");
-         fc.getExtensionFilters().add(
-                 new FileChooser.ExtensionFilter("XML files", "*.xml"));
-         fc.setInitialFileName("headphones_catalogue.xml");
-
-         File file = fc.showSaveDialog(nameLabel.getScene().getWindow());
-         if(file==null)return;
+        if(selectedHeadphnes==null){
+            AlertUtil.showWarningAlert("Please choose headphones to export");
+            return;
+        }
         try{
-            List<Headphones> list= headphonesService.getAllHeadphones();
-            HeadphonesCatalog catalog = new HeadphonesCatalog(list);
-
-            JAXBContext jaxbContext=JAXBContext.newInstance(HeadphonesCatalog.class);
-            Marshaller marshaller = jaxbContext.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,true);
-            marshaller.marshal(catalog, file);
-
-            LoggingUtil.logInfo( "EXPORT", "Headphones", file.getName(),Session.getCurrentUser().getUsername());
-
-            AlertUtil.showInformationAlert("Catalogue has been successfully exported to "+ file.getName());
+         XMLExporter.marshallSelected(selectedHeadphnes);
+         AlertUtil.showInformationAlert("Headphones exported successfully");
         }
         catch (JAXBException e) {
             AlertUtil.showErrorAlert("Cannot export to xml");

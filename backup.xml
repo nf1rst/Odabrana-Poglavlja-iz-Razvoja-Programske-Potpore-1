@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<HeadphonesCatalog>
+    <headphones>
+        <batteryLife>50</batteryLife>
+        <brand>
+            <description>german quality v5</description>
+            <name>sehnheiser</name>
+        </brand>
+        <description>good headphones </description>
+        <id>1</id>
+        <impedance>50</impedance>
+        <maxFrequency>65</maxFrequency>
+        <minFrequency>15</minFrequency>
+        <name>FXS-11</name>
+        <possibleUsages>
+            <name>Gaming</name>
+        </possibleUsages>
+        <possibleUsages>
+            <name>Hiking</name>
+        </possibleUsages>
+        <possibleUsages>
+            <name>Leisure</name>
+        </possibleUsages>
+        <price>159.99</price>
+        <type>
+            <name>Over Ear</name>
+        </type>
+        <yearEdition>2020</yearEdition>
+    </headphones>
+    <headphones>
+        <batteryLife>24</batteryLife>
+        <brand>
+            <description>gaming company</description>
+            <name>hyper x </name>
+        </brand>
+        <description>expensive headphones</description>
+        <id>2</id>
+        <impedance>15</impedance>
+        <maxFrequency>120</maxFrequency>
+        <minFrequency>66</minFrequency>
+        <name>FXF-5</name>
+        <price>350.0</price>
+        <type>
+            <name>InEar</name>
+        </type>
+        <yearEdition>2025</yearEdition>
+    </headphones>
+    <headphones>
+        <batteryLife>60</batteryLife>
+        <brand>
+            <description>gaming company</description>
+            <name>hyper x </name>
+        </brand>
+        <description>good headphones </description>
+        <id>3</id>
+        <impedance>15</impedance>
+        <maxFrequency>50</maxFrequency>
+        <minFrequency>20</minFrequency>
+        <name>ZGF-1x</name>
+        <price>259.0</price>
+        <type>
+            <name>InEar</name>
+        </type>
+        <yearEdition>2015</yearEdition>
+    </headphones>
+</HeadphonesCatalog>

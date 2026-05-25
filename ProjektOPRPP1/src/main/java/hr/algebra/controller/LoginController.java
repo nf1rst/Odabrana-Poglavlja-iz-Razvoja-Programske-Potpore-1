@@ -93,7 +93,7 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
 
     private void handleUserRedirection(User user) {
         if(user.getRole()== Role.ADMIN){
-            SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/admin-view.fxml", "Admin Panel", getMainNode(),700,500);
+            SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/admin-view.fxml", "Admin Panel", getMainNode(),700,550);
 
         }
         else if(user.getRole()==Role.USER){
@@ -125,7 +125,7 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
             showSuccess(registerErrorLabel, e.getMessage());
         }
 
-        LoggingUtil.logInfo("LOGIN", "User", Session.getCurrentUser().getUsername());
+        LoggingUtil.logInfo("REGISTER", "User", registerUsernameField.getText());
         clearUserInput();
     }
 

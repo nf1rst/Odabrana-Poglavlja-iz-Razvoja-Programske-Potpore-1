@@ -4,8 +4,6 @@ import hr.algebra.models.User;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public abstract class BaseController {
 
@@ -17,7 +15,6 @@ public abstract class BaseController {
     }
 
     protected abstract Node getMainNode(); // svaka podklasa mora dat bilo koji node iz forme da se moze dohvatit window i zatvorit prozor
-
 
     protected void fillStatusLabel(Label label, String message, Color color) {
         label.setText(message);

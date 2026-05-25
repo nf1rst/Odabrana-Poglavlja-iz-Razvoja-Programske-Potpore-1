@@ -263,7 +263,7 @@
                   <Label fx:id="currentUserLabel" />
                </children>
             </HBox>
-            <Button fx:id="onClear" mnemonicParsing="false" prefHeight="45.0" prefWidth="640.0" text="Clear">
+            <Button mnemonicParsing="false" onAction="#onClear" prefHeight="45.0" prefWidth="640.0" text="Clear">
                <HBox.margin>
                   <Insets bottom="15.0" />
                </HBox.margin></Button>
