@@ -1,15 +1,18 @@
 package hr.algebra.controller;
 import hr.algebra.models.*;
-import hr.algebra.services.*;
+import hr.algebra.services.BrandService;
+import hr.algebra.services.HeadphonesService;
+import hr.algebra.services.TypeService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
 import hr.algebra.util.SceneLoadingUtil;
+import hr.algebra.util.XMLLoggingUtil;
 import hr.algebra.xml.export.XMLExporter;
-import jakarta.xml.bind.JAXBException;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -23,11 +26,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 public class HeadphonesController extends BaseController {
-
-    @FXML private NavigationController  navigationController;
-
     @FXML private TableView<Headphones> headphonesTable;
     @FXML private TableColumn<Headphones, String> colName;
     @FXML private TableColumn<Headphones, String> colBrand;
@@ -70,7 +69,6 @@ public class HeadphonesController extends BaseController {
         setupTableSelection();
         setUpComboBoxes();
         setupSearch();
-        showPlaceholderImage();
         fillUserLabel(currentUserLabel);
         refresh();
     }
@@ -227,6 +225,7 @@ public class HeadphonesController extends BaseController {
         deleteImageFile(selectedImagePath);
         headphonesService.delete(selectedHeadphnes.getId());
         LoggingUtil.logInfo( "DELETE", "Headphones", selectedHeadphnes.getName(),Session.getCurrentUser().getUsername());
+        XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "headphones", Session.getCurrentUser().getUsername(),  selectedHeadphnes.getName());
 
         selectedHeadphnes=null;
 
@@ -257,21 +256,34 @@ public class HeadphonesController extends BaseController {
             AlertUtil.showWarningAlert("Please choose headphones to export");
             return;
         }
-        try{
-         XMLExporter.marshallSelected(selectedHeadphnes);
-         AlertUtil.showInformationAlert("Headphones exported successfully");
-        }
-        catch (JAXBException e) {
+
+        Task<Void>exportTask = new Task<>(){
+            @Override
+            protected Void call() throws Exception {
+                XMLExporter.marshallSelected(selectedHeadphnes);
+                return null;
+            }
+        };
+
+        exportTask.setOnSucceeded(e->{
+            AlertUtil.showInformationAlert("Headphones exported successfully");
+            XMLLoggingUtil.log("INFO", "EXPORT", "successfully exported selected headphones", "headphones", Session.getCurrentUser().getUsername(),  selectedHeadphnes.getName());
+        });
+
+        exportTask.setOnFailed(e-> {
             AlertUtil.showErrorAlert("Cannot export to xml");
-            LoggingUtil.logError("XML export error", e);
-        }
+            LoggingUtil.logError("XML export error", exportTask.getException());
+        });
+
+        Thread bgThread = new Thread(exportTask);
+        bgThread.setDaemon(true);
+        bgThread.start();
      }
 
     @Override
     protected Node getMainNode() {
         return searchField;
     }
-
 
         @FXML
     public void onClear(){
@@ -317,9 +329,10 @@ public class HeadphonesController extends BaseController {
 
     private void showPlaceholderImage() {
         try{
-            var placeholder = getClass().getResourceAsStream("/hr/algebra/assets/No_Image_Available.jpg");
-            if(placeholder!=null){
-                headphoneImageView.setImage(new Image(placeholder));
+            var imageStream = getClass().getResourceAsStream("/hr/algebra/assets/images/No_Image_Available.jpg");
+            if(imageStream!=null){
+                Image placeholder = new Image(imageStream);
+                headphoneImageView.setImage(placeholder);
             }
         }
         catch (Exception _){

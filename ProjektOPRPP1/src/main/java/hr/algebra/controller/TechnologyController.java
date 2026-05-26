@@ -6,6 +6,7 @@ import hr.algebra.services.TechnologyService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
 import hr.algebra.util.SceneLoadingUtil;
+import hr.algebra.util.XMLLoggingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -97,6 +98,7 @@ public class TechnologyController extends BaseController{
         technologyService.delete(selectedTechnology.getId());
 
         LoggingUtil.logInfo( "DELETE", "Technology", selectedTechnology.getName(), Session.getCurrentUser().getUsername());
+        XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "technology", Session.getCurrentUser().getUsername(), selectedTechnology.getName());
 
         selectedTechnology=null;
         onClear();

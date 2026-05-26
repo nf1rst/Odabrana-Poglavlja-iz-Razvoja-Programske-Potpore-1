@@ -1,9 +1,9 @@
 package hr.algebra.controller;
-
 import hr.algebra.models.*;
 import hr.algebra.services.*;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
+import hr.algebra.util.XMLLoggingUtil;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
@@ -12,7 +12,6 @@ import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
-
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -225,7 +224,8 @@ public class HeadphonesEditController extends BaseController{
 
         headphonesService.save(selectedHeadphones);
         // sad zbog onog scope identity ovdje se moze napravit getID da vrati pravi ID koji mu je baza generirala
-
+        LoggingUtil.logInfo("UPDATE", "Headphones", selectedHeadphones.getName(), Session.getCurrentUser().getUsername());
+        XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "headphones", Session.getCurrentUser().getUsername(),  nameField.getText());
         updateManyToMany(selectedHeadphones, userselectedTech, userSelectedUses); // posebne tablice u bazi pa se mora rucno
     }
 
@@ -247,6 +247,7 @@ public class HeadphonesEditController extends BaseController{
         );
         headphonesService.save(headphonesForInsert);
         LoggingUtil.logInfo("INSERT", "Headphones", headphonesForInsert.getName(), Session.getCurrentUser().getUsername());
+        XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "headphones", Session.getCurrentUser().getUsername(), nameField.getText());
     }
 
 
@@ -305,8 +306,6 @@ public class HeadphonesEditController extends BaseController{
     public void onChooseImage(){
         FileChooser fc = new FileChooser();
         fc.setTitle("Choose image for headphones: ");
-        fc.getExtensionFilters().add(
-                new FileChooser.ExtensionFilter("Pictures", "*.png", "*.jpeg", "*.jpg"));
 
         File file = fc.showOpenDialog(nameField.getScene().getWindow());
         if(file ==null)return;

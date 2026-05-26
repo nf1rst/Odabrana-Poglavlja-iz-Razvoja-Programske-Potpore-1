@@ -1,16 +1,20 @@
 package hr.algebra.controller;
+import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Session;
 import hr.algebra.models.Use;
 import hr.algebra.services.UseService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
 import hr.algebra.util.SceneLoadingUtil;
+import hr.algebra.util.XMLLoggingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+
+import java.sql.SQLException;
 
 public class UseController extends BaseController{
 
@@ -45,7 +49,17 @@ public class UseController extends BaseController{
         fillUserLabel(currentUserLabel);
 
         searchField.textProperty().addListener((obs,old,q)->useTable.setItems(FXCollections.observableArrayList(useService.search(q))));
-    
+
+        fillUseTable();
+    }
+
+    private void fillUseTable() {
+        try{
+            useTable.setItems(FXCollections.observableArrayList(useService.getAllUses()));
+        }
+        catch (CannotPerformActionException e){
+            AlertUtil.showErrorAlert(e.getMessage());
+        }
     }
 
     @FXML
@@ -83,12 +97,9 @@ public class UseController extends BaseController{
 
         useService.delete(selectedUse.getId());
         LoggingUtil.logInfo( "DELETE", "Use", selectedUse.getName(), Session.getCurrentUser().getUsername());
+        XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "use", Session.getCurrentUser().getUsername(),  selectedUse.getName());
         selectedUse=null;
-        refresh();
-    }
-
-    private void refresh() {
-        useTable.setItems(FXCollections.observableArrayList(useService.getAllUses()));
+        fillUseTable();
     }
 
     @Override

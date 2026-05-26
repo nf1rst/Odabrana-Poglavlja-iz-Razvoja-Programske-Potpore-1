@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<errorLogs>
+    <log>
+        <time>26-05-2026 09:40:23</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>type</entity>
+        <username>asdf1</username>
+        <identity>asdfasdf</identity>
+    </log>
+    <log>
+        <time>26-05-2026 09:40:25</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>type</entity>
+        <username>asdf1</username>
+        <identity>asdfasdf</identity>
+    </log>
+    <log>
+        <time>26-05-2026 09:41:35</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>type</entity>
+        <username>asdf1</username>
+        <identity>movement detection</identity>
+    </log>
+    <log>
+        <time>26-05-2026 09:41:50</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>type</entity>
+        <username>asdf1</username>
+        <identity>movement detection v2</identity>
+    </log>
+    <log>
+        <time>26-05-2026 09:42:07</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>use</entity>
+        <username>asdf1</username>
+        <identity>reading</identity>
+    </log>
+    <log>
+        <time>26-05-2026 09:42:22</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>use</entity>
+        <username>asdf1</username>
+        <identity>sporting</identity>
+    </log>
+    <log>
+        <time>26-05-2026 09:42:47</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>use</entity>
+        <username>asdf1</username>
+        <identity>sports games</identity>
+    </log>
+    <log>
+        <time>26-05-2026 09:43:07</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>audio technica</identity>
+    </log>
+    <log>
+        <time>26-05-2026 10:18:14</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfuly deleted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>audio technica</identity>
+    </log>
+    <log>
+        <time>26-05-2026 10:21:09</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfuly deleted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>audio technica</identity>
+    </log>
+    <log>
+        <time>26-05-2026 10:21:24</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>asdf</identity>
+    </log>
+    <log>
+        <time>26-05-2026 10:22:08</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfuly deleted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>asdf</identity>
+    </log>
+    <log>
+        <time>26-05-2026 10:22:44</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>asdf</identity>
+    </log>
+    <log>
+        <time>26-05-2026 10:24:08</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>asdf</identity>
+    </log>
+    <log>
+        <time>26-05-2026 10:29:52</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfuly deleted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>asdf</identity>
+    </log>
+    <log>
+        <time>26-05-2026 10:42:53</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>sehnheiser</identity>
+    </log>
+</errorLogs>

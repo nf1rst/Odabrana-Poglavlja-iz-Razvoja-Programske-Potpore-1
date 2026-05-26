@@ -4,6 +4,7 @@ import hr.algebra.models.Use;
 import hr.algebra.services.UseService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
+import hr.algebra.util.XMLLoggingUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
@@ -89,6 +90,7 @@ public class UseEditController extends BaseController{
         selectedUse.setName(nameField.getText());
         useService.save(selectedUse);
         LoggingUtil.logInfo("UPDATE", "Use", nameField.getText(), Session.getCurrentUser().getUsername());
+        XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "use", Session.getCurrentUser().getUsername(),  nameField.getText());
         fillStatusLabel(statusLabel,"Use successfully updated", Color.BLUE);
 
     }
@@ -97,6 +99,7 @@ public class UseEditController extends BaseController{
     private void insertNewUse() {
         useService.save(new Use(nameField.getText()));
         LoggingUtil.logInfo("INSERT", "Use", nameField.getText(), Session.getCurrentUser().getUsername());
+        XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "use", Session.getCurrentUser().getUsername(),  nameField.getText());
         fillStatusLabel(statusLabel,"Use successfully inserted", Color.GREEN);
     }
 

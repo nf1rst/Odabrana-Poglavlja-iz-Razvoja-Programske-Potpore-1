@@ -48,7 +48,7 @@
                     <Button maxWidth="Infinity" onAction="#onDelete" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Delete" HBox.hgrow="ALWAYS" />
                 </HBox>
 
-                <Button maxWidth="Infinity" onAction="#onExportXml" style="-fx-background-color: #FF9800; -fx-text-fill: white;" text="Exportaj u XML" />
+                <Button maxWidth="Infinity" onAction="#onExportXml" style="-fx-background-color: #FF9800; -fx-text-fill: white;" text="Export selected headphones to XML" />
 
             </VBox>
         </ScrollPane>

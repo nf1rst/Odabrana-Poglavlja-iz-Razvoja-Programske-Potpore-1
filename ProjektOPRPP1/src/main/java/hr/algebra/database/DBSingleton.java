@@ -3,6 +3,8 @@ import hr.algebra.exceptions.InitializationException;
 import hr.algebra.util.LoggingUtil;
 import hr.algebra.xml.AppConfig;
 import hr.algebra.xml.ConfigReader;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -25,12 +27,10 @@ public enum DBSingleton {
             );
 
             tryInitialize();
-
-
             LoggingUtil.logInfo("Database initialized successfully");
 
         } catch (Exception e) {
-            LoggingUtil.logError("DB initialization error", e);
+            LoggingUtil.logError("DB initialization error - tables already exist", e);
         }
     }
 
@@ -38,14 +38,20 @@ public enum DBSingleton {
         try{
             initSchema();
         }
-        catch (Exception e) {
-            LoggingUtil.logError("SQL script not found error", e);
+        catch (InitializationException e) {
+            LoggingUtil.logError("Script not found", e);
+        }
+        catch (IOException e) {
+            LoggingUtil.logError("DB already initialized", e); //probact ce create table i nece moc ako vidi da tablice vec postoje
+        }
+        catch (SQLException e){
+            LoggingUtil.logError("Procedure not found", e);
         }
     }
 
     private DBSingleton() {}
 
-    private static void initSchema() throws Exception {
+    private static void initSchema() throws IOException, InitializationException, SQLException {
 
         var resourceStream = DBSingleton.class.getResourceAsStream("/hr/algebra/sql/init.sql");
         if (resourceStream == null) {

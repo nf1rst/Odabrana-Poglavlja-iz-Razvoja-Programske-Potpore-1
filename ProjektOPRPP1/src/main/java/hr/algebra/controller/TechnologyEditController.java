@@ -5,6 +5,7 @@ import hr.algebra.models.Technology;
 import hr.algebra.services.TechnologyService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
+import hr.algebra.util.XMLLoggingUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
@@ -21,7 +22,7 @@ public class TechnologyEditController extends BaseController{
     @FXML private Label statusLabel;
 
     private Technology selectedTechnology;
-    private TechnologyService technologyService= TechnologyService.getInstance();
+    private final TechnologyService technologyService= TechnologyService.getInstance();
     private final ContextMenu suggestions = new ContextMenu();
     private List<Technology> allTechnologies;
 
@@ -36,6 +37,8 @@ public class TechnologyEditController extends BaseController{
             }
             showSuggestions(val);
         });
+
+
     }
 
     private void showSuggestions(String val) {
@@ -84,12 +87,14 @@ public class TechnologyEditController extends BaseController{
     }
 
     private void trySaveTechnology() {
-            if(technologyService.nameExists(nameField.getText())){ //tehnologija ne postoji onda je mora ubacit
+            if(!technologyService.nameExists(nameField.getText())){ //tehnologija ne postoji onda je mora ubacit
                 insertTechnology();
+                XMLLoggingUtil.log("INFO", "INSERT ", "successfully deleted", "technology", Session.getCurrentUser().getUsername(), nameField.getText());
                 fillStatusLabel(statusLabel, "Technology successfully inserted", Color.GREEN);
             }
             else{// ako vec postoji onda se treba napravit update te tehnologije s istim IDjem
                 updateExistingTechnology();
+                XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "technology", Session.getCurrentUser().getUsername(), nameField.getText());
                 fillStatusLabel(statusLabel, "Technology successfully updated", Color.BLUE);
             }
     }

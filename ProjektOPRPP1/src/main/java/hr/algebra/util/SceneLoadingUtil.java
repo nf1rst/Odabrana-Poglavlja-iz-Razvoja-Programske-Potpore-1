@@ -23,8 +23,8 @@ public class SceneLoadingUtil {
             stage.setTitle(title);
             stage.setWidth(1020);
             stage.setHeight(800);
+            stage.setResizable(false);
             stage.show();
-
             closeThisWindow(node);
         }
         catch (IOException e){
@@ -44,6 +44,7 @@ public class SceneLoadingUtil {
             stage.setTitle(title);
             stage.setWidth(400);
             stage.setHeight(320);
+            stage.setResizable(false);
             stage.show();
         }
         catch (IOException e){
@@ -63,6 +64,7 @@ public class SceneLoadingUtil {
             stage.setWidth(width);
             stage.setHeight(height);
             stage.show();
+            stage.setResizable(false);
 
             if(node!=null)closeThisWindow(node); //ako se posalje da je node null nece se zatvorit
         }

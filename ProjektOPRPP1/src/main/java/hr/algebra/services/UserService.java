@@ -64,13 +64,13 @@ public class UserService {
 
     public void registerAdmin(String username, String password){
         try{
+            if(repo.usernameExists(username))throw new EntityExistantException("Admin already exists");
             String passwordHash = hashPassword(password);
             User admin = new User(username,passwordHash, Role.ADMIN);
             repo.save(admin);
         }
         catch (SQLException e){
-            // ne treba se bacat korisniku dalje da vidi nego samo logirat da se nije ubacio
-            //TODO: log
+            System.out.println("proc fail");
         }
     }
 

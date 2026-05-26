@@ -15,11 +15,11 @@ public class LoggingUtil {
     }
 
     public static void logError(String message,Object ... args){
-        logger.error(message,args);
+        logger.error("[{}] CAUSE = {}",message,args);
     }
 
     public static void logInfo(String action, String entity, String identificator, String username){
-        logger.info(action, entity, identificator, username);
+        logger.info("[{}] entity={} id={}, user={}", action, entity, identificator, username);
     }
 
     public static void logInfo(String action, String entity, String username){

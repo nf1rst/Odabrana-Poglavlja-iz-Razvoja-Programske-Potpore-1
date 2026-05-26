@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ChosenHeadphones id="1">
-    <name>FXS-11</name>
-    <yearEdition>2020</yearEdition>
-    <price>159.99</price>
-    <impedance>50</impedance>
-    <minFrequency>15</minFrequency>
-    <maxFrequency>65</maxFrequency>
-    <batteryLife>50</batteryLife>
+<ChosenHeadphones id="3">
+    <name>ZGF-1x</name>
+    <yearEdition>2015</yearEdition>
+    <price>259.0</price>
+    <impedance>15</impedance>
+    <minFrequency>20</minFrequency>
+    <maxFrequency>50</maxFrequency>
+    <batteryLife>60</batteryLife>
     <description>good headphones </description>
-    <brandName>sehnheiser</brandName>
+    <brandName>hyper x </brandName>
     <technologies/>
-    <uses>
-        <use>Gaming</use>
-        <use>Hiking</use>
-        <use>Leisure</use>
-    </uses>
-    <typeName>Over Ear</typeName>
+    <uses/>
+    <typeName>InEar</typeName>
 </ChosenHeadphones>

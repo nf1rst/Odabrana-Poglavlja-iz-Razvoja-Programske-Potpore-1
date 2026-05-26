@@ -8,6 +8,7 @@ import hr.algebra.services.HeadphonesService;
 import hr.algebra.services.UserService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
+import hr.algebra.util.XMLLoggingUtil;
 import hr.algebra.xml.export.XMLExporter;
 import jakarta.xml.bind.JAXBException;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -94,6 +95,7 @@ public class AdminController extends BaseController{
         try{
             adminService.saveUserEditRights(newValue);
             LoggingUtil.logInfo("UPDATE", "User rights", Session.getCurrentUser().getUsername());
+            XMLLoggingUtil.log("INFO", "UPDATE", "successfully changed user edit rights", "user", Session.getCurrentUser().getUsername(),  "*");
         }
         catch (CannotPerformActionException _){
             //ignore - interna evidancija je napravljena u servis sloju
@@ -160,6 +162,7 @@ public class AdminController extends BaseController{
         try{
             adminService.deleteAllEntities();
             LoggingUtil.logInfo("DELETE", "Entities",  Session.getCurrentUser().getUsername());
+            XMLLoggingUtil.log("INFO", "DELETE", "successfully delted all entities", "*", Session.getCurrentUser().getUsername(),  "*");
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete all database content");
@@ -190,6 +193,8 @@ public class AdminController extends BaseController{
             }
 
             adminService.deleteUserByUsername(selectedUser.getUsername());
+            XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "user", Session.getCurrentUser().getUsername(),  selectedUser.getUsername());
+            selectedUser=null;
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete user");
@@ -201,8 +206,9 @@ public class AdminController extends BaseController{
         try{
             if(!AlertUtil.showConfirmationAlert("Are you sure you want to delete all users")){
                 return;
-            };
+            }
             adminService.deleteAllUsers();
+            XMLLoggingUtil.log("INFO", "DELETE", "successfully delted all users", "user", Session.getCurrentUser().getUsername(),  "*");
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete all users");
@@ -214,6 +220,7 @@ public class AdminController extends BaseController{
         try{
             XMLExporter.marshall(headphonesService.getAllHeadphones());
             AlertUtil.showInformationAlert("Database to XML export successful");
+            XMLLoggingUtil.log("INFO", "EXPORT", "successfully exported DB backup", "*", Session.getCurrentUser().getUsername(),  "*");
         }
         catch (JAXBException e){
             LoggingUtil.logError("JAXB backup export error", e);

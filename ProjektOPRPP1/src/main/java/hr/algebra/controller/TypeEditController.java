@@ -4,6 +4,7 @@ import hr.algebra.models.Type;
 import hr.algebra.services.TypeService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
+import hr.algebra.util.XMLLoggingUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
@@ -88,12 +89,13 @@ public class TypeEditController extends BaseController{
         selectedType.setName(nameField.getText());
         typeService.save(selectedType);
         LoggingUtil.logInfo("UPDATE", "Type", selectedType.getName(), Session.getCurrentUser().getUsername());
-
+        XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "type", Session.getCurrentUser().getUsername(),  nameField.getText());
     }
 
     private void insertNewType() {
         typeService.save(new Type(nameField.getText()));
         LoggingUtil.logInfo("INSERT", "Type", nameField.getText(), Session.getCurrentUser().getUsername());
+        XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "type", Session.getCurrentUser().getUsername(),  nameField.getText());
     }
 
     private boolean validateUserInput() {

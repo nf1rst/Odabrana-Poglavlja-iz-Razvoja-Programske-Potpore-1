@@ -5,6 +5,7 @@ import hr.algebra.models.Session;
 import hr.algebra.services.BrandService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
+import hr.algebra.util.XMLLoggingUtil;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
@@ -111,6 +112,7 @@ public class BrandEditController extends BaseController
         try{
             brandService.save(selectedBrand);
             LoggingUtil.logInfo("UPDATE", "Brand", selectedBrand.getName(), Session.getCurrentUser().getUsername());
+            XMLLoggingUtil.log("INFO", "UPDATE", "successfuly deleted", "brand", Session.getCurrentUser().getUsername(), selectedBrand.getName());
             fillStatusLabel(statusLabel, "Brand successfully updated", Color.BLUE);
         }
         catch (CannotPerformActionException e){
@@ -123,6 +125,7 @@ public class BrandEditController extends BaseController
         try{
             brandService.save(new Brand(nameField.getText(), descField.getText()));
             LoggingUtil.logInfo("INSERT", "Brand", nameField.getText(), Session.getCurrentUser().getUsername());
+            XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "brand", Session.getCurrentUser().getUsername(),  nameField.getText());
             fillStatusLabel(statusLabel, "Brand successfully inserted", Color.GREEN);
         }
         catch (CannotPerformActionException e){

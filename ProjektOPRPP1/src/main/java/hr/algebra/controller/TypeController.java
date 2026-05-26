@@ -5,6 +5,7 @@ import hr.algebra.services.TypeService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
 import hr.algebra.util.SceneLoadingUtil;
+import hr.algebra.util.XMLLoggingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -85,7 +86,7 @@ public class TypeController extends BaseController{
 
         typeService.delete(selectedType.getId());
         LoggingUtil.logInfo( "DELETE", "Type", selectedType.getName(), Session.getCurrentUser().getUsername());
-        AlertUtil.showErrorAlert("Type successfully deleted");
+        XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "type", Session.getCurrentUser().getUsername(),  nameLabel.getText());
         selectedType=null;
         onClear();
         refresh();
