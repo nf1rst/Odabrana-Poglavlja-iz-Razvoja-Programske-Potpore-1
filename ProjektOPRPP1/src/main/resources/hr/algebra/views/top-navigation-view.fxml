@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox fx:id="hBox" prefHeight="25.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.NavigationController">
+    <MenuBar prefWidth="800.0">
+        <menus>
+            <Menu text="Entities">
+                <items>
+                    <MenuItem onAction="#onHeadphones" text="Headphones" />
+                    <MenuItem onAction="#onBrands" text="Brands" />
+                    <MenuItem onAction="#onTypes" text="Types" />
+                    <MenuItem onAction="#onUses" text="Uses" />
+                    <MenuItem onAction="#onTechnologies" text="Technologies" />
+                </items>
+            </Menu>
+            <Menu text="Views">
+                <items>
+                    <MenuItem onAction="#onMainMenu" text="Main Menu" />
+                    <MenuItem onAction="#onCompareHeadphones" text="Compare headphones" />
+                </items>
+            </Menu>
+            <Menu text="Account">
+                <items>
+                    <MenuItem onAction="#onAccountInfo" text="Account info" />
+                    <MenuItem onAction="#onLogOut" text="Log out" />
+                </items>
+            </Menu>
+        </menus>
+    </MenuBar>
+</HBox>
