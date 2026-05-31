@@ -3,8 +3,12 @@ package hr.algebra.models;
 import java.util.Objects;
 
 public class Use implements Comparable<Use> {
-    private final int id;
+    private int id;
     private String name;
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Use(String name) {
         this.id=0;

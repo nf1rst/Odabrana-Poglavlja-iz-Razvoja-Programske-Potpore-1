@@ -3,9 +3,13 @@ package hr.algebra.models;
 import java.util.Objects;
 
 public class Type implements Comparable<Type> {
-    private final int id;
+    private int id;
     private String name;
 
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Type(int id, String name) {
         this.id = id;

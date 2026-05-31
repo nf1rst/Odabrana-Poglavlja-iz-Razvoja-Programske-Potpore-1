@@ -3,6 +3,7 @@ import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Type;
 import hr.algebra.repositories.TypeRepository;
 import hr.algebra.repositories.implementation.TypeRepositoryImpl;
+import hr.algebra.util.LoggingUtil;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -77,6 +78,16 @@ public class TypeService {
             throw new CannotPerformActionException("Cannot excute to get types");
         }
 
+    }
+
+    public int getTypeIdByName(String name){
+        try{
+            return repo.GetTypeIdByName(name);
+        }
+        catch (SQLException e){
+            LoggingUtil.logError("Possible usage insert error", e);
+        }
+        return 0;
     }
 
 }

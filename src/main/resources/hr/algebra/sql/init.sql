@@ -100,6 +100,7 @@ as
 begin
 	insert into Brand(Name,Description)
 		values(@Name,@Description)
+	select SCOPE_IDENTITY() as generatedID
 end;
 go
 
@@ -160,6 +161,7 @@ as
 begin 
 	insert into Type(Name)
 		values(@name)
+		select SCOPE_IDENTITY() as generatedID
 end;
 go
 
@@ -196,6 +198,7 @@ as
 begin
 	insert into Technology(Name,Description)
 		values(@name,@description)
+	select SCOPE_IDENTITY() as generatedID
 end;
 go
 
@@ -241,6 +244,7 @@ create or alter proc InsertUse
 as
 begin
 	insert into UsePurpose(Name) values(@name)
+	select SCOPE_IDENTITY() as generatedID
 end;
 go
 
@@ -566,3 +570,47 @@ begin
 	from AdminActivities
 end;
 go
+
+-- za API citanje za ubacit headphones 
+
+create or alter proc GetBrandIdByName
+@name nvarchar(50)
+as
+begin
+	select b.ID as id
+	from Brand as b
+	where b.Name=@name
+end;
+go
+
+
+create or alter proc GetTechnologyIdByName
+@name nvarchar(50)
+as
+begin
+	select t.ID as id
+	from Technology as t
+	where t.Name=@name
+end;
+go
+
+
+create or alter proc GetUseIdByName
+@name nvarchar(50)
+as
+begin
+	select u.ID as id
+	from UsePurpose as u
+	where u.Name=@name
+end;
+go
+
+create or alter proc GetTypeIdByName
+@name nvarchar(50)
+as
+begin
+	select t.ID as id
+	from Type as t
+	where  t.Name=@name
+end;
+

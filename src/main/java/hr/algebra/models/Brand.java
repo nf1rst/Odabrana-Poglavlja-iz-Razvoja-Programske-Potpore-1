@@ -3,7 +3,7 @@ package hr.algebra.models;
 import java.util.Objects;
 
 public class Brand implements Comparable<Brand>{
-    private final int id;
+    private int id;
 
     private String name;
     private String description;
@@ -18,6 +18,10 @@ public class Brand implements Comparable<Brand>{
        this.id=0; //placeholder, baza ce to poslije sama rijesit
         this.name = name;
         this.description = description;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Brand() {

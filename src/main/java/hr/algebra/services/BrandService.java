@@ -3,10 +3,13 @@ import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Brand;
 import hr.algebra.repositories.BrandRepository;
 import hr.algebra.repositories.implementation.BrandRepositoryImpl;
+import hr.algebra.util.LoggingUtil;
+
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
+import java.util.logging.Logger;
 
 public class BrandService {
     private static final BrandService INSTANCE=new BrandService();
@@ -82,6 +85,16 @@ public class BrandService {
             throw new CannotPerformActionException("Cannot execute to get brands");
         }
 
+    }
+
+    public int getBrandIdByName(String name){
+        try{
+            return repo.GetBrandIdByName(name);
+        }
+        catch (SQLException e){
+            LoggingUtil.logError("Possible usage insert error", e);
+        }
+        return 0;
     }
 
 }

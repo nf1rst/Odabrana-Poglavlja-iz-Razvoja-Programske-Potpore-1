@@ -4,6 +4,7 @@ import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Technology;
 import hr.algebra.repositories.TechnologyRepository;
 import hr.algebra.repositories.implementation.TechnologyRepositoryImpl;
+import hr.algebra.util.LoggingUtil;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -85,6 +86,16 @@ public class TechnologyService {
             throw new CannotPerformActionException("Cannot execute to get technologies");
         }
 
+    }
+
+    public int getTechnologyIdByName(String name){
+        try{
+            return repo.GetTechnologydIdByName(name);
+        }
+        catch (SQLException e){
+            LoggingUtil.logError("Possible usage insert error", e);
+        }
+        return 0;
     }
 
 }

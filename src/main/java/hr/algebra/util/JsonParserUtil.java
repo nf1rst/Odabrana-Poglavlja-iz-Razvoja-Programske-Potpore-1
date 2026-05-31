@@ -4,8 +4,6 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import hr.algebra.models.*;
 import hr.algebra.models.help.ParsedData;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -29,8 +27,6 @@ public class JsonParserUtil {
             for(JsonNode node : root){
                 Headphones headphones = new Headphones();
                 Brand brand = new Brand();
-                Technology technology = new Technology();
-                Use use = new Use();
                 Type type = new Type();
 
                 headphones.setName(node.get("name").asText("N/A"));
@@ -51,15 +47,19 @@ public class JsonParserUtil {
                 //ovdje vraca listu tehcnologies
                 JsonNode technologiesNode=node.get("technologies");
                 for(JsonNode tNode:technologiesNode){
+                    Technology technology = new Technology();
                     technology.setName(tNode.get("name").asText("N/A"));
                     technology.setDescription(tNode.get("description").asText("N/A"));
                     technologySet.add(technology);
+                    headphones.getTechnologies().add(technology);
                 }
 
                 JsonNode usesNode=node.get("uses");
                 for(JsonNode uNode:usesNode){
+                    Use use = new Use();
                     use.setName(uNode.get("name").asText("N/A"));
                     usesSet.add(use);
+                    headphones.getPossibleUsages().add(use);
                 }
 
                 JsonNode typeNode = node.get("type");
@@ -67,9 +67,6 @@ public class JsonParserUtil {
                 typeSet.add(type);
                 headphones.setType(type);
 
-
-                headphones.setTechnologies(technologySet.stream().toList());
-                headphones.setPossibleUsages(usesSet.stream().toList());
                 headphonesList.add(headphones);
             }
         }

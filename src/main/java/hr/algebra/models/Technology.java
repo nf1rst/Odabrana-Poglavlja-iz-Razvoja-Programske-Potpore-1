@@ -4,7 +4,11 @@ import java.util.Objects;
 
 public class Technology {
 
-    private final int id;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
     private String name;
     private String description;
 

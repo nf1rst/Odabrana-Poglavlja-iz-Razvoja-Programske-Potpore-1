@@ -4,6 +4,7 @@ import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Use;
 import hr.algebra.repositories.UseRepository;
 import hr.algebra.repositories.implementation.UseRepositoryImpl;
+import hr.algebra.util.LoggingUtil;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -82,6 +83,15 @@ public class UseService {
         catch (SQLException _){
             throw new CannotPerformActionException("Cannot get uses");
         }
+    }
 
+    public int getUseIdByName(String name){
+        try{
+            return repo.GetUseIdByName(name);
+        }
+        catch (SQLException e){
+            LoggingUtil.logError("Possible usage insert error", e);
+        }
+        return 0;
     }
 }

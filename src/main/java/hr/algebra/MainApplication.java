@@ -4,7 +4,7 @@ import hr.algebra.exceptions.EntityExistantException;
 import hr.algebra.models.*;
 import hr.algebra.models.help.ParsedData;
 import hr.algebra.repositories.implementation.*;
-import hr.algebra.services.UserService;
+import hr.algebra.services.*;
 import hr.algebra.util.HttpUtil;
 import hr.algebra.util.JsonParserUtil;
 import hr.algebra.util.LoggingUtil;
@@ -22,7 +22,6 @@ public class MainApplication extends Application {
     public static void main(String[] args)  {
 
         launch(args);
-
     }
 
     @Override
@@ -65,6 +64,8 @@ public class MainApplication extends Application {
             String headphonesJSON = HttpUtil.getJSON();
             ParsedData parsedData = JsonParserUtil.parse(headphonesJSON);
 
+
+            //id je mapirao dobro ali se ovdje opet salju objekti s IDem = 0 jer se nije updateala ovo lista
             insertBrand(parsedData.getBrand());
             insertTechnologies(parsedData.getTechnologies());
             insertUses(parsedData.getUses());
@@ -80,13 +81,47 @@ public class MainApplication extends Application {
 
     private void insertHeadphones(List<Headphones> headphones) {
         final HeadphonesRepositoryImpl heaphoneRepo = HeadphonesRepositoryImpl.getInstace();
+        final BrandService brandService = BrandService.getInstance();
+        final TypeService typeService = TypeService.getInstance();
+        final TechnologyService technologyService = TechnologyService.getInstance();
+        final UseService useService = UseService.getInstance();
+
+//treba se napravit da za svaki entitet po imenu izvadi njegov id pa da se onda tako dalje azurira
         headphones.forEach(b->{
-            try{
-                heaphoneRepo.save(b);
-            }
-            catch (SQLException e){
-                LoggingUtil.logError("Headphone insert error", e);
-            }
+            int brandId=brandService.getBrandIdByName(b.getBrand().getName());
+            b.getBrand().setId(brandId);
+
+            int typeId =typeService.getTypeIdByName(b.getType().getName());
+            b.getType().setId(typeId);
+            //ove 2 potencijalno zbrisat
+                try{
+                    heaphoneRepo.save(b);
+
+                    List<Technology> technologies = b.getTechnologies();
+                    technologies.forEach(t->{
+                        int technologyId= technologyService.getTechnologyIdByName(t.getName());
+                        try{
+                            heaphoneRepo.addTechnology(b.getId(), technologyId);
+                        }
+                        catch (SQLException e){
+                            LoggingUtil.logError("Headphones technology insert error", e);
+                        }
+                    });
+
+                    List<Use>uses = b.getPossibleUsages();
+                    uses.forEach(a->{
+                        try{
+                            int useId= useService.getUseIdByName(a.getName());
+                            heaphoneRepo.addUse(b.getId(), useId);
+                        }
+                        catch (SQLException e){
+                            LoggingUtil.logError("Possible usage insert error", e);
+                        }
+                    });
+                }
+                catch (SQLException e){
+                    LoggingUtil.logError("Headphone insert error", e);
+                }
         });
     }
 
@@ -144,7 +179,6 @@ public class MainApplication extends Application {
         final UserService userService = UserService.getInstance();
 
         userService.registerAdmin("admin", "asdfasdf");
-
     }
 
     @Override

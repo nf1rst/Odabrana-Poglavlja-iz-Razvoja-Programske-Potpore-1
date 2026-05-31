@@ -1,4 +1,5 @@
 package hr.algebra.models;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -17,8 +18,8 @@ public class Headphones implements Comparable<Headphones> {
     private String imagePath;
     private String name;
     private Brand brand;
-    private List<Technology>technologies;
-    private List<Use>uses;
+    private List<Technology>technologies=new ArrayList<>();
+    private List<Use>uses=new ArrayList<>();
     private Type type;
 
     @Override

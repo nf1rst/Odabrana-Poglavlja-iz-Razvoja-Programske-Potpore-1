@@ -3,6 +3,7 @@ import hr.algebra.database.DBConnector;
 import hr.algebra.models.Brand;
 import hr.algebra.repositories.BrandRepository;
 import java.sql.CallableStatement;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -64,7 +65,11 @@ public class BrandRepositoryImpl implements BrandRepository {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL InsertBrand(?,?)}")){
             statement.setString(1,brand.getName());
             statement.setString(2,brand.getDescription());
-            statement.execute();
+            try(ResultSet rs = statement.executeQuery()){
+                if(rs.next()){
+                    brand.setId(rs.getInt("generatedID"));
+                }
+            }
         }
     }
 
@@ -75,5 +80,16 @@ public class BrandRepositoryImpl implements BrandRepository {
                 rs.getString("name"),
                 rs.getString("description")
         );
+    }
+
+    @Override
+    public int GetBrandIdByName(String name) throws SQLException {
+        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetBrandIdByName(?)}")){
+            statement.setString(1, name);
+            try(ResultSet rs = statement.executeQuery()){
+                if(rs.next()){return rs.getInt("id");}
+            }
+        }
+        return 0;
     }
 }

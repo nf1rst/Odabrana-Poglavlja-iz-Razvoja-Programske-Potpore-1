@@ -1,4 +1,5 @@
 package hr.algebra.controller;
+import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.*;
 import hr.algebra.services.*;
 import hr.algebra.util.AlertUtil;
@@ -14,11 +15,14 @@ import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
+
+import javax.naming.CannotProceedException;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.sql.SQLException;
 import java.util.List;
 
 public class HeadphonesEditController extends BaseController{
@@ -252,7 +256,10 @@ public class HeadphonesEditController extends BaseController{
                 userselectedTech,
                 userSelectedUses
         );
+
         headphonesService.save(headphonesForInsert);
+        updateManyToMany(headphonesForInsert, userselectedTech, userSelectedUses);
+
         LoggingUtil.logInfo("INSERT", "Headphones", headphonesForInsert.getName(), Session.getCurrentUser().getUsername());
         XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "headphones", Session.getCurrentUser().getUsername(), nameField.getText());
     }
@@ -262,19 +269,26 @@ public class HeadphonesEditController extends BaseController{
         //ako postoje vec neke veze u bazi, trebaju se zbrisat prije nego se krene ubacivat
 
         //!! ovdje ne moze ubacit jer ne zna koji identity ID dobiju novoubacene slusalice
-        if(selectedHeadphones.getTechnologies()!=null){
-            selectedHeadphones.getTechnologies().forEach(t->headphonesService.removeTechnology(selectedHeadphones.getId(),t.getId())); // u bazi je tim redoslojedom
+
+        try {
+            if(selectedHeadphones.getTechnologies()!=null){
+                selectedHeadphones.getTechnologies().forEach(t->headphonesService.removeTechnology(selectedHeadphones.getId(),t.getId())); // u bazi je tim redoslojedom
+            }
+            if(selectedHeadphones.getPossibleUsages()!=null){
+                selectedHeadphones.getPossibleUsages().forEach(u->headphonesService.removeUse(selectedHeadphones.getId(),u.getId()));
+            }
+
+            for(Technology t:userselectedTech){
+                headphonesService.addTechnology(selectedHeadphones.getId(),t.getId());
+            }
+            for(Use u:userSelectedUses){
+                headphonesService.addUse(selectedHeadphones.getId(),u.getId());
+            }
         }
-        if(selectedHeadphones.getPossibleUsages()!=null){
-            selectedHeadphones.getPossibleUsages().forEach(u->headphonesService.removeUse(selectedHeadphones.getId(),u.getId()));
+        catch (CannotPerformActionException e){
+            AlertUtil.showErrorAlert("Cannot save headphones");
         }
 
-        for(Technology t:userselectedTech){
-            headphonesService.addTechnology(selectedHeadphones.getId(),t.getId());
-        }
-        for(Use u:userSelectedUses){
-            headphonesService.addUse(selectedHeadphones.getId(),u.getId());
-        }
     }
 
     private boolean validateUserInput() {

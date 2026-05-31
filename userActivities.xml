@@ -36,4 +36,85 @@
         <username>asdf1</username>
         <identity>asdf</identity>
     </log>
+    <log>
+        <time>31-05-2026 17:56:57</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>31-05-2026 17:56:57</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>31-05-2026 17:56:57</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>31-05-2026 17:56:58</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>31-05-2026 17:57:03</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported DB backup</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>31-05-2026 19:03:01</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>FDX-11</identity>
+    </log>
+    <log>
+        <time>31-05-2026 19:05:30</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>FDX-11</identity>
+    </log>
+    <log>
+        <time>31-05-2026 19:13:44</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ASDF1</identity>
+    </log>
+    <log>
+        <time>31-05-2026 19:17:16</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>Hyper x Alloy</identity>
+    </log>
 </errorLogs>

@@ -203,7 +203,6 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
 
     private void insert(Headphones h) throws SQLException {
         try(CallableStatement statement=DBConnector.getConnection().prepareCall("{CALL InsertHeadphones(?,?,?,?,?,?,?,?,?,?,?)}")){
-            //ovo se moze izdvojit u funkciju da ne moras kopirat dijelove koda
             statement.setString(1,h.getName());
             statement.setInt(2,h.getYearEdition());
             statement.setInt(3,h.getImpedance());

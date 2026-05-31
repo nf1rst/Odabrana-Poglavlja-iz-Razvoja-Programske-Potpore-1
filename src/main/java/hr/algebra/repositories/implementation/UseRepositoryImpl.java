@@ -68,7 +68,23 @@ public class UseRepositoryImpl implements UseRepository {
     private void insert(Use use) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL InsertUse(?)}")){
             statement.setString(1,use.getName());
-            statement.execute();
+            try(ResultSet rs = statement.executeQuery()){
+                if(rs.next()){
+                    int generatedID = rs.getInt("generatedID");
+                    use.setId(generatedID);
+                }
+            }
         }
+    }
+
+    @Override
+    public int GetUseIdByName(String name) throws SQLException {
+        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetUseIdByName(?)}")){
+            statement.setString(1, name);
+            try(ResultSet rs = statement.executeQuery()){
+                if(rs.next()){return rs.getInt("id");}
+            }
+        }
+        return 0;
     }
 }

@@ -63,8 +63,26 @@ public class TypeRepositoryImpl implements TypeRepository {
     private void insert(Type type) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL InsertType(?)}")){
             statement.setString(1,type.getName());
-            statement.execute();
+
+            try(ResultSet rs = statement.executeQuery()){
+                if(rs.next()){
+                    int generatedID = rs.getInt("generatedID");
+                    type.setId(generatedID);
+                }
+            }
+
         }
+    }
+
+    @Override
+    public int GetTypeIdByName(String name) throws SQLException {
+        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetTypeIdByName(?)}")){
+            statement.setString(1, name);
+            try(ResultSet rs = statement.executeQuery()){
+                if(rs.next()){return rs.getInt("id");}
+            }
+        }
+        return 0;
     }
 
     private Type mapRow(ResultSet rs) throws SQLException {

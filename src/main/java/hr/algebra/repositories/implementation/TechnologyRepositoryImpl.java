@@ -62,8 +62,26 @@ public class TechnologyRepositoryImpl implements TechnologyRepository {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL InsertTechnology(?,?)}")){
             statement.setString(1,technology.getName());
             statement.setString(2,technology.getDescription());
-            statement.execute();
+
+            try(ResultSet rs = statement.executeQuery()){
+                if(rs.next()){
+                    int generatedID = rs.getInt("generatedID");
+                    technology.setId(generatedID);
+                }
+            }
         }
+
+    }
+
+    @Override
+    public int GetTechnologydIdByName(String name) throws SQLException {
+        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetTechnologyIdByName(?)}")){
+            statement.setString(1, name);
+            try(ResultSet rs = statement.executeQuery()){
+                if(rs.next()){return rs.getInt("id");}
+            }
+        }
+        return 0;
     }
 
     private Technology mapRow(ResultSet rs) throws SQLException {
