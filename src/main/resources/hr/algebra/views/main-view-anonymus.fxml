@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.MainController">
+    <top>
+        <VBox alignment="TOP_CENTER" prefHeight="43.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="welcomeLabel" text="WELCOME">
+                    <font>
+                        <Font name="System Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Label text="Choose your next move" />
+            </children>
+            <BorderPane.margin>
+                <Insets top="5.0" />
+            </BorderPane.margin>
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <MenuButton mnemonicParsing="false" text="Entitites">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#onHeadphones" text="Headphones" />
+                        <MenuItem mnemonicParsing="false" onAction="#onBrands" text="Brands" />
+                        <MenuItem mnemonicParsing="false" onAction="#onTechnologies" text="Technologies" />
+                        <MenuItem mnemonicParsing="false" onAction="#onUses" text="Uses" />
+                        <MenuItem mnemonicParsing="false" onAction="#onTypes" text="Types" />
+                    </items>
+                </MenuButton>
+                <Button mnemonicParsing="false" onAction="#onCompareHeadphones" text="Compare Headphones" />
+                <Button mnemonicParsing="false" onAction="#onLogin" text="Login" />
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

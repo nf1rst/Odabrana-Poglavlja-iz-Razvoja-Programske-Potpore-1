@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<errorLogs>
+    <log>
+        <time>28-05-2026 02:14:11</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>FDX-11</identity>
+    </log>
+    <log>
+        <time>28-05-2026 02:22:21</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>FDX-11</identity>
+    </log>
+    <log>
+        <time>31-05-2026 12:50:50</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfuly deleted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>Sennheiser</identity>
+    </log>
+    <log>
+        <time>31-05-2026 12:51:12</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>asdf</identity>
+    </log>
+</errorLogs>
