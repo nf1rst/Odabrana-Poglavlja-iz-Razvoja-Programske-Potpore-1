@@ -1,10 +1,9 @@
 package hr.algebra.repositories.implementation;
+
 import hr.algebra.database.DBConnector;
 import hr.algebra.models.*;
-import hr.algebra.repositories.BrandRepository;
 import hr.algebra.repositories.HeadphonesRepository;
 
-import java.io.IOException;
 import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

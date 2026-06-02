@@ -5,5 +5,5 @@ import hr.algebra.models.Technology;
 import java.sql.SQLException;
 
 public interface TechnologyRepository extends Repository<Technology>{
-    int GetTechnologydIdByName(String name) throws SQLException;
+    int getTechnologydIdByName(String name) throws SQLException;
 }

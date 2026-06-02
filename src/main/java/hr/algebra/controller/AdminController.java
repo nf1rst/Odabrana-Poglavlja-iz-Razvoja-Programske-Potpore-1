@@ -13,7 +13,6 @@ import hr.algebra.xml.export.XMLExporter;
 import jakarta.xml.bind.JAXBException;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -44,6 +43,8 @@ public class AdminController extends BaseController{
     private final HeadphonesService headphonesService = HeadphonesService.getInstance();
     private static final AdminService adminService = AdminService.INSTANCE;
 
+
+    private String delete="DELETE"; // sonarqube
     @FXML
     public void initialize(){
         setUpColumns();
@@ -51,21 +52,7 @@ public class AdminController extends BaseController{
 
         searchField.textProperty().addListener((obs, old, val)->{
             if(!val.isBlank()){
-                try{
-                    userTableView.setItems(FXCollections.observableArrayList(userService.search(val)));
-                }
-                catch (CannotPerformActionException e){
-                    LoggingUtil.logError("search error", e);
-                    AlertUtil.showErrorAlert("Cannot perform action at this time");
-                }
-            }
-            else{
-                try{
-                    userTableView.setItems(FXCollections.observableArrayList(userService.getAllUsers()));
-                }catch (CannotPerformActionException e){
-                    LoggingUtil.logError("get all users error", e);
-                    AlertUtil.showErrorAlert("Cannot perform action at this time");
-                }
+                fillTable(userTableView, userService.search(val));
             }
         });
 
@@ -76,7 +63,7 @@ public class AdminController extends BaseController{
                         selectedUser=val;
                     }
                 });
-        fillUserTable();
+        fillTable(userTableView, userService.getAllUsers());
     }
 
     private void setUpChoiceBox() {
@@ -102,9 +89,6 @@ public class AdminController extends BaseController{
         }
     }
 
-    private void fillUserTable() {
-        userTableView.setItems(FXCollections.observableArrayList(userService.getAllUsers()));
-    }
 
     private void setUpColumns() {
         colID.setCellValueFactory
@@ -156,8 +140,8 @@ public class AdminController extends BaseController{
     public void onDeleteAllEntities(){
         try{
             adminService.deleteAllEntities();
-            LoggingUtil.logInfo("DELETE", "Entities",  Session.getCurrentUser().getUsername());
-            XMLLoggingUtil.log("INFO", "DELETE", "successfully delted all entities", "*", Session.getCurrentUser().getUsername(),  "*");
+            LoggingUtil.logInfo(delete, "Entities",  Session.getCurrentUser().getUsername());
+            XMLLoggingUtil.log("INFO", delete, "successfully delted all entities", "*", Session.getCurrentUser().getUsername(),  "*");
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete all database content");
@@ -188,12 +172,13 @@ public class AdminController extends BaseController{
             }
 
             adminService.deleteUserByUsername(selectedUser.getUsername());
-            XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "user", Session.getCurrentUser().getUsername(),  selectedUser.getUsername());
+            XMLLoggingUtil.log("INFO", delete, "successfully deleted", "user", Session.getCurrentUser().getUsername(),  selectedUser.getUsername());
             selectedUser=null;
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete user");
         }
+        fillTable(userTableView, userService.getAllUsers());
     }
 
     @FXML
@@ -203,11 +188,12 @@ public class AdminController extends BaseController{
                 return;
             }
             adminService.deleteAllUsers();
-            XMLLoggingUtil.log("INFO", "DELETE", "successfully delted all users", "user", Session.getCurrentUser().getUsername(),  "*");
+            XMLLoggingUtil.log("INFO", delete, "successfully delted all users", "user", Session.getCurrentUser().getUsername(),  "*");
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete all users");
         }
+        fillTable(userTableView, userService.getAllUsers());
     }
 
     @FXML

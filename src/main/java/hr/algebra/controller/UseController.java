@@ -1,5 +1,5 @@
 package hr.algebra.controller;
-import hr.algebra.exceptions.CannotPerformActionException;
+
 import hr.algebra.models.Session;
 import hr.algebra.models.Use;
 import hr.algebra.services.UseService;
@@ -9,12 +9,12 @@ import hr.algebra.util.SceneLoadingUtil;
 import hr.algebra.util.XMLLoggingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.*;
-
-import java.sql.SQLException;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 public class UseController extends BaseController{
 
@@ -47,10 +47,10 @@ public class UseController extends BaseController{
                 });
 
         fillUserLabel(currentUserLabel);
-
-        searchField.textProperty().addListener((obs,old,q)->useTable.setItems(FXCollections.observableArrayList(useService.search(q))));
-
         fillTable(useTable, useService.getAllUses());
+
+        searchField.textProperty().addListener((obs,old,q)->fillTable(useTable, useService.search(q)));
+
     }
 
 

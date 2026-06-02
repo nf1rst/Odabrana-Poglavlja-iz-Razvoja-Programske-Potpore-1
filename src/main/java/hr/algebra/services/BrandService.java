@@ -1,24 +1,22 @@
 package hr.algebra.services;
+
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Brand;
 import hr.algebra.repositories.BrandRepository;
-import hr.algebra.repositories.implementation.BrandRepositoryImpl;
+import hr.algebra.repositories.factory.RepositoryFactory;
 import hr.algebra.util.LoggingUtil;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
-import java.util.logging.Logger;
 
 public class BrandService {
     private static final BrandService INSTANCE=new BrandService();
-    private final BrandRepository repo;
+    private final BrandRepository repo= RepositoryFactory.getBrandRespository();
     public static BrandService getInstance(){return INSTANCE;}
 
-    public BrandService() {
-        repo= BrandRepositoryImpl.getInstance();
-    }
+    private BrandService() {}
 
     public List<Brand> getAllBrands(){
         try{
@@ -58,14 +56,12 @@ public class BrandService {
         if(query==null || query.isEmpty())return getAllBrands();
 
         Predicate<Brand>containsQuery = b->b.getName()
-                .toLowerCase()
-                .contains(query.toLowerCase().trim());
+                .contains(query);
 
         try{
             return repo.getAll()
                     .stream()
                     .filter(containsQuery)
-                    .sorted()
                     .toList();
         }
         catch (SQLException _){
@@ -89,7 +85,7 @@ public class BrandService {
 
     public int getBrandIdByName(String name){
         try{
-            return repo.GetBrandIdByName(name);
+            return repo.getBrandIdByName(name);
         }
         catch (SQLException e){
             LoggingUtil.logError("Possible usage insert error", e);

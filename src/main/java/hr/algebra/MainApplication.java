@@ -1,5 +1,6 @@
 package hr.algebra;
 import hr.algebra.database.DBSingleton;
+import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.exceptions.EntityExistantException;
 import hr.algebra.models.*;
 import hr.algebra.models.help.ParsedData;
@@ -15,6 +16,7 @@ import javafx.stage.Stage;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 
@@ -61,16 +63,18 @@ public class MainApplication extends Application {
 
     private void insertStartData() {
         try{
-            String headphonesJSON = HttpUtil.getJSON();
-            ParsedData parsedData = JsonParserUtil.parse(headphonesJSON);
+            Optional<String> headphonesJSON = HttpUtil.getJSON();
+            ParsedData parsedData;
+            if(!headphonesJSON.isEmpty()){
+                parsedData= JsonParserUtil.parse(headphonesJSON.get());
+                //id je mapirao dobro ali se ovdje opet salju objekti s IDem = 0 jer se nije updateala ovo lista
+                insertBrand(parsedData.getBrand());
+                insertTechnologies(parsedData.getTechnologies());
+                insertUses(parsedData.getUses());
+                insertTypes(parsedData.getTypes());
+                insertHeadphones(parsedData.getHeadphones());
+            }
 
-
-            //id je mapirao dobro ali se ovdje opet salju objekti s IDem = 0 jer se nije updateala ovo lista
-            insertBrand(parsedData.getBrand());
-            insertTechnologies(parsedData.getTechnologies());
-            insertUses(parsedData.getUses());
-            insertTypes(parsedData.getTypes());
-            insertHeadphones(parsedData.getHeadphones());
 
         }
         catch (Exception e){
@@ -80,7 +84,7 @@ public class MainApplication extends Application {
     }
 
     private void insertHeadphones(List<Headphones> headphones) {
-        final HeadphonesRepositoryImpl heaphoneRepo = HeadphonesRepositoryImpl.getInstace();
+        final HeadphonesService headphonesService= HeadphonesService.getInstance();
         final BrandService brandService = BrandService.getInstance();
         final TypeService typeService = TypeService.getInstance();
         final TechnologyService technologyService = TechnologyService.getInstance();
@@ -93,17 +97,16 @@ public class MainApplication extends Application {
 
             int typeId =typeService.getTypeIdByName(b.getType().getName());
             b.getType().setId(typeId);
-            //ove 2 potencijalno zbrisat
                 try{
-                    heaphoneRepo.save(b);
+                    headphonesService.save(b);
 
                     List<Technology> technologies = b.getTechnologies();
                     technologies.forEach(t->{
                         int technologyId= technologyService.getTechnologyIdByName(t.getName());
                         try{
-                            heaphoneRepo.addTechnology(b.getId(), technologyId);
+                            headphonesService.addTechnology(b.getId(), technologyId);
                         }
-                        catch (SQLException e){
+                        catch (CannotPerformActionException e){
                             LoggingUtil.logError("Headphones technology insert error", e);
                         }
                     });
@@ -112,14 +115,14 @@ public class MainApplication extends Application {
                     uses.forEach(a->{
                         try{
                             int useId= useService.getUseIdByName(a.getName());
-                            heaphoneRepo.addUse(b.getId(), useId);
+                            headphonesService.addUse(b.getId(), useId);
                         }
-                        catch (SQLException e){
+                        catch (CannotPerformActionException e){
                             LoggingUtil.logError("Possible usage insert error", e);
                         }
                     });
                 }
-                catch (SQLException e){
+                catch (CannotPerformActionException e){
                     LoggingUtil.logError("Headphone insert error", e);
                 }
         });
@@ -185,6 +188,7 @@ public class MainApplication extends Application {
     public void stop() throws Exception {
         try {
             DBSingleton.INSTANCE.closeConnection();
+            //da rucno brisanje u SQL skriptii
         } catch (Exception _) {
             //
         }

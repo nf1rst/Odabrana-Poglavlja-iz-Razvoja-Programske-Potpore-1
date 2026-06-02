@@ -75,7 +75,7 @@ public class TypeRepositoryImpl implements TypeRepository {
     }
 
     @Override
-    public int GetTypeIdByName(String name) throws SQLException {
+    public int getTypeIdByName(String name) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetTypeIdByName(?)}")){
             statement.setString(1, name);
             try(ResultSet rs = statement.executeQuery()){

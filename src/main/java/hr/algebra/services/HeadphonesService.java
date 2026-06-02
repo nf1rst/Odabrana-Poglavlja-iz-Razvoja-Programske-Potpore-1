@@ -1,8 +1,10 @@
 package hr.algebra.services;
+
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Headphones;
 import hr.algebra.repositories.HeadphonesRepository;
-import hr.algebra.repositories.implementation.HeadphonesRepositoryImpl;
+import hr.algebra.repositories.factory.RepositoryFactory;
+
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
@@ -13,8 +15,8 @@ public class HeadphonesService {
     public static HeadphonesService getInstance(){return INSTANCE;}
     private final HeadphonesRepository repo;
 
-    public HeadphonesService() {
-        this.repo= HeadphonesRepositoryImpl.getInstace();
+    private HeadphonesService() {
+        this.repo= RepositoryFactory.getHeadphonesRespository();
     }
 
     public List<Headphones>getAllHeadphones(){
@@ -143,7 +145,6 @@ public class HeadphonesService {
             return repo.getAll()
                     .stream()
                     .filter(nameMatches.or(descriptionMatches).or(brandMatches))
-                    .sorted()
                     .toList();
         }
         catch (SQLException _){

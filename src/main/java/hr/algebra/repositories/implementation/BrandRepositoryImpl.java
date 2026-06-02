@@ -1,9 +1,10 @@
 package hr.algebra.repositories.implementation;
+
 import hr.algebra.database.DBConnector;
 import hr.algebra.models.Brand;
 import hr.algebra.repositories.BrandRepository;
+
 import java.sql.CallableStatement;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -83,7 +84,7 @@ public class BrandRepositoryImpl implements BrandRepository {
     }
 
     @Override
-    public int GetBrandIdByName(String name) throws SQLException {
+    public int getBrandIdByName(String name) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetBrandIdByName(?)}")){
             statement.setString(1, name);
             try(ResultSet rs = statement.executeQuery()){

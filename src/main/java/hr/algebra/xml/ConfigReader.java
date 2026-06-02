@@ -1,20 +1,19 @@
 package hr.algebra.xml;
 
+import hr.algebra.exceptions.ConfigReadException;
+import hr.algebra.util.LoggingUtil;
 import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.InputStream;
 
 public class ConfigReader {
-    //cita config.xml koristeciDOM parser
-    //taj DOM parser ucita cijeli XML u memoriju kao stablo
-    //dobar je za male datoteke gdje trebas
-    // pristupat elementira moze u bilo kojem redoslijedu
-    // staticka utility klasa - privatni konstruktor
-
+//DOM parser
 
     private ConfigReader() {}
 
+    //https://stackoverflow.com/questions/428073/what-is-the-best-simplest-way-to-read-in-an-xml-file-in-java-application
+    //https://www.baeldung.com/java-xerces-dom-parsing
     public static AppConfig read(){
         try{
             InputStream input = ConfigReader.class.getResourceAsStream("/hr/algebra/configSettings/config.xml");
@@ -35,7 +34,8 @@ public class ConfigReader {
             return new AppConfig(url,username,password,width,height,title);
         }
         catch (Exception e){
-            throw new RuntimeException("Cannot read the config.xml file", e);
+            LoggingUtil.logError("Cannot read the config.xml file", e);
+            throw new ConfigReadException("Cannot read the config.xml file");
         }
     }
 

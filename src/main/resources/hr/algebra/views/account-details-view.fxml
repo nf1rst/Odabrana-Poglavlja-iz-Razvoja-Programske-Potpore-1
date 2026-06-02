@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="TOP_CENTER" prefHeight="700.0" prefWidth="1000.0" spacing="20" style="-fx-padding: 30; -fx-background-color: #f9f9f9;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.UserController">
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="700.0" spacing="20.0" style="-fx-padding: 3'; -fx-background-color: #f9f9f9;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.UserController">
 
     <fx:include source="top-navigation-view.fxml" />
 
@@ -21,9 +21,7 @@
 
    <!-- Profilna slika -->
    <VBox alignment="CENTER" spacing="8">
-      <ImageView fx:id="profileImageView" fitHeight="120" fitWidth="120" preserveRatio="true" style="-fx-effect: dropshadow(gaussian, #aaa, 8, 0, 0, 2);" />
-
-      <Button onAction="#onSetProfilePicture" style="-fx-background-color: #2196F3;                        -fx-text-fill: white;                        -fx-padding: 6 14;" text="Change profile picture" />
+      <ImageView fx:id="profileImageView" fitHeight="223.0" fitWidth="235.0" preserveRatio="true" style="-fx-effect: dropshadow(gaussian, #aaa, 8, 0, 0, 2);" />
 
       <Label fx:id="imageStatusLabel" style="-fx-text-fill: #777; -fx-font-size: 11;" text="" />
    </VBox>
@@ -38,11 +36,11 @@
       <Label style="-fx-font-weight: bold;" text="Role:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
       <Label fx:id="roleLabel" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-      <Label style="-fx-font-weight: bold;" text="New password:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-      <PasswordField fx:id="newPasswordField" prefWidth="200" promptText="Leave empty to keep current" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label style="-fx-font-weight: bold;" text="New username:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+      <PasswordField fx:id="newUsernameField" prefWidth="200" promptText="Leave empty to keep current" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-      <Label style="-fx-font-weight: bold;" text="Confirm password:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-      <PasswordField fx:id="confirmPasswordField" prefWidth="200" promptText="Repeat new password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label style="-fx-font-weight: bold;" text="Confirm username:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+      <PasswordField fx:id="confirmUsernameField" prefWidth="200" promptText="Repeat new username" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       <columnConstraints>
          <ColumnConstraints />
          <ColumnConstraints />

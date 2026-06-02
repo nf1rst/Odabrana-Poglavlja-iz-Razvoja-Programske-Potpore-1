@@ -51,7 +51,7 @@ public class NavigationController extends BaseController{
             AlertUtil.showErrorAlert( "To view account details, one must be logged in");
             return;
         }
-        SceneLoadingUtil.loadNewWindow("/hr/algebra/views/account-details-view.fxml", "Account", getMainNode());
+        SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/account-details-view.fxml", "Account", getMainNode(), 700,600);
     }
 
     @FXML

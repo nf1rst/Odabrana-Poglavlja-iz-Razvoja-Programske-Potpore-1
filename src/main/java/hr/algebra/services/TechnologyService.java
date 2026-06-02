@@ -3,22 +3,21 @@ package hr.algebra.services;
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Technology;
 import hr.algebra.repositories.TechnologyRepository;
-import hr.algebra.repositories.implementation.TechnologyRepositoryImpl;
+import hr.algebra.repositories.factory.RepositoryFactory;
 import hr.algebra.util.LoggingUtil;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class TechnologyService {
-    private final static TechnologyService INSTANCE=new TechnologyService();
+    private static final TechnologyService INSTANCE=new TechnologyService();
     public static TechnologyService getInstance(){return INSTANCE;}
     private final TechnologyRepository repo;
 
-    public TechnologyService() {
-        this.repo = TechnologyRepositoryImpl.getInstance();
+    private TechnologyService() {
+        this.repo = RepositoryFactory.getTechnologyRespository();
     }
 
     public List<Technology>getAllTechnologies(){
@@ -57,18 +56,15 @@ public class TechnologyService {
     public List<Technology>search(String query){
         if(query==null || query.isEmpty())return getAllTechnologies();
 
-        String queryNoCapitals=query.toLowerCase();
-
-        Predicate<Technology>nameMatches= t->t.getName().contains(queryNoCapitals);
-        Predicate<Technology>descMatches=t->t.getDescription().contains(queryNoCapitals) && t.getDescription()!=null;
+        Predicate<Technology>nameMatches= t->t.getName().contains(query);
+        Predicate<Technology>descMatches=t->t.getDescription().contains(query) && t.getDescription()!=null;
 
 
         try{
             return repo.getAll()
                     .stream()
                     .filter(nameMatches.or(descMatches))
-                    .sorted()
-                    .collect(Collectors.toList());
+                    .toList();
         }
         catch (SQLException _){
             throw new CannotPerformActionException("Cannot execute to get technolgoies");
@@ -90,7 +86,7 @@ public class TechnologyService {
 
     public int getTechnologyIdByName(String name){
         try{
-            return repo.GetTechnologydIdByName(name);
+            return repo.getTechnologydIdByName(name);
         }
         catch (SQLException e){
             LoggingUtil.logError("Possible usage insert error", e);

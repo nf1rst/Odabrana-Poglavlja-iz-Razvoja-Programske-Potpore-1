@@ -117,7 +117,7 @@ public class Headphones implements Comparable<Headphones> {
     public boolean equals(Object o) {return o instanceof Headphones h && h.id==id;}
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return Objects.hashCode(name);
     }
 
     @Override

@@ -19,7 +19,6 @@ public class XMLExporter {
         marshaller.marshal(headphonesCatalogue, new File("backup.xml"));
     }
 
-
     public static void marshallSelected (Headphones headphones) throws JAXBException {
         ChosenHeadphonesCatalogue chosenHeadphones = new ChosenHeadphonesCatalogue(headphones);
         JAXBContext context = JAXBContext.newInstance(ChosenHeadphonesCatalogue.class);

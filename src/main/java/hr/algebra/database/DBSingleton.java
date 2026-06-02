@@ -13,6 +13,8 @@ import java.sql.Statement;
 public enum DBSingleton {
     INSTANCE;
 
+    private DBSingleton() {}
+
     private static Connection connection;
     private static AppConfig config;  // static varijabla za config
 
@@ -49,7 +51,6 @@ public enum DBSingleton {
         }
     }
 
-    private DBSingleton() {}
 
     private static void initSchema() throws IOException, InitializationException, SQLException {
 

@@ -3,7 +3,7 @@ package hr.algebra.services;
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.help.DBStatistics;
 import hr.algebra.repositories.AdminRepository;
-import hr.algebra.repositories.implementation.AdminRepositoryImpl;
+import hr.algebra.repositories.factory.RepositoryFactory;
 import hr.algebra.util.LoggingUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +13,7 @@ import java.util.Optional;
 
 public enum AdminService {
     INSTANCE;
-    private final AdminRepository repo = AdminRepositoryImpl.getInstance();
+    private final AdminRepository repo = RepositoryFactory.getAdminRespository();
     private final Logger logger = LoggerFactory.getLogger(AdminService.class);
 
     public void deleteAllEntities() {
@@ -37,7 +37,6 @@ public enum AdminService {
     public void deleteUserByUsername(String username) {
         try {
             repo.deleteUserByUsername(username);
-            System.out.println("servis");
         } catch (SQLException e) {
             logger.error("ERROR", e);
             throw new CannotPerformActionException("Cannot execute to delete user");

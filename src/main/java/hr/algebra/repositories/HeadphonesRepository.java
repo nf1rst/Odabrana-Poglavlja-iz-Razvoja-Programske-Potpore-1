@@ -1,7 +1,6 @@
 package hr.algebra.repositories;
 
 import hr.algebra.models.Headphones;
-import hr.algebra.models.Technology;
 
 import java.sql.SQLException;
 import java.util.List;

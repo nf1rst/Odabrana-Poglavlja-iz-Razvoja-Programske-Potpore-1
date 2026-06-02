@@ -43,7 +43,7 @@ public class Brand implements Comparable<Brand>{
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id); //PROMIJENI U ONO S VJEZBI
+        return Objects.hashCode(name);
     }
 
     @Override

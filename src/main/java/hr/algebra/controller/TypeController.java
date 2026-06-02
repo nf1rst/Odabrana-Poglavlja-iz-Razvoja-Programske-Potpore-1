@@ -8,7 +8,6 @@ import hr.algebra.util.SceneLoadingUtil;
 import hr.algebra.util.XMLLoggingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -44,9 +43,7 @@ public class TypeController extends BaseController{
                         nameLabel.setText(val.getName());
                     }
                 });
-        searchField.textProperty().addListener((obs,old,q)->{
-            typeTable.setItems(FXCollections.observableArrayList(typeService.search(q)));
-        });
+        searchField.textProperty().addListener((obs,old,q)->fillTable(typeTable, typeService.search(q)));
 
         fillUserLabel(currentUserLabel);
         fillTable(typeTable, typeService.getAllTypes());

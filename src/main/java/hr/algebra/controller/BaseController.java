@@ -1,23 +1,20 @@
 package hr.algebra.controller;
+
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Session;
 import hr.algebra.models.User;
 import hr.algebra.util.AlertUtil;
 import javafx.collections.FXCollections;
 import javafx.scene.Node;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.paint.Color;
-import net.bytebuddy.description.type.TypeList;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public abstract class BaseController {
 
     protected User currentUser = Session.getCurrentUser();
-
 
     protected <T> void fillTable(TableView<T>tableView, List<T> list){
         try{

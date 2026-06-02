@@ -9,16 +9,12 @@ import hr.algebra.util.SceneLoadingUtil;
 import hr.algebra.util.XMLLoggingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 
 
 public class TechnologyController extends BaseController{
-
-    @FXML private NavigationController  navigationController;
-
     private final TechnologyService technologyService= TechnologyService.getInstance();
     private Technology selectedTechnology;
 
@@ -54,9 +50,7 @@ public class TechnologyController extends BaseController{
                 });
 
         //za search field da filtrira kad korisnik nesto upise
-        searchField.textProperty().addListener((obs,old,q)->{
-            technologiesTable.setItems(FXCollections.observableArrayList(technologyService.search(q)));
-        });
+        searchField.textProperty().addListener((obs,old,q)-> fillTable(technologiesTable,technologyService.search(q)));
 
         fillUserLabel(currentUserLabel);
 

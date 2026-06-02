@@ -12,13 +12,11 @@ import java.util.List;
 public class ChosenHeadphonesCatalogue {
 
     @XmlAttribute private int id;
-    //ID-a novostvorenog objekta moc insertirat u M:N medutablice
-
     @XmlElement private int yearEdition;
-    @XmlElement private int impedance; // impedance = el. otpor audio signalima (Ohm)
+    @XmlElement private int impedance;
     @XmlElement private int minFrequency;
     @XmlElement private int maxFrequency;
-    @XmlElement  private int batteryLife;//za bezicne
+    @XmlElement  private int batteryLife;
     @XmlElement private double price;
     @XmlElement   private String description;
     @XmlElement   private String name;
@@ -26,10 +24,11 @@ public class ChosenHeadphonesCatalogue {
     @XmlElement   private String brandName;
 
     @XmlElementWrapper(name="technologies")
-    @XmlElement(name="technology") private List<String> technologiesNames=new ArrayList<String>();
+    @XmlElement(name="technology") private List<String> technologiesNames=new ArrayList<>();
 
     @XmlElementWrapper(name="uses")
     @XmlElement(name="use") private List<String>usesNames=new ArrayList<>();
+
     @XmlElement   private String typeName;
 
     public ChosenHeadphonesCatalogue() {}

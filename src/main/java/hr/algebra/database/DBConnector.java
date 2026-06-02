@@ -9,7 +9,7 @@ public class DBConnector {
     private DBConnector(){}
 
     public static Connection getConnection() throws SQLException {
-            return DBSingleton.INSTANCE.getConnection(); //ovog tu se uhvatit repo koji onda propagira SQL exception do servisa koji ga pretvara u custom ex za controller
+            return DBSingleton.getConnection(); //ovog tu se uhvatit repo koji onda propagira SQL exception do servisa koji ga pretvara u custom ex za controller
 
     }
 }

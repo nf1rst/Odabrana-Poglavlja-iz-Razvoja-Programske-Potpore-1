@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ChosenHeadphones id="3">
-    <name>ZGF-1x</name>
-    <yearEdition>2015</yearEdition>
-    <price>259.0</price>
-    <impedance>15</impedance>
+<ChosenHeadphones id="8">
+    <name>AirPods Pro 2</name>
+    <yearEdition>2022</yearEdition>
+    <price>249.0</price>
+    <impedance>16</impedance>
     <minFrequency>20</minFrequency>
-    <maxFrequency>50</maxFrequency>
-    <batteryLife>60</batteryLife>
-    <description>good headphones </description>
-    <brandName>hyper x </brandName>
-    <technologies/>
-    <uses/>
-    <typeName>InEar</typeName>
+    <maxFrequency>20000</maxFrequency>
+    <batteryLife>6</batteryLife>
+    <description>Features advanced active noise cancellation, adaptive transparency, and spatial audio.</description>
+    <brandName>Apple</brandName>
+    <technologies>
+        <technology>ANC</technology>
+        <technology>H2 Chip</technology>
+    </technologies>
+    <uses>
+        <use>Commuting</use>
+        <use>Calls</use>
+    </uses>
+    <typeName>In-Ear</typeName>
 </ChosenHeadphones>

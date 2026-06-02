@@ -1,10 +1,12 @@
 package hr.algebra.services;
+
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.exceptions.EntityExistantException;
 import hr.algebra.models.Role;
+import hr.algebra.models.Session;
 import hr.algebra.models.User;
 import hr.algebra.repositories.UserRepository;
-import hr.algebra.repositories.implementation.UserRepositoryImpl;
+import hr.algebra.repositories.factory.RepositoryFactory;
 import hr.algebra.util.LoggingUtil;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -18,10 +20,9 @@ public class UserService {
     public static UserService getInstance(){return INSTANCE;}
 
     private final UserRepository repo;
-    private User loggedUser;
 
     private UserService() {
-        this.repo= UserRepositoryImpl.getInstance();
+        this.repo= RepositoryFactory.getUserRespository();
     }
 
     public Optional<User> login(String username, String password){
@@ -44,7 +45,7 @@ public class UserService {
         boolean passwordsMatch = checkPasswordMatch(password, user.get().getPassword());
 
         if(passwordsMatch){
-            loggedUser=user.get();
+            Session.setCurrentUser(user.get());
             return user;
         }
         return Optional.empty();
@@ -53,15 +54,6 @@ public class UserService {
     private boolean checkPasswordMatch(String password, String hashedPassword) {
         return BCrypt.checkpw(password, hashedPassword);
     }
-
-    public void logOut(){
-        this.loggedUser=null;
-    }
-
-    public Optional<User> getLoggedUser(){
-        return Optional.ofNullable(loggedUser);
-    }
-
 
     public void registerAdmin(String username, String password){
         try{
@@ -127,27 +119,6 @@ public class UserService {
             throw new CannotPerformActionException("Cannot execute to get users");
         }
 
-    }
-
-    public void deleteUser(int id){
-        try{
-            repo.delete(id);
-        }
-        catch (SQLException e){
-            LoggingUtil.logError("User delete error", e);
-            throw new CannotPerformActionException("Cannot execute to delete user");
-        }
-    }
-
-    public void updateImagePath(User user, String imagePath){
-        try{
-            user.setImagePath(imagePath);
-            repo.save(user);
-        }
-        catch (SQLException e){
-            LoggingUtil.logError("User update image error", e);
-            throw new CannotPerformActionException("Cannot execute to update image for user");
-        }
     }
 
     public void updateUser(User user){

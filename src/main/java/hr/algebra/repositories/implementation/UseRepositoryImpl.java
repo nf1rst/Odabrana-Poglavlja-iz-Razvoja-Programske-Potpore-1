@@ -37,7 +37,7 @@ public class UseRepositoryImpl implements UseRepository {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetUseByID(?)}")){
             statement.setInt(1,id);
             try(ResultSet rs = statement.executeQuery()){
-                while(rs.next())Optional.of(mapRow(rs));
+                while(rs.next()) Optional.of(mapRow(rs));
             }
         }
         return Optional.empty();
@@ -78,7 +78,7 @@ public class UseRepositoryImpl implements UseRepository {
     }
 
     @Override
-    public int GetUseIdByName(String name) throws SQLException {
+    public int getUseIdByName(String name) throws SQLException {
         try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetUseIdByName(?)}")){
             statement.setString(1, name);
             try(ResultSet rs = statement.executeQuery()){

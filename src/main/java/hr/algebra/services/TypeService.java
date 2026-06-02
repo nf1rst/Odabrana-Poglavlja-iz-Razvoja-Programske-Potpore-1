@@ -1,8 +1,9 @@
 package hr.algebra.services;
+
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Type;
 import hr.algebra.repositories.TypeRepository;
-import hr.algebra.repositories.implementation.TypeRepositoryImpl;
+import hr.algebra.repositories.factory.RepositoryFactory;
 import hr.algebra.util.LoggingUtil;
 
 import java.sql.SQLException;
@@ -15,8 +16,8 @@ public class TypeService {
     public static TypeService getInstance(){return INSTANCE;}
     private final TypeRepository repo;
 
-    public TypeService() {
-        this.repo= TypeRepositoryImpl.getInstance();
+    private TypeService() {
+        this.repo= RepositoryFactory.getTypeRespository();
     }
 
     public List<Type>getAllTypes(){
@@ -61,7 +62,6 @@ public class TypeService {
             return repo.getAll()
                     .stream()
                     .filter(containsQuery)
-                    .sorted()
                     .toList();
         }catch (SQLException _){
             throw new CannotPerformActionException("Cannot execute to get types");
@@ -82,7 +82,7 @@ public class TypeService {
 
     public int getTypeIdByName(String name){
         try{
-            return repo.GetTypeIdByName(name);
+            return repo.getTypeIdByName(name);
         }
         catch (SQLException e){
             LoggingUtil.logError("Possible usage insert error", e);

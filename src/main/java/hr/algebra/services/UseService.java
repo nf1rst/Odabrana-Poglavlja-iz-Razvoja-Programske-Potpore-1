@@ -3,23 +3,21 @@ package hr.algebra.services;
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Use;
 import hr.algebra.repositories.UseRepository;
-import hr.algebra.repositories.implementation.UseRepositoryImpl;
+import hr.algebra.repositories.factory.RepositoryFactory;
 import hr.algebra.util.LoggingUtil;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Locale;
 import java.util.Optional;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class UseService {
-    private final static UseService INSTANCE=new UseService();
+    private static final  UseService INSTANCE=new UseService();
     public static UseService getInstance(){return INSTANCE;}
     private final UseRepository repo;
 
-    public UseService() {
-        this.repo= UseRepositoryImpl.getInstance();
+    private UseService() {
+        this.repo= RepositoryFactory.getUseRespository();
     }
 
     public List<Use> getAllUses(){
@@ -59,13 +57,12 @@ public class UseService {
     public List<Use>search(String query){
         if(query==null ||query.trim().isEmpty())return getAllUses();
 
-        Predicate<Use> nameMatches=u->u.getName().contains(query.toLowerCase());
+        Predicate<Use> nameMatches=u->u.getName().contains(query);
 
         try{
             return repo.getAll()
                     .stream()
                     .filter(nameMatches)
-                    .sorted()
                     .toList();
         }
         catch (SQLException _){
@@ -87,7 +84,7 @@ public class UseService {
 
     public int getUseIdByName(String name){
         try{
-            return repo.GetUseIdByName(name);
+            return repo.getUseIdByName(name);
         }
         catch (SQLException e){
             LoggingUtil.logError("Possible usage insert error", e);

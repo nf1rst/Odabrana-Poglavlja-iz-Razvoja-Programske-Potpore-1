@@ -31,11 +31,11 @@ public class Type implements Comparable<Type> {
     public void setName(String name) {this.name = name;}
 
     @Override
-    public boolean equals(Object o) {return o instanceof Type t && ((Type) o).getName().equals(this.getName());}
+    public boolean equals(Object o) {return o instanceof Type t && t.getName().equals(this.getName());}
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(name);
     }
 
     @Override

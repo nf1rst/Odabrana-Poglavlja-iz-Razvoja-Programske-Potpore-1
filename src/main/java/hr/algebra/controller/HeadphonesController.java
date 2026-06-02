@@ -3,10 +3,7 @@ import hr.algebra.models.*;
 import hr.algebra.services.BrandService;
 import hr.algebra.services.HeadphonesService;
 import hr.algebra.services.TypeService;
-import hr.algebra.util.AlertUtil;
-import hr.algebra.util.LoggingUtil;
-import hr.algebra.util.SceneLoadingUtil;
-import hr.algebra.util.XMLLoggingUtil;
+import hr.algebra.util.*;
 import hr.algebra.xml.export.XMLExporter;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
@@ -109,7 +106,7 @@ public class HeadphonesController extends BaseController {
                 .selectedItemProperty()
                 .addListener((obs, old, val)->{
                     if(val!=null){
-                        headphonesTable.setItems(FXCollections.observableArrayList(headphonesService.getByBrand(val.getId())));
+                        fillTable(headphonesTable, headphonesService.getByBrand(val.getId()));
                     }
                 });
 
@@ -118,21 +115,14 @@ public class HeadphonesController extends BaseController {
                 .selectedItemProperty()
                 .addListener((obs, old, val)->{
                     if(val!=null){
-                        headphonesTable.setItems(FXCollections.observableArrayList(headphonesService.getByType(val.getId())));
+                        fillTable(headphonesTable, headphonesService.getByType(val.getId()));
                     }
                 });
     }
 
 
     private void setupSearch() {
-        searchField.textProperty().addListener((obs, old, q)->{
-            if(q==null || q.trim().isEmpty()){
-                fillTable(headphonesTable, headphonesService.getAllHeadphones());
-            }
-            else{
-                headphonesTable.setItems(FXCollections.observableArrayList(headphonesService.search(q)));
-            }
-        });
+        searchField.textProperty().addListener((obs, old, q)->fillTable(headphonesTable, headphonesService.search(q)));//ovaj vraca ili sve ili samo filtrirane ako je query validan
     }
 
     private void setupTableSelection() {
@@ -301,38 +291,25 @@ public class HeadphonesController extends BaseController {
         useLabel.setText("Uses*");
         descLabel.setText("Description*");
 
-        showPlaceholderImage();
+        MediaUtil.showPlaceholder(headphoneImageView);
         headphonesTable.getSelectionModel().clearSelection();
     }
     private void setImage(String path) {
         if(path==null || path.isEmpty()){
-            showPlaceholderImage();
+            MediaUtil.showPlaceholder(headphoneImageView);
             return;
         }
         try{
             File imageFIle = new File(path);
             if(!imageFIle.exists()){
-                showPlaceholderImage();
+                MediaUtil.showPlaceholder(headphoneImageView);
                 return;
             }
             Image image = new Image(new FileInputStream(imageFIle));
             headphoneImageView.setImage(image);
         }
         catch (Exception _){
-            showPlaceholderImage();
-        }
-    }
-
-    private void showPlaceholderImage() {
-        try{
-            var imageStream = getClass().getResourceAsStream("/hr/algebra/assets/images/No_Image_Available.jpg");
-            if(imageStream!=null){
-                Image placeholder = new Image(imageStream);
-                headphoneImageView.setImage(placeholder);
-            }
-        }
-        catch (Exception _){
-            AlertUtil.showWarningAlert("No image could be loaded");
+            MediaUtil.showPlaceholder(headphoneImageView);
         }
     }
 

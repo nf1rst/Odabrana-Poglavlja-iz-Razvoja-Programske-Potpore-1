@@ -16,13 +16,13 @@ public class XMLLoggingUtil {
 
     private XMLLoggingUtil(){} //za JAXB
 
-    private static String LOG_FILE="userActivities.xml";
-    private static DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+    private static String logFile ="userActivities.xml";
+    private static DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
 
     @XmlRootElement(name="errorLogs")
     public static class ErrorLog {
-        private List<LogEntry> log=new ArrayList<LogEntry>();
+        private List<LogEntry> log=new ArrayList<>();
 
         public void setLog(List<LogEntry> log) {
             this.log = log;
@@ -46,7 +46,7 @@ public class XMLLoggingUtil {
         public LogEntry(){}
 
         public LogEntry(String level, String action, String message, String entity, String username, String identity) {
-            this.time = LocalDateTime.now().format(FORMAT);
+            this.time = LocalDateTime.now().format(format);
             this.level = level;
             this.action = action;
             this.message = message;
@@ -122,7 +122,7 @@ public class XMLLoggingUtil {
 
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            marshaller.marshal(log, new File(LOG_FILE));
+            marshaller.marshal(log, new File(logFile));
         }
         catch (JAXBException e){
             LoggingUtil.logError("XML log fail", e);
@@ -131,7 +131,7 @@ public class XMLLoggingUtil {
     }
 
     private static ErrorLog readExistingLogs(JAXBContext context) {
-        File file = new File(LOG_FILE);
+        File file = new File(logFile);
         if(!file.exists())return new ErrorLog();
         try{
             return (ErrorLog) context.createUnmarshaller().unmarshal(file);

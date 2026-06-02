@@ -1,35 +1,24 @@
 package hr.algebra.controller;
+
 import hr.algebra.models.Session;
 import hr.algebra.services.UserService;
-import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
+import hr.algebra.util.MediaUtil;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.FileChooser;
-import java.io.File;
-import java.io.FileInputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 
 public class UserController extends BaseController {
-
-    @FXML private NavigationController  navigationController;
 
     @FXML ImageView profileImageView;
     @FXML Label usernameLabel;
     @FXML Label roleLabel;
     @FXML Label statusLabel;
     @FXML Label imageStatusLabel;
-    @FXML TextField newPasswordField;
-    @FXML TextField confirmPasswordField;
-
-    private String selectedImagePath;
+    @FXML TextField newUsernameField;
+    @FXML TextField confirmUsernameField;
 
     private final UserService userService=UserService.getInstance();
 
@@ -37,50 +26,15 @@ public class UserController extends BaseController {
     public void initialize(){
         statusLabel.setText("");
         imageStatusLabel.setText("");
+        onUserSet();
     }
 
     @Override
     protected void onUserSet() {
-        if(!Session.userLoggedIn())return; // je li ovo nepotrebno s obizorm da ne ulogirani korisnici ne mogu gledat ovaj view
+        usernameLabel.setText(Session.getCurrentUser().getUsername());
+        roleLabel.setText(Session.getCurrentUser().getRole().toString());
 
-        usernameLabel.setText(currentUser.getUsername());
-        roleLabel.setText(currentUser.getRole().toString());
-
-        loadProfileImage(currentUser.getImagePath());
-    }
-
-    private void loadProfileImage(String imageName) {
-        if(imageName==null ||imageName.isEmpty()){
-            showPlaceHolderImage();
-            return;
-        }
-        try{
-            Path imagePath = Paths.get("src/main/resources/hr/algebra/assets/images/"+imageName);
-            File imageFile = imagePath.toFile();
-
-            if(!imageFile.exists()){
-                showPlaceHolderImage();
-                return;
-            }
-            Image image = new Image(new FileInputStream(imageFile));
-            profileImageView.setImage(image);
-            imageStatusLabel.setText(imageFile.getName());
-        }
-        catch (Exception _){
-            showPlaceHolderImage();
-        }
-    }
-
-    private void showPlaceHolderImage() {
-        try{
-            var placeholder = getClass().getResourceAsStream("/hr/algebra/assets/images/placeholder.png");
-            if(placeholder!=null){
-                profileImageView.setImage(new Image(placeholder));
-            }
-        }
-        catch(Exception _){
-            imageStatusLabel.setText("No profile picture");
-        }
+        MediaUtil.showImage(profileImageView, "/hr/algebra/assets/images/noPicture.png");
     }
 
     @Override
@@ -89,63 +43,29 @@ public class UserController extends BaseController {
     }
 
     @FXML
-    public void onSetProfilePicture(){
-        FileChooser fc = new FileChooser();
-        fc.setTitle("Choose a profile picture");
-        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg", "*.jpeg"));
-
-        File file = fc.showOpenDialog(
-                usernameLabel.getScene().getWindow());
-        if(file==null)return;
-        try{
-            Path assetsDir=Paths.get("src/main/resources/hr/algebra/assets/images/");
-            Files.createDirectories(assetsDir);
-
-            String extension = getExtension(file.getName());
-            String newFileName = "profile" + currentUser.getUsername()  + extension;
-
-            Path dest = assetsDir.resolve(newFileName);
-            Files.copy(file.toPath(), dest, StandardCopyOption.REPLACE_EXISTING);
-            selectedImagePath=newFileName; // da se u bazu spremi samo ime ne cijela putanja
-
-            Image image = new Image(new FileInputStream(dest.toFile()));
-            profileImageView.setImage(image);
-            imageStatusLabel.setText(newFileName);
-            setStatus("Picture selected. Click 'Save changes' to save");
-        }
-        catch(Exception _){
-            AlertUtil.showErrorAlert( "Cannot fetch the image");
-        }
-    }
-
-    @FXML
     public void onSaveChanges(){
         boolean changed=false;
 
-        String newPasword = newPasswordField.getText();
-        String conirmPassword=confirmPasswordField.getText();
+        String newUsername = newUsernameField.getText();
+        String confirmNewUsername=confirmUsernameField.getText();
 
-        if(!newPasword.isEmpty()){
-            if(newPasword.length()<7){
-                setStatus("Password must have at least 7 characters");
+        if(!newUsername.isEmpty()){
+            if(newUsername.length()<5){
+                setStatus("Username must have at least 5 characters");
                 return;
             }
-            if(!newPasword.equals(conirmPassword)){
-                setStatus("Password do not match");
+            if(!newUsername.equals(confirmNewUsername)){
+                setStatus("Usernames do not match");
                 return;
             }
-            if(newPasword.contains("/")){
+            if(newUsername.contains("/")){
                 setStatus("Cannot use character '/'");
                 return;
             }
-            currentUser.setPassword(newPasword);
+            currentUser.setUsername(newUsername);
             changed = true;
-        }
 
-        //slika
-        if(selectedImagePath!=null){
-            currentUser.setImagePath(selectedImagePath);
-            changed=true;
+            usernameLabel.setText(Session.getCurrentUser().getUsername());
         }
 
         if(!changed){
@@ -159,31 +79,18 @@ public class UserController extends BaseController {
 
         setStatus("Changes saved successfully");
 
-        newPasswordField.clear();
-        confirmPasswordField.clear();
+        newUsernameField.clear();
+        confirmUsernameField.clear();
     }
 
     @FXML
     public void onCancel(){
-        Image oldProfilePicture=null;
-        try{
-            oldProfilePicture = new Image(new FileInputStream(new File(currentUser.getImagePath())));
-        }
-        catch (Exception _){
-            // samo neka ostavi na null da prikaze staru sliku
-        }
-        profileImageView.setImage(oldProfilePicture); // da makne sliku ako klikne cancel
-        newPasswordField.clear();
-        confirmPasswordField.clear();
+        newUsernameField.clear();
+        confirmUsernameField.clear();
     }
 
     private void setStatus(String s) {
         statusLabel.setText(s);
-    }
-
-    private String getExtension(String fileName) {
-        int dot = fileName.lastIndexOf('.');
-        return dot>=0?fileName.substring(dot):".png";
     }
 
 }

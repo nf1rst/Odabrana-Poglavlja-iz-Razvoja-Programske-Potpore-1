@@ -1,29 +1,19 @@
 package hr.algebra.controller;
+
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.*;
 import hr.algebra.services.*;
-import hr.algebra.util.AlertUtil;
-import hr.algebra.util.LoggingUtil;
-import hr.algebra.util.SceneLoadingUtil;
-import hr.algebra.util.XMLLoggingUtil;
+import hr.algebra.util.*;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.geometry.Side;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
-import javafx.stage.FileChooser;
 import javafx.util.StringConverter;
 
-import javax.naming.CannotProceedException;
-import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public class HeadphonesEditController extends BaseController{
     @FXML private TextField nameField;
@@ -180,7 +170,7 @@ public class HeadphonesEditController extends BaseController{
 
     @FXML
     public void onBack(){
-        SceneLoadingUtil.loadNewWindow("/hr/algebra/views/headphones-view.fxml", "Headphones", getMainNode());
+        SceneLoadingUtil.loadNewWindow("/hr/algebra/views/headphones-view.fxml", "Headphones view", getMainNode());
     }
 
     @FXML
@@ -286,9 +276,8 @@ public class HeadphonesEditController extends BaseController{
             }
         }
         catch (CannotPerformActionException e){
-            AlertUtil.showErrorAlert("Cannot save headphones");
+            AlertUtil.showErrorAlert(e.getMessage());
         }
-
     }
 
     private boolean validateUserInput() {
@@ -325,21 +314,11 @@ public class HeadphonesEditController extends BaseController{
 
     @FXML
     public void onChooseImage(){
-        FileChooser fc = new FileChooser();
-        fc.setTitle("Choose image for headphones: ");
-
-        File file = fc.showOpenDialog(nameField.getScene().getWindow());
-        if(file ==null)return;
-
         try{
-            Path desrDir = Paths.get("@../assets/images/Hello.png");
-            Files.createDirectories(desrDir);
-
-            Path destPath = desrDir.resolve(file.getName());
-
-            Files.copy(file.toPath(), destPath, StandardCopyOption.REPLACE_EXISTING);
-
-            selectedImagePath=destPath.toString();
+            Optional<String> path = MediaUtil.chooseFile();
+            //Optional[src\main\resources\hr\algebra\assets\images\ userInput\coty.png]
+            if(path.isPresent()) selectedImagePath=path.get();
+            imageLabel.setStyle("Image selected");
         }
         catch (Exception _){
             AlertUtil.showErrorAlert( "Cannot copy image you've selected");

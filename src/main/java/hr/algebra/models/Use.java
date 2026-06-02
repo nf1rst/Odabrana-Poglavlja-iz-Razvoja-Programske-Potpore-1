@@ -33,7 +33,7 @@ public class Use implements Comparable<Use> {
     public boolean equals(Object o) {return o instanceof Use u && u.getName().equals(this.getName());}
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(name);
     }
 
     @Override
