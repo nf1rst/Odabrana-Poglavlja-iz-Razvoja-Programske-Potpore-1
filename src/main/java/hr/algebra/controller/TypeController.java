@@ -1,4 +1,5 @@
 package hr.algebra.controller;
+import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Session;
 import hr.algebra.models.Type;
 import hr.algebra.services.TypeService;
@@ -72,8 +73,8 @@ public class TypeController extends BaseController{
             AlertUtil.showErrorAlert("One must be logged in to edit");
             return;
         }
-        if(selectedType.getName().isEmpty()){
-            AlertUtil.showErrorAlert( "Name cannot be empty");
+        if(selectedType==null){
+            AlertUtil.showErrorAlert( "One must choose a type to delete");
             return;
         }
 
@@ -81,11 +82,16 @@ public class TypeController extends BaseController{
             return;
         }
 
-        typeService.delete(selectedType.getId());
-        LoggingUtil.logInfo( "DELETE", "Type", selectedType.getName(), Session.getCurrentUser().getUsername());
-        XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "type", Session.getCurrentUser().getUsername(),  nameLabel.getText());
-        selectedType=null;
-        onClear();
+        try{
+            typeService.delete(selectedType.getId());
+            LoggingUtil.logInfo( "DELETE", "Type", selectedType.getName(), Session.checkCurrentUserName());
+            XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "type", Session.checkCurrentUserName(),  nameLabel.getText());
+            selectedType=null;
+            onClear();
+        }
+        catch (CannotPerformActionException _){
+            AlertUtil.showErrorAlert("Cannot delete type as it is associated with certain headphones");
+        }
         fillTable(typeTable, typeService.getAllTypes());
     }
 

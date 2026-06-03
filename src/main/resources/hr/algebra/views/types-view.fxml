@@ -18,9 +18,9 @@
             <Label fx:id="descLabel" text="Description*" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onClear" text="Clear" />
-                  <Button mnemonicParsing="false" onAction="#onEdit" text="Edit" />
-                  <Button mnemonicParsing="false" onAction="#onDelete" text="Delete" />
+                  <Button mnemonicParsing="false" style="-fx-background-color: #607D8B; -fx-text-fill: white;" onAction="#onClear" text="Clear" />
+                  <Button mnemonicParsing="false" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" onAction="#onEdit" text="Edit" />
+                  <Button mnemonicParsing="false" style="-fx-background-color: #f44336; -fx-text-fill: white;" onAction="#onDelete" text="Delete" />
                </children>
             </HBox>
          </children>

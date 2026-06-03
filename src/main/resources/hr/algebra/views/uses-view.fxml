@@ -27,15 +27,14 @@
             <VBox.margin>
                <Insets top="15.0" />
             </VBox.margin>
-            <Button mnemonicParsing="false" onAction="#onClear" text="Clear">
+            <Button mnemonicParsing="false" style="-fx-background-color: #607D8B; -fx-text-fill: white;" onAction="#onClear" text="Clear">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" onAction="#onEdit" text="Edit" />
-            <Button mnemonicParsing="false" onAction="#onDelete" text="Delete" />
+            <Button mnemonicParsing="false" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" onAction="#onEdit" text="Edit" />
+            <Button mnemonicParsing="false" style="-fx-background-color: #f44336; -fx-text-fill: white;" onAction="#onDelete" text="Delete" />
          </HBox>
-         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="148.0" text="Export to XML" />
       </VBox>
    </right>
    <center>

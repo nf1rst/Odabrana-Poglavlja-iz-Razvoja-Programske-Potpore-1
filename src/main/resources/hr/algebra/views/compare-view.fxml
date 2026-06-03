@@ -39,12 +39,12 @@
                      </children></VBox>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#onCompare" prefHeight="25.0" prefWidth="424.0" text="Compare" />
+            <Button mnemonicParsing="false" style="-fx-background-color: #1199ED; -fx-text-fill: white;" onAction="#onCompare" prefHeight="25.0" prefWidth="424.0" text="Compare" />
             <GridPane alignment="CENTER" hgap="15.0" prefHeight="204.0" prefWidth="400.0" vgap="15.0">
               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="0.0" prefWidth="110.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="507.0" minWidth="10.0" prefWidth="327.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="367.0" minWidth="10.0" prefWidth="306.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -73,178 +73,178 @@
                      <children>
                         <Label fx:id="nameLabel1" text="Headphones 1*">
                            <font>
-                              <Font size="21.0" />
+                              <Font size="16.0" />
                            </font>
                         </Label>
                      </children></VBox>
                   <Label text="Year edition" GridPane.rowIndex="1">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label text="Impedance" GridPane.rowIndex="2">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label text="Min. frequency" GridPane.rowIndex="3">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label text="Max. frequency" GridPane.rowIndex="4">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label text="Battery life" GridPane.rowIndex="5">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label text="Price" GridPane.rowIndex="6">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label text="Description" GridPane.rowIndex="7">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label text="Brand" GridPane.rowIndex="8">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label text="Technologies" GridPane.rowIndex="9">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label text="Uses" GridPane.rowIndex="10">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label text="Types" GridPane.rowIndex="11">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="nameLabel2" text="Headphones 2*" GridPane.columnIndex="2">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="yearLabel1" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="yearLabel2" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="impedanceLabel1" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="impedanceLabel2" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="minFreqLabel1" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="minFreqLabel2" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="maxFreqLabel1" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="maxFreqLabel2" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="batteryLabel1" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="batteryLabel2" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="priceLabel1" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="priceLabel2" GridPane.columnIndex="2" GridPane.rowIndex="6">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="descLabel1" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="descLabel2" GridPane.columnIndex="2" GridPane.rowIndex="7">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="brandLabel1" GridPane.columnIndex="1" GridPane.rowIndex="8">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="brandLabel2" GridPane.columnIndex="2" GridPane.rowIndex="8">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="techLabel1" GridPane.columnIndex="1" GridPane.rowIndex="9">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="techLabel2" GridPane.columnIndex="2" GridPane.rowIndex="9">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="usesLabel1" GridPane.columnIndex="1" GridPane.rowIndex="10">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="usesLabel2" GridPane.columnIndex="2" GridPane.rowIndex="10">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="typesLabel1" GridPane.columnIndex="1" GridPane.rowIndex="11">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                   <Label fx:id="typesLabel2" GridPane.columnIndex="2" GridPane.rowIndex="11">
                      <font>
-                        <Font size="21.0" />
+                        <Font size="16.0" />
                      </font>
                   </Label>
                </children>
@@ -263,7 +263,7 @@
                   <Label fx:id="currentUserLabel" />
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#onClear" prefHeight="45.0" prefWidth="640.0" text="Clear">
+            <Button mnemonicParsing="false" style="-fx-background-color: #E87913; -fx-text-fill: white;" onAction="#onClear" prefHeight="45.0" prefWidth="640.0" text="Clear">
                <HBox.margin>
                   <Insets bottom="15.0" />
                </HBox.margin></Button>

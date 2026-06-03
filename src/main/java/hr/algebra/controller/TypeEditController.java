@@ -94,14 +94,14 @@ public class TypeEditController extends BaseController{
     private void updateExistingType() {
         selectedType.setName(nameField.getText());
         typeService.save(selectedType);
-        LoggingUtil.logInfo("UPDATE", "Type", selectedType.getName(), Session.getCurrentUser().getUsername());
-        XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "type", Session.getCurrentUser().getUsername(),  nameField.getText());
+        LoggingUtil.logInfo("UPDATE", "Type", selectedType.getName(),Session.checkCurrentUserName());
+        XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "type", Session.checkCurrentUserName(),  nameField.getText());
     }
 
     private void insertNewType() {
         typeService.save(new Type(nameField.getText()));
-        LoggingUtil.logInfo("INSERT", "Type", nameField.getText(), Session.getCurrentUser().getUsername());
-        XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "type", Session.getCurrentUser().getUsername(),  nameField.getText());
+        LoggingUtil.logInfo("INSERT", "Type", nameField.getText(), Session.checkCurrentUserName());
+        XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "type", Session.checkCurrentUserName(),  nameField.getText());
     }
 
     private boolean validateUserInput() {

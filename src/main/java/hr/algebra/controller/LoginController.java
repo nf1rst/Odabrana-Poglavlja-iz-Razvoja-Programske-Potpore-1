@@ -80,7 +80,7 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
         Session.setCurrentUser(currentUser);
         handleUserRedirection(currentUser);
 
-        LoggingUtil.logInfo("LOGIN", "User", Session.getCurrentUser().getUsername());
+        LoggingUtil.logInfo("LOGIN", "User", Session.checkCurrentUserName());
     }
 
     private boolean validateLoginUserInput(String username, String password) {

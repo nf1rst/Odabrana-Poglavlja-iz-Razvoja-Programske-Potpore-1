@@ -95,8 +95,8 @@ public class UseEditController extends BaseController{
     private void updateExistingUse() {
         selectedUse.setName(nameField.getText());
         useService.save(selectedUse);
-        LoggingUtil.logInfo("UPDATE", "Use", nameField.getText(), Session.getCurrentUser().getUsername());
-        XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "use", Session.getCurrentUser().getUsername(),  nameField.getText());
+        LoggingUtil.logInfo("UPDATE", "Use", nameField.getText(), Session.checkCurrentUserName());
+        XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "use", Session.checkCurrentUserName(),  nameField.getText());
         fillStatusLabel(statusLabel,"Use successfully updated", Color.BLUE);
 
     }
@@ -105,7 +105,7 @@ public class UseEditController extends BaseController{
     private void insertNewUse() {
         useService.save(new Use(nameField.getText()));
         LoggingUtil.logInfo("INSERT", "Use", nameField.getText(), Session.getCurrentUser().getUsername());
-        XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "use", Session.getCurrentUser().getUsername(),  nameField.getText());
+        XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "use", Session.checkCurrentUserName(),  nameField.getText());
         fillStatusLabel(statusLabel,"Use successfully inserted", Color.GREEN);
     }
 

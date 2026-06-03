@@ -1,5 +1,6 @@
 package hr.algebra.controller;
 
+import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Session;
 import hr.algebra.models.Technology;
 import hr.algebra.services.TechnologyService;
@@ -89,10 +90,14 @@ public class TechnologyController extends BaseController{
             return ;
         }
 
-        technologyService.delete(selectedTechnology.getId());
-
-        LoggingUtil.logInfo( "DELETE", "Technology", selectedTechnology.getName(), Session.getCurrentUser().getUsername());
-        XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "technology", Session.getCurrentUser().getUsername(), selectedTechnology.getName());
+        try{
+            technologyService.delete(selectedTechnology.getId());
+            LoggingUtil.logInfo( "DELETE", "Technology", selectedTechnology.getName(), Session.checkCurrentUserName());
+            XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "technology", Session.checkCurrentUserName(), selectedTechnology.getName());
+        }
+        catch (CannotPerformActionException e){
+            AlertUtil.showErrorAlert("Cannot delete technology, as it is associated with one or more headphones");
+        }
 
         selectedTechnology=null;
         onClear();

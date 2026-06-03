@@ -18,7 +18,7 @@ public class ConfigReader {
         try{
             InputStream input = ConfigReader.class.getResourceAsStream("/hr/algebra/configSettings/config.xml");
 
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newDefaultInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(input);
 

@@ -16,13 +16,17 @@ public class Session {
         return currentUser;
     }
 
+    public static String checkCurrentUserName() {
+        return currentUser!=null?currentUser.getUsername():"N/A";
+    }
+
     public static void setCurrentUser(User currentUser) {
         Session.currentUser = currentUser;
     }
 
     public static boolean userCanEdit(){
         //admin uvijek moze
-        return (userLoggedIn() && adminAllowedEdit) || currentUser.getRole()==Role.ADMIN;
+        return (userLoggedIn() && adminAllowedEdit) || (currentUser!=null && currentUser.getRole()==Role.ADMIN);
     }
 
     public static boolean userLoggedIn(){

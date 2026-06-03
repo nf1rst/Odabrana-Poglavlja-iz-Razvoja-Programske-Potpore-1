@@ -119,7 +119,7 @@ public class BrandEditController extends BaseController
 
         try{
             brandService.save(selectedBrand);
-            LoggingUtil.logInfo("UPDATE", "Brand", selectedBrand.getName(), Session.getCurrentUser().getUsername());
+            LoggingUtil.logInfo("UPDATE", "Brand", selectedBrand.getName(), Session.checkCurrentUserName());
             XMLLoggingUtil.log("INFO", "UPDATE", "successfuly deleted", "brand", Session.getCurrentUser().getUsername(), selectedBrand.getName());
             fillStatusLabel(statusLabel, "Brand successfully updated", Color.BLUE);
         }
@@ -132,8 +132,8 @@ public class BrandEditController extends BaseController
     private void insertNewBrand() {
         try{
             brandService.save(new Brand(nameField.getText(), descField.getText()));
-            LoggingUtil.logInfo("INSERT", "Brand", nameField.getText(), Session.getCurrentUser().getUsername());
-            XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "brand", Session.getCurrentUser().getUsername(),  nameField.getText());
+            LoggingUtil.logInfo("INSERT", "Brand", nameField.getText(), Session.checkCurrentUserName());
+            XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "brand", Session.checkCurrentUserName(),  nameField.getText());
             fillStatusLabel(statusLabel, "Brand successfully inserted", Color.GREEN);
         }
         catch (CannotPerformActionException e){

@@ -31,7 +31,7 @@ public class UserController extends BaseController {
 
     @Override
     protected void onUserSet() {
-        usernameLabel.setText(Session.getCurrentUser().getUsername());
+        usernameLabel.setText(Session.checkCurrentUserName());
         roleLabel.setText(Session.getCurrentUser().getRole().toString());
 
         MediaUtil.showImage(profileImageView, "/hr/algebra/assets/images/noPicture.png");
@@ -65,7 +65,7 @@ public class UserController extends BaseController {
             currentUser.setUsername(newUsername);
             changed = true;
 
-            usernameLabel.setText(Session.getCurrentUser().getUsername());
+            usernameLabel.setText(Session.checkCurrentUserName());
         }
 
         if(!changed){

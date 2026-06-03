@@ -186,8 +186,6 @@ public class HeadphonesEditController extends BaseController{
         }
         
         trySaveHeadphones();
-
-        selectedHeadphones=null;
     }
 
     private void trySaveHeadphones() {
@@ -225,8 +223,8 @@ public class HeadphonesEditController extends BaseController{
 
         headphonesService.save(selectedHeadphones);
         // sad zbog onog scope identity ovdje se moze napravit getID da vrati pravi ID koji mu je baza generirala
-        LoggingUtil.logInfo("UPDATE", "Headphones", selectedHeadphones.getName(), Session.getCurrentUser().getUsername());
-        XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "headphones", Session.getCurrentUser().getUsername(),  nameField.getText());
+        LoggingUtil.logInfo("UPDATE", "Headphones", selectedHeadphones.getName(), Session.checkCurrentUserName());
+        XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "headphones", Session.checkCurrentUserName(),  nameField.getText());
         updateManyToMany(selectedHeadphones, userselectedTech, userSelectedUses); // posebne tablice u bazi pa se mora rucno
     }
 
@@ -250,8 +248,8 @@ public class HeadphonesEditController extends BaseController{
         headphonesService.save(headphonesForInsert);
         updateManyToMany(headphonesForInsert, userselectedTech, userSelectedUses);
 
-        LoggingUtil.logInfo("INSERT", "Headphones", headphonesForInsert.getName(), Session.getCurrentUser().getUsername());
-        XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "headphones", Session.getCurrentUser().getUsername(), nameField.getText());
+        LoggingUtil.logInfo("INSERT", "Headphones", headphonesForInsert.getName(), Session.checkCurrentUserName());
+        XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "headphones", Session.checkCurrentUserName(), nameField.getText());
     }
 
 
@@ -318,12 +316,11 @@ public class HeadphonesEditController extends BaseController{
             Optional<String> path = MediaUtil.chooseFile();
             //Optional[src\main\resources\hr\algebra\assets\images\ userInput\coty.png]
             if(path.isPresent()) selectedImagePath=path.get();
-            imageLabel.setStyle("Image selected");
         }
         catch (Exception _){
             AlertUtil.showErrorAlert( "Cannot copy image you've selected");
         }
-
+        imageLabel.setText("Image selected");
     }
 
     @Override

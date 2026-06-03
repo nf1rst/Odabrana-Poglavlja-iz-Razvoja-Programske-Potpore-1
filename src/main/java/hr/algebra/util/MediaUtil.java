@@ -28,7 +28,7 @@ public class MediaUtil {
 
     public static void showPlaceholder(ImageView imageView) {
         try{
-            InputStream imageStream = MediaUtil.class.getResourceAsStream("/hr/algebra/assets/images/No_Image_Available.jpg");
+            InputStream imageStream = MediaUtil.class.getResourceAsStream("/hr/algebra/assets/images/placeholder.png");
             if(imageStream!=null){
                 Image placeholder = new Image(imageStream);
                 imageView.setImage(placeholder);
@@ -49,7 +49,7 @@ public class MediaUtil {
 
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Select Profile Picture");
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image Files", "*.png", "*jpg"));
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg"));
         File selectedFile = fileChooser.showOpenDialog(null);
         try{
             Path targetPath = Paths.get(destDir + selectedFile.getName());

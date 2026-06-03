@@ -1,4 +1,5 @@
 package hr.algebra.controller;
+
 import hr.algebra.models.*;
 import hr.algebra.services.BrandService;
 import hr.algebra.services.HeadphonesService;
@@ -16,10 +17,9 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.StringConverter;
+
 import java.io.File;
 import java.io.FileInputStream;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -201,20 +201,18 @@ public class HeadphonesController extends BaseController {
             AlertUtil.showErrorAlert("One must be logged in to edit");
             return;
         }
-        if(selectedHeadphnes.getName().isEmpty()){
-            AlertUtil.showErrorAlert("Name field cannot be emtpy");
+        if(selectedHeadphnes==null){
+            AlertUtil.showErrorAlert("Please select headphones to delete");
             return;
         }
 
         if(!AlertUtil.showConfirmationAlert("Do you want to delete headphones: " + selectedHeadphnes.getName())) return;
 
-        deleteImageFile(selectedImagePath);
         headphonesService.delete(selectedHeadphnes.getId());
-        LoggingUtil.logInfo( "DELETE", "Headphones", selectedHeadphnes.getName(),Session.getCurrentUser().getUsername());
-        XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "headphones", Session.getCurrentUser().getUsername(),  selectedHeadphnes.getName());
+        LoggingUtil.logInfo( "DELETE", "Headphones", selectedHeadphnes.getName(),Session.checkCurrentUserName());
+        XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "headphones", Session.checkCurrentUserName(),  selectedHeadphnes.getName());
 
         selectedHeadphnes=null;
-
         fillTable(headphonesTable, headphonesService.getAllHeadphones());
     }
 
@@ -224,16 +222,6 @@ public class HeadphonesController extends BaseController {
         filterBrandCombo.setValue(null);
         filterTypeCombo.setValue(null);
         fillTable(headphonesTable, headphonesService.getAllHeadphones());
-    }
-
-    private void deleteImageFile(String path) {
-        if(path==null || path.isEmpty())return;
-        try{
-            Files.deleteIfExists(Paths.get(path));
-        }
-        catch(Exception _){
-            //
-        }
     }
 
      @FXML
@@ -254,7 +242,7 @@ public class HeadphonesController extends BaseController {
         exportTask.setOnSucceeded(e->{
             AlertUtil.showInformationAlert("Headphones exported successfully");
             LoggingUtil.logInfo("Headphones export success");
-            XMLLoggingUtil.log("INFO", "EXPORT", "successfully exported selected headphones", "headphones", Session.getCurrentUser().getUsername(),  selectedHeadphnes.getName());
+            XMLLoggingUtil.log("INFO", "EXPORT", "successfully exported selected headphones", "headphones", Session.checkCurrentUserName(),  selectedHeadphnes.getName());
         });
 
         exportTask.setOnFailed(e-> {

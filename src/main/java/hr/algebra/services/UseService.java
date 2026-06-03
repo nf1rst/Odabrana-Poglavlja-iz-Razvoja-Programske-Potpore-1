@@ -8,7 +8,6 @@ import hr.algebra.util.LoggingUtil;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Predicate;
 
 public class UseService {

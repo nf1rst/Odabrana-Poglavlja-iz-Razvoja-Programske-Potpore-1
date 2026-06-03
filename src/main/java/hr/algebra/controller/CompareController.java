@@ -4,6 +4,7 @@ import hr.algebra.models.Technology;
 import hr.algebra.models.Use;
 import hr.algebra.services.HeadphonesService;
 import hr.algebra.util.AlertUtil;
+import hr.algebra.util.MediaUtil;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -190,7 +191,8 @@ public class CompareController extends BaseController {
     private void displayHeadphonesVBox(VBox dropZone, Label viewHeadphoneName, ImageView headphonesImageView) {
         dropZone.setStyle("-fx-border-color: #00ff4d");
         viewHeadphoneName.setText(selectedHeadphones.getName()!=null?selectedHeadphones.getName():"N/A");
-        setImage(selectedHeadphones.getImagePath(),headphonesImageView);
+        if(selectedHeadphones.getImagePath()!=null)setImage(selectedHeadphones.getImagePath(),headphonesImageView);
+        else MediaUtil.showPlaceholder(headphonesImageView);
     }
 
     private void setImage(String imagePath, ImageView headphonesImageView) {

@@ -98,12 +98,12 @@ public class TechnologyEditController extends BaseController{
     private void trySaveTechnology() {
             if(!technologyService.nameExists(nameField.getText())){ //tehnologija ne postoji onda je mora ubacit
                 insertTechnology();
-                XMLLoggingUtil.log("INFO", "INSERT ", "successfully deleted", "technology", Session.getCurrentUser().getUsername(), nameField.getText());
+                XMLLoggingUtil.log("INFO", "INSERT ", "successfully deleted", "technology", Session.checkCurrentUserName(), nameField.getText());
                 fillStatusLabel(statusLabel, "Technology successfully inserted", Color.GREEN);
             }
             else{// ako vec postoji onda se treba napravit update te tehnologije s istim IDjem
                 updateExistingTechnology();
-                XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "technology", Session.getCurrentUser().getUsername(), nameField.getText());
+                XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "technology", Session.checkCurrentUserName(), nameField.getText());
                 fillStatusLabel(statusLabel, "Technology successfully updated", Color.BLUE);
             }
     }
@@ -112,12 +112,12 @@ public class TechnologyEditController extends BaseController{
         selectedTechnology.setName(nameField.getText());
         selectedTechnology.setDescription(descField.getText());
         technologyService.save(selectedTechnology);
-        LoggingUtil.logInfo("UPDATE", "Technology", nameField.getText(), Session.getCurrentUser().getUsername());
+        LoggingUtil.logInfo("UPDATE", "Technology", nameField.getText(), Session.checkCurrentUserName());
     }
 
     private void insertTechnology() {
         technologyService.save(new Technology(nameField.getText(), descField.getText()));
-        LoggingUtil.logInfo("INSERT", "Technology", nameField.getText(), Session.getCurrentUser().getUsername());
+        LoggingUtil.logInfo("INSERT", "Technology", nameField.getText(), Session.checkCurrentUserName());
     }
 
     private boolean validateUserInput() {

@@ -32,13 +32,10 @@
             <VBox.margin>
                <Insets />
             </VBox.margin>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onNew" text="Clear" />
-            <Button mnemonicParsing="false" onAction="#onOpenSave" text="Edit" />
-            <Button mnemonicParsing="false" onAction="#onDelete" text="Delete" />
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onNew" style="-fx-background-color: #607D8B; -fx-text-fill: white;" text="Clear" />
+            <Button mnemonicParsing="false" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" onAction="#onOpenSave" text="Edit" />
+            <Button mnemonicParsing="false" style="-fx-background-color: #f44336; -fx-text-fill: white;" onAction="#onDelete" text="Delete" />
          </HBox>
-         <VBox alignment="CENTER" prefHeight="53.0" prefWidth="200.0">
-            <Button mnemonicParsing="false" text="Export to XML" />
-         </VBox>
       </VBox>
    </right>
    <center>

@@ -114,7 +114,7 @@ public class Headphones implements Comparable<Headphones> {
     public void setPossibleUsages(List<Use> possibleUsages) { this.uses = possibleUsages; }
 
     @Override
-    public boolean equals(Object o) {return o instanceof Headphones h && h.id==id;}
+    public boolean equals(Object o) {return o instanceof Headphones h && h.name==name;}
     @Override
     public int hashCode() {
         return Objects.hashCode(name);

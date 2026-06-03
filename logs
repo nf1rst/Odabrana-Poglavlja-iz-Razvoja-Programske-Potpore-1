@@ -2446,3 +2446,300 @@
 2026-06-03 09:21:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
 2026-06-03 09:21:46 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
 2026-06-03 09:21:54 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 14:20:08 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 14:20:08 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 14:20:09 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Admin added
+2026-06-03 14:20:10 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 14:28:26 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 14:31:49 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 14:31:56 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 14:32:25 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=User id=Account updated, user=asdfasdf
+2026-06-03 14:32:33 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=User id=Account updated, user=asdf1
+2026-06-03 14:34:11 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 14:34:15 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-03 14:34:23 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 14:34:33 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Brand id=Apple, user=asdf1
+2026-06-03 14:34:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Brand id=Apple 1 , user=asdf1
+2026-06-03 14:37:04 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 14:37:04 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 14:37:04 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 14:37:06 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 14:37:13 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 14:37:34 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Headphones export success
+2026-06-03 14:47:21 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 14:47:24 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 14:48:33 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 14:48:33 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 14:48:33 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Admin added
+2026-06-03 14:48:36 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 14:59:27 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 15:01:40 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=admin
+2026-06-03 15:02:54 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Headphones id=AirPods Max 1, user=admin
+2026-06-03 15:03:28 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 15:03:30 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-03 15:03:42 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 15:03:45 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 15:04:02 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-03 15:04:14 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-03 15:04:31 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=AirPods Max 1, user=asdf1
+2026-06-03 15:09:47 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 15:09:47 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 15:09:48 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 15:09:49 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 15:09:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 15:10:16 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 15:12:14 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 15:12:20 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 15:12:20 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 15:12:20 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 15:12:21 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 15:12:22 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 15:12:31 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 15:12:42 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 15:12:42 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 15:12:42 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 15:12:43 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 15:12:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 15:13:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 15:15:53 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 15:15:53 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 15:15:53 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 15:15:54 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 15:15:56 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 15:16:47 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 15:16:47 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 15:16:47 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 15:16:48 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 15:16:52 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 15:17:21 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 15:17:21 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 15:17:22 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 15:17:22 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 15:17:24 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 15:17:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 15:19:53 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 15:19:53 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 15:19:53 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 15:19:54 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 15:19:55 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 15:20:13 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 15:21:21 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 15:21:21 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 15:21:21 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 15:21:22 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 15:21:23 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 15:21:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-03 15:21:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Pro 2, user=asdf1
+2026-06-03 15:22:05 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 19:02:14 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 19:02:14 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 19:02:14 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Admin added
+2026-06-03 19:02:15 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 19:03:02 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 19:04:42 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-03 19:04:45 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-03 19:05:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 19:05:24 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 19:05:32 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=User id=Account updated, user=asdfasdf
+2026-06-03 19:05:36 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=User id=Account updated, user=asdf1
+2026-06-03 19:07:43 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 19:07:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-03 19:07:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 19:08:07 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-03 19:10:09 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Headphones id=AirPods Max 1, user=asdf1
+2026-06-03 19:10:29 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=Bathys, user=asdf1
+2026-06-03 19:11:31 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Headphones export success
+2026-06-03 19:14:46 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-03 19:15:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-03 19:41:17 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 19:41:17 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 19:41:17 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 19:41:18 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 19:42:40 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:19:10 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 20:19:10 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:19:10 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-03 20:19:12 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Succesfully inserted initialized database
+2026-06-03 20:19:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 20:19:22 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:19:26 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:20:12 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 20:20:12 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:20:12 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Failed inserting starting data into database] CAUSE = []
+2026-06-03 20:20:53 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:21:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:21:19 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:21:23 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 20:21:23 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:21:23 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Failed inserting starting data into database] CAUSE = []
+2026-06-03 20:21:28 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:25:47 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 20:25:47 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:25:47 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Failed inserting starting data into database] CAUSE = []
+2026-06-03 20:25:52 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:25:55 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:28:52 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 20:28:52 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:28:53 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-03 20:28:54 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 20:29:03 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 20:29:05 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:29:14 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:33:24 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [DB initialization error - tables already exist] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Cannot open database "HeadphonesDB" requested by the login. The login failed. ClientConnectionId:525bfb2a-c6f9-49a3-94d5-b5c295f6269c]
+2026-06-03 20:36:49 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 20:36:49 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:36:50 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-03 20:37:01 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 20:37:03 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:37:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Brand id=ajlshdfjadsf, user=asdf1
+2026-06-03 20:37:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:37:48 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 20:37:48 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:37:48 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Failed inserting starting data into database] CAUSE = []
+2026-06-03 20:37:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:37:57 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:39:10 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 20:39:10 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:39:10 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Failed inserting starting data into database] CAUSE = []
+2026-06-03 20:39:56 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:39:58 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:40:21 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 20:40:21 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:40:21 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Failed inserting starting data into database] CAUSE = []
+2026-06-03 20:40:26 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:40:31 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:41:03 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 20:41:03 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:41:03 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-03 20:41:04 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 20:41:10 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 20:41:12 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:41:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:41:21 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 20:41:21 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:41:21 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Failed inserting starting data into database] CAUSE = []
+2026-06-03 20:41:24 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:41:29 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:42:03 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 20:42:03 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:42:03 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Failed inserting starting data into database] CAUSE = []
+2026-06-03 20:42:54 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 20:42:54 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:42:54 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Failed inserting starting data into database] CAUSE = [javafx.concurrent.WorkerStateEvent[source=hr.algebra.MainApplication$1@71b9ac9c[Completed exceptionally: hr.algebra.exceptions.EntityExistantException: Admin already exists]]]
+2026-06-03 20:44:12 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 20:44:12 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:44:12 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 20:44:13 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 20:44:16 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:44:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:45:28 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 20:45:28 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:45:28 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 20:45:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:45:45 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:46:21 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 20:46:21 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:46:21 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-03 20:46:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:46:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 20:46:55 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:47:19 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:47:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-03 20:47:28 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:47:32 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Brand id=asdfasdf, user=asdf1
+2026-06-03 20:47:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:47:47 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 20:47:47 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:47:47 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-03 20:47:49 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 20:47:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:48:07 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 20:50:41 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 20:50:41 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 20:50:42 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-03 20:50:42 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 20:50:48 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 20:50:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 20:51:10 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-03 20:51:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 21:57:00 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 21:57:00 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 21:57:01 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-03 21:57:02 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 21:57:02 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 21:57:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 21:58:38 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 21:58:38 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 21:58:38 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-03 21:58:40 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 21:58:41 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 21:59:12 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 22:00:35 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 22:00:35 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 22:00:35 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-03 22:00:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 22:00:39 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 22:01:28 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 22:02:57 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 22:02:57 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 22:02:58 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-03 22:02:59 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 22:03:01 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 22:04:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=LCD-X, user=asdf1
+2026-06-03 22:07:11 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 22:07:11 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 22:07:11 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-03 22:07:13 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 22:07:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 22:07:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=HD 600, user=asdf1
+2026-06-03 22:08:12 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 22:08:12 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 22:08:12 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-03 22:08:13 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 22:08:15 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 22:12:10 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 22:12:10 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 22:12:10 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-03 22:12:11 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 22:12:28 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 22:12:32 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 22:12:45 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=Major IV, user=asdf1
+2026-06-03 22:12:58 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-03 22:13:03 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-03 22:13:11 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-03 22:13:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Headphones id=AirPods Max 1, user=asdf1
+2026-06-03 22:13:40 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max 1, user=asdf1
+2026-06-03 22:13:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max 1, user=asdf1
+2026-06-03 22:15:40 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Brand id=asdf, user=asdf1
+2026-06-03 22:15:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Brand id=asdf, user=asdf1
+2026-06-03 22:15:49 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Brand id=asdf, user=asdf1
+2026-06-03 22:22:15 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 22:22:15 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 22:22:15 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-03 22:22:17 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 22:22:18 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 22:22:25 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 22:22:35 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 22:22:35 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 22:22:36 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-03 22:22:39 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 22:22:41 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 22:22:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 22:22:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=Bathys, user=asdf1
+2026-06-03 22:23:01 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Brand id=Apple 1, user=asdf1
+2026-06-03 22:23:05 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Brand id=Apple 1, user=asdf1
+2026-06-03 22:23:14 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Type id=Adfasdfasdf, user=asdf1
+2026-06-03 22:23:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Type id=Adfasdfasdf, user=asdf1
+2026-06-03 22:23:24 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Use id=asdfasdfasdf, user=asdf1
+2026-06-03 22:23:28 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Use id=asdfasdfasdf, user=asdf1
+2026-06-03 22:26:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 22:26:57 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 22:26:57 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 22:26:57 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-03 22:26:58 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-03 22:27:01 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 22:27:15 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Type id=Bone Conduction, user=asdf1
+2026-06-03 22:27:18 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Type id=On-Ear, user=asdf1
+2026-06-03 22:27:24 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Type id=In-Ear, user=asdf1
+2026-06-03 22:27:26 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Type id=Over-Ear, user=asdf1
+2026-06-03 22:29:23 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed

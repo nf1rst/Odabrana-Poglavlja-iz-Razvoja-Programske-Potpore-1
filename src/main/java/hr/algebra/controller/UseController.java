@@ -1,5 +1,6 @@
 package hr.algebra.controller;
 
+import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Session;
 import hr.algebra.models.Use;
 import hr.algebra.services.UseService;
@@ -77,8 +78,8 @@ public class UseController extends BaseController{
             AlertUtil.showErrorAlert( "One must be logged in to edit");
             return;
         }
-        if(selectedUse==null ||  selectedUse.getName().isEmpty()){
-            AlertUtil.showErrorAlert( "Name cannot be empty");
+        if(selectedUse==null){
+            AlertUtil.showErrorAlert( "One must choose a use to delete");
             return;
         }
 
@@ -87,10 +88,16 @@ public class UseController extends BaseController{
             return;
         }
 
-        useService.delete(selectedUse.getId());
-        LoggingUtil.logInfo( "DELETE", "Use", selectedUse.getName(), Session.getCurrentUser().getUsername());
-        XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "use", Session.getCurrentUser().getUsername(),  selectedUse.getName());
-        selectedUse=null;
+        try{
+            useService.delete(selectedUse.getId());
+            LoggingUtil.logInfo( "DELETE", "Use", selectedUse.getName(), Session.checkCurrentUserName());
+            XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "use", Session.checkCurrentUserName(),  selectedUse.getName());
+            selectedUse=null;
+        }
+        catch (CannotPerformActionException _){
+            AlertUtil.showErrorAlert("Cannot delete use as it is associated with certain headphones");
+        }
+
         fillTable(useTable, useService.getAllUses());
     }
 

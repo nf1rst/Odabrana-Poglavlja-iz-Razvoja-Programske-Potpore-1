@@ -26,7 +26,6 @@ public class BrandController extends BaseController {
     @FXML private TableColumn<Brand, String> colDesc;
 
     @FXML private Label nameLabel;
-    @FXML private ImageView brandImageView;
     @FXML private Label descLabel;
 
     @FXML private Label currentUserLabel;
@@ -110,11 +109,11 @@ public class BrandController extends BaseController {
     private void tryDeleteBrand() {
         try{
             brandService.delete(selectedBrand.getId());
-            LoggingUtil.logInfo("DELETE", "Brand", selectedBrand.getName(), Session.getCurrentUser().getUsername());
-            XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "brand", Session.getCurrentUser().getUsername(),  selectedBrand.getName());
+            LoggingUtil.logInfo("DELETE", "Brand", selectedBrand.getName(), Session.checkCurrentUserName());
+            XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "brand", Session.checkCurrentUserName(),  selectedBrand.getName());
         }
-        catch (CannotPerformActionException e){
-            AlertUtil.showErrorAlert(e.getMessage());
+        catch (CannotPerformActionException _){
+            AlertUtil.showErrorAlert("Cannot delete brand as it is associated with certain headphones");
         }
     }
 

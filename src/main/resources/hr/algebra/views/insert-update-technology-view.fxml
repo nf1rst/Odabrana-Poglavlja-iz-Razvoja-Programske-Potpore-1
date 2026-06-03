@@ -23,7 +23,7 @@
                   <Insets left="15.0" right="15.0" />
                </VBox.margin></TextField>
             <Label fx:id="statusLabel" prefWidth="0.0" />
-            <Button mnemonicParsing="false" onAction="#onSave" prefHeight="25.0" prefWidth="256.0" text="Save">
+            <Button mnemonicParsing="false" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" onAction="#onSave" prefHeight="25.0" prefWidth="256.0" text="Save">
                <VBox.margin>
                   <Insets top="40.0" />
                </VBox.margin>
@@ -37,7 +37,7 @@
    <top>
       <VBox prefHeight="59.0" prefWidth="300.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#onBack" text="Back" />
+            <Button mnemonicParsing="false" style="-fx-background-color: #1199ED; -fx-text-fill: white;" onAction="#onBack" text="Back" />
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                <children>
                   <Label text="Insert or Update Technology">
