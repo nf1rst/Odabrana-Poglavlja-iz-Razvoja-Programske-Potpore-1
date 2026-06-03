@@ -12,10 +12,6 @@ public class Session {
         Session.adminAllowedEdit = adminAllowedEdit;
     }
 
-    public static boolean getUserRights() {
-        return adminAllowedEdit;
-    }
-
     public  static User getCurrentUser() {
         return currentUser;
     }
@@ -26,7 +22,7 @@ public class Session {
 
     public static boolean userCanEdit(){
         //admin uvijek moze
-        return userLoggedIn() && adminAllowedEdit;
+        return (userLoggedIn() && adminAllowedEdit) || currentUser.getRole()==Role.ADMIN;
     }
 
     public static boolean userLoggedIn(){

@@ -603,4 +603,85 @@
         <username>admin</username>
         <identity>*</identity>
     </log>
+    <log>
+        <time>03-06-2026 08:32:37</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>324rtnm&lt;</identity>
+    </log>
+    <log>
+        <time>03-06-2026 08:32:46</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all users</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>03-06-2026 08:33:10</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported DB backup</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>03-06-2026 08:36:43</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>03-06-2026 08:37:12</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>03-06-2026 08:38:00</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max 1</identity>
+    </log>
+    <log>
+        <time>03-06-2026 08:38:26</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>03-06-2026 08:38:43</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported selected headphones</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>03-06-2026 08:42:58</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max 1</identity>
+    </log>
 </errorLogs>

@@ -10,30 +10,6 @@ public class DBStatistics {
     private int typeEntriesNum;
     private int usersEntriesNum;
 
-    public void setHeadphonesEntriesNum(int headphonesEntriesNum) {
-        this.headphonesEntriesNum = headphonesEntriesNum;
-    }
-
-    public void setBrandEntriesNum(int brandEntriesNum) {
-        this.brandEntriesNum = brandEntriesNum;
-    }
-
-    public void setTechEntriesNum(int techEntriesNum) {
-        this.techEntriesNum = techEntriesNum;
-    }
-
-    public void setUseEntriesNum(int useEntriesNum) {
-        this.useEntriesNum = useEntriesNum;
-    }
-
-    public void setTypeEntriesNum(int typeEntriesNum) {
-        this.typeEntriesNum = typeEntriesNum;
-    }
-
-    public void setUsersEntriesNum(int usersEntriesNum) {
-        this.usersEntriesNum = usersEntriesNum;
-    }
-
     public int getHeadphonesEntriesNum() {
         return headphonesEntriesNum;
     }

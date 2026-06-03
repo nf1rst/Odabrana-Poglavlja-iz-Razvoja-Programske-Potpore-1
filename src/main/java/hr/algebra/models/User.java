@@ -30,8 +30,6 @@ public class User implements Comparable<User>{
     public String getImagePath() {return imagePath;}
 
     public void setUsername(String username) {this.username = username;}
-    public void setPassword(String password) {this.password = password;}
-    public void setImagePath(String imagePath) {this.imagePath = imagePath;}
 
 
     @Override

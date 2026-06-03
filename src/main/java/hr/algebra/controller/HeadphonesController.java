@@ -253,6 +253,7 @@ public class HeadphonesController extends BaseController {
 
         exportTask.setOnSucceeded(e->{
             AlertUtil.showInformationAlert("Headphones exported successfully");
+            LoggingUtil.logInfo("Headphones export success");
             XMLLoggingUtil.log("INFO", "EXPORT", "successfully exported selected headphones", "headphones", Session.getCurrentUser().getUsername(),  selectedHeadphnes.getName());
         });
 
@@ -312,6 +313,4 @@ public class HeadphonesController extends BaseController {
             MediaUtil.showPlaceholder(headphoneImageView);
         }
     }
-
-
 }

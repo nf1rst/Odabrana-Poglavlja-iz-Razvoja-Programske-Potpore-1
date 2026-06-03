@@ -28,14 +28,7 @@ public class TypeService {
             throw new CannotPerformActionException("Cannot execute to get types");
         }
     }
-    public Optional<Type> getTypeById(int id){
-        try{
-            return repo.getById(id);
-        }
-        catch (SQLException _){
-            throw new CannotPerformActionException("Cannot execute to get type");
-        }
-    }
+
     public void save(Type type){
         try{
             repo.save(type);

@@ -25,15 +25,6 @@ public enum AdminService {
         }
     }
 
-    public void dropAllTables() {
-        try {
-            repo.dropAllTables();
-        } catch (SQLException e) {
-            logger.error("ERROR", e);
-            throw new CannotPerformActionException("Cannot execute to delete database");
-        }
-    }
-
     public void deleteUserByUsername(String username) {
         try {
             repo.deleteUserByUsername(username);

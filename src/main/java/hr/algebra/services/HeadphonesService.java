@@ -92,11 +92,6 @@ public class HeadphonesService {
         return found.isPresent();
     }
 
-
-    public static final Predicate<Headphones>isWireless=h->h.getBatteryLife()>0;
-    public static final Predicate<Headphones>isCheap = h->h.getPrice()<100.0;
-    public static final Predicate<Headphones>isPreminum=h->h.getPrice()>300.0;
-
     public List<Headphones>filter(Predicate<Headphones>predicate){
 
         try{

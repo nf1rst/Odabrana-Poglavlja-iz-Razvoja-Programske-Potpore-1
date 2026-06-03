@@ -28,14 +28,7 @@ public class UseService {
             throw new CannotPerformActionException("Cannot execute to get uses");
         }
     }
-    public Optional<Use> getUseById(int id){
-        try{
-            return repo.getById(id);
-        }
-        catch (SQLException _){
-            throw new CannotPerformActionException("Cannot execute to get use");
-        }
-    }
+
     public void save(Use use){
         try{
             repo.save(use);

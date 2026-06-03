@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ChosenHeadphones id="8">
-    <name>AirPods Pro 2</name>
-    <yearEdition>2022</yearEdition>
-    <price>249.0</price>
-    <impedance>16</impedance>
-    <minFrequency>20</minFrequency>
+<ChosenHeadphones id="3">
+    <name>AirPods Max</name>
+    <yearEdition>2025</yearEdition>
+    <price>549.0</price>
+    <impedance>24</impedance>
+    <minFrequency>10</minFrequency>
     <maxFrequency>20000</maxFrequency>
-    <batteryLife>6</batteryLife>
-    <description>Features advanced active noise cancellation, adaptive transparency, and spatial audio.</description>
+    <batteryLife>20</batteryLife>
+    <description>new desc</description>
     <brandName>Apple</brandName>
     <technologies>
         <technology>ANC</technology>
-        <technology>H2 Chip</technology>
+        <technology>Spatial Audio</technology>
+        <technology>Neodymium Magnets</technology>
+        <technology>Proprietary Drivers</technology>
     </technologies>
     <uses>
+        <use>Travel</use>
+        <use>Office</use>
         <use>Commuting</use>
+        <use>Entertainment</use>
+        <use>DJing</use>
         <use>Calls</use>
+        <use>Mixing</use>
     </uses>
-    <typeName>In-Ear</typeName>
+    <typeName>Over-Ear</typeName>
 </ChosenHeadphones>

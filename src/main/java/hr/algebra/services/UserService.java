@@ -64,7 +64,7 @@ public class UserService {
         }
         catch (SQLException e){
             LoggingUtil.logError("User save error", e);
-            LoggingUtil.logError("Cannot execute to register admin", e);
+            throw new CannotPerformActionException("Cannot execute to register admin");
         }
     }
 

@@ -28,14 +28,7 @@ public class TechnologyService {
             throw new CannotPerformActionException("Cannot execute to get technologies");
         }
     }
-    public Optional<Technology> getTechnologyById(int id){
-        try{
-            return repo.getById(id);
-        }
-        catch (SQLException _){
-            throw new CannotPerformActionException("Cannot execute to get technology");
-        }
-    }
+
     public void save(Technology technology){
         try{
             repo.save(technology);

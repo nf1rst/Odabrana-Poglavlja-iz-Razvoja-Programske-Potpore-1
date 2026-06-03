@@ -2,6 +2,7 @@ package hr.algebra;
 import hr.algebra.database.DBSingleton;
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.exceptions.EntityExistantException;
+import hr.algebra.exceptions.InvalidParseException;
 import hr.algebra.models.*;
 import hr.algebra.models.help.ParsedData;
 import hr.algebra.repositories.implementation.*;
@@ -55,6 +56,9 @@ public class MainApplication extends Application {
             }
         };
 
+        initDb.setOnSucceeded(e->LoggingUtil.logInfo("Database initialized"));
+        initDb.setOnFailed(e->LoggingUtil.logError("Database could not be initialized"));
+
         Thread dbThread = new Thread(initDb);
         dbThread.setDaemon(true);
         dbThread.start();
@@ -64,9 +68,8 @@ public class MainApplication extends Application {
     private void insertStartData() {
         try{
             Optional<String> headphonesJSON = HttpUtil.getJSON();
-            ParsedData parsedData;
             if(!headphonesJSON.isEmpty()){
-                parsedData= JsonParserUtil.parse(headphonesJSON.get());
+                ParsedData parsedData= JsonParserUtil.parse(headphonesJSON.get());
                 //id je mapirao dobro ali se ovdje opet salju objekti s IDem = 0 jer se nije updateala ovo lista
                 insertBrand(parsedData.getBrand());
                 insertTechnologies(parsedData.getTechnologies());
@@ -74,11 +77,9 @@ public class MainApplication extends Application {
                 insertTypes(parsedData.getTypes());
                 insertHeadphones(parsedData.getHeadphones());
             }
-
-
         }
-        catch (Exception e){
-            LoggingUtil.logError("Data insert error", e);
+        catch (InvalidParseException _){
+            // nema smisla prikazivat alert util ako korisnik moze daljem normalno
         }
 
     }

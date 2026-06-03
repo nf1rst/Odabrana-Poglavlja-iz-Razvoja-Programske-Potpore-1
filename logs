@@ -2392,3 +2392,57 @@
 2026-06-02 20:29:01 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
 2026-06-02 20:29:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
 2026-06-02 20:30:02 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 08:14:46 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 08:14:46 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 08:14:46 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 08:14:48 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 08:16:35 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 08:16:35 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 08:16:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Admin added
+2026-06-03 08:18:30 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 08:18:30 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 08:18:30 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 08:18:31 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 08:25:48 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 08:25:57 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 08:28:22 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 08:32:07 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 08:32:13 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 08:32:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 08:32:26 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 08:32:30 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 08:34:34 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 08:34:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 08:36:41 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 08:36:43 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-03 08:36:54 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 08:37:12 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-03 08:38:00 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Headphones id=AirPods Max 1, user=asdf1
+2026-06-03 08:38:26 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-03 08:42:58 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=AirPods Max 1, user=asdf1
+2026-06-03 08:44:06 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=User id=Account updated, user=asdfasdf
+2026-06-03 08:44:12 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 08:44:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 08:44:28 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 08:44:32 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=User id=Account updated, user=asdf1
+2026-06-03 08:54:36 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 08:54:55 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 08:54:55 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 08:54:56 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Admin added
+2026-06-03 08:54:57 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 08:55:06 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 08:55:12 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 09:03:45 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Procedure not found] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-03 09:03:45 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 09:03:46 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = []
+2026-06-03 09:03:49 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 09:03:54 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 09:03:57 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 09:04:09 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-03 09:21:34 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-03 09:21:34 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database initialized successfully
+2026-06-03 09:21:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Admin added
+2026-06-03 09:21:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database initialized
+2026-06-03 09:21:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-03 09:21:46 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-03 09:21:54 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
