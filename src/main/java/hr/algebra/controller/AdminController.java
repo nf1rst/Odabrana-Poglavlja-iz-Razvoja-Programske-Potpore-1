@@ -3,16 +3,20 @@ import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.help.DBStatistics;
 import hr.algebra.models.Session;
 import hr.algebra.models.User;
+import hr.algebra.models.help.ParsedData;
 import hr.algebra.services.AdminService;
+import hr.algebra.services.DBInitiatorService;
 import hr.algebra.services.HeadphonesService;
 import hr.algebra.services.UserService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.LoggingUtil;
+import hr.algebra.util.MediaUtil;
 import hr.algebra.util.XMLLoggingUtil;
 import hr.algebra.xml.export.XMLExporter;
 import jakarta.xml.bind.JAXBException;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -50,6 +54,8 @@ public class AdminController extends BaseController{
         setUpColumns();
         setUpChoiceBox();
 
+        editRightsCheckBox.setSelected(true);
+
         searchField.textProperty().addListener((obs, old, val)->{
             if(!val.isBlank()){
                 fillTable(userTableView, userService.search(val));
@@ -84,8 +90,8 @@ public class AdminController extends BaseController{
             LoggingUtil.logInfo("UPDATE", "User rights", Session.getCurrentUser().getUsername());
             XMLLoggingUtil.log("INFO", "UPDATE", "successfully changed user edit rights", "user", Session.getCurrentUser().getUsername(),  "*");
         }
-        catch (CannotPerformActionException _){
-            //ignore - interna evidancija je napravljena u servis sloju
+        catch (CannotPerformActionException e){
+            AlertUtil.showErrorAlert(e.getMessage());
         }
     }
 
@@ -138,8 +144,10 @@ public class AdminController extends BaseController{
 
     @FXML
     public void onDeleteAllEntities(){
+        if(!AlertUtil.showConfirmationAlert("Admin, are you of sound mind and hereby swear you want to delete the contents of the database"))return;
         try{
             adminService.deleteAllEntities();
+            MediaUtil.deleteImagesInIntelliJ();
             LoggingUtil.logInfo(delete, "Entities",  Session.getCurrentUser().getUsername());
             XMLLoggingUtil.log("INFO", delete, "successfully delted all entities", "*", Session.getCurrentUser().getUsername(),  "*");
         }
@@ -147,6 +155,24 @@ public class AdminController extends BaseController{
             AlertUtil.showErrorAlert("Cannot delete all database content");
             //ovdje ne treba logger jer je taj exception vec zapisan u service sloju u logove, ovo je samo da user zna sto se dogodilo
         }
+        AlertUtil.showInformationAlert("Database content successfully disposed of");
+    }
+
+    @FXML
+    public void onFillDB(){
+        DBInitiatorService initiator = DBInitiatorService.INSTANCE;
+        Task<Void> fillDb = new Task<Void>(){
+            @Override
+            protected Void call() throws Exception {
+                initiator.insetAPIData();
+                return null;
+            }
+        };
+        Thread thread = new Thread(fillDb);
+        thread.setDaemon(true);
+        thread.start();
+
+        AlertUtil.showInformationAlert("Database successfully reinitialized with API data");
     }
 
 

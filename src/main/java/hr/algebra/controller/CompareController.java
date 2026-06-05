@@ -2,9 +2,11 @@ package hr.algebra.controller;
 import hr.algebra.models.Headphones;
 import hr.algebra.models.Technology;
 import hr.algebra.models.Use;
+import hr.algebra.util.SoundUtil;
 import hr.algebra.services.HeadphonesService;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.MediaUtil;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -13,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.VBox;
 import java.io.File;
@@ -23,8 +26,6 @@ import java.util.stream.Collectors;
 public class CompareController extends BaseController {
 
     @FXML private ListView<Headphones>headphonesListView;
-
-    @FXML private NavigationController  navigationController;
 
     @FXML private Label viewHeadphoneName1;
     @FXML private Label viewHeadphoneName2;
@@ -61,6 +62,8 @@ public class CompareController extends BaseController {
 
     @FXML private VBox dropZone1;
     @FXML private VBox dropZone2;
+
+    @FXML private Button motivateButton;
 
     private final HeadphonesService headphonesService=HeadphonesService.getInstance();
     private Headphones selectedHeadphones;
@@ -269,6 +272,12 @@ public class CompareController extends BaseController {
                 setText(empty ||h==null?null:h.getName());
             }
         });
+    }
+
+    @FXML
+    public void onMonivate(){
+        SoundUtil.playAudioWithStop("src/main/resources/hr/algebra/assets/sound/alotbsol.wav", getMainNode().getScene());
+        motivateButton.setVisible(false);
     }
 
     @Override

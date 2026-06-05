@@ -15,7 +15,6 @@
       <VBox alignment="CENTER" prefHeight="379.0" prefWidth="193.0" spacing="8.0" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="nameLabel" text="Name*" />
-            <Label fx:id="descLabel" text="Description*" />
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
                <children>
                   <Button mnemonicParsing="false" style="-fx-background-color: #607D8B; -fx-text-fill: white;" onAction="#onClear" text="Clear" />

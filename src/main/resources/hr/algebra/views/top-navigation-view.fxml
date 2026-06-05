@@ -21,6 +21,7 @@
                 <items>
                     <MenuItem onAction="#onMainMenu" text="Main Menu" />
                     <MenuItem onAction="#onCompareHeadphones" text="Compare headphones" />
+               <MenuItem fx:id="adminMenuItem" onAction="#onAdminPanel" text="Admin Panel" />
                 </items>
             </Menu>
             <Menu text="Account">

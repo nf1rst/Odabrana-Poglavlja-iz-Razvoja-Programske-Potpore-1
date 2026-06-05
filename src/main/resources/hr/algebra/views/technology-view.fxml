@@ -18,15 +18,15 @@
       <VBox alignment="CENTER" prefHeight="358.0" prefWidth="184.0" spacing="8.0" BorderPane.alignment="CENTER">
          <children>
             <Label fx:id="nameLabel" text="Name *" />
-            <Label fx:id="descLabel" text="Description *">
+            <Label fx:id="descLabel" alignment="CENTER" prefHeight="121.0" prefWidth="162.0" text="Description *" wrapText="true">
                <VBox.margin>
                   <Insets top="5.0" />
                </VBox.margin></Label>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
                <children>
-                  <Button mnemonicParsing="false" style="-fx-background-color: #607D8B; -fx-text-fill: white;" onAction="#onClear" text="Clear" />
-                  <Button mnemonicParsing="false" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" onAction="#onEdit" text="Edit" />
-                  <Button mnemonicParsing="false" style="-fx-background-color: #f44336; -fx-text-fill: white;" onAction="#onDelete" text="Delete" />
+                  <Button mnemonicParsing="false" onAction="#onClear" style="-fx-background-color: #607D8B; -fx-text-fill: white;" text="Clear" />
+                  <Button mnemonicParsing="false" onAction="#onEdit" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Edit" />
+                  <Button mnemonicParsing="false" onAction="#onDelete" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Delete" />
                </children>
             </HBox>
          </children>

@@ -8,14 +8,13 @@ import hr.algebra.util.LoggingUtil;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Predicate;
 
 public class TechnologyService {
     private static final TechnologyService INSTANCE=new TechnologyService();
     public static TechnologyService getInstance(){return INSTANCE;}
     private final TechnologyRepository repo;
-
+    private String sqlError="SQL error";
     private TechnologyService() {
         this.repo = RepositoryFactory.getTechnologyRespository();
     }
@@ -24,7 +23,8 @@ public class TechnologyService {
         try{
             return repo.getAll();
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to get technologies");
         }
     }
@@ -33,7 +33,8 @@ public class TechnologyService {
         try{
             repo.save(technology);
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to save technology");
         }
     }
@@ -41,7 +42,8 @@ public class TechnologyService {
         try{
             repo.delete(id);
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to delete technology");
         }
     }
@@ -59,7 +61,8 @@ public class TechnologyService {
                     .filter(nameMatches.or(descMatches))
                     .toList();
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to get technolgoies");
         }
 
@@ -71,7 +74,8 @@ public class TechnologyService {
                     .stream()
                     .anyMatch(t->t.getName().equals(name));
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to get technologies");
         }
 

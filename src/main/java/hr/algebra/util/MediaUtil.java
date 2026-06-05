@@ -1,7 +1,9 @@
 package hr.algebra.util;
+import com.sun.javafx.util.Logging;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
+
 import java.io.File;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -15,9 +17,9 @@ public class MediaUtil {
 
      public static void showImage(ImageView imageView, String imagePath) {
         try{
-            InputStream imageStream = MediaUtil.class.getResourceAsStream(imagePath);
-            if(imageStream!=null){
-                Image placeholder = new Image(imageStream);
+            File imageFile = new File(imagePath);
+            if(imageFile.exists()){
+                Image placeholder = new Image(imageFile.toURI().toString());
                 imageView.setImage(placeholder);
             }
         }
@@ -32,10 +34,36 @@ public class MediaUtil {
             if(imageStream!=null){
                 Image placeholder = new Image(imageStream);
                 imageView.setImage(placeholder);
+                imageStream.close();
             }
         }
         catch (Exception _){
             AlertUtil.showWarningAlert("No placeholder image could be loaded");
+        }
+    }
+
+    //https://stackoverflow.com/questions/53520358/delete-image-from-the-folder
+    //https://stackoverflow.com/questions/20281835/how-to-delete-a-folder-with-files-using-java - jako korisno!!!!!!!!!!!!!!!!!
+    public static void deleteImagesInIntelliJ(){
+        String imageDir = "src/main/resources/hr/algebra/assets/images/userInput";
+        File file= new  File(imageDir);
+
+        try{
+            File[]files =file.listFiles();
+
+            if(files!=null){
+                for(File f:files){
+                    if(f.isFile()){
+                        boolean deleted = f.delete();
+                        if(!deleted) LoggingUtil.logError("Image deleteion error: " + f.getName());
+                    }
+                }
+            }
+
+        }
+        catch (Exception e){
+            LoggingUtil.logError("Image file in IntelliJ delete error", e);
+            AlertUtil.showErrorAlert("Cannot delete image from IntelliJ");
         }
     }
 

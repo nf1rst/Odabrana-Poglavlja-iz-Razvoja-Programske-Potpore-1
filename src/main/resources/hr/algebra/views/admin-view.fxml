@@ -70,6 +70,7 @@
                                     <Button mnemonicParsing="false" onAction="#onSeeDBStats" text="See Database Stats" />
                                     <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onDeleteAllEntities" text="DELETE ALL ENTITIES" />
                                     <Button mnemonicParsing="false" onAction="#onXMLBackup" text="XML backup" />
+                                    <Button layoutX="485.0" layoutY="10.0" mnemonicParsing="false" onAction="#onFillDB" text="Fill DB with API data" />
                                  </children>
                                  <BorderPane.margin>
                                     <Insets top="15.0" />

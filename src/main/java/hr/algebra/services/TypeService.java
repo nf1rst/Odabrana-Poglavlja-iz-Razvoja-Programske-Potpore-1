@@ -14,7 +14,7 @@ public class TypeService {
     private static final TypeService INSTANCE = new TypeService();
     public static TypeService getInstance(){return INSTANCE;}
     private final TypeRepository repo;
-
+    private String sqlError="SQL error";
     private TypeService() {
         this.repo= RepositoryFactory.getTypeRespository();
     }
@@ -23,7 +23,8 @@ public class TypeService {
         try{
             return repo.getAll();
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to get types");
         }
     }
@@ -32,7 +33,8 @@ public class TypeService {
         try{
             repo.save(type);
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to save type");
         }
     }
@@ -40,7 +42,8 @@ public class TypeService {
         try {
             repo.delete(id);
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to delete type");
         }
     }
@@ -55,7 +58,8 @@ public class TypeService {
                     .stream()
                     .filter(containsQuery)
                     .toList();
-        }catch (SQLException _){
+        }catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to get types");
         }
     }
@@ -66,7 +70,8 @@ public class TypeService {
                     .stream()
                     .anyMatch(t->t.getName().equals(name));
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot excute to get types");
         }
 

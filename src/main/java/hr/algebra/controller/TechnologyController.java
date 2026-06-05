@@ -10,14 +10,21 @@ import hr.algebra.util.SceneLoadingUtil;
 import hr.algebra.util.XMLLoggingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+
+import java.util.List;
 
 
 public class TechnologyController extends BaseController{
     private final TechnologyService technologyService= TechnologyService.getInstance();
     private Technology selectedTechnology;
+    private FilteredList<Technology>filteredTechnologies;
 
     @FXML private TextField searchField;
 
@@ -51,11 +58,31 @@ public class TechnologyController extends BaseController{
                 });
 
         //za search field da filtrira kad korisnik nesto upise
-        searchField.textProperty().addListener((obs,old,q)-> fillTable(technologiesTable,technologyService.search(q)));
+
+        searchInit();
 
         fillUserLabel(currentUserLabel);
 
-        fillTable(technologiesTable, technologyService.getAllTechnologies());
+        //fillTable(technologiesTable, technologyService.getAllTechnologies());
+    }
+
+    private void searchInit() {
+        ObservableList<Technology> technologyList = FXCollections.observableArrayList(technologyService.getAllTechnologies());
+
+        filteredTechnologies = new FilteredList<>(technologyList, t->true);
+        SortedList<Technology>sortedTechnologies = new SortedList<>(filteredTechnologies);
+
+        sortedTechnologies.comparatorProperty().bind(technologiesTable.comparatorProperty());
+
+        technologiesTable.setItems(sortedTechnologies);
+        searchField.textProperty().addListener((obs, old, val)-> {
+            filteredTechnologies.setPredicate(tech -> {
+                if(val==null ||val.isBlank()){
+                    return true;
+                }
+                return tech.getName().contains(val);
+            });
+        });
     }
 
     @FXML

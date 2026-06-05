@@ -209,7 +209,7 @@ public class HeadphonesEditController extends BaseController{
     }
 
     private void updateExistingHeadphones(List<Technology> userselectedTech, List<Use> userSelectedUses) {
-        selectedHeadphones.setName(nameField.getText());
+        //selectedHeadphones.setName(nameField.getText());
         selectedHeadphones.setYearEdition(Integer.parseInt(yearField.getText()));
         selectedHeadphones.setImpedance(Integer.parseInt(impedanceField.getText()));
         selectedHeadphones.setMinFrequency(Integer.parseInt(minFreqField.getText()));
@@ -314,7 +314,6 @@ public class HeadphonesEditController extends BaseController{
     public void onChooseImage(){
         try{
             Optional<String> path = MediaUtil.chooseFile();
-            //Optional[src\main\resources\hr\algebra\assets\images\ userInput\coty.png]
             if(path.isPresent()) selectedImagePath=path.get();
         }
         catch (Exception _){

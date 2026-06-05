@@ -29,8 +29,6 @@ public enum DBSingleton {
             );
 
             tryInitialize();
-            LoggingUtil.logInfo("Database initialized successfully");
-
         } catch (Exception e) {
             LoggingUtil.logError("DB initialization error - tables already exist", e);
         }
@@ -47,7 +45,7 @@ public enum DBSingleton {
             LoggingUtil.logError("DB already initialized", e); //probact ce create table i nece moc ako vidi da tablice vec postoje
         }
         catch (SQLException e){
-            LoggingUtil.logError("Procedure not found", e);
+            LoggingUtil.logError("Command already executed", e);
         }
     }
 
@@ -75,7 +73,6 @@ public enum DBSingleton {
                 }
             }
         }
-
         LoggingUtil.logInfo("Database schema initialized");
     }
 

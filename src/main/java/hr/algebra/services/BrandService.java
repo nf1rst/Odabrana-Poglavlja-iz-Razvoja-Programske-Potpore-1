@@ -15,14 +15,15 @@ public class BrandService {
     private static final BrandService INSTANCE=new BrandService();
     private final BrandRepository repo= RepositoryFactory.getBrandRespository();
     public static BrandService getInstance(){return INSTANCE;}
-
+    private String sqlError="SQL error";
     private BrandService() {}
 
     public List<Brand> getAllBrands(){
         try{
             return repo.getAll();
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to get brands");
         }
     }
@@ -30,7 +31,8 @@ public class BrandService {
         try{
             return repo.getById(id);
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to get brand");
         }
     }
@@ -38,7 +40,8 @@ public class BrandService {
         try{
             repo.save(brand);
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to save brand");
         }
     }
@@ -46,7 +49,8 @@ public class BrandService {
         try{
             repo.delete(id);
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to delete brand");
         }
     }
@@ -64,7 +68,8 @@ public class BrandService {
                     .filter(containsQuery)
                     .toList();
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot filter brands at the moment");
         }
 
@@ -77,7 +82,8 @@ public class BrandService {
                     .stream()
                     .anyMatch(b->b.getName().equalsIgnoreCase(name));
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to get brands");
         }
 

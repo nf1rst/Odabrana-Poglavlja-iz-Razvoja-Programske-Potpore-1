@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ChosenHeadphones id="8">
-    <name>AirPods Pro 2</name>
-    <yearEdition>2022</yearEdition>
-    <price>249.0</price>
-    <impedance>16</impedance>
-    <minFrequency>20</minFrequency>
-    <maxFrequency>20000</maxFrequency>
-    <batteryLife>6</batteryLife>
-    <description>Features advanced active noise cancellation, adaptive transparency, and spatial audio.</description>
-    <brandName>Apple</brandName>
+<ChosenHeadphones id="19">
+    <name>Koss Porta Pro</name>
+    <yearEdition>1984</yearEdition>
+    <price>49.99</price>
+    <impedance>60</impedance>
+    <minFrequency>15</minFrequency>
+    <maxFrequency>25000</maxFrequency>
+    <batteryLife>0</batteryLife>
+    <description>Retro on-ear portable headphones celebrated for timeless sonic performance and lightweight frame.</description>
+    <brandName>Koss</brandName>
     <technologies>
-        <technology>ANC</technology>
-        <technology>H2 Chip</technology>
+        <technology>Comfort Zone Setting</technology>
     </technologies>
     <uses>
         <use>Commuting</use>
-        <use>Calls</use>
+        <use>Casual Listening</use>
     </uses>
-    <typeName>In-Ear</typeName>
+    <typeName>On-Ear</typeName>
 </ChosenHeadphones>

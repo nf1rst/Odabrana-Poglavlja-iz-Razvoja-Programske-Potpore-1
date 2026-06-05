@@ -15,7 +15,7 @@
 <BorderPane prefHeight="700.0" prefWidth="1000.0" style="-fx-padding: 10;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.algebra.controller.HeadphonesController">
     <right>
         <ScrollPane fitToWidth="true" prefHeight="745.0" prefWidth="243.0" style="-fx-padding: 0 0 0 10;">
-            <VBox alignment="CENTER" prefHeight="705.0" prefWidth="270.0" spacing="8" style="-fx-padding: 5;">
+            <VBox alignment="CENTER" prefHeight="641.0" prefWidth="220.0" spacing="8" style="-fx-padding: 5;">
             <ImageView fx:id="headphoneImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
 
                 <Label fx:id="nameLabel" text="Name*" />
@@ -36,11 +36,11 @@
 
                 <Label fx:id="typeLabel" text="Type*" />
 
-                <Label fx:id="descLabel" text="Description*" />
-
                 <Label fx:id="techLabel" text="Technologies*" />
 
                 <Label fx:id="useLabel" text="Uses*" />
+
+                <Label fx:id="descLabel" wrapText="true" alignment="CENTER" prefHeight="83.0" prefWidth="199.0" text="Description*" />
                 <!-- Gumbi za akcije -->
                 <HBox spacing="5">
                     <Button maxWidth="Infinity" onAction="#onClear" style="-fx-background-color: #607D8B; -fx-text-fill: white;" text="Clear" HBox.hgrow="ALWAYS" />

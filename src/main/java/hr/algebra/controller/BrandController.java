@@ -13,7 +13,6 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 
 
 public class BrandController extends BaseController {
@@ -102,8 +101,8 @@ public class BrandController extends BaseController {
         }
 
         tryDeleteBrand();
-
         onNew();//tu se poziva restart selektiranogBrenda
+        fillTable(brandTable, brandService.getAllBrands());
     }
 
     private void tryDeleteBrand() {

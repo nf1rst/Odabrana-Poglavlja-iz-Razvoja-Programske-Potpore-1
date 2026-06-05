@@ -240,7 +240,7 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
             rs.getInt("MinFrequency"),
             rs.getInt("MaxFrequency"),
             rs.getInt("BatteryLife"),
-            rs.getDouble("Price"), // hoce li ovo bit problem jer je price money u db
+            rs.getDouble("Price"),
             rs.getString("Description"),
             rs.getString("ImagePath"),
             brand,
@@ -249,6 +249,7 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
             new ArrayList<>()
     );
 
+    //posebna proc koja vraca uses i tech za odredeni headphonesID
     headphones.setPossibleUsages(getPossibleUsagesForHeadphones(rs.getInt("Id")));
     headphones.setTechnologies(getTechnologiesForHeadphones(rs.getInt("Id")));
     return headphones;

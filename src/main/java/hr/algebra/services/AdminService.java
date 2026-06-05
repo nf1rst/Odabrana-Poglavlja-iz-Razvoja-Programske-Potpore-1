@@ -14,13 +14,13 @@ import java.util.Optional;
 public enum AdminService {
     INSTANCE;
     private final AdminRepository repo = RepositoryFactory.getAdminRespository();
-    private final Logger logger = LoggerFactory.getLogger(AdminService.class);
 
+    private String sqlError="SQL error";
     public void deleteAllEntities() {
         try {
             repo.deleteAllEntities();
         } catch (SQLException e) {
-            logger.error("Cannot execute to delete all entities", e);
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to delete all entities");
         }
     }
@@ -29,7 +29,7 @@ public enum AdminService {
         try {
             repo.deleteUserByUsername(username);
         } catch (SQLException e) {
-            logger.error("ERROR", e);
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to delete user");
         }
     }
@@ -38,7 +38,7 @@ public enum AdminService {
         try {
             repo.deleteAllUsers();
         } catch (SQLException e) {
-            logger.error("Cannot execute to delete all users", e);
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to delete all users");
         }
     }
@@ -50,7 +50,7 @@ public enum AdminService {
                 return stats;
             }
         } catch (SQLException e) {
-            logger.error("Cannot execute to get DB stats", e);
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to get DB stats");
         }
         return Optional.empty();

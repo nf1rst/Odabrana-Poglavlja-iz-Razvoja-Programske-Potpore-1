@@ -4,10 +4,17 @@ import hr.algebra.util.AlertUtil;
 import hr.algebra.util.SceneLoadingUtil;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.HBox;
 
 public class NavigationController extends BaseController{
     @FXML private HBox hBox;
+    @FXML private MenuItem adminMenuItem;
+
+    @FXML
+    public void initialize(){
+        if(!Session.userIsAdmin()) adminMenuItem.setVisible(false);
+    }
 
     @FXML
     public void onMainMenu(){
@@ -58,6 +65,12 @@ public class NavigationController extends BaseController{
     public void onLogOut(){
         Session.setCurrentUser(null);
         SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/login-view.fxml", "Login",getMainNode(), 400,500);
+    }
+
+    @FXML
+    public void onAdminPanel(){
+        if(!Session.userIsAdmin()) AlertUtil.showErrorAlert("Not an administrator");
+        else SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/admin-view.fxml", "Admin Panel", getMainNode(),700,550);
     }
 
     @Override

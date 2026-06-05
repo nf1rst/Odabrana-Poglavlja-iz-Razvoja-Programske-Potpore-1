@@ -209,11 +209,12 @@ public class HeadphonesController extends BaseController {
         if(!AlertUtil.showConfirmationAlert("Do you want to delete headphones: " + selectedHeadphnes.getName())) return;
 
         headphonesService.delete(selectedHeadphnes.getId());
+
         LoggingUtil.logInfo( "DELETE", "Headphones", selectedHeadphnes.getName(),Session.checkCurrentUserName());
         XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "headphones", Session.checkCurrentUserName(),  selectedHeadphnes.getName());
 
-        selectedHeadphnes=null;
         fillTable(headphonesTable, headphonesService.getAllHeadphones());
+        selectedHeadphnes=null;
     }
 
     @FXML
@@ -238,6 +239,7 @@ public class HeadphonesController extends BaseController {
                 return null;
             }
         };
+
 
         exportTask.setOnSucceeded(e->{
             AlertUtil.showInformationAlert("Headphones exported successfully");

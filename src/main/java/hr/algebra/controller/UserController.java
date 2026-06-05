@@ -27,14 +27,13 @@ public class UserController extends BaseController {
         statusLabel.setText("");
         imageStatusLabel.setText("");
         onUserSet();
+        MediaUtil.showPlaceholder(profileImageView);
     }
 
     @Override
     protected void onUserSet() {
         usernameLabel.setText(Session.checkCurrentUserName());
         roleLabel.setText(Session.getCurrentUser().getRole().toString());
-
-        MediaUtil.showImage(profileImageView, "/hr/algebra/assets/images/noPicture.png");
     }
 
     @Override

@@ -37,11 +37,17 @@ public enum DBInitiatorService {
     public void insetAPIData(){
         Optional<String> jsonData = HttpUtil.getJSON();
         if(jsonData.isEmpty()){
-            Platform.runLater(()->AlertUtil.showErrorAlert("Start data from API could not be loaded, you can still use the application"));
+            Platform.runLater(()->{
+                AlertUtil.showErrorAlert("Start data from API could not be loaded, you can still use the application");
+                LoggingUtil.logError("No Api data thread test - Application thread");
+            });
+            LoggingUtil.logError("No Api data thread test - background thread");
             return;
         }
 
         ParsedData parsedData = JsonParserUtil.parse(jsonData.get());
+//        DBConnector.getConnection().setAutoCommit(true); u try
+//        DBConnector.getConnection().rollback(); u catch
         insertBrand(parsedData.getBrand());
         insertTechnologies(parsedData.getTechnologies());
         insertUses(parsedData.getUses());

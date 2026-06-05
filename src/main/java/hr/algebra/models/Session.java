@@ -29,6 +29,10 @@ public class Session {
         return (userLoggedIn() && adminAllowedEdit) || (currentUser!=null && currentUser.getRole()==Role.ADMIN);
     }
 
+    public static boolean userIsAdmin(){
+        return currentUser!=null && currentUser.getRole()==Role.ADMIN;
+    }
+
     public static boolean userLoggedIn(){
         return currentUser != null;
     }

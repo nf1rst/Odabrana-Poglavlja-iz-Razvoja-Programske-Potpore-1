@@ -14,7 +14,7 @@ public class UseService {
     private static final  UseService INSTANCE=new UseService();
     public static UseService getInstance(){return INSTANCE;}
     private final UseRepository repo;
-
+    private String sqlError="SQL error";
     private UseService() {
         this.repo= RepositoryFactory.getUseRespository();
     }
@@ -23,7 +23,8 @@ public class UseService {
         try{
             return repo.getAll();
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to get uses");
         }
     }
@@ -32,7 +33,8 @@ public class UseService {
         try{
             repo.save(use);
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to save use");
         }
     }
@@ -41,7 +43,8 @@ public class UseService {
             repo.delete(id);
 
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot execute to delete use");
         }
     }
@@ -57,7 +60,8 @@ public class UseService {
                     .filter(nameMatches)
                     .toList();
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot get uses");
         }
 
@@ -69,7 +73,8 @@ public class UseService {
                     .stream()
                     .anyMatch(u->u.getName().equals(name));
         }
-        catch (SQLException _){
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
             throw new CannotPerformActionException("Cannot get uses");
         }
     }
