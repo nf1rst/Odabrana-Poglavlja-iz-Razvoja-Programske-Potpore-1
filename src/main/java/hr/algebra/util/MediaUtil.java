@@ -1,5 +1,5 @@
 package hr.algebra.util;
-import com.sun.javafx.util.Logging;
+
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;

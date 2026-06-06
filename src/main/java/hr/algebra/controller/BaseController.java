@@ -26,7 +26,6 @@ public abstract class BaseController {
         }
     }
 
-
     protected void onUserSet() { //prazna metoda koju klasa koja ovu nsaljeduje moze overrideat ako joj je potrebno da se nesto dogodi nakon postavljanja usera
     //ko onaj default metod u interafceima
     }
@@ -37,7 +36,6 @@ public abstract class BaseController {
         label.setText(message);
         label.setTextFill(color);
     }
-
 
     protected void fillUserLabel(Label label) {
         if(!Session.userLoggedIn()) label.setText("Anonymous");

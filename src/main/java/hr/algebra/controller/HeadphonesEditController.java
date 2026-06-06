@@ -209,7 +209,6 @@ public class HeadphonesEditController extends BaseController{
     }
 
     private void updateExistingHeadphones(List<Technology> userselectedTech, List<Use> userSelectedUses) {
-        //selectedHeadphones.setName(nameField.getText());
         selectedHeadphones.setYearEdition(Integer.parseInt(yearField.getText()));
         selectedHeadphones.setImpedance(Integer.parseInt(impedanceField.getText()));
         selectedHeadphones.setMinFrequency(Integer.parseInt(minFreqField.getText()));
@@ -222,10 +221,10 @@ public class HeadphonesEditController extends BaseController{
         selectedHeadphones.setImagePath(selectedImagePath);
 
         headphonesService.save(selectedHeadphones);
+        updateManyToMany(selectedHeadphones, userselectedTech, userSelectedUses); // posebne tablice u bazi pa se mora rucno
         // sad zbog onog scope identity ovdje se moze napravit getID da vrati pravi ID koji mu je baza generirala
         LoggingUtil.logInfo("UPDATE", "Headphones", selectedHeadphones.getName(), Session.checkCurrentUserName());
         XMLLoggingUtil.log("INFO", "UPDATE", "successfully updated", "headphones", Session.checkCurrentUserName(),  nameField.getText());
-        updateManyToMany(selectedHeadphones, userselectedTech, userSelectedUses); // posebne tablice u bazi pa se mora rucno
     }
 
     private void insertNewHeadphones(List<Technology> userselectedTech, List<Use> userSelectedUses) {
@@ -244,9 +243,9 @@ public class HeadphonesEditController extends BaseController{
                 userselectedTech,
                 userSelectedUses
         );
-
         headphonesService.save(headphonesForInsert);
         updateManyToMany(headphonesForInsert, userselectedTech, userSelectedUses);
+        selectedHeadphones=headphonesForInsert;
 
         LoggingUtil.logInfo("INSERT", "Headphones", headphonesForInsert.getName(), Session.checkCurrentUserName());
         XMLLoggingUtil.log("INFO", "INSERT", "successfully inserted", "headphones", Session.checkCurrentUserName(), nameField.getText());
@@ -260,10 +259,10 @@ public class HeadphonesEditController extends BaseController{
 
         try {
             if(selectedHeadphones.getTechnologies()!=null){
-                selectedHeadphones.getTechnologies().forEach(t->headphonesService.removeTechnology(selectedHeadphones.getId(),t.getId())); // u bazi je tim redoslojedom
+                headphonesService.removeAllTechnologiesForHeadphones(selectedHeadphones.getId());
             }
             if(selectedHeadphones.getPossibleUsages()!=null){
-                selectedHeadphones.getPossibleUsages().forEach(u->headphonesService.removeUse(selectedHeadphones.getId(),u.getId()));
+                headphonesService.removeAllUsesForHeadphones(selectedHeadphones.getId());
             }
 
             for(Technology t:userselectedTech){

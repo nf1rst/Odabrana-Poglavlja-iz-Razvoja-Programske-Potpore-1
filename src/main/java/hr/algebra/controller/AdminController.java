@@ -3,7 +3,6 @@ import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.help.DBStatistics;
 import hr.algebra.models.Session;
 import hr.algebra.models.User;
-import hr.algebra.models.help.ParsedData;
 import hr.algebra.services.AdminService;
 import hr.algebra.services.DBInitiatorService;
 import hr.algebra.services.HeadphonesService;

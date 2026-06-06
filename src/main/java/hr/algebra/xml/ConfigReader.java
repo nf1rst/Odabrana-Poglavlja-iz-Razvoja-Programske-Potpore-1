@@ -28,10 +28,7 @@ public class ConfigReader {
             String username =getTagValue(doc,"username");
             String password =getTagValue(doc,"password");
 
-            int width = Integer.parseInt(getTagValue(doc,"width"));
-            int height = Integer.parseInt(getTagValue(doc,"height"));
-            String title = getTagValue(doc,"title");
-            return new AppConfig(url,username,password,width,height,title);
+            return new AppConfig(url,username,password);
         }
         catch (Exception e){
             LoggingUtil.logError("Cannot read the config.xml file", e);

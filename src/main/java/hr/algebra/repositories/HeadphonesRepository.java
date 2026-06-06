@@ -17,4 +17,6 @@ public interface HeadphonesRepository extends Repository<Headphones> {
     void removeTechnology(int headphonesID,int technologyID) throws SQLException;
     void addUse(int headphonesID, int useID) throws SQLException;
     void removeUse(int headphonesID, int useID) throws SQLException;
+    void removeAllUsesForHeadphones(int headphonesID) throws SQLException;
+    void removeAllTechnologiesForHeadphones(int headphonesID) throws SQLException;
 }

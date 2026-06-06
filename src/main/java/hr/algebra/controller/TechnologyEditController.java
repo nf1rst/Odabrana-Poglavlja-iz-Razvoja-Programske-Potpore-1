@@ -76,7 +76,7 @@ public class TechnologyEditController extends BaseController{
 
     @FXML
     public void onBack(){
-        SceneLoadingUtil.loadNewWindow("/hr/algebra/views/technology-view.fxml", "Technology", getMainNode());
+        SceneLoadingUtil.loadNewWindow("/hr/algebra/views/technology-view.fxml", "Technology view", getMainNode());
     }
 
     @FXML
@@ -91,14 +91,13 @@ public class TechnologyEditController extends BaseController{
         }
         
         trySaveTechnology();
-        selectedTechnology=null;
 
     }
 
     private void trySaveTechnology() {
             if(!technologyService.nameExists(nameField.getText())){ //tehnologija ne postoji onda je mora ubacit
                 insertTechnology();
-                XMLLoggingUtil.log("INFO", "INSERT ", "successfully deleted", "technology", Session.checkCurrentUserName(), nameField.getText());
+                XMLLoggingUtil.log("INFO", "INSERT ", "successfully inserted", "technology", Session.checkCurrentUserName(), nameField.getText());
                 fillStatusLabel(statusLabel, "Technology successfully inserted", Color.GREEN);
             }
             else{// ako vec postoji onda se treba napravit update te tehnologije s istim IDjem
@@ -109,14 +108,14 @@ public class TechnologyEditController extends BaseController{
     }
 
     private void updateExistingTechnology() {
-        selectedTechnology.setName(nameField.getText());
         selectedTechnology.setDescription(descField.getText());
         technologyService.save(selectedTechnology);
         LoggingUtil.logInfo("UPDATE", "Technology", nameField.getText(), Session.checkCurrentUserName());
     }
 
     private void insertTechnology() {
-        technologyService.save(new Technology(nameField.getText(), descField.getText()));
+        Technology forInsert = new Technology(nameField.getText(), descField.getText());
+        technologyService.save(forInsert);
         LoggingUtil.logInfo("INSERT", "Technology", nameField.getText(), Session.checkCurrentUserName());
     }
 

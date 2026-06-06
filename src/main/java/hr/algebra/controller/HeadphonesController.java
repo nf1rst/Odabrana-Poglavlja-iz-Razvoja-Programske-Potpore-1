@@ -56,7 +56,6 @@ public class HeadphonesController extends BaseController {
     private final TypeService typeService = TypeService.getInstance();
 
     private Headphones selectedHeadphnes = null;
-    private String selectedImagePath=null;
 
     @FXML private Label currentUserLabel;
 
@@ -107,6 +106,7 @@ public class HeadphonesController extends BaseController {
                 .addListener((obs, old, val)->{
                     if(val!=null){
                         fillTable(headphonesTable, headphonesService.getByBrand(val.getId()));
+                        filterTypeCombo.getSelectionModel().clearSelection();
                     }
                 });
 
@@ -116,6 +116,7 @@ public class HeadphonesController extends BaseController {
                 .addListener((obs, old, val)->{
                     if(val!=null){
                         fillTable(headphonesTable, headphonesService.getByType(val.getId()));
+                        filterBrandCombo.getSelectionModel().clearSelection();
                     }
                 });
     }

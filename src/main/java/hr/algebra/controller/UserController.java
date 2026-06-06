@@ -61,6 +61,10 @@ public class UserController extends BaseController {
                 setStatus("Cannot use character '/'");
                 return;
             }
+            if(userService.usernameExists(newUsername)){
+                setStatus("username already in use, try another one");
+                return;
+            }
             currentUser.setUsername(newUsername);
             changed = true;
 

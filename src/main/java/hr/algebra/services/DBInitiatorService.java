@@ -46,7 +46,7 @@ public enum DBInitiatorService {
         }
 
         ParsedData parsedData = JsonParserUtil.parse(jsonData.get());
-//        DBConnector.getConnection().setAutoCommit(true); u try
+//        DBConnector.getConnection().setAutoCommit(true); iznad try
 //        DBConnector.getConnection().rollback(); u catch
         insertBrand(parsedData.getBrand());
         insertTechnologies(parsedData.getTechnologies());

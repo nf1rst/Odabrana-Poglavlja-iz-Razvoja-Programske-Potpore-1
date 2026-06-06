@@ -6,9 +6,4 @@
         <username>sa</username>
         <password>SQL</password>
     </database>
-    <window>
-        <width>1200</width>
-        <height>800</height>
-        <title>Headphones catalogue</title>
-    </window>
 </config>

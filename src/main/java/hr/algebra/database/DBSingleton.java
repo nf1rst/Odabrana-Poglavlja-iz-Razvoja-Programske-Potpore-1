@@ -59,7 +59,7 @@ public enum DBSingleton {
 
         String ddl = new String(resourceStream.readAllBytes());
 
-        if (ddl.startsWith("\uFEFF")) { // da ako pocinje s razmakom da se ne srusi
+        if (ddl.startsWith("\uFEFF")) { // da ako pocinje s razmakom da se ne srusi proc
             ddl = ddl.substring(1);
         }
 

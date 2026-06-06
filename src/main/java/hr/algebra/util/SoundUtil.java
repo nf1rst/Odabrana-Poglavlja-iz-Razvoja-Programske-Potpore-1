@@ -1,13 +1,11 @@
 package hr.algebra.util;
 
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.input.KeyCode;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.swing.*;
 import java.io.File;
 
 public class SoundUtil {

@@ -9,7 +9,6 @@ import hr.algebra.util.SceneLoadingUtil;
 import hr.algebra.util.XMLLoggingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -49,14 +48,7 @@ public class BrandController extends BaseController {
             }
         });
 
-        searchField.textProperty().addListener((obs,old,q)->{
-            try{
-                brandTable.setItems(FXCollections.observableArrayList(brandService.search(q)));
-            }
-            catch (CannotPerformActionException e){
-                AlertUtil.showErrorAlert(e.getMessage());
-            }
-        });
+        searchField.textProperty().addListener((obs,old,q)->fillTable(brandTable, brandService.search(q)));
 
         fillUserLabel(currentUserLabel);
         fillTable(brandTable, brandService.getAllBrands());

@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ChosenHeadphones id="19">
-    <name>Koss Porta Pro</name>
-    <yearEdition>1984</yearEdition>
-    <price>49.99</price>
-    <impedance>60</impedance>
-    <minFrequency>15</minFrequency>
-    <maxFrequency>25000</maxFrequency>
+<ChosenHeadphones id="11">
+    <name>K702</name>
+    <yearEdition>2008</yearEdition>
+    <price>189.0</price>
+    <impedance>62</impedance>
+    <minFrequency>10</minFrequency>
+    <maxFrequency>39800</maxFrequency>
     <batteryLife>0</batteryLife>
-    <description>Retro on-ear portable headphones celebrated for timeless sonic performance and lightweight frame.</description>
-    <brandName>Koss</brandName>
+    <description>Reference studio headphones featuring open-back design and extremely accurate response for mixing.</description>
+    <brandName>AKG</brandName>
     <technologies>
-        <technology>Comfort Zone Setting</technology>
+        <technology>Open-Back Design</technology>
+        <technology>Varimotion Diaphragm</technology>
     </technologies>
     <uses>
-        <use>Commuting</use>
-        <use>Casual Listening</use>
+        <use>Studio Monitoring</use>
+        <use>Audio Editing</use>
     </uses>
-    <typeName>On-Ear</typeName>
+    <typeName>Over-Ear</typeName>
 </ChosenHeadphones>

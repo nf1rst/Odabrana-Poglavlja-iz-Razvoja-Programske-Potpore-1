@@ -41,7 +41,7 @@ public class MainController {
             AlertUtil.showErrorAlert("To view account details, one must be logged in");
             return;
         }
-        SceneLoadingUtil.loadNewWindow("/hr/algebra/views/account-details-view.fxml", "Account info", getMainNode());
+        SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/account-details-view.fxml", "Account info", getMainNode(), 700,600);
     }
 
     @FXML public void onLogOut(){

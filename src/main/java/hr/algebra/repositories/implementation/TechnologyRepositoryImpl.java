@@ -55,6 +55,7 @@ public class TechnologyRepositoryImpl implements TechnologyRepository {
             statement.setInt(1,technology.getId());
             statement.setString(2,technology.getName());
             statement.setString(3,technology.getDescription());
+            statement.execute();
         }
     }
 

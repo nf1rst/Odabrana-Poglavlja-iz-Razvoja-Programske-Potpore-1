@@ -143,7 +143,6 @@ begin
 end;
 go
 
--- ISPRAVLJENO: Pisalo je "createor alter" spojeno
 create or alter proc UpdateType
 @id int , @name nvarchar(50)
 as
@@ -500,7 +499,6 @@ begin
 end;
 go
 
--- ISPRAVAK: @username parametar mora biti nvarchar(150), a ne int budući da je u tablici tekst!
 create or alter proc DeleteUserByUsername
 @username nvarchar(150)
 as
@@ -613,4 +611,24 @@ begin
 	from Type as t
 	where  t.Name=@name
 end;
+go
 
+create or alter proc RemoveAllUsesForHeadphones
+@headphonesId int
+as
+begin
+	delete 
+	from HeadphonesUse
+	where HeadphonesID=@headphonesId
+end;
+go
+
+create or alter proc RemoveAllTechnologiesForHeadphones
+@headphonesId int
+as
+begin
+	delete
+	from HeadphonesTechnology
+	where HeadphonesID=@headphonesId
+end;
+go

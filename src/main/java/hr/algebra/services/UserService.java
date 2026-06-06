@@ -77,7 +77,8 @@ public class UserService {
             throw new  CannotPerformActionException("Cannot execute to register user");
         }
         //ovdje ne treba provjera inputa jer je to napravljeno u kontrolleru
-
+        //$2a$12$R9h/cIPz0gi.URNZX3khRecXSTu7pBw5ZKYT1T6m2wH2.Z50s4v32}$
+        //algoritm, log rounds, 22 salt, cipher
         String hashedPassword = hashPassword(password);
         User newUser = new User(username,hashedPassword,Role.USER);
 
@@ -131,4 +132,13 @@ public class UserService {
         }
     }
 
+    public boolean usernameExists(String username){
+        try{
+            return repo.usernameExists(username);
+        }
+        catch (SQLException e){
+            LoggingUtil.logError("Username existance checking error", e);
+            throw new CannotPerformActionException("Cannot execute to check username existance");
+        }
+    }
 }

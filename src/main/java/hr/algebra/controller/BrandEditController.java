@@ -109,8 +109,6 @@ public class BrandEditController extends BaseController
         else{
             updateExistingBrand();
         }
-
-        selectedBrand=null;
     }
 
     private void updateExistingBrand() {

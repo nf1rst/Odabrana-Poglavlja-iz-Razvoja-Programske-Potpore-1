@@ -145,6 +145,22 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
     }
 
     @Override
+    public void removeAllUsesForHeadphones(int headphonesID) throws SQLException {
+        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL RemoveAllUsesForHeadphones(?)}")){
+            statement.setInt(1,  headphonesID);
+            statement.execute();
+        }
+    }
+
+    @Override
+    public void removeAllTechnologiesForHeadphones(int headphonesID) throws SQLException {
+        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL RemoveAllTechnologiesForHeadphones(?)}")){
+            statement.setInt(1,  headphonesID);
+            statement.execute();
+        }
+    }
+
+    @Override
     public List<Headphones> getAll() throws SQLException {
         List<Headphones>headphones = new ArrayList<>();
 

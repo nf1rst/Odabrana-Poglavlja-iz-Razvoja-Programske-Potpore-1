@@ -3263,3 +3263,376 @@
 2026-06-05 23:33:00 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
 2026-06-05 23:33:02 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
 2026-06-05 23:33:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 08:31:32 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-06 08:31:33 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-06 08:31:35 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 08:52:34 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 08:52:49 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 08:53:00 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 08:53:12 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 08:53:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-06 08:53:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 08:54:59 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - DELETE
+2026-06-06 08:55:05 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 08:55:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 08:55:46 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 08:56:45 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=User id=Account updated, user=asdfasdf
+2026-06-06 08:57:08 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [User update error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of UNIQUE KEY constraint 'UQ__Users__536C85E4FA836344'. Cannot insert duplicate key in object 'dbo.Users'. The duplicate key value is (admin).]
+2026-06-06 08:57:22 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=User id=Account updated, user=asdf1
+2026-06-06 09:02:22 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 09:02:22 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 09:02:25 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 09:02:27 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 09:02:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=User id=Account updated, user=asdfasdf
+2026-06-06 09:02:54 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=User id=Account updated, user=asdf1
+2026-06-06 09:05:46 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 09:05:46 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 09:05:48 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 09:05:49 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 09:07:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Headphones export success
+2026-06-06 09:10:33 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 09:13:04 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 09:15:25 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Headphones id=AirPods Max 5, user=asdf1
+2026-06-06 09:16:03 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 09:21:02 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 09:21:09 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 09:21:09 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 09:21:10 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 09:21:11 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 09:21:19 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 09:21:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - DELETE
+2026-06-06 09:21:37 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 17:44:01 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-06 17:44:01 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-06 17:44:03 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 17:44:07 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 17:44:09 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 17:45:04 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 17:45:36 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 17:45:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=Arctis Nova Pro Wireless, user=asdf1
+2026-06-06 17:59:22 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Pro 2, user=asdf1
+2026-06-06 17:59:57 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-06 17:59:57 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 18:00:04 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Image deleteion error: charca.jpg] CAUSE = []
+2026-06-06 18:00:04 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - DELETE
+2026-06-06 18:35:40 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 18:35:40 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 18:35:41 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 18:35:43 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 18:38:17 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 18:38:17 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 18:38:19 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 18:38:33 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 18:38:33 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 18:38:34 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 18:38:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 18:39:23 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:39:30 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:39:36 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:39:36 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__6A30F8CE1626F03F'. Cannot insert duplicate key in object 'dbo.HeadphonesTechnology'. The duplicate key value is (28, 32).]
+2026-06-06 18:39:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:39:50 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__6A30F8CE1626F03F'. Cannot insert duplicate key in object 'dbo.HeadphonesTechnology'. The duplicate key value is (28, 32).]
+2026-06-06 18:40:12 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:40:23 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:40:25 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:40:30 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:40:30 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__6A30F8CE1626F03F'. Cannot insert duplicate key in object 'dbo.HeadphonesTechnology'. The duplicate key value is (28, 31).]
+2026-06-06 18:40:36 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:40:36 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__6A30F8CE1626F03F'. Cannot insert duplicate key in object 'dbo.HeadphonesTechnology'. The duplicate key value is (28, 31).]
+2026-06-06 18:41:11 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 18:42:10 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-06 18:42:11 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-06 18:42:12 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 18:42:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 18:42:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 18:42:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:42:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:42:41 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:42:42 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__6A30F8CEA065D9A8'. Cannot insert duplicate key in object 'dbo.HeadphonesTechnology'. The duplicate key value is (3, 2).]
+2026-06-06 18:42:58 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:42:58 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__6A30F8CEA065D9A8'. Cannot insert duplicate key in object 'dbo.HeadphonesTechnology'. The duplicate key value is (3, 2).]
+2026-06-06 18:47:51 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 18:47:51 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 18:47:52 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 18:47:53 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 18:48:00 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:48:05 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:48:10 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:48:14 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:48:14 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__6A30F8CEA065D9A8'. Cannot insert duplicate key in object 'dbo.HeadphonesTechnology'. The duplicate key value is (3, 1).]
+2026-06-06 18:48:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:48:20 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D3E55193F5'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (3, 2).]
+2026-06-06 18:48:43 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 18:56:13 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 18:56:13 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 18:56:15 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 18:56:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-06 18:56:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 18:56:25 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - DELETE
+2026-06-06 18:56:27 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 18:56:55 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=admin
+2026-06-06 18:56:55 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Could not find stored procedure 'RemoveAllTechnologiesForHeadphones'.]
+2026-06-06 18:57:18 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 18:57:19 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 18:57:19 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 18:57:23 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 18:57:30 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 18:57:30 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Could not find stored procedure 'RemoveAllTechnologiesForHeadphones'.]
+2026-06-06 18:58:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 18:58:22 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 18:58:22 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 18:58:23 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 18:58:24 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 18:58:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 18:58:38 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D3E55193F5'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (78, 49).]
+2026-06-06 18:59:46 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 18:59:47 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 18:59:49 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 18:59:49 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:00:01 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:00:02 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D3E55193F5'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (78, 49).]
+2026-06-06 19:00:12 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 19:02:38 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:02:38 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:02:40 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:02:42 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:02:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:02:58 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - DELETE
+2026-06-06 19:02:59 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:03:10 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D3E55193F5'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (203, 129).]
+2026-06-06 19:03:12 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=admin
+2026-06-06 19:03:26 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Headphones id=AirPods Max   1, user=admin
+2026-06-06 19:03:29 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D3E55193F5'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (203, 129).]
+2026-06-06 19:03:30 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=admin
+2026-06-06 19:03:34 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D3E55193F5'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (203, 129).]
+2026-06-06 19:03:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=admin
+2026-06-06 19:03:43 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 19:05:06 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:05:06 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:05:07 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:05:08 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:05:18 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D3E55193F5'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (203, 129).]
+2026-06-06 19:05:19 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:05:29 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 19:06:06 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-06 19:06:07 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-06 19:06:08 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:06:14 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 19:06:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:06:25 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D32D695190'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (3, 1).]
+2026-06-06 19:06:26 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:07:15 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:07:17 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D32D695190'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (3, 1).]
+2026-06-06 19:07:18 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:07:23 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D32D695190'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (3, 1).]
+2026-06-06 19:07:25 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:07:37 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D32D695190'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (3, 2).]
+2026-06-06 19:07:38 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:07:59 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:09:01 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:09:01 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:09:02 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:09:04 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:09:14 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:09:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:09:25 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D32D695190'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (3, 8).]
+2026-06-06 19:09:27 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:09:31 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:09:35 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D32D695190'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (3, 7).]
+2026-06-06 19:09:36 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:09:38 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D32D695190'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (3, 8).]
+2026-06-06 19:09:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:09:41 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Violation of PRIMARY KEY constraint 'PK__Headphon__4B7EA6D32D695190'. Cannot insert duplicate key in object 'dbo.HeadphonesUse'. The duplicate key value is (3, 8).]
+2026-06-06 19:09:42 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:09:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:10:24 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:10:24 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:10:26 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:10:27 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:10:34 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:10:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:10:38 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:10:40 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:10:48 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:10:54 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:10:59 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:11:10 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 19:11:21 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-06 19:11:22 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-06 19:11:22 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:11:32 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 19:11:34 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:11:41 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Brand id=Apple, user=asdf1
+2026-06-06 19:12:18 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Type id=In-Ear, user=asdf1
+2026-06-06 19:12:22 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Type id=In-Ear v1, user=asdf1
+2026-06-06 19:12:26 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Type id=In-Ear v2, user=asdf1
+2026-06-06 19:12:32 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Use id=Audiophile Listening, user=asdf1
+2026-06-06 19:12:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Use id=Audiophile Listening v3, user=asdf1
+2026-06-06 19:12:47 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Technology id=ANC, user=asdf1
+2026-06-06 19:14:14 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:14:14 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:14:15 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:14:19 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:14:30 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:14:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:14:45 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:14:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:14:59 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Brand id=Apple, user=asdf1
+2026-06-06 19:15:02 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Brand id=Apple, user=asdf1
+2026-06-06 19:15:05 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Brand id=Apple, user=asdf1
+2026-06-06 19:15:13 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Type id=In-Ear v1, user=asdf1
+2026-06-06 19:15:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Use id=Audiophile Listening, user=asdf1
+2026-06-06 19:15:19 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Use id=Audiophile Listening v1, user=asdf1
+2026-06-06 19:15:30 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Technology id=ANC, user=asdf1
+2026-06-06 19:15:32 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Technology id=ANC, user=asdf1
+2026-06-06 19:15:45 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Technology id=ANC, user=asdf1
+2026-06-06 19:16:57 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:16:57 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:16:58 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:16:59 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:17:06 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Technology id=ANC, user=asdf1
+2026-06-06 19:21:49 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:21:49 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:21:51 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:21:52 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:22:02 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Technology id=ANC, user=asdf1
+2026-06-06 19:23:55 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 19:24:02 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:24:02 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:24:03 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:24:04 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:24:25 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 19:24:52 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:24:52 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:24:54 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:24:55 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:25:03 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Technology id=ANC, user=asdf1
+2026-06-06 19:25:09 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 19:25:25 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:25:25 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:25:27 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:25:32 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-06 19:25:32 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:25:48 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - DELETE
+2026-06-06 19:25:50 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:26:01 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Technology id=ANC, user=admin
+2026-06-06 19:26:06 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Technology id=ANC 1, user=admin
+2026-06-06 19:26:33 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 19:28:03 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:28:03 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:28:04 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:28:06 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:28:14 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Technology id=ANC, user=asdf1
+2026-06-06 19:34:45 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:34:46 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:34:48 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:34:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:34:58 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Technology id=ANC, user=asdf1
+2026-06-06 19:35:01 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 19:37:06 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-06 19:37:06 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-06 19:37:07 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:38:05 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 19:38:33 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:40:27 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Brand id=EMA, user=ema22222
+2026-06-06 19:41:28 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Headphones export success
+2026-06-06 19:42:19 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Headphones id=Ema, user=ema22222
+2026-06-06 19:43:49 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=Ema, user=ema22222
+2026-06-06 19:44:39 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:44:39 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:44:41 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:44:46 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 19:44:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:45:16 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Headphones id=ahihjbhhbhjv bghv bhjb bhnjb bhbv bgzvc ftfcghgbxdcfb nm, user=asdf1
+2026-06-06 19:45:19 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Headphones id=ahihjbhhbhjv bghv bhjb bhnjb bhbv bgzvc ftfcghgbxdcfb nm, user=asdf1
+2026-06-06 19:45:27 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Headphones id=ahihjbhhbhjv bghv bhjb bhnjb bhbv bgzvc ftfcghgbxdcfb nm, user=asdf1
+2026-06-06 19:45:56 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:46:02 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:46:09 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:46:19 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:46:48 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:46:54 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-06 19:47:04 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:27 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Headphones id=ATH-M50x 1 sadfasdf, user=asdf1
+2026-06-06 19:47:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:38 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:38 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:38 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:38 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:38 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:43 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:43 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:47:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-06 19:48:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Headphones id=asdfadsf, user=asdf1
+2026-06-06 19:49:50 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:49:50 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:49:51 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:49:53 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:50:09 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-06 19:50:09 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:50:14 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - DELETE
+2026-06-06 19:50:16 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - DELETE
+2026-06-06 19:50:19 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - DELETE
+2026-06-06 19:50:20 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:50:41 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-06 19:50:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=admin
+2026-06-06 19:50:57 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:51:12 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-06 19:51:12 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:51:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-06 19:51:38 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - UPDATE
+2026-06-06 19:54:03 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 19:54:03 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 19:54:05 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 19:54:05 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 19:54:30 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 20:08:41 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Incorrect syntax near '﻿'.]
+2026-06-06 20:08:41 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [User save error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Could not find stored procedure 'GetUserByUsername'.]
+2026-06-06 20:08:41 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Failed inserting starting data into database] CAUSE = [javafx.concurrent.WorkerStateEvent[source=hr.algebra.MainApplication$1@169e3596[Completed exceptionally: hr.algebra.exceptions.CannotPerformActionException: Cannot execute to register admin]]]
+2026-06-06 20:08:46 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Get by username error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Could not find stored procedure 'GetUserByUsername'.]
+2026-06-06 20:08:55 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Username exists error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: Could not find stored procedure 'GetUserByUsername'.]
+2026-06-06 20:08:55 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 20:08:58 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 20:09:09 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-06 20:09:09 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-06 20:09:11 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 20:09:15 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 20:09:18 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 20:10:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 20:11:59 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-06 20:11:59 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-06 20:12:01 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 20:12:07 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - REGISTER
+2026-06-06 20:12:09 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 20:12:20 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: The DELETE statement conflicted with the REFERENCE constraint "FK__Headphone__UseID__5AEE82B9". The conflict occurred in database "HeadphonesDB", table "dbo.HeadphonesUse", column 'UseID'.]
+2026-06-06 20:12:29 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=Bathys, user=asdf1
+2026-06-06 20:12:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=MDR-7506, user=asdf1
+2026-06-06 20:13:09 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 20:13:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=OpenRun Pro, user=asdf1
+2026-06-06 20:13:41 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=Cloud II Wireless, user=asdf1
+2026-06-06 20:13:48 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Type id=Bone Conduction, user=asdf1
+2026-06-06 20:13:58 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: The DELETE statement conflicted with the REFERENCE constraint "FK__Headphone__TypeI__534D60F1". The conflict occurred in database "HeadphonesDB", table "dbo.Headphones", column 'TypeID'.]
+2026-06-06 20:14:02 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: The DELETE statement conflicted with the REFERENCE constraint "FK__Headphone__TypeI__534D60F1". The conflict occurred in database "HeadphonesDB", table "dbo.Headphones", column 'TypeID'.]
+2026-06-06 20:14:18 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Technology id=USB-DAC Mode, user=asdf1
+2026-06-06 20:14:22 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: The DELETE statement conflicted with the REFERENCE constraint "FK__Headphone__Techn__571DF1D5". The conflict occurred in database "HeadphonesDB", table "dbo.HeadphonesTechnology", column 'TechnologyID'.]
+2026-06-06 20:15:33 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 20:16:42 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 20:16:42 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 20:16:45 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 20:16:47 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 20:17:50 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 20:17:50 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 20:17:51 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 20:17:55 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 20:19:16 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-06 20:19:48 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-06 20:19:48 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-06 20:19:49 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-06 20:19:49 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - LOGIN
+2026-06-06 20:20:02 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed

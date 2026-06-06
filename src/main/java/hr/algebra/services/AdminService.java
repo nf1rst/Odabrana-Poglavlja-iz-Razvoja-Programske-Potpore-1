@@ -5,8 +5,6 @@ import hr.algebra.models.help.DBStatistics;
 import hr.algebra.repositories.AdminRepository;
 import hr.algebra.repositories.factory.RepositoryFactory;
 import hr.algebra.util.LoggingUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 import java.util.Optional;

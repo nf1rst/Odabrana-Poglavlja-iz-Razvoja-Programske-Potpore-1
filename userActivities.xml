@@ -1908,4 +1908,1282 @@
         <username>admin</username>
         <identity>Audio-Technica 1</identity>
     </log>
+    <log>
+        <time>06-06-2026 08:53:51</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 08:54:56</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported DB backup</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 08:54:59</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all entities</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 08:55:18</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>asdfbn mbnhgfdsde</identity>
+    </log>
+    <log>
+        <time>06-06-2026 08:55:23</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all users</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 09:07:51</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported selected headphones</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>WF-1000XM5</identity>
+    </log>
+    <log>
+        <time>06-06-2026 09:13:04</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 09:15:25</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max 5</identity>
+    </log>
+    <log>
+        <time>06-06-2026 09:16:03</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 09:21:35</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all entities</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 17:45:04</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 17:45:36</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x</identity>
+    </log>
+    <log>
+        <time>06-06-2026 17:45:50</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>Arctis Nova Pro Wireless</identity>
+    </log>
+    <log>
+        <time>06-06-2026 17:59:22</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Pro 2</identity>
+    </log>
+    <log>
+        <time>06-06-2026 17:59:57</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:00:04</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all entities</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:39:23</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:39:30</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:39:36</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:39:50</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:40:12</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:40:23</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:40:25</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:40:30</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:40:36</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:42:35</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:42:39</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:42:41</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:42:58</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:48:00</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:48:05</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:48:10</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:48:14</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:48:20</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:56:17</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:56:25</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all entities</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:56:55</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:57:30</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x</identity>
+    </log>
+    <log>
+        <time>06-06-2026 18:58:38</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:00:02</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:02:58</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all entities</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:03:12</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:03:26</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>AirPods Max   1</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:03:30</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>AirPods Max   1</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:03:35</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>AirPods Max   1</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:05:19</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:06:26</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:07:15</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:07:18</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:07:25</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:07:38</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:07:59</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:09:15</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:09:20</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:09:27</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:09:31</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:09:36</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:09:39</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:09:42</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:09:44</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:10:34</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:10:35</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:10:38</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:10:40</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:10:48</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:10:54</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:10:59</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:11:41</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfuly deleted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>Apple</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:12:18</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>type</entity>
+        <username>asdf1</username>
+        <identity>In-Ear</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:12:22</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>type</entity>
+        <username>asdf1</username>
+        <identity>In-Ear v1</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:12:26</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>type</entity>
+        <username>asdf1</username>
+        <identity>In-Ear v2</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:12:32</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>use</entity>
+        <username>asdf1</username>
+        <identity>Audiophile Listening</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:12:35</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>use</entity>
+        <username>asdf1</username>
+        <identity>Audiophile Listening v3</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:12:47</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>technology</entity>
+        <username>asdf1</username>
+        <identity>ANC</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:14:30</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:14:44</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:14:45</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:14:50</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:14:59</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfuly deleted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>Apple</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:15:02</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfuly deleted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>Apple</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:15:05</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfuly deleted</message>
+        <entity>brand</entity>
+        <username>asdf1</username>
+        <identity>Apple</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:15:13</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>type</entity>
+        <username>asdf1</username>
+        <identity>In-Ear v1</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:15:17</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>use</entity>
+        <username>asdf1</username>
+        <identity>Audiophile Listening</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:15:19</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>use</entity>
+        <username>asdf1</username>
+        <identity>Audiophile Listening v1</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:15:30</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>technology</entity>
+        <username>asdf1</username>
+        <identity>ANC</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:15:32</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>technology</entity>
+        <username>asdf1</username>
+        <identity>ANC</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:15:45</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>technology</entity>
+        <username>asdf1</username>
+        <identity>ANC</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:17:06</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>technology</entity>
+        <username>asdf1</username>
+        <identity>ANC</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:22:03</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>technology</entity>
+        <username>asdf1</username>
+        <identity>ANC</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:25:03</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>technology</entity>
+        <username>asdf1</username>
+        <identity>ANC</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:25:32</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:25:48</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all entities</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:26:01</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>technology</entity>
+        <username>admin</username>
+        <identity>ANC</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:26:06</time>
+        <level>INFO</level>
+        <action>INSERT </action>
+        <message>successfully deleted</message>
+        <entity>technology</entity>
+        <username>admin</username>
+        <identity>ANC 1</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:28:15</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>technology</entity>
+        <username>asdf1</username>
+        <identity>ANC</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:34:58</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>technology</entity>
+        <username>asdf1</username>
+        <identity>ANC</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:40:27</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>brand</entity>
+        <username>ema22222</username>
+        <identity>EMA</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:41:28</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported selected headphones</message>
+        <entity>headphones</entity>
+        <username>ema22222</username>
+        <identity>K702</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:42:19</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>ema22222</username>
+        <identity>Ema</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:43:49</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>ema22222</username>
+        <identity>Ema</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:45:16</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ahihjbhhbhjv bghv bhjb bhnjb bhbv bgzvc ftfcghgbxdcfb nm</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:45:19</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ahihjbhhbhjv bghv bhjb bhnjb bhbv bgzvc ftfcghgbxdcfb nm</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:45:27</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ahihjbhhbhjv bghv bhjb bhnjb bhbv bgzvc ftfcghgbxdcfb nm</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:45:56</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:46:02</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:46:09</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:46:19</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:46:48</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:46:54</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:04</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:27</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:37</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:37</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:38</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:38</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:38</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:38</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:38</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:39</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:39</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:39</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:43</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:43</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:44</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:44</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:47:44</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>ATH-M50x 1 sadfasdf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:48:37</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>asdfadsf</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:50:09</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:50:14</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all entities</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:50:16</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all entities</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:50:19</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all entities</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:50:41</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:50:50</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:51:12</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:51:37</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 19:51:38</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>06-06-2026 20:12:30</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>Bathys</identity>
+    </log>
+    <log>
+        <time>06-06-2026 20:12:37</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>MDR-7506</identity>
+    </log>
+    <log>
+        <time>06-06-2026 20:13:37</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>OpenRun Pro</identity>
+    </log>
+    <log>
+        <time>06-06-2026 20:13:41</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>Cloud II Wireless</identity>
+    </log>
+    <log>
+        <time>06-06-2026 20:13:48</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>type</entity>
+        <username>asdf1</username>
+        <identity>Bone Conduction</identity>
+    </log>
+    <log>
+        <time>06-06-2026 20:14:18</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>technology</entity>
+        <username>asdf1</username>
+        <identity>USB-DAC Mode</identity>
+    </log>
 </errorLogs>

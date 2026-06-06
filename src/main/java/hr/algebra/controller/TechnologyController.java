@@ -16,9 +16,10 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.*;
-
-import java.util.List;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 
 public class TechnologyController extends BaseController{
@@ -75,14 +76,12 @@ public class TechnologyController extends BaseController{
         sortedTechnologies.comparatorProperty().bind(technologiesTable.comparatorProperty());
 
         technologiesTable.setItems(sortedTechnologies);
-        searchField.textProperty().addListener((obs, old, val)-> {
-            filteredTechnologies.setPredicate(tech -> {
+        searchField.textProperty().addListener((obs, old, val)-> filteredTechnologies.setPredicate(tech -> {
                 if(val==null ||val.isBlank()){
                     return true;
                 }
                 return tech.getName().contains(val);
-            });
-        });
+            }));
     }
 
     @FXML
@@ -122,7 +121,7 @@ public class TechnologyController extends BaseController{
             LoggingUtil.logInfo( "DELETE", "Technology", selectedTechnology.getName(), Session.checkCurrentUserName());
             XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "technology", Session.checkCurrentUserName(), selectedTechnology.getName());
         }
-        catch (CannotPerformActionException e){
+        catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete technology, as it is associated with one or more headphones");
         }
 

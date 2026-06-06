@@ -164,4 +164,25 @@ public class HeadphonesService {
 
     }
 
+    public void removeAllTechnologiesForHeadphones(int headphonesID){
+        try{
+            repo.removeAllTechnologiesForHeadphones(headphonesID);
+        }
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
+            throw new CannotPerformActionException("Cannot execute to delete uses from headphones");
+        }
+    }
+
+    public void removeAllUsesForHeadphones(int headphonesID){
+        try{
+            repo.removeAllUsesForHeadphones(headphonesID);
+        }
+        catch (SQLException e){
+            LoggingUtil.logError(sqlError, e);
+            throw new CannotPerformActionException("Cannot execute to delete technologies from headphones");
+        }
+    }
+
+
 }
