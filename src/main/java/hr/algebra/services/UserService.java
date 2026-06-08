@@ -112,6 +112,7 @@ public class UserService {
             if(query==null || query.isEmpty()){return repo.getAll();}
             return repo.getAll()
                     .stream()
+                    .sorted()
                     .filter(s->s.getUsername().contains(query))
                     .toList();
         }

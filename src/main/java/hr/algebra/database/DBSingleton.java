@@ -5,10 +5,7 @@ import hr.algebra.xml.AppConfig;
 import hr.algebra.xml.ConfigReader;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public enum DBSingleton {
     INSTANCE;
@@ -18,6 +15,8 @@ public enum DBSingleton {
     private static Connection connection;
     private static AppConfig config;  // static varijabla za config
 
+    //https://youtu.be/_7q4kMfJPDw?si=FPjB_FUz4XvtrznS
+    //Class.forName("DBSingleton")
     static {
         try {
             config = ConfigReader.read();
@@ -59,13 +58,13 @@ public enum DBSingleton {
 
         String ddl = new String(resourceStream.readAllBytes());
 
-        if (ddl.startsWith("\uFEFF")) { // da ako pocinje s razmakom da se ne srusi proc
+        if (ddl.startsWith("\uFEFF")) { // byte order mark, BOM
             ddl = ddl.substring(1);
         }
 
         try (Statement statement = connection.createStatement()) {
-            String[] statements = ddl.split("(?mi)^go\\s*$"); //da gleda samo "go" a ne kad je u sklopu druge rijeci
-
+            String[] statements = ddl.split("(?mi)^go\\s*$"); //da gleda samo "go" a ne kad je u sklopu druge rijeci, regex
+            //multi-line mode, casesensitive, pocetak linije, prepoznavanje s " ", kraj linije odmah
             for (String sql : statements) {
                 String trimmedSQL = sql.trim();
                 if (!trimmedSQL.isEmpty()) {

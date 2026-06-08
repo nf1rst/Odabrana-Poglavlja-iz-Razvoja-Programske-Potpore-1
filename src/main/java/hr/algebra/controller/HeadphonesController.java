@@ -166,7 +166,7 @@ public class HeadphonesController extends BaseController {
         );
     }
 
-
+//https://stackoverflow.com/questions/20547560/how-to-set-value-to-cell-in-tableview-in-javafx
     private void setupColums(){
         colName.setCellValueFactory(
                 d->new SimpleStringProperty(d.getValue().getName()));
@@ -204,7 +204,7 @@ public class HeadphonesController extends BaseController {
         }
         if(selectedHeadphnes==null){
             AlertUtil.showErrorAlert("Please select headphones to delete");
-            return;
+
         }
 
         if(!AlertUtil.showConfirmationAlert("Do you want to delete headphones: " + selectedHeadphnes.getName())) return;
@@ -237,6 +237,7 @@ public class HeadphonesController extends BaseController {
             @Override
             protected Void call() throws Exception {
                 XMLExporter.marshallSelected(selectedHeadphnes);
+                LoggingUtil.logInfo("Headphones in task export");
                 return null;
             }
         };
@@ -297,8 +298,9 @@ public class HeadphonesController extends BaseController {
                 MediaUtil.showPlaceholder(headphoneImageView);
                 return;
             }
-            Image image = new Image(new FileInputStream(imageFIle));
-            headphoneImageView.setImage(image);
+            MediaUtil.showImage(headphoneImageView, imageFIle.toString());
+//            Image image = new Image(new FileInputStream(imageFIle));
+//            headphoneImageView.setImage(image);
         }
         catch (Exception _){
             MediaUtil.showPlaceholder(headphoneImageView);

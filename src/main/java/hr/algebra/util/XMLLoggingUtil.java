@@ -16,12 +16,14 @@ public class XMLLoggingUtil {
 
     private XMLLoggingUtil(){} //za JAXB
 
+    //https://www.ongraph.com/marshalling-and-unmarshalling-java-objects-using-jaxb/#:~:text=Marshalling%20and%20Unmarshalling%20in%20Java%20are%20important%20JAXB%20processes%20used,XML%20data%20in%20Java%20projects
+    //https://medium.com/@bhargavineha2002/marshalling-unmarshalling-in-java-bfc153cbac6e
     private static String logFile ="userActivities.xml";
     private static DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
 
     @XmlRootElement(name="errorLogs")
-    public static class ErrorLog {
+    public static class ActivotyLog {
         private List<LogEntry> log=new ArrayList<>();
 
         public void setLog(List<LogEntry> log) {
@@ -115,14 +117,14 @@ public class XMLLoggingUtil {
     public static void log(String level, String action, String message, String entity, String username, String identity){
         //dovuci sve postojece, apendaj novi i ponovno spremi u file
         try{
-            JAXBContext context = JAXBContext.newInstance(ErrorLog.class);
-            ErrorLog log =  readExistingLogs(context);
+            JAXBContext context = JAXBContext.newInstance(ActivotyLog.class);
+            ActivotyLog logs =  readExistingLogs(context);
 
-            log.getLog().add(new LogEntry(level, action, message, entity, username, identity));
+            logs.getLog().add(new LogEntry(level, action, message, entity, username, identity));
 
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            marshaller.marshal(log, new File(logFile));
+            marshaller.marshal(logs, new File(logFile));
         }
         catch (JAXBException e){
             LoggingUtil.logError("XML log fail", e);
@@ -130,15 +132,15 @@ public class XMLLoggingUtil {
 
     }
 
-    private static ErrorLog readExistingLogs(JAXBContext context) {
+    private static ActivotyLog readExistingLogs(JAXBContext context) {
         File file = new File(logFile);
-        if(!file.exists())return new ErrorLog();
+        if(!file.exists())return new ActivotyLog();
         try{
-            return (ErrorLog) context.createUnmarshaller().unmarshal(file);
+            return (ActivotyLog) context.createUnmarshaller().unmarshal(file);
         }
         catch (JAXBException e){
             LoggingUtil.logError("XML log file read eror", e);
-            return new ErrorLog();
+            return new ActivotyLog();
         }
     }
 

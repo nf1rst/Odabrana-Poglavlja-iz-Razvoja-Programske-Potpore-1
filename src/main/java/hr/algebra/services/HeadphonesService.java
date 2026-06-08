@@ -155,6 +155,7 @@ public class HeadphonesService {
             return repo.getAll()
                     .stream()
                     .filter(nameMatches.or(descriptionMatches).or(brandMatches))
+                    .sorted() //vraca po tome sto comparator kaze
                     .toList();
         }
         catch (SQLException e){

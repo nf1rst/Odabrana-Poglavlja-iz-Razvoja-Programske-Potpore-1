@@ -53,8 +53,6 @@ public class AdminController extends BaseController{
         setUpColumns();
         setUpChoiceBox();
 
-        editRightsCheckBox.setSelected(true);
-
         searchField.textProperty().addListener((obs, old, val)->{
             if(!val.isBlank()){
                 fillTable(userTableView, userService.search(val));

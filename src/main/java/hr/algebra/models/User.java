@@ -39,6 +39,17 @@ public class User implements Comparable<User>{
     }
 
     @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='"  + password + '\'' +
+                ", role=" + role +
+                ", imagePath='" + imagePath + '\'' +
+                '}';
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(username);
     }

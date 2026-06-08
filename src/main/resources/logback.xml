@@ -1,4 +1,4 @@
-<!-- https://medium.com/@ibrahim-akay/logback-slf4j-powerful-and-flexible-logging-solution-69e6b6523c17-->
+<!-- https://medium.com/@ibrahim-akay/logback-slf4j-powerful-and-flexible-logging-solution-69e6b6523c17 -->
 <configuration>
     <!-- Console appender -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">

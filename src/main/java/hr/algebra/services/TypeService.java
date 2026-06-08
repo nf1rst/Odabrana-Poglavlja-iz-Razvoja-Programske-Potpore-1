@@ -56,6 +56,7 @@ public class TypeService {
         try{
             return repo.getAll()
                     .stream()
+                    .sorted()
                     .filter(containsQuery)
                     .toList();
         }catch (SQLException e){

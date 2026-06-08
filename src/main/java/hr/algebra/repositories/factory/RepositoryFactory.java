@@ -3,6 +3,8 @@ import hr.algebra.repositories.*;
 import hr.algebra.repositories.implementation.*;
 
 public class RepositoryFactory {
+    //https://stackoverflow.com/questions/7790185/singleton-lazy-vs-eager-instantiation
+    //https://javaconceptoftheday.com/statement-vs-preparedstatement-vs-callablestatement-in-java/
     private RepositoryFactory() {}
 
     public static AdminRepository getAdminRespository(){

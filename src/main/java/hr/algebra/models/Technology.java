@@ -2,7 +2,7 @@ package hr.algebra.models;
 
 import java.util.Objects;
 
-public class Technology {
+public class Technology implements Comparable<Technology> {
 
     public void setId(int id) {
         this.id = id;
@@ -16,6 +16,15 @@ public class Technology {
         this.id = id;
         this.name = name;
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Technology{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 
     public Technology(String name, String description) {
@@ -42,5 +51,10 @@ public class Technology {
     @Override
     public int hashCode() {
         return Objects.hashCode(name);
+    }
+
+    @Override
+    public int compareTo(Technology o) {
+        return name.compareTo(o.name);
     }
 }

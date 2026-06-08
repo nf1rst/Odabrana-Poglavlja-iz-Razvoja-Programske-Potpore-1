@@ -11,6 +11,14 @@ public class Type implements Comparable<Type> {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Type{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
+
     public Type(int id, String name) {
         this.id = id;
         this.name = name;

@@ -24,7 +24,7 @@ public class LoggingUtil {
     }
 
     public static void logInfo(String action, String entity, String username){
-        logger.info(action, entity, username);
+        logger.info("[{}], entitiy={}, user={}", action, entity, username);
     }
 
 }

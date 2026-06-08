@@ -35,7 +35,7 @@ public enum DBInitiatorService {
     }
 
     public void insetAPIData(){
-        Optional<String> jsonData = HttpUtil.getJSON();
+        Optional<String> jsonData =HttpUtil.getJSON();
         if(jsonData.isEmpty()){
             Platform.runLater(()->{
                 AlertUtil.showErrorAlert("Start data from API could not be loaded, you can still use the application");
@@ -65,7 +65,7 @@ public enum DBInitiatorService {
             int typeId =typeService.getTypeIdByName(b.getType().getName());
             b.getType().setId(typeId);
 
-                headphonesService.save(b);
+            headphonesService.save(b);
 
                 List<Technology> technologies = b.getTechnologies();
                 technologies.forEach(t->{

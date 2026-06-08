@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ChosenHeadphones id="11">
-    <name>K702</name>
-    <yearEdition>2008</yearEdition>
-    <price>189.0</price>
-    <impedance>62</impedance>
-    <minFrequency>10</minFrequency>
-    <maxFrequency>39800</maxFrequency>
-    <batteryLife>0</batteryLife>
-    <description>Reference studio headphones featuring open-back design and extremely accurate response for mixing.</description>
-    <brandName>AKG</brandName>
+<ChosenHeadphones id="45">
+    <name>Major IV</name>
+    <yearEdition>2020</yearEdition>
+    <price>149.99</price>
+    <impedance>32</impedance>
+    <minFrequency>20</minFrequency>
+    <maxFrequency>20000</maxFrequency>
+    <batteryLife>80</batteryLife>
+    <description>Iconic on-ear Marshall look with over 80 solid hours of wireless playtime and wireless charging.</description>
+    <brandName>Marshall</brandName>
     <technologies>
-        <technology>Open-Back Design</technology>
-        <technology>Varimotion Diaphragm</technology>
+        <technology>Wireless Qi Charging</technology>
     </technologies>
     <uses>
-        <use>Studio Monitoring</use>
-        <use>Audio Editing</use>
+        <use>Travel</use>
+        <use>Casual Listening</use>
     </uses>
-    <typeName>Over-Ear</typeName>
+    <typeName>On-Ear</typeName>
 </ChosenHeadphones>

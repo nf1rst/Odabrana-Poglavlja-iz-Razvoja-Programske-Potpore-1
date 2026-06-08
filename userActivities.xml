@@ -3186,4 +3186,382 @@
         <username>asdf1</username>
         <identity>USB-DAC Mode</identity>
     </log>
+    <log>
+        <time>07-06-2026 09:39:02</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>Bathys</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:39:12</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported selected headphones</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>OpenRun Pro</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:44:57</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max 1</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:45:22</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max 1</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:45:34</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max 1</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:45:53</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:47:56</time>
+        <level>INFO</level>
+        <action>INSERT</action>
+        <message>successfully inserted</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>asdf</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:52:17</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported selected headphones</message>
+        <entity>headphones</entity>
+        <username>N/A</username>
+        <identity>OpenRun Pro</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:56:43</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>dfgfsgfdgssfg</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:56:47</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>fdsgvnvgdresfdsesfdg</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:56:50</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all users</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:57:10</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all entities</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:57:18</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported DB backup</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>07-06-2026 09:59:35</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>07-06-2026 10:00:52</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>07-06-2026 10:00:53</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>07-06-2026 10:14:06</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>07-06-2026 10:15:21</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>07-06-2026 10:15:32</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>08-06-2026 12:50:45</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>08-06-2026 12:50:46</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>08-06-2026 12:50:46</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>08-06-2026 12:50:46</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>08-06-2026 12:50:46</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>08-06-2026 12:50:46</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully changed user edit rights</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>08-06-2026 18:40:16</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported selected headphones</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>Major IV</identity>
+    </log>
+    <log>
+        <time>08-06-2026 18:43:42</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported selected headphones</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>Clear Mg</identity>
+    </log>
+    <log>
+        <time>08-06-2026 18:45:03</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported selected headphones</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>Elite 7 Pro</identity>
+    </log>
+    <log>
+        <time>08-06-2026 18:45:05</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported selected headphones</message>
+        <entity>headphones</entity>
+        <username>asdf1</username>
+        <identity>Elite 7 Pro</identity>
+    </log>
+    <log>
+        <time>08-06-2026 19:33:07</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>asdf15tzhb</identity>
+    </log>
+    <log>
+        <time>08-06-2026 19:33:13</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all users</message>
+        <entity>user</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>08-06-2026 19:33:31</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all entities</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>08-06-2026 19:34:24</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported DB backup</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>08-06-2026 19:35:58</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>Bathys</identity>
+    </log>
+    <log>
+        <time>08-06-2026 19:36:15</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>08-06-2026 19:41:52</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>AirPods Max</identity>
+    </log>
+    <log>
+        <time>08-06-2026 19:47:40</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>WH-1000XM4</identity>
+    </log>
+    <log>
+        <time>08-06-2026 19:48:09</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported selected headphones</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>Major IV</identity>
+    </log>
+    <log>
+        <time>08-06-2026 19:50:08</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>WH-1000XM4</identity>
+    </log>
+    <log>
+        <time>08-06-2026 19:50:30</time>
+        <level>INFO</level>
+        <action>UPDATE</action>
+        <message>successfully updated</message>
+        <entity>headphones</entity>
+        <username>admin</username>
+        <identity>DT 990 Pro</identity>
+    </log>
+    <log>
+        <time>08-06-2026 19:54:01</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully delted all entities</message>
+        <entity>*</entity>
+        <username>admin</username>
+        <identity>*</identity>
+    </log>
+    <log>
+        <time>08-06-2026 21:58:52</time>
+        <level>INFO</level>
+        <action>DELETE</action>
+        <message>successfully deleted</message>
+        <entity>type</entity>
+        <username>asdf1</username>
+        <identity>On-Ear</identity>
+    </log>
 </errorLogs>

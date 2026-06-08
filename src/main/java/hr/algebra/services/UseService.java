@@ -57,6 +57,7 @@ public class UseService {
         try{
             return repo.getAll()
                     .stream()
+                    .sorted()
                     .filter(nameMatches)
                     .toList();
         }

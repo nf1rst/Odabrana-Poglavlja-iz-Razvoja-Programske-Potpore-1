@@ -58,6 +58,7 @@ public class TechnologyService {
         try{
             return repo.getAll()
                     .stream()
+                    .sorted()
                     .filter(nameMatches.or(descMatches))
                     .toList();
         }

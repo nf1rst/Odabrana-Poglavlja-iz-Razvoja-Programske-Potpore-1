@@ -7,6 +7,7 @@ import java.io.IOException;
 
 public class SceneLoadingUtil {
     private SceneLoadingUtil() {}
+    //private static Stage stage = new Stage(); //ne treba close window ak je 1 jer samo mijenja scene
 
     public static void loadNewWindow(String fxmlPath, String title, Node node){ // node sluzi za zatvranje trenutnog prozora
         try{
@@ -71,8 +72,8 @@ public class SceneLoadingUtil {
     }
 
     private static void closeThisWindow(Node node) {
-        Stage stage = (Stage) node.getScene().getWindow();
-        stage.close();
+        Stage stage1 = (Stage) node.getScene().getWindow();
+        stage1.close();
     }
 
 
