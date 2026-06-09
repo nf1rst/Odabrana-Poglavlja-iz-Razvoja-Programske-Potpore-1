@@ -9,6 +9,9 @@ import hr.algebra.util.SceneLoadingUtil;
 import hr.algebra.util.XMLLoggingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -31,6 +34,7 @@ public class BrandController extends BaseController {
     private final BrandService brandService = BrandService.getInstance();
     private Brand selectedBrand=null;
 
+
     @FXML
     public void initialize(){
         colId.setCellValueFactory(
@@ -47,11 +51,17 @@ public class BrandController extends BaseController {
                 showDetailsSelectedBrand(val);
             }
         });
+        ObservableList<Brand> masterList=FXCollections.observableArrayList(brandService.getAllBrands());
+        brandTable.setItems(masterList);
 
-        searchField.textProperty().addListener((obs,old,q)->fillTable(brandTable, brandService.search(q)));
+        searchField.textProperty().addListener((obs,old,q)->{
+            if(q!=null && !q.isBlank() && !q.isEmpty()){
+                observableListDataFill(brandTable, masterList,b->b.getName().contains(q));
+            }
+            else brandTable.setItems(masterList);
+        });
 
         fillUserLabel(currentUserLabel);
-        fillTable(brandTable, brandService.getAllBrands());
     }
 
     private void showDetailsSelectedBrand(Brand val) {

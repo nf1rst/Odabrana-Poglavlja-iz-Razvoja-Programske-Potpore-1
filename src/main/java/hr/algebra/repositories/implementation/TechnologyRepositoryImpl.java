@@ -1,8 +1,11 @@
 package hr.algebra.repositories.implementation;
-import hr.algebra.database.DBConnector;
+
+import hr.algebra.database.DataSource;
 import hr.algebra.models.Technology;
 import hr.algebra.repositories.TechnologyRepository;
+
 import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -17,8 +20,9 @@ public class TechnologyRepositoryImpl implements TechnologyRepository {
     @Override
     public List<Technology> getAll() throws SQLException {
         List<Technology>technology=new ArrayList<>();
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetAllTechnologies()}");
-            ResultSet rs = statement.executeQuery();)
+        try(Connection con = DataSource.getConnection();
+            CallableStatement statement = con.prepareCall("{CALL GetAllTechnologies()}");
+            ResultSet rs = statement.executeQuery())
         {
             while(rs.next())technology.add(mapRow(rs));
         }
@@ -27,7 +31,8 @@ public class TechnologyRepositoryImpl implements TechnologyRepository {
 
     @Override
     public Optional<Technology> getById(int id) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetTechnologyById(?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL GetTechnologyById(?)}")){
             statement.setInt(1,id);
             try(ResultSet rs=statement.executeQuery()){
                 while(rs.next())Optional.of(mapRow(rs));
@@ -38,7 +43,8 @@ public class TechnologyRepositoryImpl implements TechnologyRepository {
 
     @Override
     public void delete(int id) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL RemoveTechnology(?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL RemoveTechnology(?)}")){
             statement.setInt(1,id);
             statement.execute();
         }
@@ -51,7 +57,8 @@ public class TechnologyRepositoryImpl implements TechnologyRepository {
     }
 
     private void update(Technology technology) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL UpdateTechnology(?,?,?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL UpdateTechnology(?,?,?)}")){
             statement.setInt(1,technology.getId());
             statement.setString(2,technology.getName());
             statement.setString(3,technology.getDescription());
@@ -60,7 +67,8 @@ public class TechnologyRepositoryImpl implements TechnologyRepository {
     }
 
     private void insert(Technology technology) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL InsertTechnology(?,?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL InsertTechnology(?,?)}")){
             statement.setString(1,technology.getName());
             statement.setString(2,technology.getDescription());
 
@@ -76,7 +84,8 @@ public class TechnologyRepositoryImpl implements TechnologyRepository {
 
     @Override
     public int getTechnologydIdByName(String name) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetTechnologyIdByName(?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL GetTechnologyIdByName(?)}")){
             statement.setString(1, name);
             try(ResultSet rs = statement.executeQuery()){
                 if(rs.next()){return rs.getInt("id");}

@@ -19,7 +19,7 @@
 
     <dependencies>
 
-        <!-- JavaFX - grafičko sučelje -->
+        <!-- JavaFX - grafičko sucelje -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -76,6 +76,12 @@
             <artifactId>commons-io</artifactId>
             <version>2.22.0</version>
             <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>7.0.2</version>
         </dependency>
 
     </dependencies>

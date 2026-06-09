@@ -10,16 +10,15 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.StringConverter;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -59,6 +58,9 @@ public class HeadphonesController extends BaseController {
 
     @FXML private Label currentUserLabel;
 
+    ObservableList<Headphones>masterList;
+
+    //https://www.javacodegeeks.com/understanding-the-constructor-and-initialize-method-in-openjfx.html
     @FXML
     public void initialize(){
         setupColums();
@@ -66,7 +68,8 @@ public class HeadphonesController extends BaseController {
         setUpComboBoxes();
         setupSearch();
         fillUserLabel(currentUserLabel);
-        fillTable(headphonesTable, headphonesService.getAllHeadphones());
+        masterList = FXCollections.observableArrayList(headphonesService.getAllHeadphones());
+        headphonesTable.setItems(masterList);
     }
 
     private void setUpComboBoxes() {
@@ -105,7 +108,7 @@ public class HeadphonesController extends BaseController {
                 .selectedItemProperty()
                 .addListener((obs, old, val)->{
                     if(val!=null){
-                        fillTable(headphonesTable, headphonesService.getByBrand(val.getId()));
+                        observableListDataFill(headphonesTable, masterList, h->h.getBrand().getName().equals(val.getName()));
                         filterTypeCombo.getSelectionModel().clearSelection();
                     }
                 });
@@ -115,7 +118,7 @@ public class HeadphonesController extends BaseController {
                 .selectedItemProperty()
                 .addListener((obs, old, val)->{
                     if(val!=null){
-                        fillTable(headphonesTable, headphonesService.getByType(val.getId()));
+                        observableListDataFill(headphonesTable, masterList, h->h.getType().getName().equals(val.getName()));
                         filterBrandCombo.getSelectionModel().clearSelection();
                     }
                 });
@@ -123,7 +126,12 @@ public class HeadphonesController extends BaseController {
 
 
     private void setupSearch() {
-        searchField.textProperty().addListener((obs, old, q)->fillTable(headphonesTable, headphonesService.search(q)));//ovaj vraca ili sve ili samo filtrirane ako je query validan
+        searchField.textProperty().addListener((obs, old, val)->{
+            if(val!=null && !val.isEmpty()){
+                observableListDataFill(headphonesTable,masterList, h->h.getName().contains(val));
+            }
+            else headphonesTable.setItems(masterList);
+        });
     }
 
     private void setupTableSelection() {
@@ -204,7 +212,7 @@ public class HeadphonesController extends BaseController {
         }
         if(selectedHeadphnes==null){
             AlertUtil.showErrorAlert("Please select headphones to delete");
-
+            return;
         }
 
         if(!AlertUtil.showConfirmationAlert("Do you want to delete headphones: " + selectedHeadphnes.getName())) return;

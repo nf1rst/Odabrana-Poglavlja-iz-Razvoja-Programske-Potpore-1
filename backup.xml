@@ -4,36 +4,36 @@
         <batteryLife>30</batteryLife>
         <brand>
             <description>A global leader in audio innovation and consumer electronics.</description>
-            <id>19</id>
+            <id>55</id>
             <name>Sony</name>
         </brand>
         <description>Industry-leading noise canceling overhead headphones with premium sound quality.</description>
-        <id>26</id>
+        <id>76</id>
         <impedance>47</impedance>
         <maxFrequency>40000</maxFrequency>
         <minFrequency>4</minFrequency>
         <name>WH-1000XM4</name>
         <possibleUsages>
-            <id>17</id>
+            <id>49</id>
             <name>Travel</name>
         </possibleUsages>
         <possibleUsages>
-            <id>18</id>
+            <id>50</id>
             <name>Office</name>
         </possibleUsages>
         <price>349.99</price>
         <technologies>
             <description>Active Noise Cancellation uses microphones and speakers to reduce unwanted background noise.</description>
-            <id>31</id>
+            <id>91</id>
             <name>ANC</name>
         </technologies>
         <technologies>
             <description>An audio coding technology that allows streaming of high-resolution audio over Bluetooth.</description>
-            <id>32</id>
+            <id>92</id>
             <name>LDAC</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2020</yearEdition>
@@ -42,36 +42,36 @@
         <batteryLife>24</batteryLife>
         <brand>
             <description>Renowned for high-end audio solutions and pioneering noise-canceling technology.</description>
-            <id>20</id>
+            <id>56</id>
             <name>Bose</name>
         </brand>
         <description>Iconic quiet, comfort, and sound. Known for exceptional noise cancellation and plush materials.</description>
-        <id>27</id>
+        <id>77</id>
         <impedance>32</impedance>
         <maxFrequency>22000</maxFrequency>
         <minFrequency>15</minFrequency>
         <name>QuietComfort 45</name>
         <possibleUsages>
-            <id>17</id>
+            <id>49</id>
             <name>Travel</name>
         </possibleUsages>
         <possibleUsages>
-            <id>19</id>
+            <id>51</id>
             <name>Commuting</name>
         </possibleUsages>
         <price>329.0</price>
         <technologies>
             <description>Active Noise Cancellation uses microphones and speakers to reduce unwanted background noise.</description>
-            <id>31</id>
+            <id>91</id>
             <name>ANC</name>
         </technologies>
         <technologies>
             <description>Vents the earcups to increase acoustic space without increasing their size.</description>
-            <id>33</id>
+            <id>93</id>
             <name>TriPort Acoustic Structure</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2021</yearEdition>
@@ -80,36 +80,36 @@
         <batteryLife>20</batteryLife>
         <brand>
             <description>Premium tech giant focusing on seamless ecosystem integration and luxury design.</description>
-            <id>21</id>
+            <id>57</id>
             <name>Apple</name>
         </brand>
         <description>Apple-designed dynamic driver provides high-fidelity audio with advanced software processing.</description>
-        <id>28</id>
+        <id>78</id>
         <impedance>24</impedance>
         <maxFrequency>20000</maxFrequency>
         <minFrequency>10</minFrequency>
         <name>AirPods Max</name>
         <possibleUsages>
-            <id>17</id>
+            <id>49</id>
             <name>Travel</name>
         </possibleUsages>
         <possibleUsages>
-            <id>20</id>
+            <id>52</id>
             <name>Entertainment</name>
         </possibleUsages>
         <price>549.0</price>
         <technologies>
             <description>Active Noise Cancellation uses microphones and speakers to reduce unwanted background noise.</description>
-            <id>31</id>
+            <id>91</id>
             <name>ANC</name>
         </technologies>
         <technologies>
             <description>Creates a theater-like surround sound experience with dynamic head tracking.</description>
-            <id>34</id>
+            <id>94</id>
             <name>Spatial Audio</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2020</yearEdition>
@@ -118,36 +118,36 @@
         <batteryLife>0</batteryLife>
         <brand>
             <description>Legendary German audio brand trusted by audiophiles and studio professionals globally.</description>
-            <id>22</id>
+            <id>58</id>
             <name>Sennheiser</name>
         </brand>
         <description>The audiophile standard for open-back studio headphones, offering natural and transparent sound.</description>
-        <id>29</id>
+        <id>79</id>
         <impedance>300</impedance>
         <maxFrequency>40500</maxFrequency>
         <minFrequency>12</minFrequency>
         <name>HD 600</name>
         <possibleUsages>
-            <id>21</id>
+            <id>53</id>
             <name>Studio Monitoring</name>
         </possibleUsages>
         <possibleUsages>
-            <id>22</id>
+            <id>54</id>
             <name>Audiophile Listening</name>
         </possibleUsages>
         <price>399.95</price>
         <technologies>
             <description>Allows air to pass through the earcups for a natural, wide soundstage.</description>
-            <id>35</id>
+            <id>95</id>
             <name>Open-Back Design</name>
         </technologies>
         <technologies>
             <description>High-performance magnets that optimize transducer response and reduce distortion.</description>
-            <id>36</id>
+            <id>96</id>
             <name>Neodymium Magnets</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>1997</yearEdition>
@@ -156,31 +156,31 @@
         <batteryLife>0</batteryLife>
         <brand>
             <description>A global leader in audio innovation and consumer electronics.</description>
-            <id>19</id>
+            <id>55</id>
             <name>Sony</name>
         </brand>
         <description>A staple in recording studios worldwide, valued for its highly accurate, flat frequency response.</description>
-        <id>30</id>
+        <id>80</id>
         <impedance>63</impedance>
         <maxFrequency>20000</maxFrequency>
         <minFrequency>10</minFrequency>
         <name>MDR-7506</name>
         <possibleUsages>
-            <id>21</id>
+            <id>53</id>
             <name>Studio Monitoring</name>
         </possibleUsages>
         <possibleUsages>
-            <id>23</id>
+            <id>55</id>
             <name>Audio Editing</name>
         </possibleUsages>
         <price>99.0</price>
         <technologies>
             <description>Blocks external noise mechanically while preventing audio leakage.</description>
-            <id>37</id>
+            <id>97</id>
             <name>Closed-Back Isolation</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>1991</yearEdition>
@@ -189,31 +189,31 @@
         <batteryLife>0</batteryLife>
         <brand>
             <description>Japanese audio manufacturer celebrated for reliable high-fidelity equipment.</description>
-            <id>23</id>
+            <id>59</id>
             <name>Audio-Technica</name>
         </brand>
         <description>Critically acclaimed monitor headphones with exceptional clarity and deep, accurate bass response.</description>
-        <id>31</id>
+        <id>81</id>
         <impedance>38</impedance>
         <maxFrequency>28000</maxFrequency>
         <minFrequency>15</minFrequency>
         <name>ATH-M50x</name>
         <possibleUsages>
-            <id>21</id>
+            <id>53</id>
             <name>Studio Monitoring</name>
         </possibleUsages>
         <possibleUsages>
-            <id>24</id>
+            <id>56</id>
             <name>DJing</name>
         </possibleUsages>
         <price>149.0</price>
         <technologies>
             <description>Large-aperture drivers with rare earth magnets for extended frequency response.</description>
-            <id>38</id>
+            <id>98</id>
             <name>Proprietary Drivers</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2014</yearEdition>
@@ -222,36 +222,36 @@
         <batteryLife>8</batteryLife>
         <brand>
             <description>A global leader in audio innovation and consumer electronics.</description>
-            <id>19</id>
+            <id>55</id>
             <name>Sony</name>
         </brand>
         <description>The best truly wireless noise-canceling earbuds with astonishing sound fidelity.</description>
-        <id>32</id>
+        <id>82</id>
         <impedance>16</impedance>
         <maxFrequency>40000</maxFrequency>
         <minFrequency>20</minFrequency>
         <name>WF-1000XM5</name>
         <possibleUsages>
-            <id>19</id>
+            <id>51</id>
             <name>Commuting</name>
         </possibleUsages>
         <possibleUsages>
-            <id>25</id>
+            <id>57</id>
             <name>Sports</name>
         </possibleUsages>
         <price>299.99</price>
         <technologies>
             <description>Active Noise Cancellation uses microphones and speakers to reduce unwanted background noise.</description>
-            <id>31</id>
+            <id>91</id>
             <name>ANC</name>
         </technologies>
         <technologies>
             <description>Specially designed driver unit for wide frequency reproduction and deep bass.</description>
-            <id>39</id>
+            <id>99</id>
             <name>Dynamic Driver X</name>
         </technologies>
         <type>
-            <id>6</id>
+            <id>14</id>
             <name>In-Ear</name>
         </type>
         <yearEdition>2023</yearEdition>
@@ -260,36 +260,36 @@
         <batteryLife>6</batteryLife>
         <brand>
             <description>Premium tech giant focusing on seamless ecosystem integration and luxury design.</description>
-            <id>21</id>
+            <id>57</id>
             <name>Apple</name>
         </brand>
         <description>Features advanced active noise cancellation, adaptive transparency, and spatial audio.</description>
-        <id>33</id>
+        <id>83</id>
         <impedance>16</impedance>
         <maxFrequency>20000</maxFrequency>
         <minFrequency>20</minFrequency>
         <name>AirPods Pro 2</name>
         <possibleUsages>
-            <id>19</id>
+            <id>51</id>
             <name>Commuting</name>
         </possibleUsages>
         <possibleUsages>
-            <id>26</id>
+            <id>58</id>
             <name>Calls</name>
         </possibleUsages>
         <price>249.0</price>
         <technologies>
             <description>Active Noise Cancellation uses microphones and speakers to reduce unwanted background noise.</description>
-            <id>31</id>
+            <id>91</id>
             <name>ANC</name>
         </technologies>
         <technologies>
             <description>Apple's custom silicon that drives advanced audio performance and smarter noise cancellation.</description>
-            <id>40</id>
+            <id>100</id>
             <name>H2 Chip</name>
         </technologies>
         <type>
-            <id>6</id>
+            <id>14</id>
             <name>In-Ear</name>
         </type>
         <yearEdition>2022</yearEdition>
@@ -298,36 +298,36 @@
         <batteryLife>0</batteryLife>
         <brand>
             <description>A high-end audio manufacturer specializing in planar magnetic headphone technology.</description>
-            <id>24</id>
+            <id>60</id>
             <name>Audeze</name>
         </brand>
         <description>High-end planar magnetic headphones designed for ultimate precision and breath-taking clarity.</description>
-        <id>34</id>
+        <id>84</id>
         <impedance>20</impedance>
         <maxFrequency>50000</maxFrequency>
         <minFrequency>10</minFrequency>
         <name>LCD-X</name>
         <possibleUsages>
-            <id>21</id>
+            <id>53</id>
             <name>Studio Monitoring</name>
         </possibleUsages>
         <possibleUsages>
-            <id>22</id>
+            <id>54</id>
             <name>Audiophile Listening</name>
         </possibleUsages>
         <price>1199.0</price>
         <technologies>
             <description>Uses a thin diaphragm inside a magnetic field for extremely fast and accurate sound response.</description>
-            <id>41</id>
+            <id>101</id>
             <name>Planar Magnetic Transducers</name>
         </technologies>
         <technologies>
             <description>Acoustic elements that guide sound waves to reduce phase distortion and improve imaging.</description>
-            <id>42</id>
+            <id>102</id>
             <name>Fazor Waveguides</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2021</yearEdition>
@@ -336,36 +336,36 @@
         <batteryLife>60</batteryLife>
         <brand>
             <description>Legendary German audio brand trusted by audiophiles and studio professionals globally.</description>
-            <id>22</id>
+            <id>58</id>
             <name>Sennheiser</name>
         </brand>
         <description>Delivers audiophile-inspired sound with an outstanding 60-hour battery life and adaptive ANC.</description>
-        <id>35</id>
+        <id>85</id>
         <impedance>60</impedance>
         <maxFrequency>22000</maxFrequency>
         <minFrequency>6</minFrequency>
         <name>Momentum 4 Wireless</name>
         <possibleUsages>
-            <id>17</id>
+            <id>49</id>
             <name>Travel</name>
         </possibleUsages>
         <possibleUsages>
-            <id>19</id>
+            <id>51</id>
             <name>Commuting</name>
         </possibleUsages>
         <price>349.95</price>
         <technologies>
             <description>Active Noise Cancellation uses microphones and speakers to reduce unwanted background noise.</description>
-            <id>31</id>
+            <id>91</id>
             <name>ANC</name>
         </technologies>
         <technologies>
             <description>Audio codec that adjusts dynamically to provide optimal audio quality or low latency.</description>
-            <id>43</id>
+            <id>103</id>
             <name>aptX Adaptive</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2022</yearEdition>
@@ -374,36 +374,36 @@
         <batteryLife>0</batteryLife>
         <brand>
             <description>Austrian manufacturer known for producing world-class studio microphones and headphones.</description>
-            <id>25</id>
+            <id>61</id>
             <name>AKG</name>
         </brand>
         <description>Reference studio headphones featuring open-back design and extremely accurate response for mixing.</description>
-        <id>36</id>
+        <id>86</id>
         <impedance>62</impedance>
         <maxFrequency>39800</maxFrequency>
         <minFrequency>10</minFrequency>
         <name>K702</name>
         <possibleUsages>
-            <id>21</id>
+            <id>53</id>
             <name>Studio Monitoring</name>
         </possibleUsages>
         <possibleUsages>
-            <id>23</id>
+            <id>55</id>
             <name>Audio Editing</name>
         </possibleUsages>
         <price>189.0</price>
         <technologies>
             <description>Allows air to pass through the earcups for a natural, wide soundstage.</description>
-            <id>35</id>
+            <id>95</id>
             <name>Open-Back Design</name>
         </technologies>
         <technologies>
             <description>Patented multi-thickness diaphragm technology for precise imaging and powerful sound.</description>
-            <id>44</id>
+            <id>104</id>
             <name>Varimotion Diaphragm</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2008</yearEdition>
@@ -412,31 +412,31 @@
         <batteryLife>0</batteryLife>
         <brand>
             <description>Respected German manufacturer specializing in high-grade studio gear and microphones.</description>
-            <id>26</id>
+            <id>62</id>
             <name>Beyerdynamic</name>
         </brand>
         <description>Open-back studio headphones revered by professionals for their spacious sound and analytical details.</description>
-        <id>37</id>
+        <id>87</id>
         <impedance>250</impedance>
         <maxFrequency>35000</maxFrequency>
         <minFrequency>5</minFrequency>
         <name>DT 990 Pro</name>
         <possibleUsages>
-            <id>21</id>
+            <id>53</id>
             <name>Studio Monitoring</name>
         </possibleUsages>
         <possibleUsages>
-            <id>27</id>
+            <id>59</id>
             <name>Mixing</name>
         </possibleUsages>
         <price>159.0</price>
         <technologies>
             <description>Allows air to pass through the earcups for a natural, wide soundstage.</description>
-            <id>35</id>
+            <id>95</id>
             <name>Open-Back Design</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2004</yearEdition>
@@ -445,36 +445,36 @@
         <batteryLife>0</batteryLife>
         <brand>
             <description>Respected German manufacturer specializing in high-grade studio gear and microphones.</description>
-            <id>26</id>
+            <id>62</id>
             <name>Beyerdynamic</name>
         </brand>
         <description>Legendary closed-back studio headphones offering remarkable isolation and exceptional impulse response.</description>
-        <id>38</id>
+        <id>88</id>
         <impedance>80</impedance>
         <maxFrequency>35000</maxFrequency>
         <minFrequency>5</minFrequency>
         <name>DT 770 Pro</name>
         <possibleUsages>
-            <id>21</id>
+            <id>53</id>
             <name>Studio Monitoring</name>
         </possibleUsages>
         <possibleUsages>
-            <id>28</id>
+            <id>60</id>
             <name>Recording</name>
         </possibleUsages>
         <price>145.0</price>
         <technologies>
             <description>Blocks external noise mechanically while preventing audio leakage.</description>
-            <id>37</id>
+            <id>97</id>
             <name>Closed-Back Isolation</name>
         </technologies>
         <technologies>
             <description>Innovative system to improve low-end frequency response and minimize resonance.</description>
-            <id>45</id>
+            <id>105</id>
             <name>Bass Reflex System</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>1985</yearEdition>
@@ -483,36 +483,36 @@
         <batteryLife>70</batteryLife>
         <brand>
             <description>A premier lifestyle brand for gamers, known for high-performance peripheral hardware.</description>
-            <id>27</id>
+            <id>63</id>
             <name>Razer</name>
         </brand>
         <description>The definitive esports wireless gaming headset, offering crystal-clear audio and advanced mic tech.</description>
-        <id>39</id>
+        <id>89</id>
         <impedance>32</impedance>
         <maxFrequency>28000</maxFrequency>
         <minFrequency>12</minFrequency>
         <name>BlackShark V2 Pro</name>
         <possibleUsages>
-            <id>26</id>
+            <id>58</id>
             <name>Calls</name>
         </possibleUsages>
         <possibleUsages>
-            <id>29</id>
+            <id>61</id>
             <name>Gaming</name>
         </possibleUsages>
         <price>199.99</price>
         <technologies>
             <description>Divides the driver into 3 parts for individual tuning of highs, mids, and lows.</description>
-            <id>46</id>
+            <id>106</id>
             <name>TriForce Titanium Drivers</name>
         </technologies>
         <technologies>
             <description>Industry-leading 2.4GHz wireless connection for ultra-low latency gaming.</description>
-            <id>47</id>
+            <id>107</id>
             <name>HyperSpeed Wireless</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2023</yearEdition>
@@ -521,36 +521,36 @@
         <batteryLife>44</batteryLife>
         <brand>
             <description>Global innovator in gaming peripherals, focused on tactical competitive equipment.</description>
-            <id>28</id>
+            <id>64</id>
             <name>SteelSeries</name>
         </brand>
         <description>Premium gaming headset featuring a dual-battery swappable system and multi-system connect.</description>
-        <id>40</id>
+        <id>90</id>
         <impedance>38</impedance>
         <maxFrequency>40000</maxFrequency>
         <minFrequency>10</minFrequency>
         <name>Arctis Nova Pro Wireless</name>
         <possibleUsages>
-            <id>20</id>
+            <id>52</id>
             <name>Entertainment</name>
         </possibleUsages>
         <possibleUsages>
-            <id>29</id>
+            <id>61</id>
             <name>Gaming</name>
         </possibleUsages>
         <price>349.99</price>
         <technologies>
             <description>Active Noise Cancellation uses microphones and speakers to reduce unwanted background noise.</description>
-            <id>31</id>
+            <id>91</id>
             <name>ANC</name>
         </technologies>
         <technologies>
             <description>Hot-swappable dual battery mechanism ensuring endless wireless operation.</description>
-            <id>48</id>
+            <id>108</id>
             <name>Infinity Power System</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2022</yearEdition>
@@ -559,31 +559,31 @@
         <batteryLife>0</batteryLife>
         <brand>
             <description>Producer of affordable audio solutions including microphones, mixers, and monitors.</description>
-            <id>29</id>
+            <id>65</id>
             <name>Samson</name>
         </brand>
         <description>Budget-friendly semi-open studio monitoring headphones offering immense value and balance.</description>
-        <id>41</id>
+        <id>91</id>
         <impedance>32</impedance>
         <maxFrequency>30000</maxFrequency>
         <minFrequency>10</minFrequency>
         <name>SR850</name>
         <possibleUsages>
-            <id>21</id>
+            <id>53</id>
             <name>Studio Monitoring</name>
         </possibleUsages>
         <possibleUsages>
-            <id>30</id>
+            <id>62</id>
             <name>Budget Setup</name>
         </possibleUsages>
         <price>49.99</price>
         <technologies>
             <description>Blends the ambient isolation of closed-back with the soundstage benefits of open-back.</description>
-            <id>49</id>
+            <id>109</id>
             <name>Semi-Open Design</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2010</yearEdition>
@@ -592,32 +592,32 @@
         <batteryLife>0</batteryLife>
         <brand>
             <description>French luxury brand manufacturing ultra-premium acoustics and speakers.</description>
-            <id>30</id>
+            <id>66</id>
             <name>Focal</name>
         </brand>
         <description>Luxury open-back audiophile headphones featuring magnesium dome drivers for stunning realism.</description>
-        <id>42</id>
+        <id>92</id>
         <impedance>55</impedance>
         <maxFrequency>28000</maxFrequency>
         <minFrequency>5</minFrequency>
         <name>Clear Mg</name>
         <possibleUsages>
-            <id>22</id>
+            <id>54</id>
             <name>Audiophile Listening</name>
         </possibleUsages>
         <price>1499.0</price>
         <technologies>
             <description>Allows air to pass through the earcups for a natural, wide soundstage.</description>
-            <id>35</id>
+            <id>95</id>
             <name>Open-Back Design</name>
         </technologies>
         <technologies>
             <description>Lightweight and rigid driver shape providing extreme accuracy and fast transients.</description>
-            <id>50</id>
+            <id>110</id>
             <name>Magnesium Dome Driver</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2021</yearEdition>
@@ -626,36 +626,36 @@
         <batteryLife>8</batteryLife>
         <brand>
             <description>Danish specialist in professional communications and smart audio headsets.</description>
-            <id>31</id>
+            <id>67</id>
             <name>Jabra</name>
         </brand>
         <description>True wireless earbuds optimized for outstanding call quality and secure fitness fit.</description>
-        <id>43</id>
+        <id>93</id>
         <impedance>16</impedance>
         <maxFrequency>20000</maxFrequency>
         <minFrequency>20</minFrequency>
         <name>Elite 7 Pro</name>
         <possibleUsages>
-            <id>25</id>
+            <id>57</id>
             <name>Sports</name>
         </possibleUsages>
         <possibleUsages>
-            <id>26</id>
+            <id>58</id>
             <name>Calls</name>
         </possibleUsages>
         <price>199.99</price>
         <technologies>
             <description>Active Noise Cancellation uses microphones and speakers to reduce unwanted background noise.</description>
-            <id>31</id>
+            <id>91</id>
             <name>ANC</name>
         </technologies>
         <technologies>
             <description>Combines bone conduction sensors and 4 microphones to clear vocal audio during calls.</description>
-            <id>51</id>
+            <id>111</id>
             <name>MultiSensor Voice</name>
         </technologies>
         <type>
-            <id>6</id>
+            <id>14</id>
             <name>In-Ear</name>
         </type>
         <yearEdition>2021</yearEdition>
@@ -664,31 +664,31 @@
         <batteryLife>0</batteryLife>
         <brand>
             <description>American pioneer audio company responsible for creating the first stereophone.</description>
-            <id>32</id>
+            <id>68</id>
             <name>Koss</name>
         </brand>
         <description>Retro on-ear portable headphones celebrated for timeless sonic performance and lightweight frame.</description>
-        <id>44</id>
+        <id>94</id>
         <impedance>60</impedance>
         <maxFrequency>25000</maxFrequency>
         <minFrequency>15</minFrequency>
         <name>Koss Porta Pro</name>
         <possibleUsages>
-            <id>19</id>
+            <id>51</id>
             <name>Commuting</name>
         </possibleUsages>
         <possibleUsages>
-            <id>31</id>
+            <id>63</id>
             <name>Casual Listening</name>
         </possibleUsages>
         <price>49.99</price>
         <technologies>
             <description>Mechanical temporal pads adjustment to balance pressure on the ears.</description>
-            <id>52</id>
+            <id>112</id>
             <name>Comfort Zone Setting</name>
         </technologies>
         <type>
-            <id>7</id>
+            <id>15</id>
             <name>On-Ear</name>
         </type>
         <yearEdition>1984</yearEdition>
@@ -697,31 +697,31 @@
         <batteryLife>80</batteryLife>
         <brand>
             <description>Legendary British rock amplifier brand famous for vintage design and robust sound stages.</description>
-            <id>33</id>
+            <id>69</id>
             <name>Marshall</name>
         </brand>
         <description>Iconic on-ear Marshall look with over 80 solid hours of wireless playtime and wireless charging.</description>
-        <id>45</id>
+        <id>95</id>
         <impedance>32</impedance>
         <maxFrequency>20000</maxFrequency>
         <minFrequency>20</minFrequency>
         <name>Major IV</name>
         <possibleUsages>
-            <id>17</id>
+            <id>49</id>
             <name>Travel</name>
         </possibleUsages>
         <possibleUsages>
-            <id>31</id>
+            <id>63</id>
             <name>Casual Listening</name>
         </possibleUsages>
         <price>149.99</price>
         <technologies>
             <description>Allows the headphones to be charged wirelessly on any compatible Qi pad.</description>
-            <id>53</id>
+            <id>113</id>
             <name>Wireless Qi Charging</name>
         </technologies>
         <type>
-            <id>7</id>
+            <id>15</id>
             <name>On-Ear</name>
         </type>
         <yearEdition>2020</yearEdition>
@@ -730,32 +730,32 @@
         <batteryLife>0</batteryLife>
         <brand>
             <description>Leading designer of high-performance audiophile gear and planar magnetic products.</description>
-            <id>34</id>
+            <id>70</id>
             <name>HIFIMAN</name>
         </brand>
         <description>Open-back planar magnetic headphones featuring an ultra-thin diaphragm for pristine sonic detail.</description>
-        <id>46</id>
+        <id>96</id>
         <impedance>37</impedance>
         <maxFrequency>75000</maxFrequency>
         <minFrequency>6</minFrequency>
         <name>Sundara</name>
         <possibleUsages>
-            <id>22</id>
+            <id>54</id>
             <name>Audiophile Listening</name>
         </possibleUsages>
         <price>299.0</price>
         <technologies>
             <description>Uses a thin diaphragm inside a magnetic field for extremely fast and accurate sound response.</description>
-            <id>41</id>
+            <id>101</id>
             <name>Planar Magnetic Transducers</name>
         </technologies>
         <technologies>
             <description>Diaphragm that is 80% thinner than previous editions, ensuring lightning-fast response.</description>
-            <id>54</id>
+            <id>114</id>
             <name>NEO Supernano Diaphragm</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2018</yearEdition>
@@ -764,36 +764,36 @@
         <batteryLife>0</batteryLife>
         <brand>
             <description>Legendary German audio brand trusted by audiophiles and studio professionals globally.</description>
-            <id>22</id>
+            <id>58</id>
             <name>Sennheiser</name>
         </brand>
         <description>Premium wired in-ear monitors forged from resilient AMLOY-ZR01 amorphous metal.</description>
-        <id>47</id>
+        <id>97</id>
         <impedance>18</impedance>
         <maxFrequency>46500</maxFrequency>
         <minFrequency>4</minFrequency>
         <name>IE 600</name>
         <possibleUsages>
-            <id>17</id>
+            <id>49</id>
             <name>Travel</name>
         </possibleUsages>
         <possibleUsages>
-            <id>22</id>
+            <id>54</id>
             <name>Audiophile Listening</name>
         </possibleUsages>
         <price>699.95</price>
         <technologies>
             <description>Sennheiser's singular 7mm dynamic driver optimizing distortion-free performance.</description>
-            <id>55</id>
+            <id>115</id>
             <name>TrueResponse Transducer</name>
         </technologies>
         <technologies>
             <description>Resonator chambers that neutralize masking resonances for high-frequency detail.</description>
-            <id>56</id>
+            <id>116</id>
             <name>Dual-Chamber Absorber</name>
         </technologies>
         <type>
-            <id>6</id>
+            <id>14</id>
             <name>In-Ear</name>
         </type>
         <yearEdition>2022</yearEdition>
@@ -802,27 +802,27 @@
         <batteryLife>30</batteryLife>
         <brand>
             <description>Popular gaming division prioritizing exceptional ergonomics and durability for gamers.</description>
-            <id>35</id>
+            <id>71</id>
             <name>HyperX</name>
         </brand>
         <description>Renowned gaming comfort paired with a long-lasting wireless connection and immersive audio presets.</description>
-        <id>48</id>
+        <id>98</id>
         <impedance>60</impedance>
         <maxFrequency>20000</maxFrequency>
         <minFrequency>15</minFrequency>
         <name>Cloud II Wireless</name>
         <possibleUsages>
-            <id>29</id>
+            <id>61</id>
             <name>Gaming</name>
         </possibleUsages>
         <price>149.99</price>
         <technologies>
             <description>Hardware-driven virtual surround sound profile optimized for positional gaming cues.</description>
-            <id>57</id>
+            <id>117</id>
             <name>HyperX Custom 7.1</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2020</yearEdition>
@@ -831,36 +831,36 @@
         <batteryLife>10</batteryLife>
         <brand>
             <description>The world innovator in bone conduction open-ear technology and workout audio.</description>
-            <id>36</id>
+            <id>72</id>
             <name>Shokz</name>
         </brand>
         <description>Premium bone-conduction sport headphones that keep you completely aware of your surroundings.</description>
-        <id>49</id>
+        <id>99</id>
         <impedance>8</impedance>
         <maxFrequency>20000</maxFrequency>
         <minFrequency>20</minFrequency>
         <name>OpenRun Pro</name>
         <possibleUsages>
-            <id>25</id>
+            <id>57</id>
             <name>Sports</name>
         </possibleUsages>
         <possibleUsages>
-            <id>32</id>
+            <id>64</id>
             <name>Outdoor Activities</name>
         </possibleUsages>
         <price>179.95</price>
         <technologies>
             <description>Transmits audio via vibrations directly to the inner ear bone, bypassing the eardrum.</description>
-            <id>58</id>
+            <id>118</id>
             <name>Bone Conduction Tech</name>
         </technologies>
         <technologies>
             <description>Ninth generation bone conduction technology tailored to deliver punchier low frequencies.</description>
-            <id>59</id>
+            <id>119</id>
             <name>TurboPitch Enhanced Bass</name>
         </technologies>
         <type>
-            <id>8</id>
+            <id>16</id>
             <name>Bone Conduction</name>
         </type>
         <yearEdition>2022</yearEdition>
@@ -869,36 +869,36 @@
         <batteryLife>30</batteryLife>
         <brand>
             <description>French luxury brand manufacturing ultra-premium acoustics and speakers.</description>
-            <id>30</id>
+            <id>66</id>
             <name>Focal</name>
         </brand>
         <description>High-fidelity active noise-canceling wireless headphones delivering genuine luxury hi-fi audio.</description>
-        <id>50</id>
+        <id>100</id>
         <impedance>24</impedance>
         <maxFrequency>22000</maxFrequency>
         <minFrequency>15</minFrequency>
         <name>Bathys</name>
         <possibleUsages>
-            <id>17</id>
+            <id>49</id>
             <name>Travel</name>
         </possibleUsages>
         <possibleUsages>
-            <id>22</id>
+            <id>54</id>
             <name>Audiophile Listening</name>
         </possibleUsages>
         <price>799.0</price>
         <technologies>
             <description>Active Noise Cancellation uses microphones and speakers to reduce unwanted background noise.</description>
-            <id>31</id>
+            <id>91</id>
             <name>ANC</name>
         </technologies>
         <technologies>
             <description>Integrated Digital-to-Analog converter allowing hi-res 24-bit wired playback via USB.</description>
-            <id>60</id>
+            <id>120</id>
             <name>USB-DAC Mode</name>
         </technologies>
         <type>
-            <id>5</id>
+            <id>13</id>
             <name>Over-Ear</name>
         </type>
         <yearEdition>2022</yearEdition>

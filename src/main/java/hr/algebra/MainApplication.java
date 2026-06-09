@@ -1,6 +1,6 @@
 package hr.algebra;
 
-import hr.algebra.database.DBSingleton;
+import hr.algebra.database.DataSource;
 import hr.algebra.services.DBInitiatorService;
 import hr.algebra.util.LoggingUtil;
 import hr.algebra.util.SceneLoadingUtil;
@@ -49,7 +49,7 @@ public class MainApplication extends Application {
     @Override
     public void stop() throws Exception {
         try {
-            DBSingleton.INSTANCE.closeConnection();
+            DataSource.closeConnection();
             //da rucno brisanje u SQL skriptii
         } catch (Exception _) {
             //

@@ -1,4 +1,5 @@
 package hr.algebra.controller;
+
 import hr.algebra.exceptions.CannotPerformActionException;
 import hr.algebra.models.Session;
 import hr.algebra.models.Type;
@@ -9,9 +10,14 @@ import hr.algebra.util.SceneLoadingUtil;
 import hr.algebra.util.XMLLoggingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 
 public class TypeController extends BaseController{
 
@@ -25,9 +31,10 @@ public class TypeController extends BaseController{
     @FXML TextField searchField;
 
     @FXML Label nameLabel;
-    @FXML Label descLabel;
 
     @FXML Label currentUserLabel;
+
+    private ObservableList<Type> masterList;
 
     @FXML
     public void initialize(){
@@ -44,10 +51,23 @@ public class TypeController extends BaseController{
                         nameLabel.setText(val.getName());
                     }
                 });
-        searchField.textProperty().addListener((obs,old,q)->fillTable(typeTable, typeService.search(q)));
+
+
+        masterList = FXCollections.observableArrayList(typeService.getAllTypes());
+        typeTable.setItems(masterList);
+        initSearchField();
 
         fillUserLabel(currentUserLabel);
         fillTable(typeTable, typeService.getAllTypes());
+    }
+
+    private void initSearchField() {
+        searchField.textProperty().addListener((obs,old,val)->{
+            if(val!=null && !val.isEmpty()){
+                observableListDataFill(typeTable, masterList, t->t.getName().contains(val));
+            }
+            else typeTable.setItems(masterList);
+        });
     }
 
     @FXML

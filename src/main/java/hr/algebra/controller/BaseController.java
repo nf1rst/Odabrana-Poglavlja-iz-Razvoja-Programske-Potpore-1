@@ -5,12 +5,16 @@ import hr.algebra.models.Session;
 import hr.algebra.models.User;
 import hr.algebra.util.AlertUtil;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.paint.Color;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public abstract class BaseController {
 
@@ -24,6 +28,12 @@ public abstract class BaseController {
         catch (CannotPerformActionException e){
             AlertUtil.showErrorAlert(e.getMessage());
         }
+    }
+
+    protected <T> void observableListDataFill(TableView<T>tableView, ObservableList<T> masterList, Predicate<T> predicate){
+        FilteredList<T> filteredList = new FilteredList<>(masterList, predicate);
+        SortedList<T> sortedList = new SortedList<>(filteredList);
+        tableView.setItems(sortedList);
     }
 
     protected void onUserSet() { //prazna metoda koju klasa koja ovu nsaljeduje moze overrideat ako joj je potrebno da se nesto dogodi nakon postavljanja usera

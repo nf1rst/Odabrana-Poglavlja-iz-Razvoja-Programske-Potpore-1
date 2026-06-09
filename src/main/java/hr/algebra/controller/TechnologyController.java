@@ -13,7 +13,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
-import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -25,7 +24,6 @@ import javafx.scene.control.TextField;
 public class TechnologyController extends BaseController{
     private final TechnologyService technologyService= TechnologyService.getInstance();
     private Technology selectedTechnology;
-    private FilteredList<Technology>filteredTechnologies;
 
     @FXML private TextField searchField;
 
@@ -38,6 +36,8 @@ public class TechnologyController extends BaseController{
     @FXML private Label descLabel;
 
     @FXML private Label currentUserLabel;
+
+    private ObservableList<Technology> masterList;
 
     @FXML
     public void initialize(){
@@ -64,24 +64,17 @@ public class TechnologyController extends BaseController{
 
         fillUserLabel(currentUserLabel);
 
-        //fillTable(technologiesTable, technologyService.getAllTechnologies());
+        masterList=FXCollections.observableArrayList(technologyService.getAllTechnologies());
+        technologiesTable.setItems(masterList);
     }
 
     private void searchInit() {
-        ObservableList<Technology> technologyList = FXCollections.observableArrayList(technologyService.getAllTechnologies());
-
-        filteredTechnologies = new FilteredList<>(technologyList, t->true);
-        SortedList<Technology>sortedTechnologies = new SortedList<>(filteredTechnologies);
-
-        sortedTechnologies.comparatorProperty().bind(technologiesTable.comparatorProperty());
-
-        technologiesTable.setItems(sortedTechnologies);
-        searchField.textProperty().addListener((obs, old, val)-> filteredTechnologies.setPredicate(tech -> {
-                if(val==null ||val.isBlank()){
-                    return true;
-                }
-                return tech.getName().contains(val);
-            }));
+        searchField.textProperty().addListener((obs, old, val)->{
+            if(val!=null && !val.isEmpty()){
+                observableListDataFill(technologiesTable, masterList, t->t.getName().contains(val));
+            }
+            else technologiesTable.setItems(masterList);
+        });
     }
 
     @FXML

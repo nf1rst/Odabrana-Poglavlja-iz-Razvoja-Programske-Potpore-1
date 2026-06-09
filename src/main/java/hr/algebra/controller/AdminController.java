@@ -1,5 +1,6 @@
 package hr.algebra.controller;
 import hr.algebra.exceptions.CannotPerformActionException;
+import hr.algebra.models.Role;
 import hr.algebra.models.help.DBStatistics;
 import hr.algebra.models.Session;
 import hr.algebra.models.User;
@@ -15,6 +16,8 @@ import hr.algebra.xml.export.XMLExporter;
 import jakarta.xml.bind.JAXBException;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
@@ -53,10 +56,13 @@ public class AdminController extends BaseController{
         setUpColumns();
         setUpChoiceBox();
 
+        ObservableList<User> masterList = FXCollections.observableArrayList(userService.getAllUsers());
+
         searchField.textProperty().addListener((obs, old, val)->{
             if(!val.isBlank()){
-                fillTable(userTableView, userService.search(val));
+                observableListDataFill(userTableView, masterList, u->u.getUsername().contains(val));
             }
+            else userTableView.setItems(masterList);
         });
 
         userTableView.getSelectionModel()
@@ -66,7 +72,7 @@ public class AdminController extends BaseController{
                         selectedUser=val;
                     }
                 });
-        fillTable(userTableView, userService.getAllUsers());
+        userTableView.setItems(masterList);
     }
 
     private void setUpChoiceBox() {
@@ -191,6 +197,10 @@ public class AdminController extends BaseController{
                 return;
             }
             if(!AlertUtil.showConfirmationAlert("Aou you sure you want to delete user?")){
+                return;
+            }
+            if(selectedUser.getRole()== Role.ADMIN){
+                AlertUtil.showErrorAlert("One man must be left standing");
                 return;
             }
 

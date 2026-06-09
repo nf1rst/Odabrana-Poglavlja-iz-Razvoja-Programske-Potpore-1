@@ -1,10 +1,11 @@
 package hr.algebra.repositories.implementation;
 
-import hr.algebra.database.DBConnector;
+import hr.algebra.database.DataSource;
 import hr.algebra.models.Brand;
 import hr.algebra.repositories.BrandRepository;
 
 import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,9 +20,9 @@ public class BrandRepositoryImpl implements BrandRepository {
     @Override
     public List<Brand> getAll() throws SQLException {
         List<Brand>brands = new ArrayList<>();
-        try (
-                CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetAllBrands()}");
-                ResultSet rs = statement.executeQuery())
+        try (Connection con = DataSource.getConnection();
+             CallableStatement statement = con.prepareCall("{CALL GetAllBrands()}");
+             ResultSet rs = statement.executeQuery())
         {
             while (rs.next())brands.add(mapRow(rs));
         }
@@ -30,7 +31,8 @@ public class BrandRepositoryImpl implements BrandRepository {
 
     @Override
     public Optional<Brand> getById(int id) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetBrandById(?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL GetBrandById(?)}")){
             statement.setInt(1,id);
             try(ResultSet rs = statement.executeQuery()){
                 if(rs.next())return Optional.of(mapRow(rs));
@@ -41,7 +43,8 @@ public class BrandRepositoryImpl implements BrandRepository {
 
     @Override
     public void delete(int id) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL DeleteBrand(?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL DeleteBrand(?)}")){
             statement.setInt(1,id);
             statement.execute();
         }
@@ -54,7 +57,8 @@ public class BrandRepositoryImpl implements BrandRepository {
     }
 
     private void update(Brand brand) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL UpdateBrand(?,?,?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL UpdateBrand(?,?,?)}")){
             statement.setInt(1,brand.getId());
             statement.setString(2,brand.getName());
             statement.setString(3,brand.getDescription());
@@ -63,7 +67,8 @@ public class BrandRepositoryImpl implements BrandRepository {
     }
 
     private void insert (Brand brand) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL InsertBrand(?,?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL InsertBrand(?,?)}")){
             statement.setString(1,brand.getName());
             statement.setString(2,brand.getDescription());
             try(ResultSet rs = statement.executeQuery()){
@@ -85,7 +90,8 @@ public class BrandRepositoryImpl implements BrandRepository {
 
     @Override
     public int getBrandIdByName(String name) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetBrandIdByName(?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL GetBrandIdByName(?)}")){
             statement.setString(1, name);
             try(ResultSet rs = statement.executeQuery()){
                 if(rs.next()){return rs.getInt("id");}

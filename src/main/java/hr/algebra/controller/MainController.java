@@ -1,6 +1,6 @@
 package hr.algebra.controller;
+
 import hr.algebra.models.Session;
-import hr.algebra.util.SoundUtil;
 import hr.algebra.util.AlertUtil;
 import hr.algebra.util.SceneLoadingUtil;
 import javafx.fxml.FXML;
@@ -15,7 +15,6 @@ public class MainController {
     public void initialize(){
         if(!Session.userLoggedIn()) welcomeLabel.setText("Welcome anonymous");
         else welcomeLabel.setText("Welcome " + Session.getCurrentUser().getUsername());
-        SoundUtil.playAudio("src/main/resources/hr/algebra/assets/sound/winXP.wav");
     }
 
 

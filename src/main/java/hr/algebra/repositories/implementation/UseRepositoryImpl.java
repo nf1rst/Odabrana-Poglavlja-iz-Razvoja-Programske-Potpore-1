@@ -1,10 +1,11 @@
 package hr.algebra.repositories.implementation;
 
-import hr.algebra.database.DBConnector;
+import hr.algebra.database.DataSource;
 import hr.algebra.models.Use;
 import hr.algebra.repositories.UseRepository;
 
 import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -20,8 +21,9 @@ public class UseRepositoryImpl implements UseRepository {
     @Override
     public List<Use> getAll() throws SQLException {
         List<Use>uses=new ArrayList<>();
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetAllUses()}");
-            ResultSet rs  = statement.executeQuery();)
+        try(Connection con = DataSource.getConnection();
+            CallableStatement statement = con.prepareCall("{CALL GetAllUses()}");
+            ResultSet rs  = statement.executeQuery())
         {
             while(rs.next())uses.add(mapRow(rs));
         }
@@ -34,10 +36,11 @@ public class UseRepositoryImpl implements UseRepository {
 
     @Override
     public Optional<Use> getById(int id) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetUseByID(?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL GetUseByID(?)}")){
             statement.setInt(1,id);
             try(ResultSet rs = statement.executeQuery()){
-                while(rs.next()) Optional.of(mapRow(rs));
+                if(rs.next()) Optional.of(mapRow(rs));
             }
         }
         return Optional.empty();
@@ -45,7 +48,8 @@ public class UseRepositoryImpl implements UseRepository {
 
     @Override
     public void delete(int id) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL DeleteUse(?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL DeleteUse(?)}")){
             statement.setInt(1,id);
             statement.execute();
         }
@@ -58,7 +62,8 @@ public class UseRepositoryImpl implements UseRepository {
     }
 
     private void update(Use use) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL UpdateUse(?,?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL UpdateUse(?,?)}")){
             statement.setInt(1,use.getId());
             statement.setString(2,use.getName());
             statement.execute();
@@ -66,7 +71,8 @@ public class UseRepositoryImpl implements UseRepository {
     }
 
     private void insert(Use use) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL InsertUse(?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL InsertUse(?)}")){
             statement.setString(1,use.getName());
             try(ResultSet rs = statement.executeQuery()){
                 if(rs.next()){
@@ -79,7 +85,8 @@ public class UseRepositoryImpl implements UseRepository {
 
     @Override
     public int getUseIdByName(String name) throws SQLException {
-        try(CallableStatement statement = DBConnector.getConnection().prepareCall("{CALL GetUseIdByName(?)}")){
+        try(Connection con =DataSource.getConnection();
+                CallableStatement statement = con.prepareCall("{CALL GetUseIdByName(?)}")){
             statement.setString(1, name);
             try(ResultSet rs = statement.executeQuery()){
                 if(rs.next()){return rs.getInt("id");}

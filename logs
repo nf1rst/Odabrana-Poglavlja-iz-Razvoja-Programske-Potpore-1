@@ -3806,3 +3806,1102 @@
 2026-06-08 21:58:38 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
 2026-06-08 21:58:52 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Type id=On-Ear, user=asdf1
 2026-06-08 22:00:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-08 22:45:05 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-08 22:45:05 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-08 22:45:06 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-08 22:45:07 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-08 22:46:33 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-08 22:46:33 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-08 22:46:34 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-08 22:46:40 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [REGISTER], entitiy=User, user=asdf1
+2026-06-08 22:46:42 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-08 22:50:19 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-08 22:50:19 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-08 22:50:20 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-08 22:50:22 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-08 22:51:52 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-08 22:51:52 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-08 22:51:53 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-08 22:51:54 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-08 22:52:11 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-08 22:52:22 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Brand id=Aasdfasdfasdf, user=admin
+2026-06-08 22:52:31 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-08 22:53:34 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-08 22:53:34 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-08 22:53:35 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-08 22:53:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-08 22:53:46 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-09 08:44:46 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-09 08:44:47 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-09 08:44:48 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 08:45:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 08:46:14 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE], entitiy=Entities, user=admin
+2026-06-09 08:46:18 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 08:49:43 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 08:49:43 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 08:49:45 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 08:50:30 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [REGISTER], entitiy=User, user=asdf1
+2026-06-09 08:50:58 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-09 08:53:25 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 08:53:33 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE], entitiy=User rights, user=admin
+2026-06-09 08:53:36 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE], entitiy=Entities, user=admin
+2026-06-09 08:53:40 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 08:53:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-09 08:54:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-09 08:56:34 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=asdf1
+2026-06-09 08:56:49 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Pro 2, user=asdf1
+2026-06-09 08:57:02 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=Bathys, user=asdf1
+2026-06-09 08:57:11 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: The DELETE statement conflicted with the REFERENCE constraint "FK__Headphone__Brand__52593CB8". The conflict occurred in database "HeadphonesDB", table "dbo.Headphones", column 'BrandID'.]
+2026-06-09 08:57:17 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [INSERT] entity=Brand id=asdfasdf, user=asdf1
+2026-06-09 08:57:21 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Brand id=asdfasdf, user=asdf1
+2026-06-09 08:57:56 [Thread-5] INFO  hr.algebra.util.LoggingUtil - Headphones in task export
+2026-06-09 08:57:57 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Headphones export success
+2026-06-09 08:59:11 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [SQL error] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: The DELETE statement conflicted with the REFERENCE constraint "FK__Headphone__Techn__571DF1D5". The conflict occurred in database "HeadphonesDB", table "dbo.HeadphonesTechnology", column 'TechnologyID'.]
+2026-06-09 08:59:27 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=User id=Account updated, user=asdfasdf
+2026-06-09 08:59:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=User id=Account updated, user=asdf1
+2026-06-09 09:00:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 09:00:48 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Image deleteion error: coty.png] CAUSE = []
+2026-06-09 09:00:48 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE], entitiy=Entities, user=admin
+2026-06-09 09:01:08 [Thread-6] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 09:01:32 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=admin
+2026-06-09 09:01:43 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=Arctis Nova Pro Wireless, user=admin
+2026-06-09 09:02:06 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 09:02:10 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Image deleteion error: charca.jpg] CAUSE = []
+2026-06-09 09:02:10 [JavaFX Application Thread] ERROR hr.algebra.util.LoggingUtil - [Image deleteion error: rex.jpg] CAUSE = []
+2026-06-09 09:02:10 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE], entitiy=Entities, user=admin
+2026-06-09 09:02:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-09 09:03:44 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 09:03:44 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 09:03:46 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 09:03:55 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [REGISTER], entitiy=User, user=asdf1
+2026-06-09 09:04:00 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-09 09:04:33 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 09:05:00 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=admin
+2026-06-09 09:05:04 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=admin
+2026-06-09 09:05:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=Arctis Nova Pro Wireless, user=admin
+2026-06-09 09:05:58 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE], entitiy=Entities, user=admin
+2026-06-09 09:06:20 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 09:06:30 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=ATH-M50x, user=admin
+2026-06-09 09:06:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=admin
+2026-06-09 09:06:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=DT 990 Pro, user=admin
+2026-06-09 09:07:02 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=DT 990 Pro, user=admin
+2026-06-09 09:07:36 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE], entitiy=Entities, user=admin
+2026-06-09 09:18:45 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-09 10:09:12 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 10:09:12 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 10:09:14 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 20:18:14 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-09 20:18:15 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-09 20:18:16 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 20:18:36 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-09 20:44:49 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 20:44:50 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 20:44:51 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 20:47:15 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 20:47:15 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 20:47:19 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 20:47:52 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 20:47:52 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 20:47:53 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 20:47:57 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-09 20:48:32 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 20:48:32 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 20:48:34 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 20:50:29 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-09 20:50:29 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-09 20:51:47 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 20:51:47 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 20:51:49 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 20:53:04 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 20:53:04 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 20:53:05 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 20:54:11 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 20:54:11 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 20:54:13 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 20:54:19 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-09 20:55:08 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 20:55:08 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 20:55:10 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 20:56:39 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 20:56:39 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 20:56:40 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 20:58:44 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-09 20:59:13 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 20:59:13 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 20:59:15 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 20:59:15 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 21:00:59 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE], entitiy=Entities, user=admin
+2026-06-09 21:01:01 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 21:05:11 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-09 21:05:11 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-09 21:05:13 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 21:08:53 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 21:08:53 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 21:08:54 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 21:11:01 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-09 21:11:02 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-09 21:11:03 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 21:28:26 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-09 22:15:20 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-09 22:15:20 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-09 22:15:21 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 22:16:22 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [REGISTER], entitiy=User, user=asdf1
+2026-06-09 22:16:25 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [REGISTER], entitiy=User, user=asdfasdf
+2026-06-09 22:16:29 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [REGISTER], entitiy=User, user=dfcdfsvcb
+2026-06-09 22:16:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [REGISTER], entitiy=User, user=asdf5
+2026-06-09 22:17:11 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 22:20:49 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-09 22:22:50 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 22:22:50 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-09 22:22:51 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 22:23:09 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 22:23:37 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 22:23:40 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE], entitiy=Entities, user=admin
+2026-06-09 22:23:44 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 22:24:01 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE], entitiy=Entities, user=admin
+2026-06-09 22:24:03 [Thread-5] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 22:26:24 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=admin
+2026-06-09 22:26:52 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [REGISTER], entitiy=User, user=asdf1
+2026-06-09 22:26:55 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-09 22:29:00 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 22:29:01 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE], entitiy=User rights, user=admin
+2026-06-09 22:29:06 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-09 22:29:21 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-09 22:29:23 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-09 22:29:39 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=AirPods Max, user=asdf1
+2026-06-09 22:30:09 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE] entity=Headphones id=Arctis Nova Pro Wireless, user=asdf1
+2026-06-09 22:30:59 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE] entity=Headphones id=Bathys, user=asdf1
+2026-06-09 22:31:20 [Thread-6] INFO  hr.algebra.util.LoggingUtil - Headphones in task export
+2026-06-09 22:31:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Headphones export success
+2026-06-09 22:34:48 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 22:34:48 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 22:34:49 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 22:34:50 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-09 22:36:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 22:36:51 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE], entitiy=Entities, user=admin
+2026-06-09 22:41:28 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 22:41:29 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 22:41:30 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 22:41:31 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 22:41:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE], entitiy=Entities, user=admin
+2026-06-09 22:41:38 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 23:10:31 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 23:10:31 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 23:10:32 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 23:10:34 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-09 23:10:40 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit......................true
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - catalog.........................none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - credentials.....................com.zaxxer.hikari.util.Credentials@671826dc
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProvider.............none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProviderClassName....none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - dataSource......................none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName.................none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverride...............none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime...................120000
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - username........................"sa"
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+2026-06-09 23:10:43 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG c.z.hikari.util.DriverDataSource - Loaded driver with class name com.microsoft.sqlserver.jdbc.SQLServerDriver for jdbcUrl=jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (cdcc7e73-7676-4d66-8c0b-1de957f9738e)
+2026-06-09 23:10:43 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (cdcc7e73-7676-4d66-8c0b-1de957f9738e)
+2026-06-09 23:10:43 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:2 ClientConnectionId: 02da0799-3ef6-4716-9c68-7307cf58a158
+2026-06-09 23:10:43 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-09 23:10:43 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1/10, idle=1/10, active=0, waiting=0)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (cb86e0bc-f31f-4dc7-8e8b-16d915b5667c)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (cb86e0bc-f31f-4dc7-8e8b-16d915b5667c)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:3 ClientConnectionId: d1d12257-4e9c-4cbc-9d31-69b1ffdb78b5
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=2/10, idle=2/10, active=0, waiting=0)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (c8faabd1-a04a-4e74-a833-4c80647695d9)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (c8faabd1-a04a-4e74-a833-4c80647695d9)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:4 ClientConnectionId: afc464b3-9279-482a-89cd-110deb868683
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=3/10, idle=3/10, active=0, waiting=0)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (881a1f02-5d67-426c-9bc4-92ecd0e749f7)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (881a1f02-5d67-426c-9bc4-92ecd0e749f7)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:5 ClientConnectionId: cb3703f7-c36c-45bc-b3a2-fdcd368a19bd
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=4/10, idle=4/10, active=0, waiting=0)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (dc73d557-38ec-4acd-bb38-24abe6249883)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (dc73d557-38ec-4acd-bb38-24abe6249883)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:6 ClientConnectionId: 178ea44a-ed4a-4199-b723-97b1bc166d49
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=5/10, idle=5/10, active=0, waiting=0)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (724299d9-12c7-425f-95c1-446f1e730640)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (724299d9-12c7-425f-95c1-446f1e730640)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:7 ClientConnectionId: a94c9447-2600-47b4-9cd6-5a722d2c8e79
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=6/10, idle=6/10, active=0, waiting=0)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (88e0b2c4-2d1f-4727-bb0e-f1be055f8801)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (88e0b2c4-2d1f-4727-bb0e-f1be055f8801)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:8 ClientConnectionId: d45e84ff-e4d3-4e42-a6dd-4579bc4e53aa
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=7/10, idle=7/10, active=0, waiting=0)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (dd2ee5b7-64f4-4478-9ea5-f1da2e27bb20)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (dd2ee5b7-64f4-4478-9ea5-f1da2e27bb20)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:9 ClientConnectionId: c78cddc3-4395-4ac2-8b1f-86d9ba6e8a31
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=8/10, idle=8/10, active=0, waiting=0)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (eb0ba1d2-79b3-4a19-966d-bd81213e6821)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (eb0ba1d2-79b3-4a19-966d-bd81213e6821)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:10 ClientConnectionId: e1fd6f1b-500a-4102-af48-c497bf24316b
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=9/10, idle=9/10, active=0, waiting=0)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (5f38d818-fa4a-456a-ae10-2859a79f71f7)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (5f38d818-fa4a-456a-ae10-2859a79f71f7)
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:11 ClientConnectionId: 97ad280e-69c6-4dad-af53-a329a7d79e81
+2026-06-09 23:10:43 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:11:13 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:11:13 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:11:43 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:11:43 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:12:13 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:12:13 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:12:24 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:9 ClientConnectionId: c78cddc3-4395-4ac2-8b1f-86d9ba6e8a31 is alive
+2026-06-09 23:12:24 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:3 ClientConnectionId: d1d12257-4e9c-4cbc-9d31-69b1ffdb78b5 is alive
+2026-06-09 23:12:27 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:4 ClientConnectionId: afc464b3-9279-482a-89cd-110deb868683 is alive
+2026-06-09 23:12:27 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:11 ClientConnectionId: 97ad280e-69c6-4dad-af53-a329a7d79e81 is alive
+2026-06-09 23:12:28 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:8 ClientConnectionId: d45e84ff-e4d3-4e42-a6dd-4579bc4e53aa is alive
+2026-06-09 23:12:29 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:6 ClientConnectionId: 178ea44a-ed4a-4199-b723-97b1bc166d49 is alive
+2026-06-09 23:12:30 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:2 ClientConnectionId: 02da0799-3ef6-4716-9c68-7307cf58a158 is alive
+2026-06-09 23:12:33 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:10 ClientConnectionId: e1fd6f1b-500a-4102-af48-c497bf24316b is alive
+2026-06-09 23:12:40 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:7 ClientConnectionId: a94c9447-2600-47b4-9cd6-5a722d2c8e79 is alive
+2026-06-09 23:12:43 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:5 ClientConnectionId: cb3703f7-c36c-45bc-b3a2-fdcd368a19bd is alive
+2026-06-09 23:12:43 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:12:43 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:13:13 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:13:13 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:14:10 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-09 23:14:11 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-09 23:14:11 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 23:14:27 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [REGISTER], entitiy=User, user=asdf1
+2026-06-09 23:14:32 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit......................true
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - catalog.........................none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - credentials.....................com.zaxxer.hikari.util.Credentials@57f67ad2
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProvider.............none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProviderClassName....none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - dataSource......................none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName.................none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverride...............none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime...................120000
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - username........................"sa"
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+2026-06-09 23:14:40 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG c.z.hikari.util.DriverDataSource - Loaded driver with class name com.microsoft.sqlserver.jdbc.SQLServerDriver for jdbcUrl=jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (540984d9-ab7e-4565-9e72-b9d178448342)
+2026-06-09 23:14:40 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (540984d9-ab7e-4565-9e72-b9d178448342)
+2026-06-09 23:14:40 [JavaFX Application Thread] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:2 ClientConnectionId: ec5c555b-cde7-4393-9550-220a07da40ad
+2026-06-09 23:14:40 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-09 23:14:40 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1/10, idle=1/10, active=0, waiting=0)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (ff072f9d-fe1f-4edd-bd8a-3dd07570c60d)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (ff072f9d-fe1f-4edd-bd8a-3dd07570c60d)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:3 ClientConnectionId: fe442bcd-9808-4699-ad14-c76c4580cdbe
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=2/10, idle=2/10, active=0, waiting=0)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (7253d34b-4ac3-4779-b7e4-e308feb4e3b5)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (7253d34b-4ac3-4779-b7e4-e308feb4e3b5)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:4 ClientConnectionId: 53ed9d0c-1def-43c6-9ea1-14b3a019dc9a
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=3/10, idle=3/10, active=0, waiting=0)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (4222337d-1ebe-4e4c-b62c-529ea3d512a4)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (4222337d-1ebe-4e4c-b62c-529ea3d512a4)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:5 ClientConnectionId: 2814668a-3eac-4c6a-8342-3f81487b0d34
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=4/10, idle=4/10, active=0, waiting=0)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (040db7e9-169e-4970-853c-1646bbb930cc)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (040db7e9-169e-4970-853c-1646bbb930cc)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:6 ClientConnectionId: c1154b7e-13f7-48f4-9c1a-276d5d56362b
+2026-06-09 23:14:40 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=5/10, idle=5/10, active=0, waiting=0)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (156254be-6565-4572-90d2-f6419bb272f6)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (156254be-6565-4572-90d2-f6419bb272f6)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:7 ClientConnectionId: 9abdfddf-768e-4ce3-b132-859fa9b89723
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=6/10, idle=6/10, active=0, waiting=0)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (a8975fd6-6445-426a-87e1-f3271d93905c)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (a8975fd6-6445-426a-87e1-f3271d93905c)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:8 ClientConnectionId: e9630f12-9aed-44cc-90b3-3c1e93d537d6
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=7/10, idle=7/10, active=0, waiting=0)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (b3d04aa5-1881-4c89-aa3f-549277332891)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (b3d04aa5-1881-4c89-aa3f-549277332891)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:9 ClientConnectionId: bf15cfec-27f5-4297-b1fc-7b1d6f3e5017
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=8/10, idle=8/10, active=0, waiting=0)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (d91046f0-6501-44c0-8be1-405e012c0dd2)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (d91046f0-6501-44c0-8be1-405e012c0dd2)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:10 ClientConnectionId: f4ae52d8-77b5-478f-9819-5321816a4ff6
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=9/10, idle=9/10, active=0, waiting=0)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (eb8dbf29-84c5-4d61-8182-bc733445cea1)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (eb8dbf29-84c5-4d61-8182-bc733445cea1)
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:11 ClientConnectionId: 6e4fbcbe-9c74-4ceb-9288-2ad0fbb2f9d3
+2026-06-09 23:14:40 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:14:47 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [DELETE], entitiy=Entities, user=admin
+2026-06-09 23:14:53 [Thread-4] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 23:15:01 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - Database connection closed
+2026-06-09 23:24:59 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit......................true
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - catalog.........................none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentials.....................com.zaxxer.hikari.util.Credentials@5bc6d563
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProvider.............none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProviderClassName....none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSource......................none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName.................none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverride...............none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime...................120000
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - username........................"sa"
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+2026-06-09 23:25:00 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-09 23:25:00 [Thread-3] DEBUG c.z.hikari.util.DriverDataSource - Loaded driver with class name com.microsoft.sqlserver.jdbc.SQLServerDriver for jdbcUrl=jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (a424fa09-bd5b-42f4-9640-c6cefbf07b11)
+2026-06-09 23:25:00 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (a424fa09-bd5b-42f4-9640-c6cefbf07b11)
+2026-06-09 23:25:00 [Thread-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:2 ClientConnectionId: 4ce5d2ae-9023-428f-946e-4e4e95eaa541
+2026-06-09 23:25:00 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-09 23:25:00 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-09 23:25:00 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1/10, idle=1/10, active=0, waiting=0)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (609da4bb-e6b5-4ca5-b126-fde5fe88ea7e)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (609da4bb-e6b5-4ca5-b126-fde5fe88ea7e)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:3 ClientConnectionId: ac2cdc50-a007-4243-b475-183d9004d2ae
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=2/10, idle=2/10, active=0, waiting=0)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (df1b8b5b-a533-4fbf-bc5e-a1e0ffecc1f2)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (df1b8b5b-a533-4fbf-bc5e-a1e0ffecc1f2)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:4 ClientConnectionId: 7e575603-f2b4-462d-8681-0e0d067cd687
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=3/10, idle=3/10, active=0, waiting=0)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (513274a7-3891-413a-a3cb-4cf2156c9c43)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (513274a7-3891-413a-a3cb-4cf2156c9c43)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:5 ClientConnectionId: f075afa2-5ac0-40fa-b364-1cf441bbc8ac
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=4/10, idle=4/10, active=0, waiting=0)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (8d424037-bccd-461d-b220-0fab1d754fed)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (8d424037-bccd-461d-b220-0fab1d754fed)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:6 ClientConnectionId: bc34cfa2-9c06-456f-9a8d-0298b98aef55
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=5/10, idle=5/10, active=0, waiting=0)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (fc92810f-18fd-44bf-8571-d68d20b92fe1)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (fc92810f-18fd-44bf-8571-d68d20b92fe1)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:7 ClientConnectionId: e076c91e-7372-49eb-b9e0-75b8e5fb26fb
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=6/10, idle=6/10, active=0, waiting=0)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (9fcc32a7-f984-4b87-a37b-31f9d68972c5)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (9fcc32a7-f984-4b87-a37b-31f9d68972c5)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:8 ClientConnectionId: 36fb77e9-a3d6-409a-8fb3-5781986163c9
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=7/10, idle=7/10, active=0, waiting=0)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (84c20990-8bae-478a-b019-91a53e2696d5)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (84c20990-8bae-478a-b019-91a53e2696d5)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:9 ClientConnectionId: d024ef05-9068-4dce-98fb-8a94e9729c8f
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=8/10, idle=8/10, active=0, waiting=0)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (a690b7a8-27eb-46b4-8d20-96065cc8abfa)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (a690b7a8-27eb-46b4-8d20-96065cc8abfa)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:10 ClientConnectionId: 16236f9c-cb5b-4675-b7d1-361e7ad956f8
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=9/10, idle=9/10, active=0, waiting=0)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (2745d547-68f0-488c-b489-c2e6d6aa3e3f)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (2745d547-68f0-488c-b489-c2e6d6aa3e3f)
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:11 ClientConnectionId: 8703fa44-e8f6-496d-bbcd-551cddbd3f08
+2026-06-09 23:25:00 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:25:01 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 23:25:30 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:25:30 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:26:00 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:26:00 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:26:30 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:26:30 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit......................true
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - catalog.........................none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentials.....................com.zaxxer.hikari.util.Credentials@508c2a3a
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProvider.............none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProviderClassName....none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSource......................none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName.................none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverride...............none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime...................120000
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - username........................"sa"
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+2026-06-09 23:33:57 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-09 23:33:57 [Thread-3] DEBUG c.z.hikari.util.DriverDataSource - Loaded driver with class name com.microsoft.sqlserver.jdbc.SQLServerDriver for jdbcUrl=jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:33:57 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (a5c4f5d7-739b-4453-8022-f9c55f8cfaa1)
+2026-06-09 23:33:58 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (a5c4f5d7-739b-4453-8022-f9c55f8cfaa1)
+2026-06-09 23:33:58 [Thread-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 703397ff-33fc-4fa0-901b-6de70402963b
+2026-06-09 23:33:58 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-09 23:33:58 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1/10, idle=0/10, active=1, waiting=0)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (abdf23bb-3145-475b-a4fc-958d20786966)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (abdf23bb-3145-475b-a4fc-958d20786966)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:2 ClientConnectionId: 0343c226-3b67-4e55-910c-ed60d6ce386e
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=2/10, idle=1/10, active=1, waiting=0)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (4e6216da-4af9-472b-8a90-0be84d257d5d)
+2026-06-09 23:33:58 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (4e6216da-4af9-472b-8a90-0be84d257d5d)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:3 ClientConnectionId: 13b54325-8e79-48e6-9c10-226830aac5fa
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=3/10, idle=2/10, active=1, waiting=0)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (0e32743e-d632-4a69-8508-bc41dd6df692)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (0e32743e-d632-4a69-8508-bc41dd6df692)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:4 ClientConnectionId: 4f8b092a-bd65-440f-a277-383b8c275bbf
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=4/10, idle=4/10, active=0, waiting=0)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (2a69c703-2a7f-4c03-b42a-30fe459c2cfe)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (2a69c703-2a7f-4c03-b42a-30fe459c2cfe)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:5 ClientConnectionId: 657c96ea-a439-44bf-9ee0-aa8d078c62f8
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=5/10, idle=5/10, active=0, waiting=0)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (a3a6c450-31bc-47b0-9d43-222ec59b9372)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (a3a6c450-31bc-47b0-9d43-222ec59b9372)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:6 ClientConnectionId: 1bcecf76-5ce9-42d2-b4c1-56197356c087
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=6/10, idle=6/10, active=0, waiting=0)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (8145dc83-42aa-4de2-9d98-4df822266980)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (8145dc83-42aa-4de2-9d98-4df822266980)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:7 ClientConnectionId: 44f4f160-0868-40e1-ada8-899ec82ea59e
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=7/10, idle=7/10, active=0, waiting=0)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (93df47ec-e2c9-49ac-9e5d-6040869c45fa)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (93df47ec-e2c9-49ac-9e5d-6040869c45fa)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:8 ClientConnectionId: 70d30b29-8d48-4097-8f0a-fca36aa38303
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=8/10, idle=8/10, active=0, waiting=0)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (c3e67bac-82b0-432e-9500-3880e959907b)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (c3e67bac-82b0-432e-9500-3880e959907b)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:9 ClientConnectionId: 1706b050-2a57-443f-adc8-fc39892bce74
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=9/10, idle=9/10, active=0, waiting=0)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (d01961d3-fb15-4bef-9d7b-de6862750396)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (d01961d3-fb15-4bef-9d7b-de6862750396)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:10 ClientConnectionId: 54380dc8-6721-44e2-8d17-4ac876abe2fd
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:33:58 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:33:59 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-09 23:34:00 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 23:34:05 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-09 23:34:05 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Before shutdown stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:34:05 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:1 ClientConnectionId: 703397ff-33fc-4fa0-901b-6de70402963b: (connection evicted)
+2026-06-09 23:34:05 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:2 ClientConnectionId: 0343c226-3b67-4e55-910c-ed60d6ce386e: (connection evicted)
+2026-06-09 23:34:05 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:3 ClientConnectionId: 13b54325-8e79-48e6-9c10-226830aac5fa: (connection evicted)
+2026-06-09 23:34:05 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:4 ClientConnectionId: 4f8b092a-bd65-440f-a277-383b8c275bbf: (connection evicted)
+2026-06-09 23:34:05 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:5 ClientConnectionId: 657c96ea-a439-44bf-9ee0-aa8d078c62f8: (connection evicted)
+2026-06-09 23:34:05 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:6 ClientConnectionId: 1bcecf76-5ce9-42d2-b4c1-56197356c087: (connection evicted)
+2026-06-09 23:34:05 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:7 ClientConnectionId: 44f4f160-0868-40e1-ada8-899ec82ea59e: (connection evicted)
+2026-06-09 23:34:05 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:8 ClientConnectionId: 70d30b29-8d48-4097-8f0a-fca36aa38303: (connection evicted)
+2026-06-09 23:34:05 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:9 ClientConnectionId: 1706b050-2a57-443f-adc8-fc39892bce74: (connection evicted)
+2026-06-09 23:34:05 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:10 ClientConnectionId: 54380dc8-6721-44e2-8d17-4ac876abe2fd: (connection evicted)
+2026-06-09 23:34:05 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After  shutdown stats (total=0/10, idle=0/10, active=0, waiting=0)
+2026-06-09 23:34:05 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit......................true
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - catalog.........................none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentials.....................com.zaxxer.hikari.util.Credentials@f20a971
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProvider.............none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProviderClassName....none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSource......................none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName.................none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverride...............none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime...................120000
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - username........................"sa"
+2026-06-09 23:37:05 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+2026-06-09 23:37:05 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-09 23:37:06 [Thread-3] DEBUG c.z.hikari.util.DriverDataSource - Loaded driver with class name com.microsoft.sqlserver.jdbc.SQLServerDriver for jdbcUrl=jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:37:06 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (316a4bbf-1150-4f8a-a66c-ab3100b4e0b2)
+2026-06-09 23:37:06 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (316a4bbf-1150-4f8a-a66c-ab3100b4e0b2)
+2026-06-09 23:37:06 [Thread-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 33fc8fe7-d4a7-4dff-bc31-5952d7994a22
+2026-06-09 23:37:06 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-09 23:37:06 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1/10, idle=0/10, active=1, waiting=0)
+2026-06-09 23:37:06 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (8ce9a396-9d96-426d-b1f0-60c0abf30808)
+2026-06-09 23:37:06 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (8ce9a396-9d96-426d-b1f0-60c0abf30808)
+2026-06-09 23:37:06 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:2 ClientConnectionId: f2206dbf-3a09-49f3-9445-c4348e9eacf4
+2026-06-09 23:37:06 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=2/10, idle=1/10, active=1, waiting=0)
+2026-06-09 23:37:06 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (dc020bb1-785f-4cda-ba98-2fa26a5620ac)
+2026-06-09 23:37:06 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Database schema initialized
+2026-06-09 23:37:06 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (dc020bb1-785f-4cda-ba98-2fa26a5620ac)
+2026-06-09 23:37:06 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:3 ClientConnectionId: 6d76d360-3aa5-4827-9276-4705bf46426f
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=3/10, idle=2/10, active=1, waiting=0)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (15373604-4a9f-49ec-aaec-faef5e1a9ab6)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (15373604-4a9f-49ec-aaec-faef5e1a9ab6)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:4 ClientConnectionId: 0bc9cd2d-474c-45e4-a8d0-c31a48a60431
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=4/10, idle=4/10, active=0, waiting=0)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (e67978da-65fd-422d-a626-70f9287dce4c)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (e67978da-65fd-422d-a626-70f9287dce4c)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:5 ClientConnectionId: f5b0af6e-7080-4d8e-b1dc-fd7f225d0c0e
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=5/10, idle=5/10, active=0, waiting=0)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (617993e0-a90f-4aa3-a397-5b1be5d49235)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (617993e0-a90f-4aa3-a397-5b1be5d49235)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:6 ClientConnectionId: 655b0238-35eb-44e2-8cd9-2aacd3038e03
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=6/10, idle=6/10, active=0, waiting=0)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (21a776dc-5711-48f0-b6be-1465af463fd2)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (21a776dc-5711-48f0-b6be-1465af463fd2)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:7 ClientConnectionId: bb45d76a-a494-44d6-88ae-6661f93ce72f
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=7/10, idle=7/10, active=0, waiting=0)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (3240f91b-3c3a-496a-9095-b4f9bed5d0d2)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (3240f91b-3c3a-496a-9095-b4f9bed5d0d2)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:8 ClientConnectionId: d9a976d7-3f1a-46a0-9c51-33bd72407009
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=8/10, idle=8/10, active=0, waiting=0)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (3e13cd89-bad3-4df5-b060-593e7786f07d)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (3e13cd89-bad3-4df5-b060-593e7786f07d)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:9 ClientConnectionId: 7ea00748-b020-43f7-8cd7-a509a611e66a
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=9/10, idle=9/10, active=0, waiting=0)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (29d4984f-17f2-46dd-b91f-539dbd645b9e)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (29d4984f-17f2-46dd-b91f-539dbd645b9e)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:10 ClientConnectionId: d090336e-9c1c-4247-bc86-98c69dc49570
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:37:07 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:37:07 [Thread-3] INFO  hr.algebra.util.LoggingUtil - Admin successfully inserted
+2026-06-09 23:37:08 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 23:37:16 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [REGISTER], entitiy=User, user=asdf1
+2026-06-09 23:37:19 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-09 23:37:35 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 23:37:36 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:37:36 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:38:06 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:38:06 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:38:36 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:38:36 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:38:46 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:2 ClientConnectionId: f2206dbf-3a09-49f3-9445-c4348e9eacf4 is alive
+2026-06-09 23:38:50 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:4 ClientConnectionId: 0bc9cd2d-474c-45e4-a8d0-c31a48a60431 is alive
+2026-06-09 23:38:55 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:10 ClientConnectionId: d090336e-9c1c-4247-bc86-98c69dc49570 is alive
+2026-06-09 23:38:56 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:5 ClientConnectionId: f5b0af6e-7080-4d8e-b1dc-fd7f225d0c0e is alive
+2026-06-09 23:38:56 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:6 ClientConnectionId: 655b0238-35eb-44e2-8cd9-2aacd3038e03 is alive
+2026-06-09 23:38:57 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:7 ClientConnectionId: bb45d76a-a494-44d6-88ae-6661f93ce72f is alive
+2026-06-09 23:38:57 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:1 ClientConnectionId: 33fc8fe7-d4a7-4dff-bc31-5952d7994a22 is alive
+2026-06-09 23:39:00 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:8 ClientConnectionId: d9a976d7-3f1a-46a0-9c51-33bd72407009 is alive
+2026-06-09 23:39:04 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:9 ClientConnectionId: 7ea00748-b020-43f7-8cd7-a509a611e66a is alive
+2026-06-09 23:39:06 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:3 ClientConnectionId: 6d76d360-3aa5-4827-9276-4705bf46426f is alive
+2026-06-09 23:39:06 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:39:06 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:39:36 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:39:36 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:40:06 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:40:06 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:40:26 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:2 ClientConnectionId: f2206dbf-3a09-49f3-9445-c4348e9eacf4 is alive
+2026-06-09 23:40:34 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:4 ClientConnectionId: 0bc9cd2d-474c-45e4-a8d0-c31a48a60431 is alive
+2026-06-09 23:40:36 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:40:36 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:40:43 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:10 ClientConnectionId: d090336e-9c1c-4247-bc86-98c69dc49570 is alive
+2026-06-09 23:40:45 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:5 ClientConnectionId: f5b0af6e-7080-4d8e-b1dc-fd7f225d0c0e is alive
+2026-06-09 23:40:46 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:6 ClientConnectionId: 655b0238-35eb-44e2-8cd9-2aacd3038e03 is alive
+2026-06-09 23:40:46 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:7 ClientConnectionId: bb45d76a-a494-44d6-88ae-6661f93ce72f is alive
+2026-06-09 23:40:47 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:1 ClientConnectionId: 33fc8fe7-d4a7-4dff-bc31-5952d7994a22 is alive
+2026-06-09 23:40:53 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:8 ClientConnectionId: d9a976d7-3f1a-46a0-9c51-33bd72407009 is alive
+2026-06-09 23:41:01 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:9 ClientConnectionId: 7ea00748-b020-43f7-8cd7-a509a611e66a is alive
+2026-06-09 23:41:05 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - keepalive: connection ConnectionID:3 ClientConnectionId: 6d76d360-3aa5-4827-9276-4705bf46426f is alive
+2026-06-09 23:41:06 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:41:06 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit......................true
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - catalog.........................none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentials.....................com.zaxxer.hikari.util.Credentials@154d040
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProvider.............none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProviderClassName....none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSource......................none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName.................none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverride...............none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime...................120000
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - username........................"sa"
+2026-06-09 23:41:20 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+2026-06-09 23:41:20 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-09 23:41:21 [Thread-3] DEBUG c.z.hikari.util.DriverDataSource - Loaded driver with class name com.microsoft.sqlserver.jdbc.SQLServerDriver for jdbcUrl=jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:41:21 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (dc301310-ee73-4ce2-89fc-c082736f3f43)
+2026-06-09 23:41:21 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (dc301310-ee73-4ce2-89fc-c082736f3f43)
+2026-06-09 23:41:21 [Thread-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 9936c679-db27-45a7-9809-e8c2e7df6063
+2026-06-09 23:41:21 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-09 23:41:21 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 23:41:21 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 23:41:21 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1/10, idle=1/10, active=0, waiting=0)
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (a2a884b1-8f25-4fec-9516-d4f9a5ae2a2c)
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (a2a884b1-8f25-4fec-9516-d4f9a5ae2a2c)
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:2 ClientConnectionId: 4d3fc9ce-c6fe-494d-acf1-379e8a95c472
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=2/10, idle=2/10, active=0, waiting=0)
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (7d640814-6216-4a09-8a2a-e3a809d7944d)
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (7d640814-6216-4a09-8a2a-e3a809d7944d)
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:3 ClientConnectionId: ed0a225f-5958-49b3-bd7b-d19ac2c19aba
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=3/10, idle=3/10, active=0, waiting=0)
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (7ada0c81-bc50-4f73-908c-3f48426df3b6)
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (7ada0c81-bc50-4f73-908c-3f48426df3b6)
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:4 ClientConnectionId: 6e7de4ca-326b-47e2-abaa-b1aca9dbf844
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=4/10, idle=4/10, active=0, waiting=0)
+2026-06-09 23:41:21 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (d58be4f2-8372-402c-ac7b-477d2ae45909)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (d58be4f2-8372-402c-ac7b-477d2ae45909)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:5 ClientConnectionId: 2b5ea0b3-0e52-47b1-b345-e3b073493bae
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=5/10, idle=5/10, active=0, waiting=0)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (7d71484d-0875-4805-815f-4bbd048f9a46)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (7d71484d-0875-4805-815f-4bbd048f9a46)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:6 ClientConnectionId: 75c8fbaf-315b-4354-8785-0adc29980093
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=6/10, idle=6/10, active=0, waiting=0)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (ad89aaca-657a-4b41-8d51-19ecfe95bf45)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (ad89aaca-657a-4b41-8d51-19ecfe95bf45)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:7 ClientConnectionId: eea6f3f1-c44d-4293-8d63-6ecc5897d5ee
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=7/10, idle=7/10, active=0, waiting=0)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (b11a3145-6fe2-4048-a3c3-cedfca348738)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (b11a3145-6fe2-4048-a3c3-cedfca348738)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:8 ClientConnectionId: 3786f9ac-685e-40b1-b350-a4cd3512b3f6
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=8/10, idle=8/10, active=0, waiting=0)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (4f4e8ef6-4c9a-4ccf-8dbd-62fbb5b86549)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (4f4e8ef6-4c9a-4ccf-8dbd-62fbb5b86549)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:9 ClientConnectionId: d3149b05-6790-4f93-a562-1bb663b852e8
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=9/10, idle=9/10, active=0, waiting=0)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (ae410416-bb08-434e-ba3c-5666d765f6d2)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (ae410416-bb08-434e-ba3c-5666d765f6d2)
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:10 ClientConnectionId: f43e4019-369b-40d5-8a1e-f55fecddaa7c
+2026-06-09 23:41:22 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:41:23 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 23:41:23 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-09 23:41:31 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 23:41:35 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-09 23:41:35 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Before shutdown stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:41:35 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:1 ClientConnectionId: 9936c679-db27-45a7-9809-e8c2e7df6063: (connection evicted)
+2026-06-09 23:41:35 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:2 ClientConnectionId: 4d3fc9ce-c6fe-494d-acf1-379e8a95c472: (connection evicted)
+2026-06-09 23:41:35 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:3 ClientConnectionId: ed0a225f-5958-49b3-bd7b-d19ac2c19aba: (connection evicted)
+2026-06-09 23:41:35 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:4 ClientConnectionId: 6e7de4ca-326b-47e2-abaa-b1aca9dbf844: (connection evicted)
+2026-06-09 23:41:35 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:5 ClientConnectionId: 2b5ea0b3-0e52-47b1-b345-e3b073493bae: (connection evicted)
+2026-06-09 23:41:35 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:6 ClientConnectionId: 75c8fbaf-315b-4354-8785-0adc29980093: (connection evicted)
+2026-06-09 23:41:35 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:7 ClientConnectionId: eea6f3f1-c44d-4293-8d63-6ecc5897d5ee: (connection evicted)
+2026-06-09 23:41:35 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:8 ClientConnectionId: 3786f9ac-685e-40b1-b350-a4cd3512b3f6: (connection evicted)
+2026-06-09 23:41:35 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:9 ClientConnectionId: d3149b05-6790-4f93-a562-1bb663b852e8: (connection evicted)
+2026-06-09 23:41:35 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:10 ClientConnectionId: f43e4019-369b-40d5-8a1e-f55fecddaa7c: (connection evicted)
+2026-06-09 23:41:35 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After  shutdown stats (total=0/10, idle=0/10, active=0, waiting=0)
+2026-06-09 23:41:35 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit......................true
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - catalog.........................none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentials.....................com.zaxxer.hikari.util.Credentials@55aaed3e
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProvider.............none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProviderClassName....none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSource......................none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName.................none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverride...............none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime...................120000
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - username........................"sa"
+2026-06-09 23:42:12 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+2026-06-09 23:42:12 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-09 23:42:13 [Thread-3] DEBUG c.z.hikari.util.DriverDataSource - Loaded driver with class name com.microsoft.sqlserver.jdbc.SQLServerDriver for jdbcUrl=jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:42:13 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (49883f23-44ce-4dfe-82ed-a10f022dbbe6)
+2026-06-09 23:42:13 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (49883f23-44ce-4dfe-82ed-a10f022dbbe6)
+2026-06-09 23:42:13 [Thread-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: 091d03ce-bd1d-452d-9f12-2241e6301d33
+2026-06-09 23:42:13 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-09 23:42:13 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 23:42:13 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 23:42:13 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1/10, idle=1/10, active=0, waiting=0)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (100b1331-b68c-4ddb-8e84-8a71eeac52a4)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (100b1331-b68c-4ddb-8e84-8a71eeac52a4)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:2 ClientConnectionId: ec9827d4-9023-480d-a3fd-a23a5b9af92f
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=2/10, idle=2/10, active=0, waiting=0)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (d34a4215-dcc9-4e65-9940-eb284f6abd0f)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (d34a4215-dcc9-4e65-9940-eb284f6abd0f)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:3 ClientConnectionId: 1ec1f577-0b96-460a-b0ed-20e7d1b8e9af
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=3/10, idle=3/10, active=0, waiting=0)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (b1e8a2e3-7e84-4334-b1a5-6a4bc1f8a1a3)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (b1e8a2e3-7e84-4334-b1a5-6a4bc1f8a1a3)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:4 ClientConnectionId: f7e05c2e-9900-4ba7-a065-0f8e7319d1fa
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=4/10, idle=4/10, active=0, waiting=0)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (58812db6-f357-43f9-8936-582e92642a94)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (58812db6-f357-43f9-8936-582e92642a94)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:5 ClientConnectionId: f3225a3d-e4e3-4fc1-b385-ef73f2609e10
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=5/10, idle=5/10, active=0, waiting=0)
+2026-06-09 23:42:13 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (12063ae1-7f0b-4d19-ae01-9bc362f89931)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (12063ae1-7f0b-4d19-ae01-9bc362f89931)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:6 ClientConnectionId: fb771559-57db-41eb-943c-83684d2506ea
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=6/10, idle=6/10, active=0, waiting=0)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (f2e4c52b-5c73-4613-9224-f60bf295dfbe)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (f2e4c52b-5c73-4613-9224-f60bf295dfbe)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:7 ClientConnectionId: 4e23b39d-10ad-4ea8-98e3-cfd7c0121337
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=7/10, idle=7/10, active=0, waiting=0)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (a9db3424-ad1d-4c13-9303-a2dbd46f8ae4)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (a9db3424-ad1d-4c13-9303-a2dbd46f8ae4)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:8 ClientConnectionId: d92001b2-a882-4043-88a0-8824010c4fd1
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=8/10, idle=8/10, active=0, waiting=0)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (35c27f8a-a1bb-4394-9981-04f9d916e059)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (35c27f8a-a1bb-4394-9981-04f9d916e059)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:9 ClientConnectionId: 76ec57a1-ba1d-4c1e-a7ee-ab6f91a2785b
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=9/10, idle=9/10, active=0, waiting=0)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (bb7b4c5c-323f-4f8d-9444-634cf59674e4)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (bb7b4c5c-323f-4f8d-9444-634cf59674e4)
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:10 ClientConnectionId: 0418a380-62e6-4ebe-96da-920c17eaeae4
+2026-06-09 23:42:14 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:42:15 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 23:42:15 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=asdf1
+2026-06-09 23:42:20 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 23:42:25 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-09 23:42:25 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Before shutdown stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:42:26 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:1 ClientConnectionId: 091d03ce-bd1d-452d-9f12-2241e6301d33: (connection evicted)
+2026-06-09 23:42:26 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:2 ClientConnectionId: ec9827d4-9023-480d-a3fd-a23a5b9af92f: (connection evicted)
+2026-06-09 23:42:26 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:3 ClientConnectionId: 1ec1f577-0b96-460a-b0ed-20e7d1b8e9af: (connection evicted)
+2026-06-09 23:42:26 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:4 ClientConnectionId: f7e05c2e-9900-4ba7-a065-0f8e7319d1fa: (connection evicted)
+2026-06-09 23:42:26 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:5 ClientConnectionId: f3225a3d-e4e3-4fc1-b385-ef73f2609e10: (connection evicted)
+2026-06-09 23:42:26 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:6 ClientConnectionId: fb771559-57db-41eb-943c-83684d2506ea: (connection evicted)
+2026-06-09 23:42:26 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:7 ClientConnectionId: 4e23b39d-10ad-4ea8-98e3-cfd7c0121337: (connection evicted)
+2026-06-09 23:42:26 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:8 ClientConnectionId: d92001b2-a882-4043-88a0-8824010c4fd1: (connection evicted)
+2026-06-09 23:42:26 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:9 ClientConnectionId: 76ec57a1-ba1d-4c1e-a7ee-ab6f91a2785b: (connection evicted)
+2026-06-09 23:42:26 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:10 ClientConnectionId: 0418a380-62e6-4ebe-96da-920c17eaeae4: (connection evicted)
+2026-06-09 23:42:26 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After  shutdown stats (total=0/10, idle=0/10, active=0, waiting=0)
+2026-06-09 23:42:26 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit......................true
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - catalog.........................none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentials.....................com.zaxxer.hikari.util.Credentials@154d040
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProvider.............none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProviderClassName....none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSource......................none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName.................none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverride...............none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime...................120000
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - username........................"sa"
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+2026-06-09 23:43:25 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-09 23:43:25 [Thread-3] DEBUG c.z.hikari.util.DriverDataSource - Loaded driver with class name com.microsoft.sqlserver.jdbc.SQLServerDriver for jdbcUrl=jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:43:25 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (464a428c-085d-41d3-91fe-02a1421dcaff)
+2026-06-09 23:43:26 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (464a428c-085d-41d3-91fe-02a1421dcaff)
+2026-06-09 23:43:26 [Thread-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: b1d0bb83-d254-45c4-8efb-6f829233fbd5
+2026-06-09 23:43:26 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-09 23:43:26 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 23:43:26 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1/10, idle=0/10, active=1, waiting=0)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (77ba7101-c2ea-4e86-b0c7-de79cb071396)
+2026-06-09 23:43:26 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (77ba7101-c2ea-4e86-b0c7-de79cb071396)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:2 ClientConnectionId: a9e4a016-4bb9-40f9-9658-e9d0d5f77e49
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=2/10, idle=2/10, active=0, waiting=0)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (1cb55e20-6cae-4874-9776-52e703286dad)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (1cb55e20-6cae-4874-9776-52e703286dad)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:3 ClientConnectionId: 0c5d4596-923e-49a5-bb60-435863a182a7
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=3/10, idle=3/10, active=0, waiting=0)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (9a751e98-84bb-4d77-86de-63e8810f028d)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (9a751e98-84bb-4d77-86de-63e8810f028d)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:4 ClientConnectionId: 68cb3bce-a725-41cb-a15c-7dbe9e134080
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=4/10, idle=4/10, active=0, waiting=0)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (dd8789e3-953f-442f-be94-2300e509169f)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (dd8789e3-953f-442f-be94-2300e509169f)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:5 ClientConnectionId: 6c764abc-c09e-4333-b48d-f43d4c04aca1
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=5/10, idle=5/10, active=0, waiting=0)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (b481f23c-1b1d-45cf-9a83-8c7ab401dbd6)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (b481f23c-1b1d-45cf-9a83-8c7ab401dbd6)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:6 ClientConnectionId: de9b9418-be2a-4177-92d1-1a8724f815ab
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=6/10, idle=6/10, active=0, waiting=0)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (816098e9-b31a-4127-9317-f852456887d3)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (816098e9-b31a-4127-9317-f852456887d3)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:7 ClientConnectionId: 60a597aa-1b04-4988-9218-599c015d6be5
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=7/10, idle=7/10, active=0, waiting=0)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (12b9bc20-4f0d-46aa-8f56-31e5555a4c5b)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (12b9bc20-4f0d-46aa-8f56-31e5555a4c5b)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:8 ClientConnectionId: c4c8039b-47c8-487a-960f-3f4e9db095da
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=8/10, idle=8/10, active=0, waiting=0)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (0c89e6c7-ee2b-4eb9-8ad5-94c6437a54b2)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (0c89e6c7-ee2b-4eb9-8ad5-94c6437a54b2)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:9 ClientConnectionId: 9c9ad360-6f1d-45d7-826d-a1e0dc437cd8
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=9/10, idle=9/10, active=0, waiting=0)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (cf9e69fc-dd28-44ef-bec6-3547a2a6b6f4)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (cf9e69fc-dd28-44ef-bec6-3547a2a6b6f4)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:10 ClientConnectionId: 0b30e893-7072-453a-840b-d9e67466a8db
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:43:26 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Connection not added, stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:43:27 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 23:43:32 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 23:43:38 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-06-09 23:43:38 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Before shutdown stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:43:38 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:1 ClientConnectionId: b1d0bb83-d254-45c4-8efb-6f829233fbd5: (connection evicted)
+2026-06-09 23:43:38 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:2 ClientConnectionId: a9e4a016-4bb9-40f9-9658-e9d0d5f77e49: (connection evicted)
+2026-06-09 23:43:38 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:3 ClientConnectionId: 0c5d4596-923e-49a5-bb60-435863a182a7: (connection evicted)
+2026-06-09 23:43:38 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:4 ClientConnectionId: 68cb3bce-a725-41cb-a15c-7dbe9e134080: (connection evicted)
+2026-06-09 23:43:38 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:5 ClientConnectionId: 6c764abc-c09e-4333-b48d-f43d4c04aca1: (connection evicted)
+2026-06-09 23:43:38 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:6 ClientConnectionId: de9b9418-be2a-4177-92d1-1a8724f815ab: (connection evicted)
+2026-06-09 23:43:38 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:7 ClientConnectionId: 60a597aa-1b04-4988-9218-599c015d6be5: (connection evicted)
+2026-06-09 23:43:38 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:8 ClientConnectionId: c4c8039b-47c8-487a-960f-3f4e9db095da: (connection evicted)
+2026-06-09 23:43:38 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:9 ClientConnectionId: 9c9ad360-6f1d-45d7-826d-a1e0dc437cd8: (connection evicted)
+2026-06-09 23:43:38 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Closing connection ConnectionID:10 ClientConnectionId: 0b30e893-7072-453a-840b-d9e67466a8db: (connection evicted)
+2026-06-09 23:43:38 [JavaFX Application Thread] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After  shutdown stats (total=0/10, idle=0/10, active=0, waiting=0)
+2026-06-09 23:43:38 [JavaFX Application Thread] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - HikariPool-1 - configuration:
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - allowPoolSuspension.............false
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - autoCommit......................true
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - catalog.........................none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionInitSql...............none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTestQuery.............none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - connectionTimeout...............30000
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentials.....................com.zaxxer.hikari.util.Credentials@154d040
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProvider.............none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - credentialsProviderClassName....none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSource......................none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceClassName.............none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceJNDI..................none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - dataSourceProperties............{password=<masked>}
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - driverClassName.................none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverride...............none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - exceptionOverrideClassName......none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckProperties...........{}
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - healthCheckRegistry.............none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - idleTimeout.....................600000
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - initializationFailTimeout.......1
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - isolateInternalQueries..........false
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - jdbcUrl.........................jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - keepaliveTime...................120000
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - leakDetectionThreshold..........0
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maxLifetime.....................1800000
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - maximumPoolSize.................10
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricRegistry..................none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - metricsTrackerFactory...........none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - minimumIdle.....................10
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - password........................<masked>
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - poolName........................"HikariPool-1"
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - readOnly........................false
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - registerMbeans..................false
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - scheduledExecutor...............none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - schema..........................none
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - threadFactory...................internal
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - transactionIsolation............default
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - username........................"sa"
+2026-06-09 23:43:55 [Thread-3] DEBUG com.zaxxer.hikari.HikariConfig - validationTimeout...............5000
+2026-06-09 23:43:55 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-06-09 23:43:56 [Thread-3] DEBUG c.z.hikari.util.DriverDataSource - Loaded driver with class name com.microsoft.sqlserver.jdbc.SQLServerDriver for jdbcUrl=jdbc:sqlserver://localhost:1433;databaseName=HeadphonesDB;encrypt=false;trustServerCertificate=true
+2026-06-09 23:43:56 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (c86966a5-b1f2-4341-b8fe-6a18cf556756)
+2026-06-09 23:43:56 [Thread-3] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (c86966a5-b1f2-4341-b8fe-6a18cf556756)
+2026-06-09 23:43:56 [Thread-3] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:1 ClientConnectionId: be555b75-3783-445e-8e56-69d892bc13db
+2026-06-09 23:43:56 [Thread-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-06-09 23:43:56 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Command already executed] CAUSE = [com.microsoft.sqlserver.jdbc.SQLServerException: There is already an object named 'AdminActivities' in the database.]
+2026-06-09 23:43:56 [Thread-3] ERROR hr.algebra.util.LoggingUtil - [Admin already exists] CAUSE = [hr.algebra.exceptions.EntityExistantException: Admin already exists]
+2026-06-09 23:43:56 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=1/10, idle=1/10, active=0, waiting=0)
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (1da2b4b3-4501-4b7f-8e95-8da668a5a439)
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (1da2b4b3-4501-4b7f-8e95-8da668a5a439)
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:2 ClientConnectionId: 8b5d44d1-6b40-4bab-b499-779e57976653
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=2/10, idle=2/10, active=0, waiting=0)
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (04e5669e-7d39-4e0c-b22c-c322a45044d0)
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (04e5669e-7d39-4e0c-b22c-c322a45044d0)
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:3 ClientConnectionId: 2d15a625-d969-4986-9db4-26ff596047bc
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=3/10, idle=3/10, active=0, waiting=0)
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (fd3a2691-6c8e-4157-b42f-e96ec588aba1)
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (fd3a2691-6c8e-4157-b42f-e96ec588aba1)
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:4 ClientConnectionId: c59f9548-80f0-40be-992b-ee609395bc37
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=4/10, idle=4/10, active=0, waiting=0)
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (541b43ed-4604-493e-859e-b5c887b54fbd)
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (541b43ed-4604-493e-859e-b5c887b54fbd)
+2026-06-09 23:43:56 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:5 ClientConnectionId: e7ee152a-35f6-4c16-9b4e-7041ac61a8fb
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=5/10, idle=5/10, active=0, waiting=0)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (148417e1-14b9-4613-906a-231c22feea45)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (148417e1-14b9-4613-906a-231c22feea45)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:6 ClientConnectionId: 87b21cdc-6c47-45f4-a5d0-7217ca060aac
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=6/10, idle=6/10, active=0, waiting=0)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (3aaf6b01-8432-4134-bf52-43951d7e6dac)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (3aaf6b01-8432-4134-bf52-43951d7e6dac)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:7 ClientConnectionId: 4334ad91-fc3f-4d3c-9176-9eda61e8ce70
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=7/10, idle=7/10, active=0, waiting=0)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (657a7381-e60b-45cc-9d49-e1c42bceab5e)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (657a7381-e60b-45cc-9d49-e1c42bceab5e)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:8 ClientConnectionId: ae01878c-9d3b-452f-afda-5c321e223f4e
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=8/10, idle=8/10, active=0, waiting=0)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (d875d8d5-30cc-494e-bcf5-da0dfb3461a4)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (d875d8d5-30cc-494e-bcf5-da0dfb3461a4)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:9 ClientConnectionId: 4534749c-6f82-47cb-b95f-aa5b6da57301
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=9/10, idle=9/10, active=0, waiting=0)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Attempting to create/setup new connection (2fbe6318-30bf-4b94-8424-ed4280f49df4)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Established new connection (2fbe6318-30bf-4b94-8424-ed4280f49df4)
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection ConnectionID:10 ClientConnectionId: c352ab09-767d-4079-a201-64f15c3b085b
+2026-06-09 23:43:57 [HikariPool-1:connection-adder] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - After adding stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:43:57 [Thread-3] INFO  hr.algebra.util.LoggingUtil - API data successfully inserted
+2026-06-09 23:43:59 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [LOGIN], entitiy=User, user=admin
+2026-06-09 23:44:06 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE], entitiy=User rights, user=admin
+2026-06-09 23:44:06 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE], entitiy=User rights, user=admin
+2026-06-09 23:44:07 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE], entitiy=User rights, user=admin
+2026-06-09 23:44:07 [JavaFX Application Thread] INFO  hr.algebra.util.LoggingUtil - [UPDATE], entitiy=User rights, user=admin
+2026-06-09 23:44:26 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:44:26 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.
+2026-06-09 23:44:56 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0)
+2026-06-09 23:44:56 [HikariPool-1:housekeeper] DEBUG com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled.

@@ -8,14 +8,13 @@ import hr.algebra.util.LoggingUtil;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Predicate;
 
 public class BrandService {
     private static final BrandService INSTANCE=new BrandService();
     private final BrandRepository repo= RepositoryFactory.getBrandRespository();
     public static BrandService getInstance(){return INSTANCE;}
-    private String sqlError="SQL error";
+    private static final String SQL_ERROR ="SQL error";
     private BrandService() {}
 
     public List<Brand> getAllBrands(){
@@ -23,25 +22,17 @@ public class BrandService {
             return repo.getAll();
         }
         catch (SQLException e){
-            LoggingUtil.logError(sqlError, e);
+            LoggingUtil.logError(SQL_ERROR, e);
             throw new CannotPerformActionException("Cannot execute to get brands");
         }
     }
-    public Optional<Brand> getBrandById(int id){
-        try{
-            return repo.getById(id);
-        }
-        catch (SQLException e){
-            LoggingUtil.logError(sqlError, e);
-            throw new CannotPerformActionException("Cannot execute to get brand");
-        }
-    }
+
     public void save(Brand brand) {
         try{
             repo.save(brand);
         }
         catch (SQLException e){
-            LoggingUtil.logError(sqlError, e);
+            LoggingUtil.logError(SQL_ERROR, e);
             throw new CannotPerformActionException("Cannot execute to save brand");
         }
     }
@@ -50,7 +41,7 @@ public class BrandService {
             repo.delete(id);
         }
         catch (SQLException e){
-            LoggingUtil.logError(sqlError, e);
+            LoggingUtil.logError(SQL_ERROR, e);
             throw new CannotPerformActionException("Cannot execute to delete brand");
         }
     }
@@ -69,7 +60,7 @@ public class BrandService {
                     .toList();
         }
         catch (SQLException e){
-            LoggingUtil.logError(sqlError, e);
+            LoggingUtil.logError(SQL_ERROR, e);
             throw new CannotPerformActionException("Cannot filter brands at the moment");
         }
 
@@ -83,7 +74,7 @@ public class BrandService {
                     .anyMatch(b->b.getName().equalsIgnoreCase(name));
         }
         catch (SQLException e){
-            LoggingUtil.logError(sqlError, e);
+            LoggingUtil.logError(SQL_ERROR, e);
             throw new CannotPerformActionException("Cannot execute to get brands");
         }
 

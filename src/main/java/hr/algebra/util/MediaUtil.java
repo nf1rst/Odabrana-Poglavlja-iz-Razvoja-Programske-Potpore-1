@@ -44,6 +44,7 @@ public class MediaUtil {
 
     //https://stackoverflow.com/questions/53520358/delete-image-from-the-folder
     //https://stackoverflow.com/questions/20281835/how-to-delete-a-folder-with-files-using-java - jako korisno!!!!!!!!!!!!!!!!!
+    //https://youtu.be/Tpwnvi-3pGw?si=lR5OVlHLwOZUVEwY
     public static void deleteImagesInIntelliJ(){
         String imageDir = "src/main/resources/hr/algebra/assets/images/userInput";
         File file= new  File(imageDir);

@@ -27,7 +27,7 @@ public class UserController extends BaseController {
         statusLabel.setText("");
         imageStatusLabel.setText("");
         onUserSet();
-        MediaUtil.showPlaceholder(profileImageView);
+        MediaUtil.showImage(profileImageView, "src/main/resources/hr/algebra/assets/images/noPicture.png");
     }
 
     @Override

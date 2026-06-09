@@ -1,37 +1,45 @@
 package hr.algebra.database;
+
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import hr.algebra.exceptions.InitializationException;
 import hr.algebra.util.LoggingUtil;
 import hr.algebra.xml.AppConfig;
 import hr.algebra.xml.ConfigReader;
 
 import java.io.IOException;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
-public enum DBSingleton {
-    INSTANCE;
+//https://www.baeldung.com/hikaricp
+public class DataSource {
+    private static final HikariConfig hikariCOnfig = new  HikariConfig();
+    private static HikariDataSource ds;
+    private static AppConfig configSettings;
 
-    private DBSingleton() {}
-
-    private static Connection connection;
-    private static AppConfig config;  // static varijabla za config
-
-    //https://youtu.be/_7q4kMfJPDw?si=FPjB_FUz4XvtrznS
-    //Class.forName("DBSingleton")
-    static {
-        try {
-            config = ConfigReader.read();
-
-            connection = DriverManager.getConnection(
-                    config.getDbUrl(),
-                    config.getDbUsername(),
-                    config.getDbPassword()
-            );
-
+    static{
+        try{
+            configSettings = ConfigReader.read();
+            hikariCOnfig.setJdbcUrl(configSettings.getDbUrl());
+            hikariCOnfig.setUsername(configSettings.getDbUsername());
+            hikariCOnfig.setPassword(configSettings.getDbPassword());
+            ds = new HikariDataSource(hikariCOnfig);
             tryInitialize();
-        } catch (Exception e) {
-            LoggingUtil.logError("DB initialization error - tables already exist", e);
+
         }
+        catch (Exception e){
+            LoggingUtil.logError("Hikari static error", e);
+        }
+
     }
+
+    private DataSource(){}
+
+    public static Connection getConnection() throws SQLException {
+        return ds.getConnection();
+    }
+
 
     private static void tryInitialize() {
         try{
@@ -51,7 +59,7 @@ public enum DBSingleton {
 
     private static void initSchema() throws IOException, InitializationException, SQLException {
 
-        var resourceStream = DBSingleton.class.getResourceAsStream("/hr/algebra/sql/init.sql");
+        var resourceStream = DataSource.class.getResourceAsStream("/hr/algebra/sql/init.sql");
         if (resourceStream == null) {
             throw new InitializationException("init.sql not found");
         }
@@ -62,7 +70,8 @@ public enum DBSingleton {
             ddl = ddl.substring(1);
         }
 
-        try (Statement statement = connection.createStatement()) {
+        try (Connection con = ds.getConnection();
+                Statement statement =  con.createStatement()) {
             String[] statements = ddl.split("(?mi)^go\\s*$"); //da gleda samo "go" a ne kad je u sklopu druge rijeci, regex
             //multi-line mode, casesensitive, pocetak linije, prepoznavanje s " ", kraj linije odmah
             for (String sql : statements) {
@@ -75,21 +84,7 @@ public enum DBSingleton {
         LoggingUtil.logInfo("Database schema initialized");
     }
 
-    public static Connection getConnection() throws SQLException {
-        if (connection == null || connection.isClosed()) {
-            connection = DriverManager.getConnection(
-                    config.getDbUrl(),
-                    config.getDbUsername(),
-                    config.getDbPassword()
-            );
-        }
-        return connection;
-    }
-
-    public void closeConnection() throws SQLException {
-        if (connection != null && !connection.isClosed()) {
-            connection.close();
-            LoggingUtil.logInfo("Database connection closed");
-        }
+    public static void closeConnection() {
+        ds.close();
     }
 }

@@ -7,6 +7,7 @@ public class RepositoryFactory {
     //https://javaconceptoftheday.com/statement-vs-preparedstatement-vs-callablestatement-in-java/
     private RepositoryFactory() {}
 
+    //simple factory
     public static AdminRepository getAdminRespository(){
         return AdminRepositoryImpl.getInstance();
     }

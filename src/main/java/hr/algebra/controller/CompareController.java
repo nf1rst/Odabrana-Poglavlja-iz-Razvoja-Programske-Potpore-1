@@ -11,15 +11,12 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.VBox;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -70,6 +67,8 @@ public class CompareController extends BaseController {
 
     private Headphones headphonesForComparing1;
     private Headphones headphonesForComparing2;
+
+    //https://docs.oracle.com/javafx/2/drag_drop/jfxpub-drag_drop.htm
     @FXML
     public void initialize(){
         initListView();
@@ -110,6 +109,11 @@ public class CompareController extends BaseController {
     public void onCompare(){
         if(headphonesForComparing1==null || headphonesForComparing2==null){
             AlertUtil.showErrorAlert("Both headphones must be chosen to start comparison");
+            return;
+        }
+
+        if(headphonesForComparing1.compareTo(headphonesForComparing2)==0){
+            AlertUtil.showWarningAlert("Headphones in drop zones are the same, no point in any of this");
             return;
         }
 
@@ -163,9 +167,13 @@ public class CompareController extends BaseController {
             Dragboard db = event.getDragboard();
             boolean success = false;
             if(db.hasString()){
-                int id = Integer.parseInt(db.getString());
-                headphonesService.getHeadphonesById(id)
-                        .ifPresent(h-> selectedHeadphones =h); // jer servis vraca optional
+                checkDraggedHeadphones(db.getString());
+
+                if(checkForDuplicates(headphonesForComparing1, selectedHeadphones))
+                {
+                    AlertUtil.showWarningAlert("The same headphones have already been droppped in drop zone 1");
+                    return;
+                }
              displayHeadphonesVBox(dropZone1, viewHeadphoneName1, headphones1ImageView);
              headphonesForComparing1=selectedHeadphones;
              success=true;
@@ -178,9 +186,12 @@ public class CompareController extends BaseController {
            Dragboard db = event.getDragboard();
            boolean success=false;
            if(db.hasString()){
-               int id = Integer.parseInt(db.getString());
-               headphonesService.getHeadphonesById(id)
-                       .ifPresent(h->selectedHeadphones=h);
+               checkDraggedHeadphones(db.getString());
+
+               if(checkForDuplicates(headphonesForComparing2, selectedHeadphones)){
+                   AlertUtil.showWarningAlert("The same headphones are already in the drop zone 2");
+                   return;
+               }
 
                displayHeadphonesVBox(dropZone2, viewHeadphoneName2, headphones2ImageView);
                headphonesForComparing2=selectedHeadphones;
@@ -191,6 +202,15 @@ public class CompareController extends BaseController {
         });
     }
 
+    private boolean checkForDuplicates(Headphones headphonesForComparing1, Headphones selectedHeadphones) {
+        return headphonesForComparing1!=null && headphonesForComparing1.compareTo(selectedHeadphones)==0;
+    }
+
+    private void checkDraggedHeadphones(String draggedId) {
+        int id = Integer.parseInt(draggedId);
+        headphonesService.getHeadphonesById(id).ifPresent(h->selectedHeadphones=h);
+    }
+
     private void displayHeadphonesVBox(VBox dropZone, Label viewHeadphoneName, ImageView headphonesImageView) {
         dropZone.setStyle("-fx-border-color: #00ff4d");
         viewHeadphoneName.setText(selectedHeadphones.getName()!=null?selectedHeadphones.getName():"N/A");
@@ -199,34 +219,7 @@ public class CompareController extends BaseController {
     }
 
     private void setImage(String imagePath, ImageView headphonesImageView) {
-        if(imagePath==null || imagePath.isEmpty()){
-            showPlaceHolderImage(headphonesImageView);
-            return;
-        }
-        try{
-            File imageFile = new File(imagePath);
-            if(!imageFile.exists()){
-                showPlaceHolderImage(headphonesImageView);
-                return;
-            }
-            Image image = new Image(new FileInputStream(imageFile));
-            headphonesImageView.setImage(image);
-        }
-        catch (Exception _){
-            showPlaceHolderImage(headphonesImageView);
-        }
-    }
-
-    private void showPlaceHolderImage(ImageView headphonesImageView) {
-        try{
-            var placeholder = getClass().getResourceAsStream("/hr/algebra/assets/No_Image_Available.jpg");
-            if(placeholder!=null){
-                headphonesImageView.setImage(new Image(placeholder));
-            }
-        }
-        catch (Exception _){
-            AlertUtil.showErrorAlert("Cannot load any images");
-        }
+        MediaUtil.showImage(headphonesImageView, imagePath);
     }
 
     private void setInRange() {

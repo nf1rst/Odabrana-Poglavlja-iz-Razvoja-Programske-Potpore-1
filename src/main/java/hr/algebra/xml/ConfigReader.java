@@ -22,6 +22,7 @@ public class ConfigReader {
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(input);
 
+
             doc.getDocumentElement().normalize(); //da makne whitespace izmedu tragova
 
             String url = getTagValue(doc,"url");
