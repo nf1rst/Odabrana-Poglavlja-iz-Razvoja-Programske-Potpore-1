@@ -121,7 +121,6 @@ public class Headphones implements Comparable<Headphones> {
     }
 
     @Override
-    //public int compareTo(Headphones o) {return name.compareTo(o.name);}
     public int compareTo(Headphones o) {return Double.compare(this.price,o.price);}
 
 }

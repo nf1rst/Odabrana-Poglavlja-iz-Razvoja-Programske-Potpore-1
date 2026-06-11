@@ -12,7 +12,6 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -111,6 +110,7 @@ public class TechnologyController extends BaseController{
 
         try{
             technologyService.delete(selectedTechnology.getId());
+            masterList.setAll(technologyService.getAllTechnologies());
             LoggingUtil.logInfo( "DELETE", "Technology", selectedTechnology.getName(), Session.checkCurrentUserName());
             XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "technology", Session.checkCurrentUserName(), selectedTechnology.getName());
         }
@@ -120,7 +120,7 @@ public class TechnologyController extends BaseController{
 
         selectedTechnology=null;
         onClear();
-        fillTable(technologiesTable, technologyService.getAllTechnologies());
+        technologiesTable.setItems(masterList);
     }
 
     @Override

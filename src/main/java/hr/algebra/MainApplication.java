@@ -24,7 +24,7 @@ public class MainApplication extends Application {
         //https://stackoverflow.com/questions/16708931/javafx-working-with-threads-and-gui
         //https://medium.com/@mglover/concurrency-in-javafx-32a5f6133d
         //https://youtu.be/pdRX6CLP0tM?si=bImZUEx_w1N84C_b
-        Task<Void>initTask = new Task<Void>() {
+        Task<Void>initTask = new Task<>() {
             @Override
             protected Void call() throws Exception {
                 DBInitiatorService dbInitiatorService = DBInitiatorService.INSTANCE;

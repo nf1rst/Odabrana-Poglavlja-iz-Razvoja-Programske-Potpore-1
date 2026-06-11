@@ -10,6 +10,8 @@ import hr.algebra.util.SceneLoadingUtil;
 import hr.algebra.util.XMLLoggingUtil;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -32,8 +34,10 @@ public class UseController extends BaseController{
 
     @FXML private Label currentUserLabel;
 
+    private ObservableList<Use> masterList;
     @FXML
     public void initialize(){
+        masterList = FXCollections.observableArrayList(useService.getAllUses());
         colID.setCellValueFactory(
                 d->new SimpleIntegerProperty(d.getValue().getId()));
         colName.setCellValueFactory(
@@ -48,7 +52,7 @@ public class UseController extends BaseController{
                 });
 
         fillUserLabel(currentUserLabel);
-        fillTable(useTable, useService.getAllUses());
+        useTable.setItems(masterList);
 
         searchField.textProperty().addListener((obs,old,q)->fillTable(useTable, useService.search(q)));
 
@@ -90,6 +94,7 @@ public class UseController extends BaseController{
 
         try{
             useService.delete(selectedUse.getId());
+            masterList.setAll(useService.getAllUses());
             LoggingUtil.logInfo( "DELETE", "Use", selectedUse.getName(), Session.checkCurrentUserName());
             XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "use", Session.checkCurrentUserName(),  selectedUse.getName());
             selectedUse=null;
@@ -97,8 +102,7 @@ public class UseController extends BaseController{
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete use as it is associated with certain headphones");
         }
-
-        fillTable(useTable, useService.getAllUses());
+        useTable.setItems(masterList);
     }
 
     @Override

@@ -40,7 +40,7 @@
 
                 <Label fx:id="useLabel" text="Uses*" />
 
-                <Label fx:id="descLabel" wrapText="true" alignment="CENTER" prefHeight="83.0" prefWidth="199.0" text="Description*" />
+                <Label fx:id="descLabel" alignment="CENTER" prefHeight="83.0" prefWidth="199.0" text="Description*" wrapText="true" />
                 <!-- Gumbi za akcije -->
                 <HBox spacing="5">
                     <Button maxWidth="Infinity" onAction="#onClear" style="-fx-background-color: #607D8B; -fx-text-fill: white;" text="Clear" HBox.hgrow="ALWAYS" />
@@ -62,8 +62,9 @@
          <children>
              <HBox spacing="10">
                  <TextField fx:id="searchField" prefHeight="25.0" prefWidth="175.0" promptText="search by name" />
-                 <ComboBox fx:id="filterBrandCombo" prefHeight="25.0" prefWidth="117.0" promptText="Filter by brand" />
-                 <ComboBox fx:id="filterTypeCombo" prefHeight="25.0" prefWidth="109.0" promptText="Filter by type" />
+                 <ComboBox fx:id="filterBrandCombo" prefHeight="25.0" prefWidth="126.0" promptText="Filter by brand" />
+                 <ComboBox fx:id="filterTypeCombo" prefHeight="25.0" prefWidth="116.0" promptText="Filter by type" />
+               <ComboBox fx:id="filterUseCombo" prefHeight="25.0" prefWidth="118.0" promptText="Filter by uses" />
                  <Button onAction="#onShowAll" text="Show all" />
              </HBox>
             <TableView fx:id="headphonesTable" prefHeight="652.0" prefWidth="737.0">

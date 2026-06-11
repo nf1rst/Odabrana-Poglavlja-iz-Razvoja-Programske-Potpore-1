@@ -17,7 +17,6 @@ import javafx.scene.input.Dragboard;
 import javafx.scene.input.TransferMode;
 import javafx.scene.layout.VBox;
 
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class CompareController extends BaseController {
@@ -84,6 +83,8 @@ public class CompareController extends BaseController {
         viewHeadphoneName2.setText("Name*");
         headphones1ImageView.setImage(null);
         headphones2ImageView.setImage(null);
+        if(headphonesForComparing1!=null)  headphonesListView.getItems().add(headphonesForComparing1);
+        if(headphonesForComparing2!=null) headphonesListView.getItems().add(headphonesForComparing2);
         headphonesForComparing1=null;
         headphonesForComparing2=null;
         clearHeadphonesGrid(nameLabel1, yearLabel1, impedanceLabel1, minFreqLabel1, maxFreqLabel1, batteryLabel1, priceLabel1, descLabel1, brandLabel1, techLabel1, usesLabel1, typesLabel1);
@@ -112,7 +113,7 @@ public class CompareController extends BaseController {
             return;
         }
 
-        if(headphonesForComparing1.compareTo(headphonesForComparing2)==0){
+        if(headphonesForComparing1.equals(headphonesForComparing2)){
             AlertUtil.showWarningAlert("Headphones in drop zones are the same, no point in any of this");
             return;
         }
@@ -174,12 +175,14 @@ public class CompareController extends BaseController {
                     AlertUtil.showWarningAlert("The same headphones have already been droppped in drop zone 1");
                     return;
                 }
+
+                //if(headphonesForComparing1!=null) headphonesListView.getItems().add(headphonesForComparing1);
              displayHeadphonesVBox(dropZone1, viewHeadphoneName1, headphones1ImageView);
              headphonesForComparing1=selectedHeadphones;
              success=true;
             }
-            event.setDropCompleted(success);
-            event.consume();
+            event.setDropCompleted(success) ; //register za micanje
+            //
         });
 
         dropZone2.setOnDragDropped(event ->{
@@ -192,13 +195,13 @@ public class CompareController extends BaseController {
                    AlertUtil.showWarningAlert("The same headphones are already in the drop zone 2");
                    return;
                }
-
+               //if(headphonesForComparing2!=null) headphonesListView.getItems().add(headphonesForComparing2);
                displayHeadphonesVBox(dropZone2, viewHeadphoneName2, headphones2ImageView);
                headphonesForComparing2=selectedHeadphones;
                success=true;
            }
            event.setDropCompleted(success);
-           event.consume();
+           //
         });
     }
 
@@ -226,12 +229,12 @@ public class CompareController extends BaseController {
         dropZone1.setOnDragOver(event->{
             event.acceptTransferModes(TransferMode.COPY); //drop nece radit bez ovog
             dropZone1.setStyle("-fx-border-color: #0390fc;");
-            event.consume();
+            //
         });
         dropZone2.setOnDragOver(event->{
             event.acceptTransferModes(TransferMode.COPY); //drop nece radit bez ovog
             dropZone2.setStyle("-fx-border-color: #0390fc;");
-            event.consume();
+            //
         });
     }
 
@@ -248,23 +251,27 @@ public class CompareController extends BaseController {
             ClipboardContent content = new ClipboardContent();
             content.putString(String.valueOf(selectedHeadphones.getId()));
             db.setContent(content);
-
-            event.consume();
+            //
+        });
+        headphonesListView.setOnDragDone(event ->{
+            if(event.getTransferMode()==TransferMode.MOVE){
+                headphonesListView.getItems().remove(selectedHeadphones);
+            }
         });
     }
 
+    //https://stackoverflow.com/questions/50612023/javafx-setcellvaluefactory
     private void initListView() {
-        List<Headphones>allHeadphones=headphonesService.getAllHeadphones();
-        headphonesListView.setItems(FXCollections.observableArrayList(allHeadphones));
+        headphonesListView.setItems(FXCollections.observableArrayList(headphonesService.getAllHeadphones()));
         headphonesListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
-        headphonesListView.setCellFactory(lv->new ListCell<Headphones>(){
+        headphonesListView.setCellFactory(lv->new ListCell<>(){
             @Override
             protected void updateItem(Headphones h, boolean empty){
                 super.updateItem(h,empty);
                 setText(empty ||h==null?null:h.getName());
             }
-        });
+        }); //da nije toString
     }
 
     @FXML

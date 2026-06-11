@@ -67,7 +67,7 @@ public class HeadphonesEditController extends BaseController{
         usesListView.setItems(FXCollections.observableArrayList(allUses));
         usesListView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
-        technologiesListView.setCellFactory(lv->new ListCell<Technology>(){
+        technologiesListView.setCellFactory(lv->new ListCell<>(){
             @Override
             protected void updateItem(Technology t, boolean empty){
                 super.updateItem(t,empty);
@@ -75,7 +75,7 @@ public class HeadphonesEditController extends BaseController{
             }
         });
 
-        usesListView.setCellFactory(lv->new ListCell<Use>(){
+        usesListView.setCellFactory(lv->new ListCell<>(){
             @Override
             protected void updateItem(Use u, boolean emtpy){
                 super.updateItem(u,emtpy);

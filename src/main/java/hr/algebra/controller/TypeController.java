@@ -104,6 +104,7 @@ public class TypeController extends BaseController{
 
         try{
             typeService.delete(selectedType.getId());
+            masterList.setAll(typeService.getAllTypes());
             LoggingUtil.logInfo( "DELETE", "Type", selectedType.getName(), Session.checkCurrentUserName());
             XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "type", Session.checkCurrentUserName(),  nameLabel.getText());
             selectedType=null;
@@ -112,7 +113,7 @@ public class TypeController extends BaseController{
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete type as it is associated with certain headphones");
         }
-        fillTable(typeTable, typeService.getAllTypes());
+        typeTable.setItems(masterList);
     }
 
 

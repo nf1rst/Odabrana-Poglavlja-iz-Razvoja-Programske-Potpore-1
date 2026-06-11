@@ -26,7 +26,6 @@ public class DataSource {
             hikariCOnfig.setPassword(configSettings.getDbPassword());
             ds = new HikariDataSource(hikariCOnfig);
             tryInitialize();
-
         }
         catch (Exception e){
             LoggingUtil.logError("Hikari static error", e);

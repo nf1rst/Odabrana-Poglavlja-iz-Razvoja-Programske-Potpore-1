@@ -11,7 +11,6 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.*;
@@ -34,7 +33,7 @@ public class BrandController extends BaseController {
     private final BrandService brandService = BrandService.getInstance();
     private Brand selectedBrand=null;
 
-
+    private ObservableList<Brand> masterList;
     @FXML
     public void initialize(){
         colId.setCellValueFactory(
@@ -51,7 +50,7 @@ public class BrandController extends BaseController {
                 showDetailsSelectedBrand(val);
             }
         });
-        ObservableList<Brand> masterList=FXCollections.observableArrayList(brandService.getAllBrands());
+        masterList=FXCollections.observableArrayList(brandService.getAllBrands());
         brandTable.setItems(masterList);
 
         searchField.textProperty().addListener((obs,old,q)->{
@@ -104,12 +103,13 @@ public class BrandController extends BaseController {
 
         tryDeleteBrand();
         onNew();//tu se poziva restart selektiranogBrenda
-        fillTable(brandTable, brandService.getAllBrands());
+        brandTable.setItems(masterList);
     }
 
     private void tryDeleteBrand() {
         try{
             brandService.delete(selectedBrand.getId());
+            masterList.setAll(brandService.getAllBrands());
             LoggingUtil.logInfo("DELETE", "Brand", selectedBrand.getName(), Session.checkCurrentUserName());
             XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "brand", Session.checkCurrentUserName(),  selectedBrand.getName());
         }

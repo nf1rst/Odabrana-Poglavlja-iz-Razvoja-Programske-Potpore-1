@@ -49,14 +49,15 @@ public class AdminController extends BaseController{
     private final HeadphonesService headphonesService = HeadphonesService.getInstance();
     private static final AdminService adminService = AdminService.INSTANCE;
 
+    ObservableList<User> masterList;
 
-    private String delete="DELETE"; // sonarqube
+    private static final String DELETE ="DELETE"; // sonarqube
     @FXML
     public void initialize(){
         setUpColumns();
         setUpChoiceBox();
 
-        ObservableList<User> masterList = FXCollections.observableArrayList(userService.getAllUsers());
+         masterList=FXCollections.observableArrayList(userService.getAllUsers());
 
         searchField.textProperty().addListener((obs, old, val)->{
             if(!val.isBlank()){
@@ -112,7 +113,7 @@ public class AdminController extends BaseController{
 
     @FXML
     public void onListAllUsers(){
-        fillTable(userTableView, userService.getAllUsers());
+        userTableView.setItems(masterList);
         clear();
     }
 
@@ -151,8 +152,9 @@ public class AdminController extends BaseController{
         try{
             adminService.deleteAllEntities();
             MediaUtil.deleteImagesInIntelliJ();
-            LoggingUtil.logInfo(delete, "Entities",  Session.getCurrentUser().getUsername());
-            XMLLoggingUtil.log("INFO", delete, "successfully delted all entities", "*", Session.getCurrentUser().getUsername(),  "*");
+            masterList.setAll(userService.getAllUsers());
+            LoggingUtil.logInfo(DELETE, "Entities",  Session.getCurrentUser().getUsername());
+            XMLLoggingUtil.log("INFO", DELETE, "successfully delted all entities", "*", Session.getCurrentUser().getUsername(),  "*");
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete all database content");
@@ -205,13 +207,14 @@ public class AdminController extends BaseController{
             }
 
             adminService.deleteUserByUsername(selectedUser.getUsername());
-            XMLLoggingUtil.log("INFO", delete, "successfully deleted", "user", Session.getCurrentUser().getUsername(),  selectedUser.getUsername());
+            XMLLoggingUtil.log("INFO", DELETE, "successfully deleted", "user", Session.getCurrentUser().getUsername(),  selectedUser.getUsername());
+            masterList.setAll(userService.getAllUsers());
             selectedUser=null;
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete user");
         }
-        fillTable(userTableView, userService.getAllUsers());
+        userTableView.setItems(masterList);
     }
 
     @FXML
@@ -221,12 +224,13 @@ public class AdminController extends BaseController{
                 return;
             }
             adminService.deleteAllUsers();
-            XMLLoggingUtil.log("INFO", delete, "successfully delted all users", "user", Session.getCurrentUser().getUsername(),  "*");
+            masterList.setAll(userService.getAllUsers());
+            XMLLoggingUtil.log("INFO", DELETE, "successfully delted all users", "user", Session.getCurrentUser().getUsername(),  "*");
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete all users");
         }
-        fillTable(userTableView, userService.getAllUsers());
+        userTableView.setItems(masterList);
     }
 
     @FXML

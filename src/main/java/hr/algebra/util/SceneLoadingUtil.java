@@ -39,8 +39,8 @@ public class SceneLoadingUtil {
             Stage stage = new  Stage();
             stage.setScene(scene);
             stage.setTitle(title);
-            stage.setWidth(400);
-            stage.setHeight(320);
+            stage.setWidth(400);//400
+            stage.setHeight(320);//320
             stage.setResizable(false);
             stage.show();
         }

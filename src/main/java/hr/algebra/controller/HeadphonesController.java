@@ -4,6 +4,7 @@ import hr.algebra.models.*;
 import hr.algebra.services.BrandService;
 import hr.algebra.services.HeadphonesService;
 import hr.algebra.services.TypeService;
+import hr.algebra.services.UseService;
 import hr.algebra.util.*;
 import hr.algebra.xml.export.XMLExporter;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -19,6 +20,7 @@ import javafx.scene.image.ImageView;
 import javafx.util.StringConverter;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -49,37 +51,41 @@ public class HeadphonesController extends BaseController {
     @FXML private TextField searchField;
     @FXML private ComboBox<Brand> filterBrandCombo;
     @FXML private ComboBox<Type> filterTypeCombo;
+    @FXML private ComboBox<Use>filterUseCombo;
 
     private final HeadphonesService headphonesService = HeadphonesService.getInstance();
     private final BrandService brandService = BrandService.getInstance();
     private final TypeService typeService = TypeService.getInstance();
+    private final UseService useService = UseService.getInstance();
 
     private Headphones selectedHeadphnes = null;
 
     @FXML private Label currentUserLabel;
 
-    ObservableList<Headphones>masterList;
+    private ObservableList<Headphones>masterList;
+    private ObservableList<Type>typesObsList;
+    private ObservableList<Use>usesObsList;
+    private ObservableList<Brand>brandsObsList;
 
     //https://www.javacodegeeks.com/understanding-the-constructor-and-initialize-method-in-openjfx.html
     @FXML
     public void initialize(){
         setupColums();
         setupTableSelection();
-        setUpComboBoxes();
         setupSearch();
         fillUserLabel(currentUserLabel);
         masterList = FXCollections.observableArrayList(headphonesService.getAllHeadphones());
+        typesObsList=FXCollections.observableArrayList(typeService.getAllTypes());
+        usesObsList=FXCollections.observableArrayList(useService.getAllUses());
+        brandsObsList=FXCollections.observableArrayList(brandService.getAllBrands());
+        setUpComboBoxes();
+
         headphonesTable.setItems(masterList);
     }
 
     private void setUpComboBoxes() {
-        List<Type>allTypes=typeService.getAllTypes();
-        List<Brand>allBrands = brandService.getAllBrands();
 
-        filterTypeCombo.setItems(FXCollections.observableArrayList(allTypes));
-        filterBrandCombo.setItems(FXCollections.observableArrayList(allBrands));
-
-        filterBrandCombo.setConverter(new StringConverter<Brand>() {
+        filterBrandCombo.setConverter(new StringConverter<>() {
             @Override
             public String toString(Brand brand) {
                 return brand.getName()!=null?brand.getName():null;
@@ -91,7 +97,7 @@ public class HeadphonesController extends BaseController {
             }
         });
 
-        filterTypeCombo.setConverter(new StringConverter<Type>() {
+        filterTypeCombo.setConverter(new StringConverter<>() {
             @Override
             public String toString(Type type) {
                 return type.getName()!=null?type.getName():null;
@@ -103,6 +109,18 @@ public class HeadphonesController extends BaseController {
             }
         });
 
+        filterUseCombo.setConverter(new StringConverter<>() {
+            @Override
+            public String toString(Use use) {
+                return use.getName()!=null?use.getName():null;
+            }
+
+            @Override
+            public Use fromString(String string) {
+                return null;
+            }
+        });
+
         filterBrandCombo
                 .getSelectionModel()
                 .selectedItemProperty()
@@ -110,6 +128,7 @@ public class HeadphonesController extends BaseController {
                     if(val!=null){
                         observableListDataFill(headphonesTable, masterList, h->h.getBrand().getName().equals(val.getName()));
                         filterTypeCombo.getSelectionModel().clearSelection();
+                        filterUseCombo.getSelectionModel().clearSelection();
                     }
                 });
 
@@ -120,8 +139,40 @@ public class HeadphonesController extends BaseController {
                     if(val!=null){
                         observableListDataFill(headphonesTable, masterList, h->h.getType().getName().equals(val.getName()));
                         filterBrandCombo.getSelectionModel().clearSelection();
+                        filterUseCombo.getSelectionModel().clearSelection();
                     }
                 });
+
+        setupManyToManyUseListener();
+
+
+        filterTypeCombo.setItems(typesObsList);
+        filterUseCombo.setItems(usesObsList);
+        filterBrandCombo.setItems(brandsObsList);
+    }
+
+    private void setupManyToManyUseListener() {
+        filterUseCombo.getSelectionModel()
+                .selectedItemProperty()
+                .addListener((obs, old, val)->{
+                    if(val!=null){
+                        filterBrandCombo.getSelectionModel().clearSelection();
+                        filterTypeCombo.getSelectionModel().clearSelection();
+                        List<Headphones>appropriateHeadphones=new ArrayList<>();
+                        masterList.forEach(h->{
+                            if(h.getPossibleUsages()!=null){
+                                h.getPossibleUsages().forEach(u->{
+                                    if( u.equals(val)){
+                                        appropriateHeadphones.add(h);
+                                    }
+                                });
+                            }
+                        });
+                        headphonesTable.setItems(FXCollections.observableArrayList(appropriateHeadphones));
+                    }
+                    else headphonesTable.setItems(masterList);
+                });
+
     }
 
 
@@ -201,7 +252,7 @@ public class HeadphonesController extends BaseController {
             AlertUtil.showErrorAlert("One must be logged in to edit");
             return;
         }
-        SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/insert-update-headphones-view.fxml", "Insert and Update Headphone", getMainNode(), 600,600);
+        SceneLoadingUtil.loadNewCustomWindow("/hr/algebra/views/insert-update-headphones-view.fxml", "Insert and Update Headphone" , getMainNode(), 600,600);
     }
 
     @FXML
@@ -219,10 +270,11 @@ public class HeadphonesController extends BaseController {
 
         headphonesService.delete(selectedHeadphnes.getId());
 
+        masterList.setAll(headphonesService.getAllHeadphones());
         LoggingUtil.logInfo( "DELETE", "Headphones", selectedHeadphnes.getName(),Session.checkCurrentUserName());
         XMLLoggingUtil.log("INFO", "DELETE", "successfully deleted", "headphones", Session.checkCurrentUserName(),  selectedHeadphnes.getName());
 
-        fillTable(headphonesTable, headphonesService.getAllHeadphones());
+        headphonesTable.setItems(masterList);
         selectedHeadphnes=null;
     }
 
@@ -231,7 +283,8 @@ public class HeadphonesController extends BaseController {
         searchField.clear();
         filterBrandCombo.setValue(null);
         filterTypeCombo.setValue(null);
-        fillTable(headphonesTable, headphonesService.getAllHeadphones());
+        filterUseCombo.setValue(null);
+        headphonesTable.setItems(masterList);
     }
 
      @FXML
@@ -307,8 +360,6 @@ public class HeadphonesController extends BaseController {
                 return;
             }
             MediaUtil.showImage(headphoneImageView, imageFIle.toString());
-//            Image image = new Image(new FileInputStream(imageFIle));
-//            headphoneImageView.setImage(image);
         }
         catch (Exception _){
             MediaUtil.showPlaceholder(headphoneImageView);

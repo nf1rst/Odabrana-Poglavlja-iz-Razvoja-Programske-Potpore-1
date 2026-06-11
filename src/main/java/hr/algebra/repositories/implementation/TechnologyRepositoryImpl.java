@@ -35,7 +35,7 @@ public class TechnologyRepositoryImpl implements TechnologyRepository {
                 CallableStatement statement = con.prepareCall("{CALL GetTechnologyById(?)}")){
             statement.setInt(1,id);
             try(ResultSet rs=statement.executeQuery()){
-                while(rs.next())Optional.of(mapRow(rs));
+                if(rs.next())Optional.of(mapRow(rs));
             }
         }
         return Optional.empty();
