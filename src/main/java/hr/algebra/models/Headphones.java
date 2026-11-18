@@ -5,14 +5,13 @@ import java.util.Objects;
 
 
 public class Headphones implements Comparable<Headphones> {
-    private int id; // ovdje id nije final da ga se moze u repo sloju postavit na inserted objekt tako da ga u controlleru mogu poslat u metodu koja ce preko vracenog
-    //ID-a novostvorenog objekta moc insertirat u M:N medutablice
+    private int id;
 
     private int yearEdition;
-    private int impedance; // impedance = el. otpor audio signalima (Ohm)
+    private int impedance;
     private int minFrequency;
     private int maxFrequency;
-    private int batteryLife;//za bezicne
+    private int batteryLife;
     private double price;
     private String description;
     private String imagePath;

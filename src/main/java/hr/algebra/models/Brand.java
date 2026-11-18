@@ -8,14 +8,14 @@ public class Brand implements Comparable<Brand>{
     private String name;
     private String description;
 
-    public Brand(int id,String name, String description) {//za citanje iz baze
+    public Brand(int id,String name, String description) {
         this.id=id;
         this.name = name;
         this.description = description;
     }
 
-    public Brand(String name, String description) {//za stvaranje novog
-       this.id=0; //placeholder, baza ce to poslije sama rijesit
+    public Brand(String name, String description) {
+       this.id=0;
         this.name = name;
         this.description = description;
     }

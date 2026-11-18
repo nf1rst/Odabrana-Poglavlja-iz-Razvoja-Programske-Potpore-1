@@ -42,9 +42,6 @@ public class MediaUtil {
         }
     }
 
-    //https://stackoverflow.com/questions/53520358/delete-image-from-the-folder
-    //https://stackoverflow.com/questions/20281835/how-to-delete-a-folder-with-files-using-java - jako korisno!!!!!!!!!!!!!!!!!
-    //https://youtu.be/Tpwnvi-3pGw?si=lR5OVlHLwOZUVEwY
     public static void deleteImagesInIntelliJ(){
         String imageDir = "src/main/resources/hr/algebra/assets/images/userInput";
         File file= new  File(imageDir);
@@ -67,11 +64,6 @@ public class MediaUtil {
             AlertUtil.showErrorAlert("Cannot delete image from IntelliJ");
         }
     }
-
-    //https://teamtreehouse.com/community/setting-selected-image-file-to-imageview-in-javafx
-    // Source - https://stackoverflow.com/q/40120133
-// Posted by Philayyy, modified by community. See post 'Timeline' for change history
-// Retrieved 2026-06-02, License - CC BY-SA 4.0
 
     public static Optional<String> chooseFile(){
         String destDir = "src/main/resources/hr/algebra/assets/images/userInput/";

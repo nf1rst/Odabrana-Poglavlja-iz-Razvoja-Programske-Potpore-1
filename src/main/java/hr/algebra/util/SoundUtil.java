@@ -11,7 +11,6 @@ import java.io.File;
 public class SoundUtil {
     private SoundUtil(){}
 
-    //https://youtu.be/SyZQVJiARTQ?si=GYgUVmNsIc04f4AH
     public static void playAudioWithStop(String audioPath, Scene scene){
         File file = new File(audioPath);
         if(!file.exists()){

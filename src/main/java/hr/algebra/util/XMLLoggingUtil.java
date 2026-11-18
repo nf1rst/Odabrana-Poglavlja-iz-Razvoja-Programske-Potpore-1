@@ -16,8 +16,6 @@ public class XMLLoggingUtil {
 
     private XMLLoggingUtil(){} //za JAXB
 
-    //https://www.ongraph.com/marshalling-and-unmarshalling-java-objects-using-jaxb/#:~:text=Marshalling%20and%20Unmarshalling%20in%20Java%20are%20important%20JAXB%20processes%20used,XML%20data%20in%20Java%20projects
-    //https://medium.com/@bhargavineha2002/marshalling-unmarshalling-in-java-bfc153cbac6e
     private static final String LOG_FILE ="userActivities.xml";
     private static final DateTimeFormatter FORMAT = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
@@ -27,7 +25,6 @@ public class XMLLoggingUtil {
         private List<LogEntry> log=new ArrayList<>();
 
         public ActivotyLog(){
-            //prazni ctor za JAXB
         }
 
         public void setLog(List<LogEntry> log) {
@@ -118,7 +115,6 @@ public class XMLLoggingUtil {
     }
 
     public static void log(String level, String action, String message, String entity, String username, String identity){
-        //dovuci sve postojece, apendaj novi i ponovno spremi u file
         try{
             JAXBContext context = JAXBContext.newInstance(ActivotyLog.class);
             ActivotyLog logs =  readExistingLogs(context);

@@ -271,7 +271,6 @@ public class HeadphonesRepositoryImpl implements HeadphonesRepository {
             new ArrayList<>()
     );
 
-    //posebna proc koja vraca uses i tech za odredeni headphonesID
     headphones.setPossibleUsages(getPossibleUsagesForHeadphones(rs.getInt("Id")));
     headphones.setTechnologies(getTechnologiesForHeadphones(rs.getInt("Id")));
     return headphones;

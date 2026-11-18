@@ -107,6 +107,6 @@ public class UseController extends BaseController{
 
     @Override
     protected Node getMainNode() {
-        return searchField; // bilo sta samo da je u view
+        return searchField;
     }
 }

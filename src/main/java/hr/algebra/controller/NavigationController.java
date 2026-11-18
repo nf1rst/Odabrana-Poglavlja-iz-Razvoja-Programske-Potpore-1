@@ -75,6 +75,6 @@ public class NavigationController extends BaseController{
 
     @Override
     protected Node getMainNode() {
-        return hBox; // menuItem se ovdje ne moze vratit jer ne nasljeduje klasu node
+        return hBox;
     }
 }

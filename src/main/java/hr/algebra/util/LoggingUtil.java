@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 //https://medium.com/@ibrahim-akay/logback-slf4j-powerful-and-flexible-logging-solution-69e6b6523c17
 
 public class LoggingUtil {
-    //ovaj prikazuje da je log uvijek nastao u ovoj klasi pa ne mogu vidjet di se zapravo stvara
     private static Logger logger = LoggerFactory.getLogger(LoggingUtil.class.getName());
 
     private LoggingUtil(){}

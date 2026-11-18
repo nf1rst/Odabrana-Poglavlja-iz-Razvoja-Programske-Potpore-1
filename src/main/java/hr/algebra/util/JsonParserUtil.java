@@ -14,9 +14,6 @@ public class JsonParserUtil {
     private static final ObjectMapper mapper = new ObjectMapper();
 
     private JsonParserUtil() {}
-
-    //https://stackoverflow.com/questions/52684545/returning-an-array-of-a-generic-type-in-java
-    //https://codesignal.com/learn/courses/handling-json-files-with-java/lessons/working-with-json-in-java-advanced-parsing-techniques
     public static ParsedData parse(String json){
         List<Headphones>headphonesList = new ArrayList<>();
         Set<Technology>technologySet = new LinkedHashSet<>();

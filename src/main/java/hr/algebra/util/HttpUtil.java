@@ -20,8 +20,8 @@ public class HttpUtil {
             return Optional.of(response.body());
         }
         catch (Exception e){
-            LoggingUtil.logError("Http error", e); // da se ne hvata u mainu, samo nego se logira korisnik moze idalje normalno koristit aplikaciju
-            Thread.currentThread().interrupt(); //sonarqube
+            LoggingUtil.logError("Http error", e);
+            Thread.currentThread().interrupt();
             return Optional.empty();
         }
     }

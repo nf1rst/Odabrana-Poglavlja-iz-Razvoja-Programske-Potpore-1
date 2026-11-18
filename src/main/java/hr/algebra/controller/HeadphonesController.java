@@ -67,7 +67,6 @@ public class HeadphonesController extends BaseController {
     private ObservableList<Use>usesObsList;
     private ObservableList<Brand>brandsObsList;
 
-    //https://www.javacodegeeks.com/understanding-the-constructor-and-initialize-method-in-openjfx.html
     @FXML
     public void initialize(){
         setupColums();

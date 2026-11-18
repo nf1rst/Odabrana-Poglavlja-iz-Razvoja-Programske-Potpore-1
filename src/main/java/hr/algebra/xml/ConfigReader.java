@@ -12,8 +12,6 @@ public class ConfigReader {
 
     private ConfigReader() {}
 
-    //https://stackoverflow.com/questions/428073/what-is-the-best-simplest-way-to-read-in-an-xml-file-in-java-application
-    //https://www.baeldung.com/java-xerces-dom-parsing
     public static AppConfig read(){
         try{
             InputStream input = ConfigReader.class.getResourceAsStream("/hr/algebra/configSettings/config.xml");
@@ -23,7 +21,7 @@ public class ConfigReader {
             Document doc = builder.parse(input);
 
 
-            doc.getDocumentElement().normalize(); //da makne whitespace izmedu tragova
+            doc.getDocumentElement().normalize();
 
             String url = getTagValue(doc,"url");
             String username =getTagValue(doc,"username");
