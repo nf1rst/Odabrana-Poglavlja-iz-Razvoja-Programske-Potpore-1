@@ -25,7 +25,6 @@ public class Session {
     }
 
     public static boolean userCanEdit(){
-        //admin uvijek moze
         return (userLoggedIn() && adminAllowedEdit) || (currentUser!=null && currentUser.getRole()==Role.ADMIN);
     }
 

@@ -26,9 +26,6 @@ public class UserService {
     }
 
     public Optional<User> login(String username, String password){
-        //https://davidbertoldi.medium.com/hashing-passwords-in-java-757e787ce71c
-        //https://medium.com/@singhalabhay19/understanding-bcrypt-in-java-a-deep-dive-into-password-hashing-1b4362ccae94
-
         Optional<User> user=Optional.empty();
         try{
             user = repo.getByUsername(username);
@@ -76,9 +73,6 @@ public class UserService {
             LoggingUtil.logError("Username exists error", e);
             throw new  CannotPerformActionException("Cannot execute to register user");
         }
-        //ovdje ne treba provjera inputa jer je to napravljeno u kontrolleru
-        //$2a$12$R9h/cIPz0gi.URNZX3khRecXSTu7pBw5ZKYT1T6m2wH2.Z50s4v32}$
-        //algoritm, log rounds, 22 salt, cipher
         String hashedPassword = hashPassword(password);
         User newUser = new User(username,hashedPassword,Role.USER);
 

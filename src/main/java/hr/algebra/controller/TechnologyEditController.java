@@ -95,7 +95,7 @@ public class TechnologyEditController extends BaseController{
     }
 
     private void trySaveTechnology() {
-            if(!technologyService.nameExists(nameField.getText())){ //tehnologija ne postoji onda je mora ubacit
+            if(!technologyService.nameExists(nameField.getText())){
                 insertTechnology();
                 XMLLoggingUtil.log("INFO", "INSERT ", "successfully inserted", "technology", Session.checkCurrentUserName(), nameField.getText());
                 fillStatusLabel(statusLabel, "Technology successfully inserted", Color.GREEN);

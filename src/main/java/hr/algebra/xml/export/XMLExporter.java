@@ -7,7 +7,6 @@ import java.io.File;
 import java.util.List;
 
 
-//https://www.ibm.com/docs/en/was/8.5.5?topic=ujxdb-using-jaxb-schemagen-tooling-generate-xml-schema-file-from-java-class
 public class XMLExporter {
     private XMLExporter(){}
 

@@ -51,7 +51,7 @@ public class AdminController extends BaseController{
 
     ObservableList<User> masterList;
 
-    private static final String DELETE ="DELETE"; // sonarqube
+    private static final String DELETE ="DELETE";
     @FXML
     public void initialize(){
         setUpColumns();
@@ -80,11 +80,11 @@ public class AdminController extends BaseController{
         boolean currentUserRights = adminService.getUserEditRights();
         Session.setAdminAllowedEdit(currentUserRights);
 
-        editRightsCheckBox.setSelected(currentUserRights); //UI
+        editRightsCheckBox.setSelected(currentUserRights);
 
         editRightsCheckBox.selectedProperty().addListener((obs, old, newValue)->{ // ne na text property jer se onda ne prati sto admin tipka po checkboxu
-            Session.setAdminAllowedEdit(newValue); // za session provjere
-            handleUserRights(newValue); // za update baze podataka
+            Session.setAdminAllowedEdit(newValue);
+            handleUserRights(newValue);
         });
     }
 
@@ -158,7 +158,6 @@ public class AdminController extends BaseController{
         }
         catch (CannotPerformActionException _){
             AlertUtil.showErrorAlert("Cannot delete all database content");
-            //ovdje ne treba logger jer je taj exception vec zapisan u service sloju u logove, ovo je samo da user zna sto se dogodilo
         }
         AlertUtil.showInformationAlert("Database content successfully disposed of");
     }

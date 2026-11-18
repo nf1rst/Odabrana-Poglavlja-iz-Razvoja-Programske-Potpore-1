@@ -253,9 +253,6 @@ public class HeadphonesEditController extends BaseController{
 
 
     private void updateManyToMany(Headphones selectedHeadphones, List<Technology> userselectedTech, List<Use> userSelectedUses) {
-        //ako postoje vec neke veze u bazi, trebaju se zbrisat prije nego se krene ubacivat
-
-        //!! ovdje ne moze ubacit jer ne zna koji identity ID dobiju novoubacene slusalice
 
         try {
             if(selectedHeadphones.getTechnologies()!=null){

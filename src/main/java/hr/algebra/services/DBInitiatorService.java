@@ -24,7 +24,6 @@ public enum DBInitiatorService {
     private final TechnologyService technologyService =  TechnologyService.getInstance();
 
     public void insertAdmin(){
-        //ovaj ide u try catch, da dopusti inserAPIData da se izvrsi ukoliko admin vec postoji
         try{
             userService.registerAdmin("admin", "asdfasdf");
             LoggingUtil.logInfo("Admin successfully inserted");
@@ -57,7 +56,6 @@ public enum DBInitiatorService {
     }
 
     private void insertHeadphones(List<Headphones> headphones) {
-        //treba se napravit da za svaki entitet po imenu izvadi njegov id pa da se onda tako dalje azurira
         headphones.forEach(b->{
             int brandId=brandService.getBrandIdByName(b.getBrand().getName());
             b.getBrand().setId(brandId);

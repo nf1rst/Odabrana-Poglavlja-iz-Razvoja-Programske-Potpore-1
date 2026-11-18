@@ -57,8 +57,6 @@ public class TechnologyController extends BaseController{
                     }
                 });
 
-        //za search field da filtrira kad korisnik nesto upise
-
         searchInit();
 
         fillUserLabel(currentUserLabel);

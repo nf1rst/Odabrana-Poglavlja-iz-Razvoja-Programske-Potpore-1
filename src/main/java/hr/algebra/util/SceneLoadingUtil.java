@@ -7,9 +7,8 @@ import java.io.IOException;
 
 public class SceneLoadingUtil {
     private SceneLoadingUtil() {}
-    //private static Stage stage = new Stage(); //ne treba close window ak je 1 jer samo mijenja scene
 
-    public static void loadNewWindow(String fxmlPath, String title, Node node){ // node sluzi za zatvranje trenutnog prozora
+    public static void loadNewWindow(String fxmlPath, String title, Node node){
         try{
             FXMLLoader loader = new FXMLLoader(SceneLoadingUtil.class.getResource(fxmlPath));
             Scene scene = new Scene(loader.load());
@@ -63,7 +62,7 @@ public class SceneLoadingUtil {
             stage.show();
             stage.setResizable(false);
 
-            if(node!=null)closeThisWindow(node); //ako se posalje da je node null nece se zatvorit
+            if(node!=null)closeThisWindow(node);
         }
         catch (IOException e){
             AlertUtil.showErrorAlert("Cannot load new window");

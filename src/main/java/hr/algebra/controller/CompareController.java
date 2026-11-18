@@ -67,12 +67,11 @@ public class CompareController extends BaseController {
     private Headphones headphonesForComparing1;
     private Headphones headphonesForComparing2;
 
-    //https://docs.oracle.com/javafx/2/drag_drop/jfxpub-drag_drop.htm
     @FXML
     public void initialize(){
         initListView();
         setUpDragSource();
-        setupDropZones(); //kad dode dovoljno blizu da krene zeleno
+        setupDropZones();
 
         fillUserLabel(currentUserLabel);
     }
@@ -175,9 +174,7 @@ public class CompareController extends BaseController {
                     AlertUtil.showWarningAlert("The same headphones have already been droppped in drop zone 1");
                     return;
                 }
-
-                //if(headphonesForComparing1!=null) headphonesListView.getItems().add(headphonesForComparing1);
-             displayHeadphonesVBox(dropZone1, viewHeadphoneName1, headphones1ImageView);
+                displayHeadphonesVBox(dropZone1, viewHeadphoneName1, headphones1ImageView);
              headphonesForComparing1=selectedHeadphones;
              success=true;
             }
@@ -195,7 +192,6 @@ public class CompareController extends BaseController {
                    AlertUtil.showWarningAlert("The same headphones are already in the drop zone 2");
                    return;
                }
-               //if(headphonesForComparing2!=null) headphonesListView.getItems().add(headphonesForComparing2);
                displayHeadphonesVBox(dropZone2, viewHeadphoneName2, headphones2ImageView);
                headphonesForComparing2=selectedHeadphones;
                success=true;
@@ -227,12 +223,12 @@ public class CompareController extends BaseController {
 
     private void setInRange() {
         dropZone1.setOnDragOver(event->{
-            event.acceptTransferModes(TransferMode.COPY); //drop nece radit bez ovog
+            event.acceptTransferModes(TransferMode.COPY);
             dropZone1.setStyle("-fx-border-color: #0390fc;");
             //
         });
         dropZone2.setOnDragOver(event->{
-            event.acceptTransferModes(TransferMode.COPY); //drop nece radit bez ovog
+            event.acceptTransferModes(TransferMode.COPY);
             dropZone2.setStyle("-fx-border-color: #0390fc;");
             //
         });
@@ -259,8 +255,6 @@ public class CompareController extends BaseController {
             }
         });
     }
-
-    //https://stackoverflow.com/questions/50612023/javafx-setcellvaluefactory
     private void initListView() {
         headphonesListView.setItems(FXCollections.observableArrayList(headphonesService.getAllHeadphones()));
         headphonesListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);

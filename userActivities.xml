@@ -4572,4 +4572,13 @@
         <username>admin</username>
         <identity>Major IV</identity>
     </log>
+    <log>
+        <time>18-11-2026 10:18:31</time>
+        <level>INFO</level>
+        <action>EXPORT</action>
+        <message>successfully exported selected headphones</message>
+        <entity>headphones</entity>
+        <username>asdfasdf</username>
+        <identity>ATH-M50x</identity>
+    </log>
 </errorLogs>

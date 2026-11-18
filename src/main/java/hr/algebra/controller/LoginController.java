@@ -57,13 +57,13 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
             return;
         }
 
-        Optional<User> result=Optional.empty(); // da ga dole mogu provjerit jel spremio ista u varijablu
+        Optional<User> result=Optional.empty();
 
         try{
             result = userService.login(username,password);
         }
         catch (EntityExistantException _){
-            showError(loginErrorLabel, "Username not found. Try to register new account with it"); // ako ga tu uhvati znaci da ne postoji
+            showError(loginErrorLabel, "Username not found. Try to register new account with it");
             return;
         }
         catch (CannotPerformActionException e){
@@ -71,7 +71,7 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
         }
 
         if(result.isEmpty()){
-            showError(loginErrorLabel, "Incorrect password"); // ako prode do tu znaci da username postoji al password nije dobar
+            showError(loginErrorLabel, "Incorrect password");
             loginPasswordField.clear();
             return;
         }
@@ -149,7 +149,7 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
             return false;
         }
         if(hasSuspiciusCharacters.test(username)){
-            showError(registerErrorLabel, "Username cannot contain characters '/'"); // jer se za logiranje koristi N/A ako nije ulogiran
+            showError(registerErrorLabel, "Username cannot contain characters '/'");
             return false;
         }
         return true;
@@ -157,7 +157,7 @@ public class LoginController { //iako ovaj ne treba sve motode iz Base Controlle
 
     @FXML
     public void onWithoutAccount(){
-        SceneLoadingUtil.loadNewWindow("/hr/algebra/views/main-view-anonymus.fxml", "Main screen", getMainNode()); //null jer znaci da korisnik klinuo da zeli razgledavat pa se nije ni mono ulogirat tad
+        SceneLoadingUtil.loadNewWindow("/hr/algebra/views/main-view-anonymus.fxml", "Main screen", getMainNode());
     }
 
 

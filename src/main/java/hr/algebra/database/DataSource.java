@@ -48,7 +48,7 @@ public class DataSource {
             LoggingUtil.logError("Script not found", e);
         }
         catch (IOException e) {
-            LoggingUtil.logError("DB already initialized", e); //probact ce create table i nece moc ako vidi da tablice vec postoje
+            LoggingUtil.logError("DB already initialized", e);
         }
         catch (SQLException e){
             LoggingUtil.logError("Command already executed", e);
@@ -71,8 +71,7 @@ public class DataSource {
 
         try (Connection con = ds.getConnection();
                 Statement statement =  con.createStatement()) {
-            String[] statements = ddl.split("(?mi)^go\\s*$"); //da gleda samo "go" a ne kad je u sklopu druge rijeci, regex
-            //multi-line mode, casesensitive, pocetak linije, prepoznavanje s " ", kraj linije odmah
+            String[] statements = ddl.split("(?mi)^go\\s*$");
             for (String sql : statements) {
                 String trimmedSQL = sql.trim();
                 if (!trimmedSQL.isEmpty()) {

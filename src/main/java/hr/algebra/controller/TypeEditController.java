@@ -81,7 +81,7 @@ public class TypeEditController extends BaseController{
     }
 
     private void trySaveType() {
-        if(!typeService.nameExists(nameField.getText())){ // trenutno ne postoji type s tim imenom pa ga dodaj
+        if(!typeService.nameExists(nameField.getText())){
             insertNewType();
             fillStatusLabel(statusLabel,"Type inserted successfully", Color.GREEN);
         }

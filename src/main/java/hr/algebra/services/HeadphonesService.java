@@ -58,7 +58,6 @@ public class HeadphonesService {
         }
     }
 
-    //service sloj se ne brine o tome da to prode kroz bazu to se radi tamo u repo implementaion
     public void addTechnology(int headphonesId, int technologyId){
         try {
             repo.addTechnology(headphonesId,technologyId);
@@ -119,7 +118,6 @@ public class HeadphonesService {
         }
 
     }
-    //filteri za UI
 
     public List<Headphones>getByBrand(int brandId){
         try {
@@ -145,7 +143,7 @@ public class HeadphonesService {
             throw new CannotPerformActionException("Cannot execute to get headphones by use");
         }
     }
-    //pretraga po brand, name ili desc
+
     public List<Headphones> search(String query) {
         Predicate<Headphones> nameMatches = h -> h.getName().contains(query);
         Predicate<Headphones> descriptionMatches = h -> h.getDescription() != null && h.getDescription().contains(query);
